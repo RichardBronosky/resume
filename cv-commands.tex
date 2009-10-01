@@ -1,0 +1,72 @@
+\usepackage{setspace}
+\usepackage{geometry}
+
+\pagestyle{empty}
+\setlength{\tabcolsep}{0in}
+\hyphenchar\font=-1
+\geometry{a4paper, twoside} 
+\setstretch{1}
+\usepackage{booktabs}
+\usepackage{topcapt}
+%%%%%%%%%%%%
+
+%%%%%%%%%%%%
+% PDF setup
+\usepackage{hyperref}
+\hypersetup{colorlinks,breaklinks,
+            linkcolor=blue,urlcolor=blue,
+            anchorcolor=blue,citecolor=blue,
+    	    pdftitle={Wayne Steven D. See},
+	    pdfauthor={Wayne Steven D. See},
+    	    pdfsubject={Resume},
+    	    pdfkeywords={resume, j2ee, python, java, unix}
+}
+
+%%%%%%%%%%%%
+
+\usepackage[dvipsnames,usenames]{color}
+\usepackage{simplemargins}
+\usepackage{graphicx}
+\setleftmargin{1.5cm}
+\setrightmargin{2cm}
+\settopmargin{2.0cm}
+\setbottommargin{0cm}
+
+\newfont{\skillfont}{cmr10 at 9pt}
+\newfont{\linkfont}{cmr10 at 6pt}
+
+\newcommand{\blocktitle}[1]{
+	\vspace{1mm}
+	\textcolor{MidnightBlue}{
+{\sc {#1}
+	\vspace{1.5mm}
+	\hrule}
+	\vspace*{1.5mm}
+} }
+
+\newenvironment{skillblock}[1]{\blocktitle{#1}\begin{tabular}{p{4cm}p{13cm}}}{\end{tabular}}
+\newcommand{\skill}[2]{\noindent\raggedright{\skillfont{#1}} & #2}
+
+\newcommand{\sectionheader}[3]{
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+\textbf{#1} & \\
+\emph{#2} & \emph{#3}
+\end{tabular*}
+}
+
+\newenvironment{longtext}[1]{\small {#1}}
+
+\newcommand{\heading}[4]{
+\begin{center}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lcr}
+&\huge{\textbf{\sc{#1}}}&\\
+\href{mailto:#2}{\small #2} & \small #3 & \small Mobile: #4\\
+\hline\hline
+\end{tabular*}
+\end{center}
+}
+
+\newcommand{\shortskip}[0]{\vspace{2.0mm}\\}
+\newcommand{\tinyskip}[0]{\vspace{0.4mm}\\}
+
+\setlength{\parindent}{0in}
