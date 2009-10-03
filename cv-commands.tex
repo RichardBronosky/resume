@@ -1,72 +1,100 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%               A simple LaTeX CV template                 %
+%         Design and layout heavily inspired by            %
+%   Jeremy Edberg's template (http://edberg.org/jeremy)    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \usepackage{setspace}
 \usepackage{geometry}
+\usepackage{ifthen}
 
 \pagestyle{empty}
 \setlength{\tabcolsep}{0in}
 \hyphenchar\font=-1
-\geometry{a4paper, twoside} 
+\geometry{letterpaper, twoside} 
 \setstretch{1}
 \usepackage{booktabs}
 \usepackage{topcapt}
-%%%%%%%%%%%%
 
-%%%%%%%%%%%%
-% PDF setup
 \usepackage{hyperref}
-\hypersetup{colorlinks,breaklinks,
-            linkcolor=blue,urlcolor=blue,
-            anchorcolor=blue,citecolor=blue,
-    	    pdftitle={Wayne Steven D. See},
-	    pdfauthor={Wayne Steven D. See},
-    	    pdfsubject={Resume},
-    	    pdfkeywords={resume, j2ee, python, java, unix}
+\hypersetup{
+    colorlinks,breaklinks,
+    linkcolor=black,urlcolor=blue,
+    anchorcolor=MidnightBlue,citecolor=blue,
+    pdftitle={Richard Paul Bronosky},
+    pdfauthor={Richard Paul Bronosky},
+    pdfsubject={Resume},
+    pdfkeywords={resume, linux, apache, mysql, php, python, xen}
 }
-
-%%%%%%%%%%%%
 
 \usepackage[dvipsnames,usenames]{color}
 \usepackage{simplemargins}
 \usepackage{graphicx}
 \setleftmargin{1.5cm}
-\setrightmargin{2cm}
-\settopmargin{2.0cm}
-\setbottommargin{0cm}
+\setrightmargin{1.5cm}
+\settopmargin{1cm}
+\setbottommargin{1.5cm}
 
 \newfont{\skillfont}{cmr10 at 9pt}
 \newfont{\linkfont}{cmr10 at 6pt}
 
+\newcommand{\heading}[4]{
+    \begin{center}
+    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lcr}
+    &\huge{\textbf{\sc{#1}}}&\\
+    \href{mailto:#2}{\small #2} & \small #3 & \small Mobile: #4\\
+    \hline\hline
+    \end{tabular*}
+    \end{center}
+}
+
+\newcounter{blocktitlechildren}
 \newcommand{\blocktitle}[1]{
-	\vspace{1mm}
-	\textcolor{MidnightBlue}{
-{\sc {#1}
-	\vspace{1.5mm}
-	\hrule}
-	\vspace*{1.5mm}
-} }
+    \blocktitlechild{2mm}
+    \setcounter{blocktitlechildren}{0}
+    %\textcolor{MidnightBlue}
+    {{\sc{#1}\vspace{1.5mm}\hrule}\vspace*{1.5mm}}
+}
 
-\newenvironment{skillblock}[1]{\blocktitle{#1}\begin{tabular}{p{4cm}p{13cm}}}{\end{tabular}}
-\newcommand{\skill}[2]{\noindent\raggedright{\skillfont{#1}} & #2}
+\newcommand{\blocktitlechild}[2][]{
+    \ifthenelse{\equal{\value{blocktitlechildren}}{0}}{}{\vspace{#2}#1}
+    \addtocounter{blocktitlechildren}{1}
+}
 
-\newcommand{\sectionheader}[3]{
-\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-\textbf{#1} & \\
-\emph{#2} & \emph{#3}
-\end{tabular*}
+\newcommand{\skillnew}[2]{
+    \blocktitlechild{1mm}
+    \begin{tabular}
+        {p{2cm}p{16cm}}
+        \noindent\raggedright{\skillfont{#1}} & #2
+    \end{tabular}
+}
+
+\newcommand{\sectionheader}[4]{
+    \blocktitlechild{2mm}
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2\\
+    \emph{#3} & \emph{#4}
+    \end{tabular*}
+}
+
+\newcommand{\sectionsub}[2]{
+    \blocktitlechild{1.4mm}
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+    \emph{#1} & \emph{#2}
+    \end{tabular*}
 }
 
 \newenvironment{longtext}[1]{\small {#1}}
 
-\newcommand{\heading}[4]{
-\begin{center}
-\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lcr}
-&\huge{\textbf{\sc{#1}}}&\\
-\href{mailto:#2}{\small #2} & \small #3 & \small Mobile: #4\\
-\hline\hline
-\end{tabular*}
-\end{center}
-}
+\newcommand{\shortspace}{\vspace{2mm}}
+\newcommand{\shortskip} {\vspace{2mm}\\}
+\newcommand{\halfspace} {\vspace{1mm}}
+\newcommand{\halfskip}  {\vspace{1mm}\\}
+\newcommand{\tinyspace} {\vspace{0.4mm}}
+\newcommand{\tinyskip}  {\vspace{0.4mm}\\}
+\newcommand{\picospace} {\vspace{0.1mm}}
+\newcommand{\picoskip}  {\vspace{0.1mm}\\}
+\newcommand{\fix}{\hspace*{\fill}}
 
-\newcommand{\shortskip}[0]{\vspace{2.0mm}\\}
-\newcommand{\tinyskip}[0]{\vspace{0.4mm}\\}
 
 \setlength{\parindent}{0in}
