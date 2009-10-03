@@ -1,78 +1,178 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%               A simple LaTeX CV template                 %
-%         Design and layout heavily inspired by            %
-%   Jeremy Edberg's template (http://edberg.org/jeremy)    %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-\documentclass[10.5pt]{article}
+\documentclass[10pt]{article}
 
 \include{cv-commands}
 
 \begin{document}
-\heading{Wayne Steven D. See}{wayne.steven.see@gmail.com}{711 Camba St., Binondo, Manila, Philippines}{(+63) 917-7940763}
+\heading{Richard Paul Bronosky}
+{Richard@Bronosky.com}
+{53 Blackberry Lane, Douglasville, GA 30134}
+{404-922-7866}
+
+\blocktitle{Overview}
+\begin{longtext}
+    management of engineers/administrators and developers;
+    workflow optimization;
+    web application development;
+    system administration of various Unix \& Gnu/Linux;
+    Xen virtualization host and guest administration;
+    optimization of RAID, swap, and cache;
+    MySQL high availability, replication, disaster planning, performance tuning, schema design;
+    application code security and performance auditing;
+    data transformation and migration via MS SQL Server Integration Services;
+    management of SLAs as both the vendor and vendee;
+    strong verbal and written communication skills;
+    excellent troubleshooting and debugging skills
+    \halfskip
+    --- I do all development with command line tools for complete system/location
+        agnosticism. Both local and remote I use Gnu Screen, BASH, VIM, MySQL Monitor
+        (/usr/bin/mysql), and SSH+SOCKS proxy (of http, imap, etc.) for maximum efficiency.
+        References can be found online in \href{http://www.linkedin.com/in/richardbronosky}{LinkedIn}\footnote{\linkfont{LinkedIn: \href{http://www.linkedin.com/in/richardbronosky}{http://www.linkedin.com/in/richardbronosky}}} profile page.
+        Code samples, \LaTeX\ source for this resume, and open source projects are available at personal \href{http://github.com/RichardBronosky/}{GitHub}\footnote{\linkfont{GitHub: \href{http://github.com/RichardBronosky/}{http://github.com/RichardBronosky/}}} repository.
+        Active member of \href{http://serverfault.com/users/4131/richard-bronosky#answers}{ServerFault}\footnote{\linkfont{ServerFault: \href{http://serverfault.com/users/4131/richard-bronosky\#answers}{http://serverfault.com/users/4131/richard-bronosky\#answers}}} and various mailing lists.
+        \shortspace
+\end{longtext}
+
+\blocktitle{Skills}
+
+\skillnew{Languages}{
+    MySQL (Since 2000,Expert),
+    shell scripting (2000,E),
+    PHP (2000,E),
+    Python (2006,Intermediate),
+    Ruby (2006,I),
+    JavaScript (1995,E),
+    HTML (1994,E),
+    XML (1999,E),
+    CSS (1998,E),
+    Oracle SQL \& PL/SQL,
+    MS SQL Server Integration Services,
+    Java,
+    ColdFusion,
+    PERL \& CGI,
+    C/C++,
+    \LaTeX
+}
+
+\skillnew{Software}{
+    MySQL High Availability and FS wizardry,
+    Continuent UniCluster,
+    Apache (1998,E),
+    BASH,
+    VIM,
+    Gnu Screen,
+    SSH tunnel wizardry,
+    CVS/SVN/GIT,
+    Ruby on Rails,
+    Django,
+    Tomcat,
+    VMWare,
+    Xen,
+    LVM,
+    Splunk,
+    Nagios,
+    Cacti,
+    Adobe Photoshop and Illustrator (1994,E),
+    Macromedia Flash (1999,I)
+}
+
+\skillnew{Systems}{
+    Gnu/Linux (RedHat, Debian),
+    Solaris,
+    FreeBSD,
+    OpenBSD,
+    MacOS X%,
+%    Windows 95/98/NT
+}
+
 \blocktitle{Experience}
-\sectionheader{Orange \& Bronze Software Labs, Ltd. Co.}{Senior Software Engineer and Trainer}{September 2007 to Present}
+
+\sectionheader
+{Atlanta Journal-Constitution}
+{Atlanta, GA}
+{Internet Systems Manager \& MySQL DBA}
+{July 2008 to Present}
 \begin{longtext}
-Assisted in trainings held by the company for clients. Training topics included Java fundamentals
-and best practices, Java Servlets, and Java frameworks such as Spring and Hibernate. Also tasked
-in developing a proof of concept project for a client that used Adobe technologies (Adobe Flex
-and Flash Media Server).
-\shortskip
-Currently assigned as assistant team leader for offshore client that is developing a product targeted for use
-by healthcare professionals. Technologies used include Spring, Struts, Hibernate and Swing
-(client-side application deployed through Java Web Start). Development methodology used in
-project is Scrum.\\
+Linux admin;
+manage a department of admins;
+virtualize existing web infrastructure;
+infrastructure and capacity planning
 \end{longtext}
-\sectionheader{Azeus Systems Philippines, Ltd.}{Software Developer}{June 2005 to July 2007}
+\sectionsub
+{MySQL DBA}
+{January 2007 to July 2008}
 \begin{longtext}
-Served as developer in several of the company's high profile projects for the Hong Kong
-Government. Projects used Waterfall as software development model and followed CMMI
-guidelines as an organizational process. Most of the projects involved have strict performance
-guidelines and regarded as mission critical by clients. Tasks include requirements gathering and
-design of functional and program specifications, as well as implementation of user interfaces and
-business logic. Technologies used in projects include J2EE, HTML, JavaScript, PL/SQL and
-XML, among others. Database used for projects include Oracle 8i and Oracle 10g. Application
-servers used include Apache Tomcat and Oracle Application Server.
-\shortskip
-Also served as organization trainer for interns. Tasks include training interns on the company's
-primary technologies, including SQL, JavaScript, HTML, J2EE, PL/SQL. Also oversaw the development and implementation of two internal projects for the company. Technologies used in the internal projects include Adobe Flex 2, Adobe Integrated Runtime (AIR), Echo2 Framework,
-J2EE, and SOAP web services.\\
+MySQL DB admin;
+optimize developer code;
+maintain high availability and performance;
+Django \& Rails extra
 \end{longtext}
 
-\begin{skillblock}{Technical Proficiencies}
-\skill{Languages}{Java, Ruby, Python, JavaScript, ActionScript, PL/SQL}
-\tinyskip
-\skill{Frameworks}{Spring, iBATIS, Hibernate, Struts 2, JUnit}
-\tinyskip
-\skill{Databases}{Oracle, PostgreSQL, MySQL}
-\tinyskip
-\skill{Tools}{CVS, SVN, git, Hudson, Eclipse, NetBeans}
-\tinyskip
-\skill{Operating Systems}{Windows 95/98/2000/NT/XP, Linux (Ubuntu)}
-\end{skillblock}
-\shortskip
-
-\blocktitle{Education \& Certifications}
-\sectionheader{Bachelor of Science in Computer Science, Major in Software Technology}{De La Salle University}{2001 to 2005}
-
-\sectionheader{Comparative Study of Pattern Recognition Algorithms in Scoliosis Detection}{Applied Academic Activities}{2004 to 2005}
+\sectionheader
+{Yahoo!}{Atlanta, GA / Sunnyvale, CA}
+{Technical Yahoo!}
+{March 2004 to January 2007}
 \begin{longtext}
-Implemented a system that uses a variety of pattern recognition algorithms to diagnose and
-detect scoliosis from digital x-ray image inputs. In charge
-of system design, architecture and implementation and role in team was Project Leader. System was awarded the Silver
-Medal, Most Outstanding Thesis Award.\\
+manage teams, development, projects, SLAs;
+develop web applications;
+administer FreeBSD, Linux, Apache, MySQLs
 \end{longtext}
 
-\sectionheader{PhilNITS Certified}{Philippine National IT Standards Foundation (formerly known as JITSE)}{October 2006}
-\shortskip
-\blocktitle{Personal Background \& References}
-
+\sectionheader
+{Apple Computer}{Atlanta, GA}
+{Business Sales Specialist}
+{March 2004 to June 2004}
 \begin{longtext}
-Proficient in Chinese Mandarin, Chinese Fookien, English and Filipino. Interests include open source software, creative writing, chess and badminton. References can be found online in \href{http://www.linkedin.com/in/waynesee}{LinkedIn} profile page. Code samples and open source projects are available at personal \href{http://github.com/weynsee}{GitHub} repository.
-
-\linkfont {LinkedIn: \href{http://www.linkedin.com/in/waynesee}{http://www.linkedin.com/in/waynesee}}\\
-\linkfont {GitHub: \href{http://github.com/weynsee}{http://github.com/weynsee}}
+exploit my expertise to lure businesses from away Microsoft products for the greater good of the universe
 \end{longtext}
 
+\sectionheader
+{Lanier Worldwide}{Atlanta, GA}
+{Web Application Developer}
+{October 2002 to March 2004}
+\begin{longtext}
+manage and train developers on CVS, security policies, best practices;
+develop custom CMS
+\end{longtext}
+
+\sectionheader
+{MedCenterDirect}{Atlanta, GA}
+{Lead Solutions Developer}
+{December 2000 to October 2002}
+\begin{longtext}
+develop applications, portals, commerce solutions
+\end{longtext}
+
+\sectionheader
+{Amazing Graphics}{Atlanta, GA}
+{Digital Designer/Production Artist}
+{April 1999 to August 2000}
+\begin{longtext}
+graphic creation and prepress;
+Mac, NT, Solaris/Unix network \& system administration
+\end{longtext}
+
+\sectionheader
+{Freelance}{}
+{Consultant}
+{January 1998 to March 2004}
+\begin{longtext}
+on-site and remote consulting in LAMP stack, networking, web \& client app development, Q/A, graphic design
+\end{longtext}
+
+\sectionheader
+{World Wide Development}{Ashland, KY}
+{Webmaster}
+{August 1996 to January 1998}
+\begin{longtext}
+pioneered the DB driven web solutions market using HTML, JS, Perl, C/C++, ColdFusion, MS SQL
+\end{longtext}
+
+\blocktitle{Education}
+
+\sectionheader
+{University of Kentucky}
+{}
+{Computer Engineering and Systems Analysis}
+{1997}
+\fix
 \end{document}
