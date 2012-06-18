@@ -1,6 +1,8 @@
 \documentclass[10pt]{article}
 
 \include{cv-commands}
+\usepackage{units}
+
 
 \begin{document}
 \heading{Richard Paul Bronosky}
@@ -11,47 +13,44 @@
 \blocktitle{Overview}
 \begin{longtext}
     management of systems engineers \& software developers;
-    workflow optimization;
-    web application development;
+    SDLC \& workflow optimization;
+    web \& mobile application development;
+    web \& mobile architecture;
+    iPhone development/deployment;
+    Android development/deployment;
+    PhoneGap HTML5+CSS3 application development;
+    management of vendors \& contractors;
     system administration of various Unix \& Gnu/Linux;
-    Xen virtualization host \& guest administration;
+    virtualization host \& guest administration;
     optimization of RAID, swap, and cache;
-    MySQL high availability, replication, disaster planning, performance tuning, schema design;
+    MySQL schema design, tuning, replication, disaster planning, HA;
     application code security \& performance auditing;
-    data transformation \& migration via MS SQL Server Integration Services;
-    management of SLAs as both the vendor \& vendee;
+    data transformation \& migration;
+    management of SLAs as both the client \& vendor;
     strong verbal \& written communication skills;
-    excellent troubleshooting \& debugging skills
-    \halfskip
-    --- I do all development with command line tools for complete system/location
-        agnosticism. Both local \& remote I use Gnu Screen, BASH, VIM, and SSH+SOCKS proxy (of http, imap, etc.) for maximum efficiency.
-        References can be found at
-
-        \href{http://www.linkedin.com/in/richardbronosky}{http://www.linkedin.com/in/richardbronosky}.
-        Code samples, \LaTeX\ source for this resume, and open source projects are available at \href{http://github.com/RichardBronosky/}{http://github.com/RichardBronosky/}.
-        Active member of \href{http://serverfault.com/users/4131/richard-bronosky#answers}{ServerFault} and various mailing lists.
-        \shortspace
+    excellent troubleshooting \& debugging skills;
+    command line addict
 \end{longtext}
+\shortspace
 
 \blocktitle{Skills}
 
 \skillnew{Languages}{
-    MySQL (Since 2000,Expert),
-    shell scripting (2000,E),
-    PHP (2000,E),
-    Python (2006,Intermediate),
-    Ruby (2006,I),
-    JavaScript (1995,E),
-    HTML (1994,E),
-    XML (1999,E),
-    CSS (1998,E),
+    shell scripting (Since 1994, Expert),
+    RegEx (1994, E),
+    PHP (2000, E),
+    Python (2006, Intermediate),
+    Ruby (2006, I),
+    HTML (1994, E),
+    JavaScript (1995, E),
+    CSS (1998, E),
+    XML (1999, E),
     PostgreSQL,
     Oracle SQL \& PL/SQL,
-    MS SQL Server Integration Services,
     Java,
     ColdFusion,
     PERL \& CGI,
-    C/C++,
+    C/C++/Objective-C,
     BIND DNS,
     \LaTeX
 }
@@ -61,19 +60,27 @@
     Solaris,
     FreeBSD,
     OpenBSD,
-    MacOS X%,
+    MacOS X,
+    Android,
+    iOS
 %    Windows 95/98/NT
 
-    MySQL High Availability \& FS wizardry,
-    Continuent UniCluster,
-    Apache (1998,E),
+%    MySQL High Availability \& FS wizardry,
+%    Continuent UniCluster,
+    HTTP (1994, E),
+    TCP/IP (1994, I),
+    MySQL (2000, E),
+    Apache (1998, E),
+    SSH tunnel wizardry (1994, E),
+    cURL (2000, E),
+    tcpdump,
     BASH,
     VIM,
     Gnu Screen,
-    SSH tunnel wizardry,
+    Xcode,
     CVS/SVN/GIT,
-    Ruby on Rails,
     Django,
+    Ruby on Rails,
     Tomcat,
     VMWare,
     Xen,
@@ -82,21 +89,26 @@
     Nagios,
     Cacti,
     Adobe Photoshop \& Illustrator (1994,E),
-    Macromedia Flash (1999,I)
+    Macromedia Flash
 }
 
 \blocktitle{Experience}
 
 \sectionheader
-{Cox Media Group digital / Atlanta Journal-Constitution}
+{Cox Media Group Digital \& Strategy / Atlanta Journal-Constitution}
 {Atlanta, GA}
 {Software Development Manager}
 {November 2009 to Present}
 \begin{longtext}
-manage 1/4 of a 30 developer team;
-maintain SDL process;
+manage 7 developers in a team of \~{}30;
+maintain SDLC process;
+software development;
 software \& hardware architecture;
-software \& strategy development
+mobile architecture \& technical strategy;
+recommend \& review application architecture \& code;
+%code, protocol, \& process archaeology;
+functional test scripting
+
 \end{longtext}
 \sectionsub
 {Internet Systems Manager \& MySQL DBA}
@@ -180,9 +192,10 @@ pioneered the DB driven web solutions market using HTML, JS, Perl, C/C++, ColdFu
 \blocktitle{Education}
 
 \sectionheader
-{University of Kentucky}
-{}
+{University of Kentucky}{}
 {Computer Engineering and Systems Analysis}
 {1997}
 \fix
+\halfskip
+\href{http://references.bronosky.com}{http://references.bronosky.com}
 \end{document}
