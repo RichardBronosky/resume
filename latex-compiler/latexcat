@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+
+generate() {
+    # generate PDF capturing stdout and stderr in a log file
+    pdflatex --interaction=nonstopmode $sourcefile &>latexcat.log
+}
+
+# make and enter a temporary directory
+cd $(mktemp -d)
+mkdir output
+cd output
+
+# write stdin to a file
+cat /dev/stdin > ../sourcefile
+
+# determine the type of the source file
+if file -b ../sourcefile | grep -q "tar archive"; then
+    tarfile=1
+    tar xf ../sourcefile
+    # find the latex file
+    for sourcefile in $(grep -Ild skip '^\\documentclass' *); do
+        generate
+    done
+else
+    sourcefile="../sourcefile"
+    generate
+fi
+
+if [[ -n $tarfile ]]; then
+    # remove the source files
+    tar tf ../sourcefile | xargs -n 1 rm
+    # check for more than 1 pdf
+    if [[ $(ls -1 *.pdf | wc -l) -gt 1 ]] && [[ $1 != "--debug" ]]; then
+        # force tar ouput
+        set -- "--tar"
+    fi
+fi
+
+# send log to stdout
+if [[ $1 == "--debug" ]]; then
+    ls -l;
+    echo;
+    cat latexcat.log
+# send tar to stdout
+elif [[ $1 == "--tar" ]]; then
+    cd ..
+    tar cf - output
+# send PDF to stdout
+else
+    cat *.pdf
+fi
