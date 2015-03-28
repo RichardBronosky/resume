@@ -15,6 +15,7 @@
 \setstretch{1}
 \usepackage{booktabs}
 \usepackage{topcapt}
+\renewcommand{\familydefault}{cmss}
 
 \usepackage{hyperref}
 \hypersetup{
@@ -35,13 +36,13 @@
 \settopmargin{1cm}
 \setbottommargin{1.5cm}
 
-\newfont{\skillfont}{cmr10 at 9pt}
-\newfont{\linkfont}{cmr10 at 6pt}
+\newfont{\skillfont}{cmss10 at 9pt}
+\newfont{\linkfont}{cmss10 at 6pt}
 
 \newcommand{\heading}[4]{
     \begin{center}
     \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lcr}
-    &\huge{\textbf{\sc{#1}}}&\\
+    &\huge{\textbf{#1}}&\\
     \href{mailto:#2}{\small #2} & \small #3 & \small Mobile: #4\\
     \hline\hline
     \end{tabular*}
@@ -53,7 +54,7 @@
     \blocktitlechild{2mm}
     \setcounter{blocktitlechildren}{0}
     %\textcolor{MidnightBlue}
-    {{\sc{#1}\vspace{1.5mm}\hrule}\vspace*{1.5mm}}
+    {{#1\vspace{1.5mm}\hrule}\vspace*{1.5mm}}
 }
 
 \newcommand{\blocktitlechild}[2][]{
@@ -85,16 +86,6 @@
 }
 
 \newenvironment{longtext}[1]{\small {#1}}
-
-\newcommand{\shortspace}{\vspace{2mm}}
-\newcommand{\shortskip} {\vspace{2mm}\\}
-\newcommand{\halfspace} {\vspace{1mm}}
-\newcommand{\halfskip}  {\vspace{1mm}\\}
-\newcommand{\tinyspace} {\vspace{0.4mm}}
-\newcommand{\tinyskip}  {\vspace{0.4mm}\\}
-\newcommand{\picospace} {\vspace{0.1mm}}
-\newcommand{\picoskip}  {\vspace{0.1mm}\\}
-\newcommand{\fix}{\hspace*{\fill}}
 
 
 \setlength{\parindent}{0in}
