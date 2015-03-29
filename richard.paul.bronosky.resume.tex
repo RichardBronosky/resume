@@ -1,7 +1,79 @@
 \documentclass[10pt]{article}
 
-\include{cv-commands}
-\usepackage{units}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,breaklinks,
+    linkcolor=black,urlcolor=blue,
+    anchorcolor=MidnightBlue,citecolor=blue,
+    pdftitle={Richard Paul Bronosky},
+    pdfauthor={Richard Paul Bronosky},
+    pdfsubject={Resume},
+    pdfkeywords={resume, linux, mobile, iOS, Android, python, Docker, AWS}
+}
+
+\usepackage[top=0.5in, bottom=0.25in, left=0.5in, right=0.5in]{geometry}
+\usepackage{xfrac}
+\usepackage{setspace}
+\usepackage{ifthen}
+
+\pagestyle{empty}
+\setlength{\tabcolsep}{0in}
+\hyphenchar\font=-1
+\setstretch{1}
+\usepackage{booktabs}
+\usepackage{topcapt}
+
+\newfont{\skillfont}{cmr10 at 9pt}
+\newfont{\linkfont}{cmr10 at 6pt}
+
+\newcommand{\heading}[4]{
+    \begin{center}
+    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lcr}
+    &\huge{\textbf{\sc{#1}}}&\\
+    \href{mailto:#2}{\small #2} & \small #3 & \small Mobile: #4\\
+    \hline\hline
+    \end{tabular*}
+    \end{center}
+}
+
+\newcounter{blocktitlechildren}
+\newcommand{\blocktitle}[1]{
+    \blocktitlechild{2mm}
+    \setcounter{blocktitlechildren}{0}
+    {{\sc{#1}\vspace{1.5mm}\hrule}\vspace*{1.5mm}}
+}
+
+\newcommand{\blocktitlechild}[2][]{
+    \ifthenelse{\equal{\value{blocktitlechildren}}{0}}{}{\vspace{#2}#1}
+    \addtocounter{blocktitlechildren}{1}
+}
+
+\newcommand{\skillnew}[2]{
+    \blocktitlechild{1mm}
+    \begin{tabular}
+        {p{2cm}p{16cm}}
+        \noindent\raggedright{\skillfont{#1}} & #2
+    \end{tabular}
+}
+
+\newcommand{\sectionheader}[4]{
+    \blocktitlechild{2mm}
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2\\
+    \emph{#3} & \emph{#4}
+    \end{tabular*}
+}
+
+\newcommand{\sectionsub}[2]{
+    \blocktitlechild{1.4mm}
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+    \emph{#1} & \emph{#2}
+    \end{tabular*}
+}
+
+\newenvironment{longtext}[1]{\small {#1}}
+
+\setlength{\parindent}{0in}
 
 
 \begin{document}
@@ -23,12 +95,11 @@
 %    It plays into my strength of deep diving into extremely complex systems and making them accessible to various audiences.
 %    It answers questions I have had about my role in vendor and site relationships.
 \end{longtext}
-\shortspace
+\vspace{2mm}
 \begin{longtext}
     I have been employed as a web professional since 1996. I have not been this excited about the state of technology in 16 years. I will lead Cox into this space with Speed, Passion, and Courage.
-
 \end{longtext}
-\shortspace
+\vspace{2mm}
 
 \blocktitle{Overview}
 \begin{longtext}
@@ -50,7 +121,7 @@
     Excellent troubleshooting and debugging skills ---
     Unrepentant command line addict
 \end{longtext}
-\shortspace
+\vspace{2mm}
 
 \blocktitle{Skills}
 
@@ -122,7 +193,7 @@
 {Software Development Manager}
 {November 2009 to Present}
 \begin{longtext}
-Manage seven developers in a team of thirty.
+manage $\sfrac{1}{4}$ of a \~{}30 developer team;
 Encourage and inspire developers and vendors to give great service.
 Improve performance through coaching.
 Maintain SDLC process.
@@ -140,10 +211,12 @@ Script functional tests.
 {Internet Systems Manager \& MySQL DBA}
 {July 2008 to November 2009}
 \begin{longtext}
-Administer Linux.
+Administer Gnu/Linux servers.
 Manage a department of system administrators.
 Virtualize existing web infrastructure.
 Plan infrastructure and capacity.
+Audit and deploy developer code and data migrations.
+Troubleshoot network issues.
 \end{longtext}
 \sectionsub
 {MySQL DBA}
@@ -162,7 +235,7 @@ Develop extra Django and Rails projects.
 \begin{longtext}
 Manage teams, development, projects, SLAs.
 Develop web applications.
-Administer FreeBSD, Linux, Apache, MySQL.
+Administer FreeBSD, Gnu/Linux, Apache, MySQL.
 \end{longtext}
 
 \sectionheader
@@ -198,7 +271,7 @@ Script manual data migrations.
 {University of Kentucky}{}
 {Computer Engineering and Systems Analysis}
 {1997}
-\fix
-\halfskip
+\hspace*{\fill}
+\vspace{1mm}
 \href{http://references.bronosky.com}{http://references.bronosky.com}
 \end{document}
