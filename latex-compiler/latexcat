@@ -38,9 +38,9 @@ fi
 
 # send log to stdout
 if [[ $1 == "--debug" ]]; then
-    ls -l;
-    echo;
     cat latexcat.log
+    echo;
+    ls -l;
 # send tar to stdout
 elif [[ $1 == "--tar" ]]; then
     cd ..
