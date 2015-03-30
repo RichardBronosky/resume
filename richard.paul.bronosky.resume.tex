@@ -38,7 +38,7 @@
 
 \newcounter{blocktitlechildren}
 \newcommand{\blocktitle}[1]{
-    \blocktitlechild{2mm}
+    \blocktitlechild{4mm}
     \setcounter{blocktitlechildren}{0}
     {{\sc{#1}\vspace{1.5mm}\hrule}\vspace*{1.5mm}}
 }
@@ -51,7 +51,7 @@
 \newcommand{\skillnew}[2]{
     \blocktitlechild{1mm}
     \begin{tabular}
-        {p{2cm}p{16cm}}
+        {p{2cm}p{17cm}}
         \noindent\raggedright{\skillfont{#1}} & #2
     \end{tabular}
 }
@@ -78,31 +78,14 @@
 
 \begin{document}
 \heading{Richard Paul Bronosky}
-{Richard@Bronosky.com}
+{Bruno@Bronosky.com}
 {53 Blackberry Lane, Douglasville, GA 30134}
 {404-922-7866}
 
-\blocktitle{Objective}
-\begin{longtext}
-    I have a vision for what is next for my company.
-    I want to see all of our content responsive to screens of any size.
-    Our concept of mobile should encompass Connected TVs, Blu-ray players, set-top boxes, and game consoles.
-    I'm going to convince you to incorporate into apps features that only apps can have, that justify them being apps.
-    I want to see Medley provide tools for curating content for devices that makes it a natural part of the workflow.
-    We're going to build an architecture with inconsequential publishing delays. They will no longer be discussed.
-    I have seen this company through "the draining of the swamp" and the toilsome have-to-dos. I want to be the person who leads us into the want-to-dos.
-%    The Mobile Architect position gives clarity to the role I have served technically since 2010.
-%    It plays into my strength of deep diving into extremely complex systems and making them accessible to various audiences.
-%    It answers questions I have had about my role in vendor and site relationships.
-\end{longtext}
-\vspace{2mm}
-\begin{longtext}
-    I have been employed as a web professional since 1996. I have not been this excited about the state of technology in 16 years. I will lead Cox into this space with Speed, Passion, and Courage.
-\end{longtext}
-\vspace{2mm}
-
 \blocktitle{Overview}
+\blocktitlechild{2mm}
 \begin{longtext}
+    Cloud computing with Amazon Web Services, Heroku, and Docker ---
     Manage systems engineers and software developers ---
     Optimize SDLC and workflow ---
     Develop web and mobile applications ---
@@ -121,23 +104,19 @@
     Excellent troubleshooting and debugging skills ---
     Unrepentant command line addict
 \end{longtext}
-\vspace{2mm}
 
 \blocktitle{Skills}
-
 \skillnew{Languages}{
     Python,
     JavaScript,
     CSS,
     HTML,
-%    XML,
     shell scripting,
     RegEx,
     Objective-C,
     Java,
     PostgreSQL,
     Oracle SQL \& PL/SQL,
-%    ColdFusion,
     Ruby,
     PHP,
     PERL \& CGI,
@@ -152,11 +131,9 @@
     OpenBSD,
     MacOS X,
     iOS,
-    Android
-%    Windows 95/98/NT
-
-%    MySQL High Availability and FS wizardry,
-%    Continuent UniCluster,
+    Android,
+    Amazon Web Services (EC2, EBS, ELB ECS, S3, Route53),
+    Docker,
     HTTP,
     TCP/IP,
     Apache,
@@ -169,43 +146,49 @@
     VIM,
     Gnu Screen,
     tmux,
-    Adobe Photoshop and Illustrator,
+    Adobe Photoshop \& Illustrator \& Flash,
     Xcode,
     GIT/SVN/CVS,
     Ruby on Rails,
     Tomcat,
     MySQL,
-    VMWare,
+    %VMWare,
     Xen,
     LVM,
     BIND DNS,
     Splunk,
-    Nagios,
-    Cacti,
-    Macromedia Flash
+    %Cacti,
+    Nagios
 }
 
 \blocktitle{Experience}
-
 \sectionheader
-{Cox Media Group Digital \& Strategy Team / Atlanta Journal-Constitution}
+{Cox Media Group Technology / Atlanta Journal-Constitution}
 {Atlanta, GA}
-{Software Development Manager}
-{November 2009 to Present}
+{Solution Architect, Mobile}
+{December 2012 to Present}
 \begin{longtext}
-manage $\sfrac{1}{4}$ of a \~{}30 developer team;
-Encourage and inspire developers and vendors to give great service.
-Improve performance through coaching.
-Maintain SDLC process.
+Develop mobile client and backend POCs.
+Architect and deploy cloud infrastructure.
+Develop and maintain original Open Source software projects.
 Present and Teach.
-Architect and develop software.
 Lead mobile architecture and technical strategy.
 Recommend and review application architecture and code.
 Study complex systems and make them accessible to various audiences.
+Maintain SDLC process.
 Manage vendors.
 %code, protocol, and process archaeology;
 Script functional tests.
+\end{longtext}
 
+\sectionsub
+{Software Development Manager}
+{November 2009 to December 2012}
+\begin{longtext}
+Manage $\sfrac{1}{4}$ of a \~{}30 developer team;
+Improve performance through coaching.
+Encourage and inspire developers and vendors to give great service.
+Architect and develop software.
 \end{longtext}
 \sectionsub
 {Internet Systems Manager \& MySQL DBA}
@@ -266,7 +249,6 @@ Script manual data migrations.
 \end{longtext}
 
 \blocktitle{Education}
-
 \sectionheader
 {University of Kentucky}{}
 {Computer Engineering and Systems Analysis}
