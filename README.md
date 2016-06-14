@@ -1,4 +1,4 @@
-# Richard Paul Bronosky
+# Bruno Bronosky
 Solution Architect, Mobile — Cox Media Group Technology
 
 --------
