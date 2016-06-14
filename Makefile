@@ -1,4 +1,4 @@
-TARGET=richard.paul.bronosky.resume.pdf
+TARGET=bruno.bronosky.resume.pdf
 
 # HINT: Run `make clean` if you get "Nothing to be done for `all`."
 all: $(TARGET)
