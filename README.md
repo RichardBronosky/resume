@@ -1,4 +1,4 @@
-## [Download PDF] [1]
+## [Download PDF][1]
 
 # Bruno Bronosky
 Solution Architect, Mobile — Cox Media Group Technology
@@ -6,7 +6,7 @@ Solution Architect, Mobile — Cox Media Group Technology
 --------
 
 ## This is my resume. There are many like it, but this one is mine.
-I am a coder. I write code. I coded my [resume in LaTeX] because that is the way I want to maintain it. I have made it available in [PDF form] [1] because it is reliable. Do not ask for it in "Word" format.
+I am a coder. I write code. I coded my [resume in LaTeX] because that is the way I want to maintain it. I have made it available in [PDF form][1] because it is reliable. Do not ask for it in "Word" format.
 
 ## This repo is special
 There are many resumes on github. This repo is unique because it is also the source code for the popular [richardbronosky/latex-compiler] Docker image.
