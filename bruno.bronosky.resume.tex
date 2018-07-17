@@ -1,6 +1,21 @@
-\documentclass[10pt]{article}
+% Congratulations! You are among the elite few who will ever see the source code
+% that generated the resume PDF that most others stop at. Your curiosity in me
+% makes me more interested in you. When we speak, be sure to mention that you
+% saw this message. That said, let me make a disclaimer. The state of this code
+% is very unpredictable. I customize my resume for every recipient I send it to.
+% Most of the customizations get `git stash`-ed, `git branch`-ed, or `git
+% rebase`-ed away. But, there is always a fair bit of tech-debt in this code. I
+% like to believe that someday I will make this a gleaming example of what a
+% resume template should be. But, I find the Docker container that I built for
+% generating the PDF to be much more interesting to polish. Have you seen it?
+% It's in this repo. Unlike this code, it's a great example of the work I do.
+
+\documentclass[letterpaper,10pt]{article}
 \renewcommand{\familydefault}{\sfdefault}
 
+\usepackage{parskip}
+\setlength{\parindent}{0mm}
+\setlength{\parskip}{0mm}
 \usepackage{hyperref}
 \hypersetup{
     colorlinks,breaklinks,
@@ -12,7 +27,8 @@
     pdfkeywords={resume, Linux, mobile, iOS, Android, python, Docker, AWS, DevOps}
 }
 
-\usepackage[top=8mm, bottom=12mm, left=12mm, right=12mm]{geometry}
+\usepackage[top=8mm, bottom=10mm, left=12mm, right=10mm]{geometry}
+%\usepackage{showframe} %debug
 \usepackage{xfrac}
 \usepackage{setspace}
 \usepackage{ifthen}
@@ -20,9 +36,20 @@
 \usepackage{fancyhdr}
 \setlength{\footskip}{10pt}
 \fancyhf{}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
-\lfoot{\hline\hline\href{https://github.com/RichardBronosky/resume}{\small https://github.com/RichardBronosky/resume}}
+
+\setlength{\fboxsep}{-\fboxrule}
+\newcommand{\debux}[1]{\fbox{#1}}
+
+\newcommand{\lineDouble}[0]{\hrule\vspace{2pt}\hrule\vspace{1.5pt}}
+\newcommand{\autohref}[1]{\href{#1}{#1}}
+
+\lfoot{
+    \lineDouble
+    \begin{tabularx}{\textwidth}{l>{\raggedleft\arraybackslash}X}
+        \autohref{https://github.com/RichardBronosky/resume} &
+        \autohref{https://stackoverflow.com/cv/brunobronosky} \\
+    \end{tabularx}
+}
 \pagestyle{fancy}
 
 \setlength{\tabcolsep}{0mm}
@@ -31,58 +58,103 @@
 \setstretch{1}
 \usepackage{booktabs}
 \usepackage{topcapt}
+\usepackage{tabularx}
+\usepackage{colortbl}
+\newcolumntype{L}[0]{>{\raggedright\arraybackslash}X}
+\newcolumntype{C}[0]{>{\centering\arraybackslash}X}
+\newcolumntype{R}[0]{>{\raggedleft\arraybackslash}X}
 
-\newfont{\skillfont}{cmr10 at 9pt}
-\newfont{\linkfont}{cmr10 at 6pt}
+\newcommand{\sizeA}[0]{\fontsize{6pt}{7pt}\selectfont}
+\newcommand{\sizeB}[0]{\fontsize{7pt}{8pt}\selectfont}
+\newcommand{\sizeC}[0]{\fontsize{8pt}{9pt}\selectfont}
+\newcommand{\sizeD}[0]{\fontsize{9pt}{10pt}\selectfont}
+\newcommand{\sizeE}[0]{\fontsize{10pt}{12pt}\selectfont}
+\newcommand{\sizeF}[0]{\fontsize{11pt}{13pt}\selectfont}
 
+\AtBeginDocument{\sizeD}
 \newcommand{\heading}[4]{
-    \begin{center}
-    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lcr}
-    &\huge{\textbf{\sc{#1}}}&\\
-    \href{mailto:#2}{\small #2} & \small #3 & \small Mobile: #4\\
-    \hline\hline
-    \end{tabular*}
-    \end{center}
+    \begin{tabularx}{\textwidth}{LCR}
+        &\huge{\textbf{\sc{#1}}}&\\
+        \href{mailto:#2}{#2} & #3 & Mobile: #4\\
+    \end{tabularx}
+    \lineDouble
+    \vspace{5pt}%
 }
 
-\newcounter{blocktitlechildren}
+\newcounter{skipfirstcounter}
+\newcommand{\skipfirst}[1]{
+    \ifthenelse{\equal{\value{skipfirstcounter}}{0}}{#1}{#1}
+	\addtocounter{skipfirstcounter}{1}
+}
+
 \newcommand{\blocktitle}[1]{
-    \blocktitlechild{4mm}
-    \setcounter{blocktitlechildren}{0}
-    {{\sc{#1}\vspace{1.5mm}\hrule}\vspace*{1.5mm}}
+	\setcounter{skipfirstcounter}{0}
+    \begin{tabularx}{\textwidth}{lR}
+        {\sizeF\sc{#1}} & \noindent\hrulefill\\
+    \end{tabularx}
 }
 
-\newcommand{\blocktitlechild}[2][]{
-    \ifthenelse{\equal{\value{blocktitlechildren}}{0}}{}{\vspace{#2}#1}
-    \addtocounter{blocktitlechildren}{1}
+\newcommand{\blockOverview}[1]{%
+    \blocktitle{Overview}%
+    \vspace{0.4mm}%
+    \begin{tabular*}{\textwidth}{p{\textwidth}}%
+        #1%
+    \end{tabular*}%
+	\vspace{2mm}%
+}%
+
+\newcommand{\blockSkills}[1]{
+    \blocktitle{Skills}
+    \begin{tabular*}{\textwidth}{p{22mm}p{171.6mm}}%
+        #1% no slashes here because I addlinespace later
+    \end{tabular*}%
+	\vspace{2.4mm}%
 }
 
-\newcommand{\skillnew}[2]{
-    \blocktitlechild{1mm}
-    \begin{tabular}
-        {p{2cm}p{17cm}}
-        \noindent\raggedright{\skillfont{#1}} & #2
-    \end{tabular}
+\newcommand{\skillgroup}[2]{{\sizeE{#1}} & #2\\\addlinespace[1.6mm]}
+
+\newcommand{\skillgrouplast}[2]{{\sizeE{#1}} & #2\\}
+
+\newcommand{\blockExperience}[1]{
+    \blocktitle{Career}%
+    #1%
+	\vspace{2mm}%
 }
 
-\newcommand{\sectionheader}[4]{
-    \blocktitlechild{2mm}
-    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-    \textbf{#1} & #2\\
-    \emph{#3} & \emph{#4}
-    \end{tabular*}
+\newcommand{\blockEducation}[1]{
+    \blocktitle{Education}%
+    #1%
+}
+
+\newcommand{\sectionheaderfirst}[2]{
+    \begin{tabularx}{\textwidth}{Lr}%
+    % TODO: Make this shorter on the first one
+    %\skipfirst{\addlinespace[1.1mm]}
+    \textbf{#1} & #2\\%
+    \end{tabularx}%
+}
+
+\newcommand{\sectionheader}[2]{
+	\vspace{2mm}%
+	\sectionheaderfirst{#1}{#2}%
 }
 
 \newcommand{\sectionsub}[2]{
-    \blocktitlechild{1.4mm}
-    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-    \emph{#1} & \emph{#2}
-    \end{tabular*}
+    {\def\arraystretch{1}
+        \begin{tabularx}{\textwidth}{Lr}
+        \rowcolor[rgb]{.9,.9,.9}
+        \emph{#1} &
+        \rule{0mm}{3.2mm} % This is a kludge that must be adjusted if the font size changes
+        \emph{#2} \\
+        \addlinespace[0.4mm]
+        \end{tabularx}
+    }
 }
 
-\newenvironment{longtext}[1]{\small {#1}}
-
-\setlength{\parindent}{0mm}
+\newcommand{\sectionbody}[1]{
+    #1
+    \vspace{1mm}
+}
 
 
 \begin{document}
@@ -91,181 +163,226 @@
 {2525 MacLaren Cir, Dunwoody, GA 30360}
 {404-922-7866}
 
-\blocktitle{Overview}
-\blocktitlechild{2mm}
-\begin{longtext}
-    Cloud computing with Amazon Web Services, Heroku, and Docker ---
-    Manage systems engineers and software developers ---
-    Optimize SDLC and workflow ---
-    Develop web and mobile applications ---
-    Web and mobile architecture ---
-    Develop and deploy iPhone and Android apps ---
-    Develop and deploy PhoneGap HTML5+CSS3+JS apps ---
-    Manage vendors and contractors ---
+\blockOverview{
+    Cloud computing with Amazon Web Services, Heroku, Docker, and Kubernetes ---
+    Data center orchastration with Chef and Ansible ---
+    Plan infrastructure and capacity ---
+    OpenVPN, SSH tunneling, network security ---
+    %Troubleshoot network issues ---
+    DBA for Cassandra, MongoDB, PostgreSQL, \& MySQL ---
     Administer various Unix and Gnu/Linux ---
     Administer virtualization hosts and guests ---
     Optimize RAID, swap, and cache ---
-    MySQL schema design, tuning, replication, disaster planning, and HA ---
-    Audit application code for security and performance ---
-    Transform and migrate data ---
+    Code, protocol, and process archaeology ---
+    Manage systems engineers and software developers ---
+    Manage vendors and contractors ---
     Manage SLAs as both the client and vendor ---
+    Study complex systems and make them accessible to various audiences ---
+    Recommend and review application architecture and code ---
+    Maintain SDLC process ---
+    Develop web and mobile applications ---
+    Architect web and mobile solutions ---
+    Develop and deploy iPhone and Android apps ---
+    Develop and deploy PhoneGap HTML5+CSS3+JS apps ---
+    Audit and deploy developer code and data migrations ---
+    Transform and migrate data ---
+    Audit application code for security and performance ---
     Strong verbal and written communication skills ---
     Excellent troubleshooting and debugging skills ---
     Unrepentant command line addict
-\end{longtext}
-
-\blocktitle{Skills}
-\skillnew{Languages \& Frameworks}{
-    Python,
-    JavaScript,
-    CSS,
-    HTML,
-    RegEx,
-    BASH,
-    shell scripting,
-    Objective-C,
-    Java,
-    PostgreSQL,
-    Oracle SQL \& PL/SQL,
-    Django,
-    jQuery,
-    Ruby,
-    Ruby on Rails,
-    PHP,
-    PERL \& CGI,
-    C/C++,
-    \LaTeX
 }
 
-\skillnew{Systems \& Software}{
-    Gnu/Linux (RedHat, Debian),
-    %Solaris,
-    FreeBSD,
-    %OpenBSD,
-    MacOS X,
-    iOS,
-    Android,
-    Amazon Web Services (EC2, EBS, ELB ECS, S3, Route53),
-    Docker,
-    HTTP,
-    TCP/IP,
-    Apache,
-    SSH tunnel wizardry,
-    cURL,
-    tcpdump,
-    VIM,
-    Gnu Screen,
-    tmux,
-    Adobe Photoshop \& Illustrator \& Flash,
-    Blender,
-    Eagle CAD,
-    Xcode,
-    Git/SVN/CVS,
-    Git hooks,
-    %Tomcat,
-    MySQL,
-    %VMWare,
-    Xen,
-    LVM,
-    BIND DNS,
-    New Relic,
-    Splunk,
-    %Cacti,
-    Nagios
+\blockSkills{
+    \skillgroup{Development}{
+        Python,
+        bash/shell scripting,
+        Objective-C,
+        Java,
+        PostgreSQL,
+        Oracle SQL \& PL/SQL,
+        iOS,
+        Android,
+        Django,
+        JavaScript,
+        CSS,
+        HTML,
+        jQuery,
+        Ruby,
+        Ruby on Rails,
+        PHP,
+        %PERL \& CGI,
+        C/C++,
+        \LaTeX
+    }
+
+    \skillgroup{Operations}{
+        Gnu/Linux (RedHat, Debian),
+        %Solaris,
+        FreeBSD,
+        %OpenBSD,
+        MacOS X,
+        Amazon Web Services (EC2, Lambda, DynamoDB, ELB, ECS, S3, Route53),
+        Kubernetes,
+        Cassandra,
+        MongoDB
+        %Tomcat,
+        MySQL,
+        Apache,
+        VMWare,
+        xen,
+        LVM,
+        BIND DNS,
+        %New Relic,
+        %Splunk,
+        %Cacti,
+        Nagios
+    }
+
+    \skillgrouplast{Concepts}{
+        DevOps,
+        CI/CD,
+        vim,
+        git,
+        Chef,
+        Ansible,
+        Terraform,
+        Docker,
+        HTTP,
+        TCP/IP,
+        SSH tunnel wizardry,
+        RegEx,
+        cURL,
+        tcpdump,
+        Gnu Screen,
+        tmux,
+        Adobe Photoshop \& Illustrator,
+        Blender,
+        Eagle CAD,
+        Xcode
+    }
 }
 
-\blocktitle{Challenges Accepted}
-\sectionheader
-{Cox Media Group Technology / Atlanta Journal-Constitution}
-{Atlanta, GA}
-{Solution Architect, Mobile}
-{December 2012 to Present}
-\begin{longtext}
-Develop mobile client and backend POCs.
-Architect and deploy cloud infrastructure.
-Develop and maintain original Open Source software projects.
-Workflow and process automation.
-Lead mobile architecture and technical strategy.
-Present and Teach.
-\end{longtext}
+\blockExperience{
+	\sectionheaderfirst
+	{MidAmerican Energy Services}{Dunwoody, GA}
+	\sectionsub
+	{DevOps Team Leader}
+	{October 2016 to Present}
+	\sectionbody{
+	Research, recommend, deploy, and administer hardware and software.
+	Orchestrate servers with Chef.
+	Design Docker containers.
+	Build and maintain Kubernetes clusters serving microservices.
+	Manage AWS costs.
+	Make and document changes to AWS infrastructure via aws-cli.
+	Manage network security with AWS Security Groups, iptables, and OpenVPN.
+	Develop tools in Python, bash, awk, sed, etc.
+	Build and maintain Cassandra, MongoDB, and MySQL databases.
+	Build custom Raspberry Pi images for IoT devices sent to client locations.
+	Develop and teach Arduino and CircuitPython software/hardware.
+	}
 
-\sectionsub
-{Software Development Manager}
-{November 2009 to December 2012}
-\begin{longtext}
-Manage $\sfrac{1}{4}$ of a \~{}30 developer team.
-%Improve performance through coaching.
-%Encourage and inspire developers and vendors to give great service.
-Workflow automation scripting.
-Architect and develop software.
-\end{longtext}
-\sectionsub
-{Internet Systems Manager \& MySQL DBA}
-{July 2008 to November 2009}
-\begin{longtext}
-Administer Gnu/Linux servers.
-Manage a department of sysadmins.
-Workflow automation and config management.
-\end{longtext}
-\sectionsub
-{MySQL DBA}
-{January 2007 to July 2008}
-\begin{longtext}
-Administer MySQL.
-Optimize developer code.
-Maintain high availability and performance.
-Develop extra Django and Rails projects.
-\end{longtext}
+	\sectionheader
+	{Cox Media Group Technology / Atlanta Journal-Constitution}{Atlanta, GA}
+	\sectionsub
+	{Solution Architect, Mobile}
+	{December 2012 to October 2016}
+	\sectionbody{
+	Develop mobile client and backend POCs.
+	Architect and deploy cloud infrastructure.
+	Develop and maintain original Open Source software projects.
+	Workflow and process automation.
+	Lead mobile architecture and technical strategy.
+	Present and Teach.
+	}
 
-\sectionheader
-{Yahoo!}{Atlanta, GA telecommute to Sunnyvale, CA}
-{Technical Yahoo!}
-{March 2004 to January 2007}
-\begin{longtext}
-Manage teams, projects, SLAs.
-Automate workflows.
-Develop web applications.
-Administer FreeBSD, Apache, MySQL.
-\end{longtext}
+	\sectionsub
+	{Software Development Manager}
+	{November 2009 to December 2012}
+	\sectionbody{
+	Manage $\sfrac{1}{4}$ of a \~{}30 developer team.
+	%Improve performance through coaching.
+	%Encourage and inspire developers and vendors to give great service.
+	Workflow automation scripting.
+	Architect and develop software.
+	}
 
-\sectionheader
-{Apple Computer}{Atlanta, GA}
-{Business Sales Specialist}
-{March 2004 to June 2004}
-\begin{longtext}
-Exploit my expertise to lure businesses away from Microsoft products for the greater good of the universe.
-\end{longtext}
+	\sectionsub
+	{Internet Systems Manager \& MySQL DBA}
+	{July 2008 to November 2009}
+	\sectionbody{
+	Administer Gnu/Linux servers.
+	Manage a department of sysadmins.
+	Workflow automation and config management.
+	}
 
-\sectionheader
-{Lanier Worldwide}{Atlanta, GA}
-{Web Application Developer}
-{October 2002 to March 2004}
-\begin{longtext}
-Manage and train developers on CVS, security policies, and best practices.
-Develop CMS and software deployment system.
-\end{longtext}
+	\sectionsub
+	{MySQL DBA}
+	{January 2007 to July 2008}
+	\sectionbody{
+	Administer MySQL.
+	Optimize developer code.
+	Maintain high availability and performance.
+	Develop extra Django and Rails projects.
+	}
 
-\sectionheader
-{MedCenterDirect}{Atlanta, GA}
-{Lead Solutions Developer}
-{December 2000 to October 2002}
-\begin{longtext}
-Develop applications, portals, and commerce solutions.
-Architect custom deployment strategy.
-Script data migrations.
-\end{longtext}
+	\sectionheader
+	{Yahoo!}{Atlanta, GA telecommute to Sunnyvale, CA}
+	\sectionsub
+	{Technical Yahoo!}
+	{March 2004 to January 2007}
+	\sectionbody{
+	Manage teams, projects, SLAs.
+	Automate workflows.
+	Develop web applications.
+	Administer FreeBSD, Apache, MySQL.
+	}
 
-\sectionheader
-{Additional Professional Experience}{}
-{Various Software/Systems Engineering, Tech Support, and Graphics/Animation positions}
-{August 1996 to December 2000}
-\begin{longtext}
-To keep the resume to one page, discuss during interview.
-\end{longtext}
+	\sectionheader
+	{Apple Computer}{Atlanta, GA}
+	\sectionsub
+	{Business Sales Specialist}
+	{March 2004 to June 2004}
+	\sectionbody{
+	Exploit my expertise to lure businesses away from Microsoft products for the greater good of the universe.
+	}
 
-\blocktitle{Education}
-\sectionheader
-{University of Kentucky}{}
-{Computer Engineering and Systems Analysis}
-{1997}
+	\sectionheader
+	{Lanier Worldwide}{Atlanta, GA}
+	\sectionsub
+	{Web Application Developer}
+	{October 2002 to March 2004}
+	\sectionbody{
+	Manage and train developers on CVS, security policies, and best practices.
+	Develop CMS and software deployment system.
+	}
+
+	\sectionheader
+	{MedCenterDirect}{Atlanta, GA}
+	\sectionsub
+	{Lead Solutions Developer}
+	{December 2000 to October 2002}
+	\sectionbody{
+	Develop applications, portals, and commerce solutions.
+	Architect custom deployment strategy.
+	Script data migrations.
+	}
+
+	\sectionheader
+	{Additional Professional Experience}{}
+	\sectionsub
+	{Various Software/Systems Engineering, Tech Support, and Graphics/Animation positions}
+	{August 1995 to December 2000}
+	\sectionbody{
+	Out of respect for your time, I've kept this resume to one page. See StackOverflow URL below or discuss during interview.
+	}
+}
+
+\blockEducation{
+	\sectionheaderfirst%
+	{University of Kentucky}{}%
+	\sectionsub%
+	{Computer Engineering and Systems Analysis}%
+	{1997}%
+}%
 \end{document}
