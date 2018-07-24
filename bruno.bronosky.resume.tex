@@ -84,11 +84,11 @@
 \newcounter{skipfirstcounter}
 \newcommand{\skipfirst}[1]{
     \ifthenelse{\equal{\value{skipfirstcounter}}{0}}{#1}{#1}
-	\addtocounter{skipfirstcounter}{1}
+    \addtocounter{skipfirstcounter}{1}
 }
 
 \newcommand{\blocktitle}[1]{
-	\setcounter{skipfirstcounter}{0}
+    \setcounter{skipfirstcounter}{0}
     \begin{tabularx}{\textwidth}{lR}
         {\sizeF\sc{#1}} & \noindent\hrulefill\\
     \end{tabularx}
@@ -100,7 +100,7 @@
     \begin{tabular*}{\textwidth}{p{\textwidth}}%
         #1%
     \end{tabular*}%
-	\vspace{2mm}%
+    \vspace{2mm}%
 }%
 
 \newcommand{\blockSkills}[1]{
@@ -108,7 +108,7 @@
     \begin{tabular*}{\textwidth}{p{22mm}p{171.6mm}}%
         #1% no slashes here because I addlinespace later
     \end{tabular*}%
-	\vspace{2.4mm}%
+    \vspace{2.4mm}%
 }
 
 \newcommand{\skillgroup}[2]{{\sizeE{#1}} & #2\\\addlinespace[1.6mm]}
@@ -118,7 +118,7 @@
 \newcommand{\blockExperience}[1]{
     \blocktitle{Career}%
     #1%
-	\vspace{2mm}%
+    \vspace{2mm}%
 }
 
 \newcommand{\blockEducation}[1]{
@@ -135,8 +135,8 @@
 }
 
 \newcommand{\sectionheader}[2]{
-	\vspace{2mm}%
-	\sectionheaderfirst{#1}{#2}%
+    \vspace{2mm}%
+    \sectionheaderfirst{#1}{#2}%
 }
 
 \newcommand{\sectionsub}[2]{
@@ -256,6 +256,8 @@
         Gnu Screen,
         tmux,
         Adobe Photoshop \& Illustrator,
+        Autodesk Fusion360,
+        Mach3 CNC,
         Blender,
         Eagle CAD,
         Xcode
@@ -263,126 +265,127 @@
 }
 
 \blockExperience{
-	\sectionheaderfirst
-	{MidAmerican Energy Services}{Dunwoody, GA}
-	\sectionsub
-	{DevOps Team Leader}
-	{October 2016 to Present}
-	\sectionbody{
-	Research, recommend, deploy, and administer hardware and software.
-	Orchestrate servers with Chef.
-	Design Docker containers.
-	Build and maintain Kubernetes clusters serving microservices.
-	Manage AWS costs.
-	Make and document changes to AWS infrastructure via aws-cli.
-	Manage network security with AWS Security Groups, iptables, and OpenVPN.
-	Develop tools in Python, bash, awk, sed, etc.
-	Build and maintain Cassandra, MongoDB, and MySQL databases.
-	Build custom Raspberry Pi images for IoT devices sent to client locations.
-	Develop and teach Arduino and CircuitPython software/hardware.
-	}
+    \sectionheaderfirst
+    {MidAmerican Energy Services}{Dunwoody, GA}
+    \sectionsub
+    {DevOps Team Leader}
+    {October 2016 to Present}
+    \sectionbody{
+    Research, recommend, deploy, and administer hardware and software.
+    Orchestrate servers with Chef.
+    Design Docker containers.
+    Build and maintain Kubernetes clusters serving microservices.
+    Manage AWS costs.
+    Make and document changes to AWS infrastructure via aws-cli.
+    Manage network security with AWS Security Groups, iptables, and OpenVPN.
+    Develop tools in Python, bash, awk, sed, etc.
+    Build and maintain Cassandra, MongoDB, and MySQL databases.
+    Build custom Raspberry Pi images for IoT devices sent to client locations.
+    Develop and teach Arduino and CircuitPython software/hardware.
+    Design and CNC mill custom IoT hardware cases.
+    }
 
-	\sectionheader
-	{Cox Media Group Technology / Atlanta Journal-Constitution}{Atlanta, GA}
-	\sectionsub
-	{Solution Architect, Mobile}
-	{December 2012 to October 2016}
-	\sectionbody{
-	Develop mobile client and backend POCs.
-	Architect and deploy cloud infrastructure.
-	Develop and maintain original Open Source software projects.
-	Workflow and process automation.
-	Lead mobile architecture and technical strategy.
-	Present and Teach.
-	}
+    \sectionheader
+    {Cox Media Group Technology / Atlanta Journal-Constitution}{Atlanta, GA}
+    \sectionsub
+    {Solution Architect, Mobile}
+    {December 2012 to October 2016}
+    \sectionbody{
+    Develop mobile client and backend POCs.
+    Architect and deploy cloud infrastructure.
+    Develop and maintain original Open Source software projects.
+    Workflow and process automation.
+    Lead mobile architecture and technical strategy.
+    Present and Teach.
+    }
 
-	\sectionsub
-	{Software Development Manager}
-	{November 2009 to December 2012}
-	\sectionbody{
-	Manage $\sfrac{1}{4}$ of a \~{}30 developer team.
-	%Improve performance through coaching.
-	%Encourage and inspire developers and vendors to give great service.
-	Workflow automation scripting.
-	Architect and develop software.
-	}
+    \sectionsub
+    {Software Development Manager}
+    {November 2009 to December 2012}
+    \sectionbody{
+    Manage $\sfrac{1}{4}$ of a \~{}30 developer team.
+    %Improve performance through coaching.
+    %Encourage and inspire developers and vendors to give great service.
+    Workflow automation scripting.
+    Architect and develop software.
+    }
 
-	\sectionsub
-	{Internet Systems Manager \& MySQL DBA}
-	{July 2008 to November 2009}
-	\sectionbody{
-	Administer Gnu/Linux servers.
-	Manage a department of sysadmins.
-	Workflow automation and config management.
-	}
+    \sectionsub
+    {Internet Systems Manager \& MySQL DBA}
+    {July 2008 to November 2009}
+    \sectionbody{
+    Administer Gnu/Linux servers.
+    Manage a department of sysadmins.
+    Workflow automation and config management.
+    }
 
-	\sectionsub
-	{MySQL DBA}
-	{January 2007 to July 2008}
-	\sectionbody{
-	Administer MySQL.
-	Optimize developer code.
-	Maintain high availability and performance.
-	Develop extra Django and Rails projects.
-	}
+    \sectionsub
+    {MySQL DBA}
+    {January 2007 to July 2008}
+    \sectionbody{
+    Administer MySQL.
+    Optimize developer code.
+    Maintain high availability and performance.
+    Develop extra Django and Rails projects.
+    }
 
-	\sectionheader
-	{Yahoo!}{Atlanta, GA telecommute to Sunnyvale, CA}
-	\sectionsub
-	{Technical Yahoo!}
-	{March 2004 to January 2007}
-	\sectionbody{
-	Manage teams, projects, SLAs.
-	Automate workflows.
-	Develop web applications.
-	Administer FreeBSD, Apache, MySQL.
-	}
+    \sectionheader
+    {Yahoo!}{Atlanta, GA telecommute to Sunnyvale, CA}
+    \sectionsub
+    {Technical Yahoo!}
+    {March 2004 to January 2007}
+    \sectionbody{
+    Manage teams, projects, SLAs.
+    Automate workflows.
+    Develop web applications.
+    Administer FreeBSD, Apache, MySQL.
+    }
 
-	\sectionheader
-	{Apple Computer}{Atlanta, GA}
-	\sectionsub
-	{Business Sales Specialist}
-	{March 2004 to June 2004}
-	\sectionbody{
-	Exploit my expertise to lure businesses away from Microsoft products for the greater good of the universe.
-	}
+    \sectionheader
+    {Apple Computer}{Atlanta, GA}
+    \sectionsub
+    {Business Sales Specialist}
+    {March 2004 to June 2004}
+    \sectionbody{
+    Exploit my expertise to lure businesses away from Microsoft products for the greater good of the universe.
+    }
 
-	\sectionheader
-	{Lanier Worldwide}{Atlanta, GA}
-	\sectionsub
-	{Web Application Developer}
-	{October 2002 to March 2004}
-	\sectionbody{
-	Manage and train developers on CVS, security policies, and best practices.
-	Develop CMS and software deployment system.
-	}
+    \sectionheader
+    {Lanier Worldwide}{Atlanta, GA}
+    \sectionsub
+    {Web Application Developer}
+    {October 2002 to March 2004}
+    \sectionbody{
+    Manage and train developers on CVS, security policies, and best practices.
+    Develop CMS and software deployment system.
+    }
 
-	\sectionheader
-	{MedCenterDirect}{Atlanta, GA}
-	\sectionsub
-	{Lead Solutions Developer}
-	{December 2000 to October 2002}
-	\sectionbody{
-	Develop applications, portals, and commerce solutions.
-	Architect custom deployment strategy.
-	Script data migrations.
-	}
+    \sectionheader
+    {MedCenterDirect}{Atlanta, GA}
+    \sectionsub
+    {Lead Solutions Developer}
+    {December 2000 to October 2002}
+    \sectionbody{
+    Develop applications, portals, and commerce solutions.
+    Architect custom deployment strategy.
+    Script data migrations.
+    }
 
-	\sectionheader
-	{Additional Professional Experience}{}
-	\sectionsub
-	{Various Software/Systems Engineering, Tech Support, and Graphics/Animation positions}
-	{August 1995 to December 2000}
-	\sectionbody{
-	Out of respect for your time, I've kept this resume to one page. See StackOverflow URL below or discuss during interview.
-	}
+    \sectionheader
+    {Additional Professional Experience}{}
+    \sectionsub
+    {Various Software/Systems Engineering, Tech Support, and Graphics/Animation positions}
+    {August 1995 to December 2000}
+    \sectionbody{
+    Out of respect for your time, I've kept this resume to one page. See StackOverflow URL below or discuss during interview.
+    }
 }
 
 \blockEducation{
-	\sectionheaderfirst%
-	{University of Kentucky}{}%
-	\sectionsub%
-	{Computer Engineering and Systems Analysis}%
-	{1997}%
+    \sectionheaderfirst%
+    {University of Kentucky}{}%
+    \sectionsub%
+    {Computer Engineering and Systems Analysis}%
+    {1997}%
 }%
 \end{document}
