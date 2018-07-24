@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
 generate() {
+    echo "[INFO] Launching pdflatex.">>latexcat.log
     # generate PDF capturing stdout and stderr in a log file
-    pdflatex --interaction=nonstopmode $sourcefile &>latexcat.log
+    pdflatex --interaction=nonstopmode $sourcefile &>>latexcat.log
 }
 
 # make and enter a temporary directory
@@ -15,6 +16,7 @@ cat /dev/stdin > ../sourcefile
 
 # determine the type of the source file
 if file -b ../sourcefile | grep -q "tar archive"; then
+    echo "[INFO] Detected tar sourcefile.">>latexcat.log
     tarfile=1
     tar xf ../sourcefile
     # find the latex file
@@ -22,6 +24,7 @@ if file -b ../sourcefile | grep -q "tar archive"; then
         generate
     done
 else
+    echo "[INFO] Detected single sourcefile.">>latexcat.log
     sourcefile="../sourcefile"
     generate
 fi
@@ -31,6 +34,8 @@ if [[ -n $tarfile ]]; then
     tar tf ../sourcefile | xargs -n 1 rm
     # check for more than 1 pdf
     if [[ $(ls -1 *.pdf | wc -l) -gt 1 ]] && [[ $1 != "--debug" ]]; then
+        echo "[INFO] Detected need for tar output.">>latexcat.log
+        echo "[INFO] Requesting tar output.">>latexcat.log
         # force tar ouput
         set -- "--tar"
     fi
@@ -38,11 +43,15 @@ fi
 
 # send log to stdout
 if [[ $1 == "--debug" ]]; then
+    echo "[INFO] Detected debug.">>latexcat.log
+    echo "[INFO] Sending latexcat.log.">>latexcat.log
     cat latexcat.log
     echo;
     ls -l;
 # send tar to stdout
 elif [[ $1 == "--tar" ]]; then
+    echo "[INFO] Detected request for tar output.">>latexcat.log
+    echo "[INFO] Sending tar output.">>latexcat.log
     cd ..
     tar cf - output
 # send PDF to stdout

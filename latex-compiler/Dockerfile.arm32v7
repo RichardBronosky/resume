@@ -1,4 +1,6 @@
-FROM ubuntu
+FROM arm32v7/ubuntu
+# See: https://lobradov.github.io/Building-docker-multiarch-images
+# Build via: sudo docker build -f Dockerfile.arm32v7 --tag richardbronosky/latex-compiler .
 
 MAINTAINER Bruno Bronosky <bruno@bronosky.com>
 

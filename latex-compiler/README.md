@@ -17,19 +17,19 @@ Here are some of the many ways you can run this image:
 
 ```bash
 # get pdf output and save it to a file
-docker run -i richardbronosky/latex-compiler < richard.paul.bronosky.resume.tex > richard.paul.bronosky.resume.pdf
+docker run -i richardbronosky/latex-compiler < bruno.bronosky.resume.tex > bruno.bronosky.resume.pdf
 
 # cat the log and get ls -l output
-docker run -i richardbronosky/latex-compiler --debug < richard.paul.bronosky.resume.tex
+docker run -i richardbronosky/latex-compiler --debug < bruno.bronosky.resume.tex
 
 # get tar output and expand it (creating an output directory in the current directory)
-docker run -i richardbronosky/latex-compiler --tar < richard.paul.bronosky.resume.tex | tar x
+docker run -i richardbronosky/latex-compiler --tar < bruno.bronosky.resume.tex | tar x
 
 # get tar output and save it to a file
-docker run -i richardbronosky/latex-compiler --tar < richard.paul.bronosky.resume.tex > output.tar
+docker run -i richardbronosky/latex-compiler --tar < bruno.bronosky.resume.tex > output.tar
 
 # send tar input if your document requires additional tex and sty files
-tar cf - *.tex *.sty | docker run -i richardbronosky/latex-compiler > richard.paul.bronosky.resume.pdf
+tar cf - *.tex *.sty | docker run -i richardbronosky/latex-compiler > bruno.bronosky.resume.pdf
 # NOTE: All files with a `\documentclass` command will be compiled into PDFs forcing tar output if more than 1.
 #       It's probably safer to do the following...
 
