@@ -1,7 +1,7 @@
 ## [Download PDF][1]
 
 # Bruno Bronosky
-Solution Architect, Mobile — Cox Media Group Technology
+DevOps Team Lead — MidAmerican Energy Services
 
 --------
 
