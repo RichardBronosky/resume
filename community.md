@@ -38,7 +38,12 @@ I love technology and I feel grateful that I can making a living do something th
 - [Arduino On-Ramp](https://github.com/RichardBronosky/Arduino-On-Ramp-Class)
   - Is a class that I teach with Maureen Haley at Decatur Makers.
 
+## Gist
 
+- [Quick Start Guide for `confd`](https://gist.github.com/RichardBronosky/82dcea3f069667870b936d0391d12260#demo-script)
+  - I selected `confd` as preprocessor/templating solution for my team. I wanted them to all get familiar with it, but I felt like the extraneous information in the official documentation was distracting and made it hard to follow. I created an abridged version of the official guide by removing everything but the simplest [`file`] backend. I am a huge proponent of **"Copy-Pasta"** (yes, 🍝) and always try to include demos that are ready to paste in a shell.
+
+## etc
 
 There are plenty more in addition to what's below. (This is what I do when I can't sleep.)
 
