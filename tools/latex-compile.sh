@@ -1,4 +1,4 @@
-#!/bin/bash -eux
+#!/bin/bash -eu
 
 root_of_git_repo="$(git rev-parse --show-toplevel)"
 
