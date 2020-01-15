@@ -4,7 +4,7 @@ root_of_git_repo="$(git rev-parse --show-toplevel)"
 
 confirm_and_run(){
     cmd="$*"
-        cat <<NOTICE
+        cat >&2 <<NOTICE
 About to execute:
     $cmd
 
@@ -14,7 +14,5 @@ NOTICE
     eval "$cmd"
 }
 
-for latex_file in $(find $root_of_git_repo -name *.tex); do
-    pdf_file="$(basename $latex_file .tex).pdf"
-    confirm_and_run "docker run -i richardbronosky/latex-compiler < $latex_file > $pdf_file"
-done
+cd $root_of_git_repo
+confirm_and_run "tar cf - $(echo $(find . -maxdepth 1 -name '*tex' -or -name '*sty' -or -name '*ins' -or -name '*dtx')) | docker run -i richardbronosky/latex-compiler --tar | tar xv"
