@@ -1,9 +1,14 @@
 #!/usr/bin/env bash
 
 generate() {
-    echo "[INFO] Launching pdflatex.">>latexcat.log
-    # generate PDF capturing stdout and stderr in a log file
-    pdflatex --interaction=nonstopmode $sourcefile &>>latexcat.log
+    if [[ $sourcefile =~ \.tex$ ]]; then
+        echo "[INFO] Launching pdflatex $sourcefile.">>latexcat.log
+        # generate PDF capturing stdout and stderr in a log file
+        pdflatex --interaction=nonstopmode $sourcefile &>>latexcat.log
+    else
+        echo "[INFO] Launching tex $sourcefile.">>latexcat.log
+        tex $sourcefile >>latexcat.log
+    fi
 }
 
 # make and enter a temporary directory
@@ -20,7 +25,10 @@ if file -b ../sourcefile | grep -q "tar archive"; then
     tarfile=1
     tar xf ../sourcefile
     # find the latex file
-    for sourcefile in $(grep -Ild skip '^\\documentclass' *); do
+    for sourcefile in $(ls -1 2>/dev/null | grep -vE '.tex$'); do
+        generate
+    done
+    for sourcefile in $(ls -1 *.tex 2>/dev/null); do
         generate
     done
 else
