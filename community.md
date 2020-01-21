@@ -19,7 +19,7 @@ I love technology and I feel grateful that I can making a living do something th
   - Is my most popular answer and I refer back to it nearly every day because I write multiple new tools every single day.
 
 - [Returning a boolean from a Bash function](https://stackoverflow.com/questions/5431909/returning-a-boolean-from-a-bash-function/43840545#43840545)
-  - Can be considered an example of my approach to coding standards. I don't feel it's productive to enumerate rigid rules for my teams (in most cases). I prefer we share an understanding about why some this are prone to error or misunderstanding and trust that I hired smart people who can choose when to improvise.
+  - Can be considered an example of my approach to coding standards. I don't feel it's productive to enumerate rigid rules for my teams (in most cases). I prefer we share an understanding about why some things are prone to error or misunderstanding and trust that I hired smart people who can choose when to improvise.
 
 - [Using the RUN instruction in a Dockerfile with 'source' does not work](https://stackoverflow.com/questions/20635472/using-the-run-instruction-in-a-dockerfile-with-source-does-not-work/45087082#45087082)
   - Is my explanation of not just how, but also why a common Docker problem/pattern should be avoided.
