@@ -29,7 +29,7 @@
 
 \usepackage[top=8mm, bottom=10mm, left=12mm, right=10mm]{geometry}
 %\usepackage{showframe} %debug
-\usepackage{xfrac}
+\usepackage{nicefrac}
 \usepackage{setspace}
 \usepackage{ifthen}
 
@@ -156,6 +156,8 @@
     \vspace{1mm}
 }
 
+\newcommand{\rating}[1]{\nicefrac{#1}{5}\kern 0.05em}
+
 
 \begin{document}
 \heading{Bruno Bronosky}
@@ -195,82 +197,80 @@
 
 \blockSkills{
     \skillgroup{Development}{
-        bash/PowerShell/shell scripting,
-        Node.js,
-        Python,
-        Objective-C,
-        Java,
-        PostgreSQL,
-        Oracle SQL \& PL/SQL,
-        iOS,
-        Android,
-        Django,
-        JavaScript,
-        CSS,
-        HTML,
-        jQuery,
-        Ruby,
-        Ruby on Rails,
-        PHP,
-        %PERL \& CGI,
-        C/C++,
-        \LaTeX
+        \rating{5}bash/PowerShell/shell scripting,
+        \rating{3}Node.js,
+        \rating{4}Python,
+        \rating{2}Java/Android,
+        \rating{4}PostgreSQL,
+        \rating{4}Oracle SQL \& PL/SQL,
+        \rating{3}Django,
+        \rating{4}JavaScript,
+        \rating{4}CSS,
+        \rating{4}HTML,
+        \rating{4}jQuery,
+        \rating{3}Ruby,
+        \rating{2}Ruby on Rails,
+        \rating{4}PHP,
+        %\rating{2}PERL \& CGI,
+        \rating{2}C/C++/Objective-C,
+        \rating{3}\LaTeX
     }
 
     \skillgroup{Operations}{
-        Gnu/Linux (RedHat, Debian),
-        %Solaris,
-        FreeBSD,
-        %OpenBSD,
-        MacOS X,
-        Amazon Web Services (EC2, CF+Lambda@Edge, API Gateway, Lambda, DynamoDB, ELB, ECS, S3, Route53, Sagemaker),
-        Azure (Blob storage, CDN, Container Instances, Functions),
-        Kubernetes,
-        Cassandra,
-        MongoDB,
-        ELK,
-        %Tomcat,
-        MySQL,
-        Apache,
-        VMWare,
-        xen,
-        LVM,
-        BIND DNS,
-        %New Relic,
-        %Splunk,
-        %Cacti,
-        Sensu,
-        Nagios
+        \rating{4}Gnu/Linux (RedHat, Debian),
+        %\rating{1}Solaris,
+        \rating{3}FreeBSD,
+        %\rating{2}OpenBSD,
+        \rating{5}MacOS X,
+        \rating{4}Windows 10 WSL2,
+        \rating{4}Amazon Web Services (EC2, CF+Lambda@Edge, API Gateway, Lambda, DynamoDB, ELB, ECS, S3, Route53, Sagemaker),
+        \rating{2}Azure (Blob storage, CDN, Container Instances, Functions),
+        \rating{4}Kubernetes,
+        \rating{3}Cassandra,
+        \rating{3}MongoDB,
+        \rating{3}ELK,
+        %\rating{2}Tomcat,
+        \rating{4}MySQL,
+        \rating{4}Apache,
+        \rating{3}VMWare,
+        \rating{3}xen,
+        \rating{3}LVM,
+        \rating{4}BIND DNS,
+        %\rating{3}New Relic,
+        %\rating{3}Splunk,
+        %\rating{3}Cacti,
+        \rating{3}Sensu,
+        \rating{4}Nagios
     }
 
     \skillgrouplast{Concepts}{
-        DevOps,
-        CI/CD,
-        vim,
-        git,
-        Terraform,
-        Chef,
-        Ansible,
-        %Puppet,
-        Packer,
-        Docker,
-        Serverless,
-        HTTP,
-        TCP/IP,
-        SSH tunnel wizardry,
-        RegEx,
-        cURL,
-        tcpdump,
+        \rating{4}DevOps,
+        \rating{4}CI/CD,
+        \rating{5}vim,
+        \rating{5}git,
+        \rating{4}Terraform,
+        \rating{4}Chef,
+        \rating{3}Ansible,
+        %\rating{2}Puppet,
+        \rating{4}Packer,
+        \rating{4}Docker,
+        \rating{4}Serverless,
+        \rating{5}HTTP,
+        \rating{4}TCP/IP,
+        \rating{5}SSH tunnel wizardry,
+        \rating{4}RegEx,
+        \rating{5}cURL,
+        \rating{3}tcpdump,
         %Gnu Screen,
-        tmux,
-        AI/ML,
-        IoT,
-        Adobe Photoshop \& Illustrator,
-        Autodesk Fusion360,
-        Mach3 CNC,
-        Blender,
-        Eagle CAD,
-        Xcode
+        \rating{4}tmux,
+        \rating{2}AI/ML,
+        \rating{3}IoT,
+        \rating{5}Adobe Photoshop \& Illustrator,
+        \rating{2}Autodesk Fusion360,
+        \rating{1}Mach3 CNC,
+        \rating{1}Blender,
+        \rating{1}Eagle CAD,
+        \rating{2}Xcode
     }
 }
 
@@ -284,7 +284,7 @@
     Direct and train a department of SREs.
     Train developers to follow DevOps & CI/CD processes.
     Architect Hybrid-Cloud and Multi-Cloud infrastructure.
-    Set and inforce security practices.
+    Set and enforce security practices.
     Develop tools and services in bash, Node.js, Python, and Go.
     Design, build, and deploy Docker containers, API Gateways.
     Automate and orchestrate infrastructure with Packer and Terraform.
@@ -327,7 +327,7 @@
     {Software Development Manager}
     {November 2009 to December 2012}
     \sectionbody{
-    Manage $\sfrac{1}{4}$ of a \~{}30 developer team.
+    Manage $\nicefrac{1}{4}$ of a \~{}30 developer team.
     %Improve performance through coaching.
     %Encourage and inspire developers and vendors to give great service.
     Workflow automation scripting.
