@@ -6,11 +6,14 @@ I love technology and I feel grateful that I can making a living do something th
 
 ## StackOverflow answers
 
-- [Why does Vim ignore my modeline values?](https://stackoverflow.com/posts/41994024/revisions#rev7c9c43d4-19b1-48b5-a1cf-d823d95ca840)
-  - Shows how I accept and celebrate correction.
+- [How can I copy the output of a command directly into my clipboard?](https://gist.github.com/RichardBronosky/56d8f614fab2bacdd8b048fb58d0c0c7)
+  - Shows how I follow the [Unix philosophy](https://en.wikipedia.org/wiki/Unix_philosophy#Origin) even when writing a simple bash script.
 
 - [`aws` cli not added to path after installation](https://stackoverflow.com/questions/23332147/awscli-not-added-to-path-after-installation/42984351#42984351)
   - Shows how I don't just give people the answer they seek, but also encourage them to learn how to approach similar future issues.
+
+- [How can I check if a string represents an int, without using try/except?](https://stackoverflow.com/questions/1265665/how-can-i-check-if-a-string-represents-an-int-without-using-try-except/4894182#4894182)
+  - An example of a "clever" solution to a problem and that I take responsibility for verifying my solutions before I contribute them.
 
 - [How do I redirect output to a variable in shell?](https://stackoverflow.com/questions/2559076/how-do-i-redirect-output-to-a-variable-in-shell/15170225#15170225)
   - Shows how I respectfully teach complex concepts.
@@ -29,6 +32,12 @@ I love technology and I feel grateful that I can making a living do something th
 
 - [How to sign in kubernetes dashboard?](https://stackoverflow.com/questions/46664104/how-to-sign-in-kubernetes-dashboard/47761914#47761914)
   - Shows why I love awk for oneliners (and vicariously why I say I like PowerShell's concept of passing objects instead of text streams).
+
+- [How to convert string to integer in UNIX?](https://stackoverflow.com/questions/11268437/how-to-convert-string-to-integer-in-unix/59781257#59781257)
+  - Is a good example of what I mean by "I love to code because it satisfies my curiousity. I'm lucky to get paid for doing something that I'd be doing for free otherwise."
+
+- [Why does Vim ignore my modeline values?](https://stackoverflow.com/questions/4590191/why-does-vim-ignore-my-modeline-values/41994024#comment93649087_41994024)
+  - Shows how I accept and celebrate correction.
 
 ## GitHub projects
 
