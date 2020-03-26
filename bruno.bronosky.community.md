@@ -6,11 +6,11 @@ I love technology and I feel grateful that I can making a living do something th
 
 ## StackOverflow answers
 
-- [How can I copy the output of a command directly into my clipboard?](https://gist.github.com/RichardBronosky/56d8f614fab2bacdd8b048fb58d0c0c7)
-  - Shows how I follow the [Unix philosophy](https://en.wikipedia.org/wiki/Unix_philosophy#Origin) even when writing a simple bash script.
-
 - [`aws` cli not added to path after installation](https://stackoverflow.com/questions/23332147/awscli-not-added-to-path-after-installation/42984351#42984351)
   - Shows how I don't just give people the answer they seek, but also encourage them to learn how to approach similar future issues.
+
+- [How can I copy the output of a command directly into my clipboard?](https://gist.github.com/RichardBronosky/56d8f614fab2bacdd8b048fb58d0c0c7)
+  - Shows how I follow the [Unix philosophy](https://en.wikipedia.org/wiki/Unix_philosophy#Origin) even when writing a simple bash script.
 
 - [How can I check if a string represents an int, without using try/except?](https://stackoverflow.com/questions/1265665/how-can-i-check-if-a-string-represents-an-int-without-using-try-except/4894182#4894182)
   - An example of a "clever" solution to a problem and that I take responsibility for verifying my solutions before I contribute them.
