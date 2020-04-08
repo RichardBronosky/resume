@@ -22,4 +22,4 @@ There are many resumes on github. This repo is unique because it is also the sou
 [PDF cover letter]: https://github.com/RichardBronosky/resume/raw/master/bruno.bronosky.community.pdf
 [community]:        https://github.com/RichardBronosky/resume/blob/master/bruno.bronosky.community.md
 [resume in LaTeX]:  https://github.com/RichardBronosky/resume/blob/master/bruno.bronosky.resume.tex
-[richardbronosky/latex-compiler]: https://registry.hub.docker.com/u/richardbronosky/latex-compiler/
+[richardbronosky/latex-compiler]: https://registry.hub.docker.com/r/richardbronosky/latex-compiler
