@@ -1,4 +1,5 @@
 ## [Download Resume PDF][PDF resume] / [Download Cover Letter (alternative) PDF][PDF cover letter]
+(After following the links above, you must click the <kbd>Download</kbd> button.)
 
 # Bruno Bronosky
 
@@ -18,8 +19,8 @@ You can learn everything you need to know about me by looking at [what I put out
 
 There are many resumes on github. This repo is unique because it is also the source code for the popular [richardbronosky/latex-compiler] Docker image.
 
-[PDF resume]:       https://github.com/RichardBronosky/resume/raw/master/bruno.bronosky.resume.pdf
-[PDF cover letter]: https://github.com/RichardBronosky/resume/raw/master/bruno.bronosky.community.pdf
-[community]:        https://github.com/RichardBronosky/resume/blob/master/bruno.bronosky.community.md
-[resume in LaTeX]:  https://github.com/RichardBronosky/resume/blob/master/bruno.bronosky.resume.tex
-[richardbronosky/latex-compiler]: https://registry.hub.docker.com/u/richardbronosky/latex-compiler/
+[PDF resume]:       bruno.bronosky.resume.pdf
+[PDF cover letter]: bruno.bronosky.community.pdf
+[community]:        bruno.bronosky.community.md
+[resume in LaTeX]:  bruno.bronosky.resume.tex
+[richardbronosky/latex-compiler]: https://registry.hub.docker.com/r/richardbronosky/latex-compiler/
