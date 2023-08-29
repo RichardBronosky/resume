@@ -1,0 +1,398 @@
+$schema: https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json
+basics:
+  name: Bruno Bronosky
+  label: Principal DevOps Engineer and Trainer
+  image: "http://www.gravatar.com/avatar/959ccd33301cb3c15953c1a632a36763?s=500"
+  email: bruno@bronosky.com
+  phone: (404) 992-7866
+  url: https://github.com/RichardBronosky/resume
+  summary: |-
+    Born in the Appilachian mountains of West Virginia to a radio electronics technician, Bruno grew up in coal mining
+    country where most of his classmates remain. He never threw a ball with his father, though they did attend a
+    handfull of Cincinnati Reds baseball games. They spent their nights and weekends soldering Heathkit projects from
+    Radio Shack and writing games and equation solvers in Borland Turbo Basic, then Turbo Pascal, and eventually Delphi.
+    When calling his father in 1995 to tell him Bruno got his first professional programming gig, they both saw this
+    like getting drafted in the MLB. Everyday Bruno feels like "the luckiest man in baseball" to have escaped the coal
+    mines.
+
+    # Bruno does:
+
+    - cloud computing: OpenStack Amazon Web Services, Microsoft Azure, Google Cloud Platform, Linode, DigitalOcean, Heroku
+    - container services: Docker, Kubernetes, Nomad, ECS, EKS
+    - infrastructure orchestration and automation with Terraform, Ansible, Chef, Argo
+    - infrastructure and capacity planning
+    - data center operations
+    - OpenVPN, SSH tunneling, network security
+    - troubleshoot network issues
+    - DBA for DynamoDB, Kafka, Cassandra, MongoDB, CouchDB, PostgreSQL, MySQL
+    - administer various Unix and Gnu/Linux
+    - administer virtualization hosts and guests
+    - optimize RAID, swap, cache
+    - archaeology of code, protocol, process
+    - manage systems engineers, software developers
+    - manage vendors, contractors
+    - manage client SLAs, vendor SLAs
+    - study complex systems and make them accessible to various audiences
+    - {Review, Recommend} application {architecture, code}
+    - maintain SDLC process
+    - develop web and mobile applications
+    - architect {cloud, web, mobile} solutions
+    - {Develop, Deploy} {iPhone, Android} apps
+    - {Develop, Deploy} {Cordova, React Native} HTML5+CSS3+JS apps
+    - {Audit, Deploy} {developer code, data migrations}
+    - {Transform, Migrate} data
+    - audit application code for security and performance
+
+    # Bruno is:
+
+    - teacher
+    - strong verbal and written communicator
+    - excellent troubleshooting and debugging
+    - unrepentant command line addict
+    - ambiguity assassin
+  location:
+    address: Lower Garden District
+    postalCode: "70130"
+    city: New Orleans
+    countryCode: US
+    region: LA
+  profiles:
+    - network: Not a Cover Letter
+    #- network: RSS
+      username: Community Involvement
+      url: https://github.com/RichardBronosky/resume/blob/master/bruno.bronosky.community.md
+    - network: Github
+      username: RichardBronosky
+      url: https://github.com/RichardBronosky
+    - network: StackOverflow
+      username: Bruno-Bronosky
+      url: https://stackexchange.com/users/40542/bruno-bronosky
+    - network: LinkedIn
+      username: Bruno-Bronosky
+      url: https://www.linkedin.com/in/RichardBronosky
+    - network: X ; Twitter
+      username: RichardBronosky
+      url: https://x.com/RichardBronosky
+
+work:
+  - name: "Confidential: International Airline"
+    position: "Contract: Trainer of DevOps Engineers"
+    startDate: "2022-09-30"
+    endDate: "2023-07-31"
+    summary: >-
+      Value: >$10B
+      Employees: >90k
+    highlights:
+      - CI/CD with Harness.io, AWS infrastructure with CDK+CFN, Migration to github Enterprise from 5 other VCS
+      - Architected an internal ML/AI Software Development Co-Pilot trained on internal code repos to reduce code "re-invention" and time/effort
+
+  - name: "Confidential: Cyber Security and Biometric Identity Org"
+    position: "Contract: Trainer of DevOps Engineers"
+    startDate: "2022-05-01"
+    endDate: "2022-09-30"
+    summary: >-
+      Value: >$3B
+      Employees: >10k 
+    highlights:
+      - CI/CD with Jenkins/CloudBees, SonarQube, JMeter, various software testing tools
+
+  - name: "Confidential: Financial Services Org"
+    position: "Contract: Trainer of Robotics, Computer Vision, and Machine Learning Engineers"
+    startDate: "2021-11-01"
+    endDate: "2022-04-30"
+    summary: >-
+      Value: >$1T
+      Employees: >225k
+    highlights:
+      - Robotics R&D, Machine Learning, Computer Vision, Software Development, Network & Physical Architecture, DevSecOps, Linux System Administration
+      - ROS 1&2 [Robotics Operating System], Dobot CR5, Python, C++
+
+  - name: "Confidential: Chemical Engineering R&D and Production Org"
+    position: "Contract: Trainer of DevOps Engineers"
+    startDate: "2021-02-01"
+    endDate: "2021-09-30"
+    summary: >-
+      Value: >$10B
+      Employees: >90k
+    highlights:
+      - CI/CD with Jenkins, SonarQube, JMeter, various software testing tools
+      - AWS infrastructure and network security architecture
+      - Architected an internal ML/AI Software Development Co-Pilot trained on internal code repos to reduce code "re-invention" and time/effort
+
+  - name: Rooms To Go
+    location: Dunwoody, GA
+    position: Principal DevOps Engineer
+    startDate: "2018-11-01"
+    endDate: "2021-02-01"
+    highlights:
+      - Direct and train a department of DevOps Engineers and SREs.
+      - Train developers to follow DevOps & CI/CD processes.
+      - Architect Hybrid-Cloud and Multi-Cloud infrastructure.
+      - Set and enforce security practices.
+      - Develop tools and services in bash, Node.js, Python, and Go.
+      - Design, build, and deploy Docker containers, API Gateways.
+      - Automate and orchestrate infrastructure with Packer and Terraform.
+      - Build and maintain [Fargate] ECS, EKS, and Kubernetes clusters serving microservices.
+      - Manage AWS costs.
+      - Make and document changes to AWS infrastructure via aws-cli.
+      - Manage network security with AWS Security Groups, iptables, and OpenVPN.
+      - Maintain MongoDB and DynamoDB databases.
+
+  - name: MidAmerican Energy Services
+    location: Dunwoody, GA
+    position: DevOps Team Leader
+    startDate: "2016-10-01"
+    endDate: "2018-07-01"
+    highlights:
+      - Orchestrate infrastructure with Packer, Terraform, Chef, and Ansible.
+      - Build and maintain Kubernetes clusters serving microservices.
+      - Develop tools in Python, Go, bash, awk, sed, CircuitPython, and Arduino.
+      - Build and maintain Cassandra, MongoDB, and MySQL databases.
+      - Build custom Raspberry Pi images for IoT devices sent to client locations.
+      - Design and CNC mill custom IoT hardware cases.
+
+  - name: Cox Media Group [Technology]
+    location: Atlanta, GA
+    position: Solution Architect, Mobile
+    startDate: "2012-12-02"
+    endDate: "2016-10-01"
+    highlights:
+      - Develop mobile client and backend POCs.
+      - Architect and deploy cloud infrastructure.
+      - Develop and maintain original Open Source software projects.
+      - Workflow and process automation.
+      - Lead mobile architecture and technical strategy.
+      - Present and teach.
+
+  - name: Cox Media Group [Technology]
+    location: Atlanta, GA
+    position: Software Development Manager
+    startDate: "2009-11-01"
+    endDate: "2012-12-02"
+    highlights:
+      - Manage 1/4 of a ~30 developer team.
+      - Improve performance through coaching.
+      - Encourage and inspire developers and vendors to give great service.
+      - Workflow automation scripting.
+      - Architect and develop software.
+
+  - name: Cox Media Group [Technology]
+    location: Atlanta, GA
+    position: Internet Systems Manager & MySQL DBA
+    startDate: "2008-07-01"
+    endDate: "2009-11-01"
+    highlights:
+      - Administer Gnu/Linux servers.
+      - Manage a department of sysadmins.
+      - Workflow automation and config management.
+
+  - name: Atlanta Journal-Constitution (Cox Media Group)
+    location: Atlanta, GA
+    position: MySQL DBA
+    startDate: "2007-01-01"
+    endDate: "2008-07-01"
+    highlights:
+      - Administer MySQL.
+      - Optimize developer code.
+      - Maintain high availability and performance.
+      - Develop extra Django and Rails projects.
+
+  - name: Yahoo!
+    location: Atlanta, GA telecommute to Sunnyvale, CA
+    position: Technical Yahoo!
+    startDate: "2004-03-01"
+    endDate: "2007-01-01"
+    highlights:
+      - Manage teams, projects, SLAs.
+      - Automate workflows.
+      - Develop web applications.
+      - Administer FreeBSD, Apache, MySQL.
+
+  - name: Apple Computer
+    location: Atlanta, GA
+    position: Business Sales Specialist
+    startDate: "2004-03-01"
+    endDate: "2004-06-01"
+    highlights:
+      - Exploit my expertise to lure businesses away from Microsoft products for the greater good of the universe.
+
+  - name: Lanier Worldwide
+    location: Atlanta, GA
+    position: Web Application Developer
+    startDate: "2002-10-01"
+    endDate: "2004-03-01"
+    highlights:
+      - Manage and train developers on CVS, security policies, and best practices.
+      - Develop CMS and software deployment system.
+
+  - name: MedCenterDirect
+    location: Atlanta, GA
+    position: Lead Solutions Developer
+    startDate: "2000-12-02"
+    endDate: "2002-10-01"
+    highlights:
+      - Develop applications, portals, and commerce solutions.
+      - Architect custom deployment strategy.
+      - Script data migrations.
+
+  - name: Amazing Graphics
+    location: Atlanta, GA
+    position: Digital Designer/Production Artist
+    startDate: "1999-04-01"
+    endDate: "2000-08-01"
+    highlights:
+      - graphic creation and prepress;
+      - Mac, NT, Solaris/Unix network & system administration
+
+  - name: Freelance
+    location: USA and Ireland
+    position: Consultant
+    startDate: "1998-01-01"
+    endDate: "2004-03-01"
+    highlights:
+      - on-site and remote consulting in LAMP stack, networking, web & client app development, Q/A, graphic design
+
+  - name: World Wide Development
+    location: Ashland, KY
+    position: Webmaster
+    startDate: "1995-08-01"
+    endDate: "1998-01-01"
+    highlights:
+      - pioneered the DB driven web solutions market using HTML, JS, Perl, C/C++, ColdFusion, MS SQL
+
+
+volunteer:
+  - organization: DecaturMakers
+    position: Instructor
+    url: https://decaturmakers.org/about/whats-in-the-space/
+    startDate: "2015-01-16"
+    summary: With the mission "to empower a community of builders, creatives, and learners", Decatur Makers "envisions a world where anyone can make anything".
+    highlights:
+      - Built and raced 2 Power Racing Series electric vehicles
+      - Taught skills in programming, Arduino and other microprocessors, soldering, electrical engineering, lithium battery assembly and safety
+      - Taught skills in welding, wood working, maintenance of bicycles, motorcycles, and cars
+
+
+education:
+  - institution: University of Kentucky
+    area: Computer Engineering and Systems Analysis
+    endDate: "1997"
+
+
+skills:
+#   level: beginner , intermediate, advanced, master
+  - name: "Amazon Web Services"
+    level: master
+    keywords:
+      - CDK/CFN
+      - EC2
+      - ECS/EKS/Fargate
+      - EBS
+      - RDS
+      - S3
+      - Lamda
+      - CloudFront
+      - GuardDuty
+      - SNS
+      - SQS
+  - name: "Automation/Orchestration"
+    level: master
+    keywords:
+      - Terraform
+      - Ansible
+      - Chef
+      - CloudFormation
+      - CDK
+      - 
+  - name: Kubernetes, Docker, and containers
+    level: advanced
+    keywords:
+      - containerd
+      - Helm
+      - Argo Project; Argo-CD
+  - name: GNU/Linux and BSD Server Administration
+    level: master
+    keywords:
+      - Linux
+      - FreeBSD
+      - OpenBSD
+      - MacOS
+      - Arch Linux
+      - Debian
+      - RHEL Red Hat Enterprise Linux
+      - CLI; Command Line Interface
+      - SSH
+      - Systemd; systemctl
+      - System V; SysV Init
+      - LSB; Linux Standard Base
+  - name: Bash/Shell Scripting
+    level: master
+    keywords:
+      - GNU Bash; shell scripting
+      - Zsh; Z shell
+  - name: Web Development
+    level: master
+    keywords:
+      - HTML
+      - CSS
+      - JavaScript; ECMAScript
+  - name: Node.js
+    level: intermediate
+  - name: Python
+    level: intermediate
+  - name: C/C++
+    level: beginner
+  - name: Rust
+    level: beginner
+  - name: ""
+    level: beginner
+
+interests:
+  - name: Outdoors
+    keywords:
+      - Camping
+      - Hiking
+      - Rock Climbing
+
+  - name: Maker
+    keywords:
+      - Making my own tools
+      - PEV; Personal Electronic Vehicles
+      - FPV multirotors/drones
+
+  - name: Automation
+    keywords:
+      - automating infrastructure/operations
+
+  - name: Electrical Engineering
+    keywords:
+      - RaspberryPi, SBCs
+      - Microprocessors
+      - IoT
+      - Ham Radio, LoRa, Software Defined Radio
+
+  - name: Robotics
+    keywords:
+      - ROS Robotics Operating System
+      - Arm, Actuator, and End Effector design
+      - BLDC, Brushless DC Motors
+      - ESC development, [Vetter] Electronic Speed Control
+
+  - name: Jeeps and Motorcycles
+    keywords:
+      - Jeep Wrangler
+      - Harley-Davidson Dyna Glide
+      - Kawasaki KLR650
+
+  - name: Skydiving
+    keywords:
+      - USPA Class A License
+      - Packing my own PD Sabre-2 190 parachute
+
+meta:
+  theme: kendall-markdown
+  canonical: https://raw.githubusercontent.com/jsonresume/resume-schema/master/resume.json
+  version: v1.0.0
+  lastModified: "2023-06-01T00:42:42"
+
+
