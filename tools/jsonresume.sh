@@ -3,7 +3,8 @@
 set -eu
 set -x
 
-yaml_file=resume.yaml
+#yaml_file=resume.yaml
+yaml_file=bruno.bronosky.resume.yaml
 #cmd_args=("${@}")
 #declare -p cmd_args
 #script_name="${cmd_args[0]}"
@@ -34,12 +35,13 @@ watch_yaml_to_json () {
 }
 
 serve () {
-    theme="$(jq --raw-output '""+.meta.theme' resume.json)";
+    src_file="${1:-$(json_file "$yaml_file")}"
+    theme="$(yq -ot '""+.meta.theme' $src_file)";
     THEME="${THEME:-$theme}"
     if [[ -n ${THEME:-} ]]; then
-        resume serve --theme "${THEME}"
+        resume serve --resume "$src_file" --theme "${THEME}"
     else
-        resume serve
+        resume serve --resume "$src_file"
     fi
 }
 
@@ -63,6 +65,23 @@ cycle () {
         cat ono2.js
 }
 
+render () {
+    format="$1"
+    src_file="${2:-$(json_file "$yaml_file")}"
+    dst_file="${src_file%.*}.$format"
+    which -a yq; yq -V
+    resume export --resume "$src_file" $dst_file --theme $(yq -ot '""+.meta.theme' $src_file)
+}
+
+html () {
+    src_file="${1:-$(json_file "$yaml_file")}"
+    render html "$src_file"
+}
+
+pdf () {
+    src_file="${1:-$(json_file "$yaml_file")}"
+    render pdf "$src_file"
+}
 
 main () {
     yaml_to_json "$yaml_file"

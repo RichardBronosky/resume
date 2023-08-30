@@ -19,7 +19,7 @@
       {
         "network": "Not a Cover Letter",
         "username": "Community Involvement",
-        "url": "https://github.com/RichardBronosky/resume/blob/master/bruno.bronosky.community.md"
+        "url": "https://github.com/RichardBronosky/resume/blob/main/bruno.bronosky.community.md"
       },
       {
         "network": "Github",
@@ -187,7 +187,7 @@
       "highlights": [
         "Manage teams, projects, SLAs.",
         "Automate workflows.",
-        "Develop web applications.",
+        "Develop PHP web applications.",
         "Administer FreeBSD, Apache, MySQL."
       ]
     },
@@ -209,7 +209,7 @@
       "endDate": "2004-03-01",
       "highlights": [
         "Manage and train developers on CVS, security policies, and best practices.",
-        "Develop CMS and software deployment system."
+        "Develop PHP CMS and software deployment system."
       ]
     },
     {
@@ -219,7 +219,7 @@
       "startDate": "2000-12-02",
       "endDate": "2002-10-01",
       "highlights": [
-        "Develop applications, portals, and commerce solutions.",
+        "Develop PHP applications, portals, and commerce solutions.",
         "Architect custom deployment strategy.",
         "Script data migrations."
       ]
@@ -296,7 +296,7 @@
       ]
     },
     {
-      "name": "Automation/Orchestration",
+      "name": "Automation/Orchestration & CI/CD",
       "level": "master",
       "keywords": [
         "Terraform",
@@ -304,7 +304,7 @@
         "Chef",
         "CloudFormation",
         "CDK",
-        null
+        "Jenkins"
       ]
     },
     {
@@ -312,6 +312,7 @@
       "level": "advanced",
       "keywords": [
         "containerd",
+        "Podman",
         "Helm",
         "Argo Project; Argo-CD"
       ]
@@ -324,7 +325,7 @@
         "FreeBSD",
         "OpenBSD",
         "MacOS",
-        "Arch Linux",
+        "Arch Linux, BTW",
         "Debian",
         "RHEL Red Hat Enterprise Linux",
         "CLI; Command Line Interface",
@@ -343,33 +344,41 @@
       ]
     },
     {
+      "name": "Graphics",
+      "level": "master",
+      "keywords": [
+        "Adobe Creative Suite",
+        "OpenSCAD",
+        "FreeCAD",
+        "Fusion 360"
+      ]
+    },
+    {
       "name": "Web Development",
       "level": "master",
       "keywords": [
         "HTML",
         "CSS",
-        "JavaScript; ECMAScript"
+        "JavaScript; ECMAScript",
+        "PHP"
       ]
     },
     {
-      "name": "Node.js",
-      "level": "intermediate"
+      "name": "Interpreted Languages",
+      "level": "intermediate",
+      "keywords": [
+        "Node.js",
+        "Python"
+      ]
     },
     {
-      "name": "Python",
-      "level": "intermediate"
-    },
-    {
-      "name": "C/C++",
-      "level": "beginner"
-    },
-    {
-      "name": "Rust",
-      "level": "beginner"
-    },
-    {
-      "name": "",
-      "level": "beginner"
+      "name": "Compiled Languages",
+      "level": "beginner",
+      "keywords": [
+        "Rust",
+        "Go/GoLang",
+        "C/C++"
+      ]
     }
   ],
   "interests": [
@@ -392,7 +401,10 @@
     {
       "name": "Automation",
       "keywords": [
-        "automating infrastructure/operations"
+        "Home Assistant",
+        "Tasmota",
+        "Node-RED",
+        "MQTT"
       ]
     },
     {
@@ -431,7 +443,7 @@
   ],
   "meta": {
     "theme": "kendall-markdown",
-    "canonical": "https://raw.githubusercontent.com/jsonresume/resume-schema/master/resume.json",
+    "canonical": "https://raw.githubusercontent.com/jsonresume/resume-schema/main/resume.json",
     "version": "v1.0.0",
     "lastModified": "2023-06-01T00:42:42"
   }
