@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Resume of Bruno Bronosky</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <style type="text/css">
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800);
+@charset "utf-8";
+@-webkit-viewport   { width: device-width; }
+@-moz-viewport      { width: device-width; }
+@-ms-viewport       { width: device-width; }
+@-o-viewport        { width: device-width; }
+@viewport           { width: device-width; }
+
+body{
+  font-family: 'Open Sans', Arial, Tahoma;
+  font-weight: 400;
+  color: #363636;
+  background: #334960;
+}
+blockquote {
+  font-size: 1em;
+}
+
+.container{
+  margin-top: 80px;
+  margin-bottom: 15px;
+  background: #fff;
+}
+
+#photo-header{
+  margin-top: -75px;
+}
+#photo{
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  overflow: hidden;
+  padding: 5px;
+  background: #334960;
+  display: inline-block;
+}
+#photo img{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+#text-header h1{
+  margin: 0;
+  padding: 0;
+  font-size: 1.5em;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+#text-header h1::first-line{
+  font-size: 1.5em;
+  font-weight: 800;
+  line-height: 1.5em;
+  text-transform: uppercase;
+}
+#text-header h1 span{
+  color: #334960;
+  opacity: 0.7;
+}
+#text-header h1 sup{
+  opacity: 0.5;
+}
+#text-header:after{
+  width: 100%;
+  height: 3px;
+  border-bottom: 1px solid #ddd;
+  margin-top: 15px;
+  content: '';
+  display: block;
+}
+
+.box{
+  padding-bottom: 10px;
+  margin-bottom: 25px;
+}
+.box h2{
+  color: #227c74;
+  font-size: 1.5em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+#section_about p{
+  margin-left: 1.2em;
+}
+#section_about h1{
+  margin-left: 1.0em;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+/*#section_work_experience{}*/
+/*#section_awards{}*/
+/*#section_volunteer{}*/
+/*#section_projects{}*/
+/*#section_contact{}*/
+/*#section_skills{}*/
+/*#section_publications{}*/
+/*#section_languages{}*/
+/*#section_hobbies{}*/
+/*#section_education{}*/
+
+#awards,
+#education{
+  margin-top: 20px;
+  margin-bottom: 0;
+  position: relative;
+  padding: 1em 0;
+  list-style: none;
+}
+#awards:before,
+#education:before {
+  width: 5px;
+  height: 100%;
+  position: absolute;
+  left: 35px;
+  top: 0;
+  content: ' ';
+  display: block;
+  background: none;
+}
+#awards li,
+#education li{
+  width: 100%;
+  z-index: 2;
+  position: relative;
+  float: left;
+}
+#awards .year,
+#education .year{
+  width: 14%;
+  background: #fff;
+  padding: 10px;
+  font-weight: 700;
+  display: inline-block;
+}
+#awards .description,
+#education .description{
+  width: 83%;
+  display: inline-block;
+  background: #eee;
+  margin-bottom: 10px;
+  position: relative;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+#awards .description:after,
+#education .description:after {
+  content: none;
+  position: absolute;
+  top: 15px;
+  right: 0;
+  left: -16px;
+  height: 0;
+  width: 0;
+  border: solid transparent;
+  border-right-color: #eee;
+  border-width: 8px;
+  pointer-events: none;
+}
+#awards .description h3,
+#education .description h3{
+  font-size: 1.2em;
+  margin: 0;
+  padding: 0;
+  font-weight: 700;
+}
+#awards .description p,
+#education .description p{
+  margin-top: 5px;
+  padding: 0;
+}
+
+.job{
+  margin-bottom: 15px;
+}
+.job .details {
+  margin-left: 3%;
+  width: 95%;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: #eee;
+  border-bottom: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+.job .where{
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.job .year{
+  opacity: 0.7;
+}
+.job .profession{
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.job .description{
+  line-height: 1.5em;
+}
+.job .highlights{
+  padding: 5px 0;
+  font-weight: bold;
+}
+.job .job-details {
+  padding-left: 5%;
+  width: 100%;
+}
+.publication {
+  margin-bottom: 0;
+}
+.publication .name{
+  font-size: 1em;
+  font-weight: bold;
+}
+.publication .year{
+    opacity: 0.7;
+}
+.publication p{
+  margin: 0;
+  padding-top: 10px;
+}
+
+.contact-item{
+  width: 100%;
+  float: left;
+}
+.contact-item .icon{
+  padding: 10px;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  color: #32475c;
+  background: #eee;
+}
+.contact-item:last-child .icon{
+  border-bottom: none;
+}
+.contact-item .title{
+  width: 80%;
+  width: calc(100% - 55px);
+  font-weight: 700;
+  opacity: 0.9;
+}
+.contact-item .title.only{
+  margin-top: 10px;
+}
+.contact-item .description{
+  width: 80%;
+  width: calc(100% - 55px);
+  color: #334960;
+}
+
+.item-interests,
+.item-skills{
+  height: 30px;
+  color: #334960;
+  padding: 5px 10px;
+  margin-bottom: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 1.1em;
+  font-weight: 600;
+}
+.interest,
+.skill{
+  color: #fff;
+  display: inline-block;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  padding: 5px 10px;
+  background: #32475c;
+  position: relative;
+  font-size: .85em;
+}
+.skill-level {
+  background-color: #227c74;
+  border-radius: 4px;
+  color: #fff;
+  padding: 1px 8px;
+  font-size: .75em;
+  position: absolute;
+  margin: 1px 10px;
+}
+
+#language-skills .skill{
+  margin: 10px 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.list-group {
+  /*/ No need to set list-style: none; since .list-group-item is block level /*/
+  margin-bottom: 20px;
+  padding-left: 0; /*/ reset padding because ul and ol /*/
+}
+
+
+/*/ Individual list items //
+//
+// Use on `li`s or `div`s within the `.list-group` parent. /*/
+
+.list-group-item {
+  position: relative;
+  display: list-item;
+  padding: 0px;
+  /*/ Place the border on the list items and negative margin up for better styling /*/
+  margin: 0px 0px -1px 20px;
+  border: none;
+  /*
+  background-color: @list-group-bg;
+  border: 1px solid @list-group-border;
+
+  // Round the first and last items //
+  &:first-child {
+    .border-top-radius(@list-group-border-radius);
+  }
+  &:last-child {
+    margin-bottom: 0;
+    .border-bottom-radius(@list-group-border-radius);
+  }
+  */
+}
+
+    </style>
+    <style type="text/css" media="print">
+    body {
+  font-size: .95em;
+  -webkit-print-color-adjust: exact;
+}
+
+a[href]:after {
+  content: none !important;
+}
+
+#photo{
+  display: none;
+}
+
+.box {
+  margin-bottom: -10px;
+}
+
+blockquote,
+#education,
+#awards,
+.avoid-break,
+.contact-item,
+.publication,
+.skills,
+.interests {
+  page-break-inside: avoid;
+}
+
+.col-sm-5{
+  width: 40%;
+  padding: 0 15px;
+}
+
+.col-sm-7{
+  width: 60%;
+  padding: 0 15px;
+}
+
+.skills .col-sm-offset-1,
+.interests .col-sm-offset-1{
+  margin-top: -10px;
+  margin-bottom: 5px;
+}
+
+#education {
+  margin: 0;
+  margin-bottom: -20px;
+}
+#awards:before,
+#education:before {
+  background: none;
+}
+
+#awards .description,
+#education .description,
+.job .details {
+  border: 1px solid #eee;
+}
+.job {
+  margin: 0px;
+}
+.publication,
+.publication .panel-heading,
+.publication .name{
+  margin: 0;
+  padding: 0 5px;
+  border: none;
+}
+.publication .panel-body {
+  padding: 0 10px;
+  margin: 0;
+}
+
+.panel-default {
+  margin-top: 10px;
+}
+
+.badge {
+  margin: 0;
+}
+
+.list-group {
+  margin-bottom: 8px;
+  padding-left: 0;
+}
+.list-group-item{
+  border: none;
+  padding: 0px;
+  margin: 0px 0px -1px 20px;
+}
+.list-group-item:after{
+  content: none;
+  position: absolute;
+  top: 8px;
+  right: 0;
+  left: -1px;
+  height: 0;
+  width: 0;
+  border: solid transparent;
+  border-right-color: #999;
+  border-width: 4px;
+  pointer-events: none;
+ }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div id="photo-header" class="text-center">
+            <!-- PHOTO (AVATAR) -->
+            <div id="photo">
+              <img src="http:&#x2F;&#x2F;www.gravatar.com&#x2F;avatar&#x2F;959ccd33301cb3c15953c1a632a36763?s&#x3D;500" alt="avatar">
+            </div>
+            <div id="text-header" >
+              <h1>Bruno Bronosky<br><span>Principal DevOps Engineer and Trainer</span></h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-7">
+          <!-- ABOUT ME -->
+          <div class="box" id="section_about">
+            <h2><i class="fas fa-user ico"></i> About</h2>
+            <p><p>Born in the Appilachian mountains of West Virginia to a radio electronics technician, Bruno grew up in coal mining
+country where most of his classmates remain. He never threw a ball with his father, though they did attend a
+handfull of Cincinnati Reds baseball games. They spent their nights and weekends soldering Heathkit projects from
+Radio Shack and writing games and equation solvers in Borland Turbo Basic, then Turbo Pascal, and eventually Delphi.
+When calling his father in 1995 to tell him Bruno got his first professional programming gig, they both saw this
+like getting drafted in the MLB. Everyday Bruno feels like "the luckiest man in baseball" to have escaped the coal
+mines.</p>
+<h1 id="brunodoes">Bruno does:</h1>
+<ul>
+<li>cloud computing: OpenStack Amazon Web Services, Microsoft Azure, Google Cloud Platform, Linode, DigitalOcean, Heroku</li>
+<li>container services: Docker, Kubernetes, Nomad, ECS, EKS</li>
+<li>infrastructure orchestration and automation with Terraform, Ansible, Chef, Argo</li>
+<li>infrastructure and capacity planning</li>
+<li>data center operations</li>
+<li>OpenVPN, SSH tunneling, network security</li>
+<li>troubleshoot network issues</li>
+<li>DBA for DynamoDB, Kafka, Cassandra, MongoDB, CouchDB, PostgreSQL, MySQL</li>
+<li>administer various Unix and Gnu/Linux</li>
+<li>administer virtualization hosts and guests</li>
+<li>optimize RAID, swap, cache</li>
+<li>archaeology of code, protocol, process</li>
+<li>manage systems engineers, software developers</li>
+<li>manage vendors, contractors</li>
+<li>manage client SLAs, vendor SLAs</li>
+<li>study complex systems and make them accessible to various audiences</li>
+<li>{Review, Recommend} application {architecture, code}</li>
+<li>maintain SDLC process</li>
+<li>develop web and mobile applications</li>
+<li>architect {cloud, web, mobile} solutions</li>
+<li>{Develop, Deploy} {iPhone, Android} apps</li>
+<li>{Develop, Deploy} {Cordova, React Native} HTML5+CSS3+JS apps</li>
+<li>{Audit, Deploy} {developer code, data migrations}</li>
+<li>{Transform, Migrate} data</li>
+<li>audit application code for security and performance</li>
+</ul>
+<h1 id="brunois">Bruno is:</h1>
+<ul>
+<li>teacher</li>
+<li>strong verbal and written communicator</li>
+<li>excellent troubleshooting and debugging</li>
+<li>unrepentant command line addict</li>
+<li>ambiguity assassin</li>
+</ul></p>
+          </div>
+          <!-- WORK EXPERIENCE -->
+          <div class="box" id="section_work_experience">
+            <h2><i class= "fas fa-suitcase ico"></i> Work Experience</h2>
+              <div class="job clearfix">
+                <div class="row">
+                  <div class="details">
+                    <div class="where">
+                      Confidential: International Airline
+                    </div>
+                    <div class="year">2022 – 2023</div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="job-details col-xs-11">
+                    <div class="profession">Contract: Trainer of DevOps Engineers</div>
+                    <div class="description">
+                      Value: >$10B Employees: >90k
+                      <ul class="list-group">
+                        <li class="list-group-item">CI/CD with Harness.io, AWS infrastructure with CDK+CFN, Migration to github Enterprise from 5 other VCS</li>
+                        <li class="list-group-item">Architected an internal ML/AI Software Development Co-Pilot trained on internal code repos to reduce code "re-invention" and time/effort</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="job clearfix">
+                <div class="row">
+                  <div class="details">
+                    <div class="where">
+                      Confidential: Cyber Security and Biometric Identity Org
+                    </div>
+                    <div class="year">2022 – 2022</div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="job-details col-xs-11">
+                    <div class="profession">Contract: Trainer of DevOps Engineers</div>
+                    <div class="description">
+                      Value: >$3B Employees: >10k 
+                      <ul class="list-group">
+                        <li class="list-group-item">CI/CD with Jenkins/CloudBees, SonarQube, JMeter, various software testing tools</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="job clearfix">
+                <div class="row">
+                  <div class="details">
+                    <div class="where">
+                      Confidential: Financial Services Org
+                    </div>
+                    <div class="year">2021 – 2022</div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="job-details col-xs-11">
+                    <div class="profession">Contract: Trainer of Robotics, Computer Vision, and Machine Learning Engineers</div>
+                    <div class="description">
+                      Value: >$1T Employees: >225k
+                      <ul class="list-group">
+                        <li class="list-group-item">Robotics R&D, Machine Learning, Computer Vision, Software Development, Network & Physical Architecture, DevSecOps, Linux System Administration</li>
+                        <li class="list-group-item">ROS 1&2 [Robotics Operating System], Dobot CR5, Python, C++</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="job clearfix">
+                <div class="row">
+                  <div class="details">
+                    <div class="where">
+                      Confidential: Chemical Engineering R&amp;D and Production Org
+                    </div>
+                    <div class="year">2021 – 2021</div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="job-details col-xs-11">
+                    <div class="profession">Contract: Trainer of DevOps Engineers</div>
+                    <div class="description">
+                      Value: >$10B Employees: >90k
+                      <ul class="list-group">
+                        <li class="list-group-item">CI/CD with Jenkins, SonarQube, JMeter, various software testing tools</li>
+                        <li class="list-group-item">AWS infrastructure and network security architecture</li>
+                        <li class="list-group-item">Architected an internal ML/AI Software Development Co-Pilot trained on internal code repos to reduce code "re-invention" and time/effort</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="job clearfix">
+                <div class="row">
+                  <div class="details">
+                    <div class="where">
+                      Rooms To Go
+                      <div class="pull-right">
+                        Dunwoody, GA
+                      </div>
+                    </div>
+                    <div class="year">2018 – 2021</div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="job-details col-xs-11">
+                    <div class="profession">Principal DevOps Engineer</div>
+                    <div class="description">
+                      
+                      <ul class="list-group">
+                        <li class="list-group-item">Direct and train a department of DevOps Engineers and SREs.</li>
+                        <li class="list-group-item">Train developers to follow DevOps & CI/CD processes.</li>
+                        <li class="list-group-item">Architect Hybrid-Cloud and Multi-Cloud infrastructure.</li>
+                        <li class="list-group-item">Set and enforce security practices.</li>
+                        <li class="list-group-item">Develop tools and services in bash, Node.js, Python, and Go.</li>
+                        <li class="list-group-item">Design, build, and deploy Docker containers, API Gateways.</li>
+                        <li class="list-group-item">Automate and orchestrate infrastructure with Packer and Terraform.</li>
+                        <li class="list-group-item">Build and maintain [Fargate] ECS, EKS, and Kubernetes clusters serving microservices.</li>
+                        <li class="list-group-item">Manage AWS costs.</li>
+                        <li class="list-group-item">Make and document changes to AWS infrastructure via aws-cli.</li>
+                        <li class="list-group-item">Manage network security with AWS Security Groups, iptables, and OpenVPN.</li>
+                        <li class="list-group-item">Maintain MongoDB and DynamoDB databases.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="job clearfix">
+                <div class="row">
+                  <div class="details">
+                    <div class="where">
+                      MidAmerican Energy Services
+                      <div class="pull-right">
+                        Dunwoody, GA
+                      </div>
+                    </div>
+                    <div class="year">2016 – 2018</div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="job-details col-xs-11">
+                    <div class="profession">DevOps Team Leader</div>
+                    <div class="description">
+                      
+                      <ul class="list-group">
+                        <li class="list-group-item">Orchestrate infrastructure with Packer, Terraform, Chef, and Ansible.</li>
+                        <li class="list-group-item">Build and maintain Kubernetes clusters serving microservices.</li>
+                        <li class="list-group-item">Develop tools in Python, Go, bash, awk, sed, CircuitPython, and Arduino.</li>
+                        <li class="list-group-item">Build and maintain Cassandra, MongoDB, and MySQL databases.</li>
+                        <li class="list-group-item">Build custom Raspberry Pi images for IoT devices sent to client locations.</li>
+                        <li class="list-group-item">Design and CNC mill custom IoT hardware cases.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="job clearfix">
+                <div class="row">
+                  <div class="details">
+                    <div class="where">
+                      Cox Media Group [Technology]
+                      <div class="pull-right">
+                        Atlanta, GA
+                      </div>
+                    </div>
+                    <div class="year">2012 – 2016</div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="job-details col-xs-11">
+                    <div class="profession">Solution Architect, Mobile</div>
+                    <div class="description">
+                      
+                      <ul class="list-group">
+                        <li class="list-group-item">Develop mobile client and backend POCs.</li>
+                        <li class="list-group-item">Architect and deploy cloud infrastructure.</li>
+                        <li class="list-group-item">Develop and maintain original Open Source software projects.</li>
+                        <li class="list-group-item">Workflow and process automation.</li>
+                        <li class="list-group-item">Lead mobile architecture and technical strategy.</li>
+                        <li class="list-group-item">Present and teach.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="job clearfix">
+                <div class="row">
+                  <div class="details">
+                    <div class="where">
+                      Cox Media Group [Technology]
+                      <div class="pull-right">
+                        Atlanta, GA
+                      </div>
+                    </div>
+                    <div class="year">2009 – 2012</div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="job-details col-xs-11">
+                    <div class="profession">Software Development Manager</div>
+                    <div class="description">
+                      
+                      <ul class="list-group">
+                        <li class="list-group-item">Manage 1/4 of a ~30 developer team.</li>
+                        <li class="list-group-item">Improve performance through coaching.</li>
+                        <li class="list-group-item">Encourage and inspire developers and vendors to give great service.</li>
+                        <li class="list-group-item">Workflow automation scripting.</li>
+                        <li class="list-group-item">Architect and develop software.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="job clearfix">
+                <div class="row">
+                  <div class="details">
+                    <div class="where">
+                      Cox Media Group [Technology]
+                      <div class="pull-right">
+                        Atlanta, GA
+                      </div>
+                    </div>
+                    <div class="year">2008 – 2009</div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="job-details col-xs-11">
+                    <div class="profession">Internet Systems Manager &amp; MySQL DBA</div>
+                    <div class="description">
+                      
+                      <ul class="list-group">
+                        <li class="list-group-item">Administer Gnu/Linux servers.</li>
+                        <li class="list-group-item">Manage a department of sysadmins.</li>
+                        <li class="list-group-item">Workflow automation and config management.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="job clearfix">
+                <div class="row">
+                  <div class="details">
+                    <div class="where">
+                      Atlanta Journal-Constitution (Cox Media Group)
+                      <div class="pull-right">
+                        Atlanta, GA
+                      </div>
+                    </div>
+                    <div class="year">2007 – 2008</div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="job-details col-xs-11">
+                    <div class="profession">MySQL DBA</div>
+                    <div class="description">
+                      
+                      <ul class="list-group">
+                        <li class="list-group-item">Administer MySQL.</li>
+                        <li class="list-group-item">Optimize developer code.</li>
+                        <li class="list-group-item">Maintain high availability and performance.</li>
+                        <li class="list-group-item">Develop extra Django and Rails projects.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="job clearfix">
+                <div class="row">
+                  <div class="details">
+                    <div class="where">
+                      Yahoo!
+                      <div class="pull-right">
+                        Atlanta, GA telecommute to Sunnyvale, CA
+                      </div>
+                    </div>
+                    <div class="year">2004 – 2007</div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="job-details col-xs-11">
+                    <div class="profession">Technical Yahoo!</div>
+                    <div class="description">
+                      
+                      <ul class="list-group">
+                        <li class="list-group-item">Manage teams, projects, SLAs.</li>
+                        <li class="list-group-item">Automate workflows.</li>
+                        <li class="list-group-item">Develop PHP web applications.</li>
+                        <li class="list-group-item">Administer FreeBSD, Apache, MySQL.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="job clearfix">
+                <div class="row">
+                  <div class="details">
+                    <div class="where">
+                      Apple Computer
+                      <div class="pull-right">
+                        Atlanta, GA
+                      </div>
+                    </div>
+                    <div class="year">2004 – 2004</div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="job-details col-xs-11">
+                    <div class="profession">Business Sales Specialist</div>
+                    <div class="description">
+                      
+                      <ul class="list-group">
+                        <li class="list-group-item">Exploit my expertise to lure businesses away from Microsoft products for the greater good of the universe.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="job clearfix">
+                <div class="row">
+                  <div class="details">
+                    <div class="where">
+                      Lanier Worldwide
+                      <div class="pull-right">
+                        Atlanta, GA
+                      </div>
+                    </div>
+                    <div class="year">2002 – 2004</div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="job-details col-xs-11">
+                    <div class="profession">Web Application Developer</div>
+                    <div class="description">
+                      
+                      <ul class="list-group">
+                        <li class="list-group-item">Manage and train developers on CVS, security policies, and best practices.</li>
+                        <li class="list-group-item">Develop PHP CMS and software deployment system.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="job clearfix">
+                <div class="row">
+                  <div class="details">
+                    <div class="where">
+                      MedCenterDirect
+                      <div class="pull-right">
+                        Atlanta, GA
+                      </div>
+                    </div>
+                    <div class="year">2000 – 2002</div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="job-details col-xs-11">
+                    <div class="profession">Lead Solutions Developer</div>
+                    <div class="description">
+                      
+                      <ul class="list-group">
+                        <li class="list-group-item">Develop PHP applications, portals, and commerce solutions.</li>
+                        <li class="list-group-item">Architect custom deployment strategy.</li>
+                        <li class="list-group-item">Script data migrations.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="job clearfix">
+                <div class="row">
+                  <div class="details">
+                    <div class="where">
+                      Amazing Graphics
+                      <div class="pull-right">
+                        Atlanta, GA
+                      </div>
+                    </div>
+                    <div class="year">1999 – 2000</div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="job-details col-xs-11">
+                    <div class="profession">Digital Designer&#x2F;Production Artist</div>
+                    <div class="description">
+                      
+                      <ul class="list-group">
+                        <li class="list-group-item">graphic creation and prepress;</li>
+                        <li class="list-group-item">Mac, NT, Solaris/Unix network & system administration</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="job clearfix">
+                <div class="row">
+                  <div class="details">
+                    <div class="where">
+                      Freelance
+                      <div class="pull-right">
+                        USA and Ireland
+                      </div>
+                    </div>
+                    <div class="year">1998 – 2004</div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="job-details col-xs-11">
+                    <div class="profession">Consultant</div>
+                    <div class="description">
+                      
+                      <ul class="list-group">
+                        <li class="list-group-item">on-site and remote consulting in LAMP stack, networking, web & client app development, Q/A, graphic design</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="job clearfix">
+                <div class="row">
+                  <div class="details">
+                    <div class="where">
+                      World Wide Development
+                      <div class="pull-right">
+                        Ashland, KY
+                      </div>
+                    </div>
+                    <div class="year">1995 – 1998</div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="job-details col-xs-11">
+                    <div class="profession">Webmaster</div>
+                    <div class="description">
+                      
+                      <ul class="list-group">
+                        <li class="list-group-item">pioneered the DB driven web solutions market using HTML, JS, Perl, C/C++, ColdFusion, MS SQL</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <!-- VOLUNTEER -->
+          <div class="box" id="section_volunteer">
+            <h2><i class= "fas fa-users ico"></i> Volunteer</h2>
+              <div class="job clearfix">
+                <div class="row">
+                  <div class="details">
+                    <div class="where">DecaturMakers</div>
+                    <div class="address">
+                      <a href="https:&#x2F;&#x2F;decaturmakers.org&#x2F;about&#x2F;whats-in-the-space&#x2F;" target= "_blank"><i class="fas fa-globe ico"></i> https:&#x2F;&#x2F;decaturmakers.org&#x2F;about&#x2F;whats-in-the-space&#x2F;</a>
+                    </div>
+                    <div class="year">2015 – Present</div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="job-details col-xs-11">
+                    <div class="profession">Instructor</div>
+                    <div class="description">
+                      With the mission "to empower a community of builders, creatives, and learners", Decatur Makers "envisions a world where anyone can make anything".
+                      <ul class="list-group">
+                        <li class="list-group-item">Built and raced 2 Power Racing Series electric vehicles</li>
+                        <li class="list-group-item">Taught skills in programming, Arduino and other microprocessors, soldering, electrical engineering, lithium battery assembly and safety</li>
+                        <li class="list-group-item">Taught skills in welding, wood working, maintenance of bicycles, motorcycles, and cars</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-5">
+          <!-- CONTACT -->
+          <div class="box clearfix" id="section_contact">
+            <h2><i class="fas fa-bullseye ico"></i> Contact</h2>
+            <div class="contact-item">
+              <div class="icon pull-left text-center"><span class="fas fa-map-marker fa-fw"></span></div>
+              <div class="title pull-right">Lower Garden District</div>
+              <div class="title  pull-right">New Orleans, LA 70130 US</div>
+            </div>
+            <div class="contact-item">
+              <div class="icon pull-left text-center"><span class="fas fa-phone fa-fw"></span></div>
+              <div class="title only pull-right">(404) 992-7866</div>
+            </div>
+            <div class="contact-item">
+              <div class="icon pull-left text-center"><span class="fas fa-envelope fa-fw"></span></div>
+              <div class="title only pull-right"><a href="mailto:bruno@bronosky.com" target="_blank">bruno@bronosky.com</a></div>
+            </div>
+            <div class="contact-item">
+              <div class="icon pull-left text-center"><span class="fas fa-globe fa-fw"></span></div>
+              <div class="title only pull-right"><a href="https:&#x2F;&#x2F;github.com&#x2F;RichardBronosky&#x2F;resume" target="_blank">https:&#x2F;&#x2F;github.com&#x2F;RichardBronosky&#x2F;resume</a></div>
+            </div>
+            <div class="contact-item">
+              <div class="icon pull-left text-center"><span class="fas fa-rss fa-fw"></span></div>
+              <div class="title pull-right">Not a Cover Letter</div>
+              <div class="description pull-right"><a href="https:&#x2F;&#x2F;github.com&#x2F;RichardBronosky&#x2F;resume&#x2F;blob&#x2F;main&#x2F;bruno.bronosky.community.md" target="_blank">Community Involvement</a></div>
+            </div>
+            <div class="contact-item">
+              <div class="icon pull-left text-center"><span class="fab fa-github fa-fw"></span></div>
+              <div class="title pull-right">Github</div>
+              <div class="description pull-right"><a href="https:&#x2F;&#x2F;github.com&#x2F;RichardBronosky" target="_blank">RichardBronosky</a></div>
+            </div>
+            <div class="contact-item">
+              <div class="icon pull-left text-center"><span class="fab fa-stack-overflow fa-fw"></span></div>
+              <div class="title pull-right">StackOverflow</div>
+              <div class="description pull-right"><a href="https:&#x2F;&#x2F;stackexchange.com&#x2F;users&#x2F;40542&#x2F;bruno-bronosky" target="_blank">Bruno-Bronosky</a></div>
+            </div>
+            <div class="contact-item">
+              <div class="icon pull-left text-center"><span class="fab fa-linkedin fa-fw"></span></div>
+              <div class="title pull-right">LinkedIn</div>
+              <div class="description pull-right"><a href="https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;RichardBronosky" target="_blank">Bruno-Bronosky</a></div>
+            </div>
+            <div class="contact-item">
+              <div class="icon pull-left text-center"><span class="fab fa-x-twitter fa-fw"></span></div>
+              <div class="title pull-right">X ; Twitter</div>
+              <div class="description pull-right"><a href="https:&#x2F;&#x2F;x.com&#x2F;RichardBronosky" target="_blank">RichardBronosky</a></div>
+            </div>
+          </div>
+          <!-- SKILLS -->
+          <div class="box" id="section_skills">
+            <h2><i class="fas fa-tasks ico"></i> Skills</h2>
+            <div class="skills clearfix">
+              <div class="item-skills">
+                  Amazon Web Services
+                  <span class="skill-level">master</span>
+              </div>
+              <div class="col-sm-offset-1 col-sm-12 clearfix">
+                <span class= "skill badge">CDK/CFN</span>
+                <span class= "skill badge">EC2</span>
+                <span class= "skill badge">ECS/EKS/Fargate</span>
+                <span class= "skill badge">EBS</span>
+                <span class= "skill badge">RDS</span>
+                <span class= "skill badge">S3</span>
+                <span class= "skill badge">Lamda</span>
+                <span class= "skill badge">CloudFront</span>
+                <span class= "skill badge">GuardDuty</span>
+                <span class= "skill badge">SNS</span>
+                <span class= "skill badge">SQS</span>
+              </div>
+            </div>
+            <div class="skills clearfix">
+              <div class="item-skills">
+                  Automation&#x2F;Orchestration &amp; CI&#x2F;CD
+                  <span class="skill-level">master</span>
+              </div>
+              <div class="col-sm-offset-1 col-sm-12 clearfix">
+                <span class= "skill badge">Terraform</span>
+                <span class= "skill badge">Ansible</span>
+                <span class= "skill badge">Chef</span>
+                <span class= "skill badge">CloudFormation</span>
+                <span class= "skill badge">CDK</span>
+                <span class= "skill badge">Jenkins</span>
+              </div>
+            </div>
+            <div class="skills clearfix">
+              <div class="item-skills">
+                  Kubernetes, Docker, and containers
+                  <span class="skill-level">advanced</span>
+              </div>
+              <div class="col-sm-offset-1 col-sm-12 clearfix">
+                <span class= "skill badge">containerd</span>
+                <span class= "skill badge">Podman</span>
+                <span class= "skill badge">Helm</span>
+                <span class= "skill badge">Argo Project; Argo-CD</span>
+              </div>
+            </div>
+            <div class="skills clearfix">
+              <div class="item-skills">
+                  GNU&#x2F;Linux and BSD Server Administration
+                  <span class="skill-level">master</span>
+              </div>
+              <div class="col-sm-offset-1 col-sm-12 clearfix">
+                <span class= "skill badge">Linux</span>
+                <span class= "skill badge">FreeBSD</span>
+                <span class= "skill badge">OpenBSD</span>
+                <span class= "skill badge">MacOS</span>
+                <span class= "skill badge">Arch Linux, BTW</span>
+                <span class= "skill badge">Debian</span>
+                <span class= "skill badge">RHEL Red Hat Enterprise Linux</span>
+                <span class= "skill badge">CLI; Command Line Interface</span>
+                <span class= "skill badge">SSH</span>
+                <span class= "skill badge">Systemd; systemctl</span>
+                <span class= "skill badge">System V; SysV Init</span>
+                <span class= "skill badge">LSB; Linux Standard Base</span>
+              </div>
+            </div>
+            <div class="skills clearfix">
+              <div class="item-skills">
+                  Bash&#x2F;Shell Scripting
+                  <span class="skill-level">master</span>
+              </div>
+              <div class="col-sm-offset-1 col-sm-12 clearfix">
+                <span class= "skill badge">GNU Bash; shell scripting</span>
+                <span class= "skill badge">Zsh; Z shell</span>
+              </div>
+            </div>
+            <div class="skills clearfix">
+              <div class="item-skills">
+                  Graphics
+                  <span class="skill-level">master</span>
+              </div>
+              <div class="col-sm-offset-1 col-sm-12 clearfix">
+                <span class= "skill badge">Adobe Creative Suite</span>
+                <span class= "skill badge">OpenSCAD</span>
+                <span class= "skill badge">FreeCAD</span>
+                <span class= "skill badge">Fusion 360</span>
+              </div>
+            </div>
+            <div class="skills clearfix">
+              <div class="item-skills">
+                  Web Development
+                  <span class="skill-level">master</span>
+              </div>
+              <div class="col-sm-offset-1 col-sm-12 clearfix">
+                <span class= "skill badge">HTML</span>
+                <span class= "skill badge">CSS</span>
+                <span class= "skill badge">JavaScript; ECMAScript</span>
+                <span class= "skill badge">PHP</span>
+              </div>
+            </div>
+            <div class="skills clearfix">
+              <div class="item-skills">
+                  Interpreted Languages
+                  <span class="skill-level">intermediate</span>
+              </div>
+              <div class="col-sm-offset-1 col-sm-12 clearfix">
+                <span class= "skill badge">Node.js</span>
+                <span class= "skill badge">Python</span>
+              </div>
+            </div>
+            <div class="skills clearfix">
+              <div class="item-skills">
+                  Compiled Languages
+                  <span class="skill-level">beginner</span>
+              </div>
+              <div class="col-sm-offset-1 col-sm-12 clearfix">
+                <span class= "skill badge">Rust</span>
+                <span class= "skill badge">Go/GoLang</span>
+                <span class= "skill badge">C/C++</span>
+              </div>
+            </div>
+          </div>
+          <!-- HOBBIES -->
+          <div class="box" id="section_hobbies">
+            <h2><i class="fas fa-heart ico"></i> Interests</h2>
+            <div class="interests clearfix">
+              <div class="item-interests">
+                  Outdoors
+              </div>
+              <div class="col-sm-offset-1 col-sm-12 clearfix">
+                <span class= "interest badge">Camping</span>
+                <span class= "interest badge">Hiking</span>
+                <span class= "interest badge">Rock Climbing</span>
+              </div>
+            </div>
+            <div class="interests clearfix">
+              <div class="item-interests">
+                  Maker
+              </div>
+              <div class="col-sm-offset-1 col-sm-12 clearfix">
+                <span class= "interest badge">Making my own tools</span>
+                <span class= "interest badge">PEV; Personal Electronic Vehicles</span>
+                <span class= "interest badge">FPV multirotors/drones</span>
+              </div>
+            </div>
+            <div class="interests clearfix">
+              <div class="item-interests">
+                  Automation
+              </div>
+              <div class="col-sm-offset-1 col-sm-12 clearfix">
+                <span class= "interest badge">Home Assistant</span>
+                <span class= "interest badge">Tasmota</span>
+                <span class= "interest badge">Node-RED</span>
+                <span class= "interest badge">MQTT</span>
+              </div>
+            </div>
+            <div class="interests clearfix">
+              <div class="item-interests">
+                  Electrical Engineering
+              </div>
+              <div class="col-sm-offset-1 col-sm-12 clearfix">
+                <span class= "interest badge">RaspberryPi, SBCs</span>
+                <span class= "interest badge">Microprocessors</span>
+                <span class= "interest badge">IoT</span>
+                <span class= "interest badge">Ham Radio, LoRa, Software Defined Radio</span>
+              </div>
+            </div>
+            <div class="interests clearfix">
+              <div class="item-interests">
+                  Robotics
+              </div>
+              <div class="col-sm-offset-1 col-sm-12 clearfix">
+                <span class= "interest badge">ROS Robotics Operating System</span>
+                <span class= "interest badge">Arm, Actuator, and End Effector design</span>
+                <span class= "interest badge">BLDC, Brushless DC Motors</span>
+                <span class= "interest badge">ESC development, [Vetter] Electronic Speed Control</span>
+              </div>
+            </div>
+            <div class="interests clearfix">
+              <div class="item-interests">
+                  Jeeps and Motorcycles
+              </div>
+              <div class="col-sm-offset-1 col-sm-12 clearfix">
+                <span class= "interest badge">Jeep Wrangler</span>
+                <span class= "interest badge">Harley-Davidson Dyna Glide</span>
+                <span class= "interest badge">Kawasaki KLR650</span>
+              </div>
+            </div>
+            <div class="interests clearfix">
+              <div class="item-interests">
+                  Skydiving
+              </div>
+              <div class="col-sm-offset-1 col-sm-12 clearfix">
+                <span class= "interest badge">USPA Class A License</span>
+                <span class= "interest badge">Packing my own PD Sabre-2 190 parachute</span>
+              </div>
+            </div>
+          </div>
+          <!-- EDUCATION -->
+          <div class="box" id="section_education">
+            <h2><i class="fas fa-university ico"></i> Education</h2>
+            <ul id="education" class="clearfix">
+              <li>
+                <div class="year pull-left">1997</div>
+                <div class="description pull-right">
+                  <h3>University of Kentucky</h3>
+                  <div class="where"></div>
+                  
+                  <p>Computer Engineering and Systems Analysis</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
