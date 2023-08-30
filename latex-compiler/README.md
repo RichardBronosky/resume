@@ -36,7 +36,7 @@ tar cf - *.tex *.sty | docker run -i richardbronosky/latex-compiler > bruno.bron
 # send tar input and expand tar output
 tar cf - *.tex *.sty | docker run -i richardbronosky/latex-compiler --tar | tar x
 ```
-[really simple Docker image]: https://github.com/RichardBronosky/resume/blob/master/latex-compiler/Dockerfile 
-[really smart]: https://github.com/RichardBronosky/resume/blob/master/latex-compiler/latexcat 
+[really simple Docker image]: https://github.com/RichardBronosky/resume/blob/main/latex-compiler/Dockerfile 
+[really smart]: https://github.com/RichardBronosky/resume/blob/main/latex-compiler/latexcat 
 [open an issue]: https://github.com/RichardBronosky/resume/issues 
 [my resume repo]: https://github.com/RichardBronosky/resume 

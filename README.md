@@ -18,8 +18,8 @@ You can learn everything you need to know about me by looking at [what I put out
 
 There are many resumes on github. This repo is unique because it is also the source code for the popular [richardbronosky/latex-compiler] Docker image.
 
-[PDF resume]:       https://github.com/RichardBronosky/resume/raw/master/bruno.bronosky.resume.pdf
-[PDF cover letter]: https://github.com/RichardBronosky/resume/raw/master/bruno.bronosky.community.pdf
-[community]:        https://github.com/RichardBronosky/resume/blob/master/bruno.bronosky.community.md
-[resume in LaTeX]:  https://github.com/RichardBronosky/resume/blob/master/bruno.bronosky.resume.tex
+[PDF resume]:       https://github.com/RichardBronosky/resume/raw/main/bruno.bronosky.resume.pdf
+[PDF cover letter]: https://github.com/RichardBronosky/resume/raw/main/bruno.bronosky.community.pdf
+[community]:        https://github.com/RichardBronosky/resume/blob/main/bruno.bronosky.community.md
+[resume in LaTeX]:  https://github.com/RichardBronosky/resume/blob/main/bruno.bronosky.resume.tex
 [richardbronosky/latex-compiler]: https://registry.hub.docker.com/r/richardbronosky/latex-compiler
