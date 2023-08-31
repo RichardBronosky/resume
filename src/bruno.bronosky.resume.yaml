@@ -1,3 +1,6 @@
+---
+permalink: https://github.com/RichardBronosky/resume/blob/main/src/bruno.bronosky.resume.yaml
+---
 $schema: https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json
 basics:
   name: Bruno Bronosky
