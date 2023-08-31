@@ -1,1 +1,1 @@
-../bruno.bronosky.community.md
+../src/bruno.bronosky.community.md
