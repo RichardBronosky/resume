@@ -1,7 +1,5 @@
 #! /usr/bin/env bash
-
 set -eu
-set -x
 
 #yaml_file=resume.yaml
 yaml_file=bruno.bronosky.resume.yaml
@@ -90,4 +88,6 @@ main () {
     serve
 }
 
-"$@"
+default_function=("help")
+#"$@"
+source $(PATH=.:$PATH which BOILERPLATE.sh)
