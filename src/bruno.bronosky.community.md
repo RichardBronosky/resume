@@ -1,3 +1,6 @@
+---
+permalink: https://github.com/RichardBronosky/resume/blob/main/src/bruno.bronosky.community.md
+---
 # Community Involvement
 
 ## What I hope you take away from this
