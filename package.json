@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "jsonresume-theme-kendall-markdown": "^0.2.1",
+    "jsonresume-theme-kendall-markdown": "^0.2.2",
     "resume-cli": "^3.0.8"
   },
   "scripts": {
@@ -9,6 +9,8 @@
     "develop":
         "./tools/jsonresume.sh main",
     "serve":
-        "./tools/jsonresume.sh serve"
+        "./tools/jsonresume.sh serve",
+    "build":
+        "./tools/jsonresume.sh build"
   }
 }

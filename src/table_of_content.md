@@ -1,9 +1,9 @@
 ---
-permalink: https://github.com/RichardBronosky/resume
+permalink: https://github.com/RichardBronosky/resume/blob/main/src/table_of_content.md
 ---
 # Bruno Bronosky
 
-Principal DevOps Engineer and Trainer
+Principal DevOps Automation Engineer and Trainer
 
 ## [View Resume HTML][HTML resume] / [View Cover Letter (alternative)][MD cover letter]
 

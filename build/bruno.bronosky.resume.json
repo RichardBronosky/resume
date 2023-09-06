@@ -2,12 +2,12 @@
   "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
   "basics": {
     "name": "Bruno Bronosky",
-    "label": "Principal DevOps Engineer and Trainer",
+    "label": "Principal DevOps Automation Engineer and Trainer",
     "image": "http://www.gravatar.com/avatar/959ccd33301cb3c15953c1a632a36763?s=500",
     "email": "bruno@bronosky.com",
     "phone": "(404) 992-7866",
-    "url": "https://github.com/RichardBronosky/resume",
-    "summary": "Born in the Appilachian mountains of West Virginia to a radio electronics technician, Bruno grew up in coal mining\ncountry where most of his classmates remain. He never threw a ball with his father, though they did attend a\nhandfull of Cincinnati Reds baseball games. They spent their nights and weekends soldering Heathkit projects from\nRadio Shack and writing games and equation solvers in Borland Turbo Basic, then Turbo Pascal, and eventually Delphi.\nWhen calling his father in 1995 to tell him Bruno got his first professional programming gig, they both saw this\nlike getting drafted in the MLB. Everyday Bruno feels like \"the luckiest man in baseball\" to have escaped the coal\nmines.\n\n# Bruno does:\n\n- cloud computing: OpenStack Amazon Web Services, Microsoft Azure, Google Cloud Platform, Linode, DigitalOcean, Heroku\n- container services: Docker, Kubernetes, Nomad, ECS, EKS\n- infrastructure orchestration and automation with Terraform, Ansible, Chef, Argo\n- infrastructure and capacity planning\n- data center operations\n- OpenVPN, SSH tunneling, network security\n- troubleshoot network issues\n- DBA for DynamoDB, Kafka, Cassandra, MongoDB, CouchDB, PostgreSQL, MySQL\n- administer various Unix and Gnu/Linux\n- administer virtualization hosts and guests\n- optimize RAID, swap, cache\n- archaeology of code, protocol, process\n- manage systems engineers, software developers\n- manage vendors, contractors\n- manage client SLAs, vendor SLAs\n- study complex systems and make them accessible to various audiences\n- {Review, Recommend} application {architecture, code}\n- maintain SDLC process\n- develop web and mobile applications\n- architect {cloud, web, mobile} solutions\n- {Develop, Deploy} {iPhone, Android} apps\n- {Develop, Deploy} {Cordova, React Native} HTML5+CSS3+JS apps\n- {Audit, Deploy} {developer code, data migrations}\n- {Transform, Migrate} data\n- audit application code for security and performance\n\n# Bruno is:\n\n- teacher\n- strong verbal and written communicator\n- excellent troubleshooting and debugging\n- unrepentant command line addict\n- ambiguity assassin",
+    "url": "https://richardbronosky.github.io/resume/",
+    "summary": "Born in the Appalachian mountains of West Virginia to a radio electronics technician, Bruno grew up in coal mining\ncountry where most of his classmates remain. He never threw a ball with his father, though they did attend a\nhandful of Cincinnati Reds baseball games. They spent their nights and weekends soldering Heathkit projects from\nRadio Shack and writing games and equation solvers in Borland Turbo Basic, then Turbo Pascal, and eventually Delphi.\nWhen calling his father in 1995 to tell him Bruno got his first professional programming gig, they both saw this\nlike getting drafted into MLB. Every day Bruno feels like \"the luckiest man in baseball\" to have escaped the coal\nmines.\n\n# Bruno does:\n\n- cloud computing: OpenStack Amazon Web Services, Microsoft Azure, Google Cloud Platform, Linode, DigitalOcean, Heroku\n- container services: Docker, Kubernetes, Nomad, ECS, EKS\n- infrastructure orchestration and automation with Terraform, Ansible, Chef, Argo\n- infrastructure and capacity planning\n- data center operations\n- OpenVPN, SSH tunneling, network security\n- troubleshoot network issues\n- DBA for DynamoDB, Kafka, Cassandra, MongoDB, CouchDB, PostgreSQL, MySQL\n- administer various Unix and Gnu/Linux\n- administer virtualization hosts and guests\n- optimize RAID, swap, cache\n- archaeology of code, protocol, process\n- manage systems engineers, software developers\n- manage vendors, contractors\n- manage client SLAs, vendor SLAs\n- study complex systems and make them accessible to various audiences\n- {Review, Recommend} application {architecture, code}\n- maintain SDLC process\n- develop web and mobile applications\n- architect {cloud, web, mobile} solutions\n- {Develop, Deploy} {iPhone, Android} apps\n- {Develop, Deploy} {Cordova, React Native} HTML5+CSS3+JS apps\n- {Audit, Deploy} {developer code, data migrations}\n- {Transform, Migrate} data\n- audit application code for security and performance\n\n# Bruno is:\n\n- teacher\n- strong verbal and written communicator\n- excellent troubleshooting and debugging\n- unrepentant command line addict\n- ambiguity assassin",
     "location": {
       "address": "Lower Garden District",
       "postalCode": "70130",
@@ -51,7 +51,7 @@
       "endDate": "2023-07-31",
       "summary": "Value: >$10B Employees: >90k",
       "highlights": [
-        "CI/CD with Harness.io, AWS infrastructure with CDK+CFN, Migration to github Enterprise from 5 other VCS",
+        "CI/CD with Harness.io, AWS infrastructure with CDK+CFN, Migration to Github Enterprise from 5 other VCS",
         "Architected an internal ML/AI Software Development Co-Pilot trained on internal code repos to reduce code \"re-invention\" and time/effort"
       ]
     },
@@ -180,7 +180,7 @@
     },
     {
       "name": "Yahoo!",
-      "location": "Atlanta, GA telecommute to Sunnyvale, CA",
+      "location": "Atlanta, GA telecommuting to Sunnyvale, CA",
       "position": "Technical Yahoo!",
       "startDate": "2004-03-01",
       "endDate": "2007-01-01",
