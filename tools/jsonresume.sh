@@ -2,39 +2,45 @@
 set -eu
 
 #yaml_file=resume.yaml
-yaml_file=bruno.bronosky.resume.yaml
+yaml_file=src/bruno.bronosky.resume.yaml
 #cmd_args=("${@}")
 #declare -p cmd_args
 #script_name="${cmd_args[0]}"
 script_name="${0}"
 
-json_file () {
+json_filename () {
     local yaml_file="${1}"
-    echo "$(basename "${yaml_file}" .yaml).json"
+    local type="${2:-json}"
+    echo "build/$(basename "${yaml_file}" .yaml).${type}"
 }
 
+json_file="$(json_filename "${yaml_file}")"
+
 yaml_to_json () {
-    local filename="${1}"
-    local out="$(json_file "${filename}")"
+    local filename="${1:-$yaml_file}"
+    local out="$(json_filename "${filename}")"
     local mid="${out}.mid"
-    yq -ojson "${filename}">"${mid}"
-    cp "${mid}" "${out}"
+    yq -ojson 'select(.basics)' "${filename}">"${mid}"
+    mv "${mid}" "${out}"
 }
 
 watch_yaml_to_json () {
     inotifywait --monitor --include "${yaml_file}" -e CLOSE_WRITE "${PWD}" | \
-        while read -r dir action filename; do
-            echo "$(date) -- dir: ${dir}; filename: ${filename}; action: ${action}"
-            yaml_to_json "${filename}"
-            if [[ -n ${server_pid:-} ]] && [[ -f /proc/$server_pid/cmdline ]] && grep -q 'resume serve' /proc/$server_pid/cmdline; then
-                kill $server_pid
+        while read -r dir action watched_file; do
+            echo "$(date) inotify event -- dir: ${dir}; watched_file: ${watched_file}; action: ${action}"
+            yaml_to_json "${watched_file}"
+            if [[ -n "${server_pid:-}" ]] \
+            && [[ -f "/proc/$server_pid/cmdline" ]] \
+            && grep -q 'resume serve' "/proc/$server_pid/cmdline"; \
+            then
+                kill "$server_pid"
             fi
         done
 }
 
 serve () {
-    src_file="${1:-$(json_file "$yaml_file")}"
-    theme="$(yq -ot '""+.meta.theme' $src_file)";
+    src_file="${1:-$json_file}"
+    theme="$(yq -ot '""+.meta.theme' "$src_file")";
     THEME="${THEME:-$theme}"
     if [[ -n ${THEME:-} ]]; then
         resume serve --resume "$src_file" --theme "${THEME}"
@@ -65,24 +71,30 @@ cycle () {
 
 render () {
     format="$1"
-    src_file="${2:-$(json_file "$yaml_file")}"
+    src_file="${2:-$json_file}"
     dst_file="${src_file%.*}.$format"
     which -a yq; yq -V
     resume export --resume "$src_file" $dst_file --theme $(yq -ot '""+.meta.theme' $src_file)
 }
 
 html () {
-    src_file="${1:-$(json_file "$yaml_file")}"
+    src_file="${1:-$json_file}"
     render html "$src_file"
 }
 
 pdf () {
-    src_file="${1:-$(json_file "$yaml_file")}"
+    src_file="${1:-$json_file}"
     render pdf "$src_file"
 }
 
+build () {
+    yaml_to_json
+    html
+    pdf
+}
+
 main () {
-    yaml_to_json "$yaml_file"
+    yaml_to_json
     watch_yaml_to_json &
     #serve_loop
     serve

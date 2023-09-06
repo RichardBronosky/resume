@@ -4,18 +4,18 @@ permalink: https://github.com/RichardBronosky/resume/blob/main/src/bruno.bronosk
 $schema: https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json
 basics:
   name: Bruno Bronosky
-  label: Principal DevOps Engineer and Trainer
+  label: Principal DevOps Automation Engineer and Trainer
   image: "http://www.gravatar.com/avatar/959ccd33301cb3c15953c1a632a36763?s=500"
   email: bruno@bronosky.com
   phone: (404) 992-7866
-  url: https://github.com/RichardBronosky/resume
+  url: https://richardbronosky.github.io/resume/
   summary: |-
-    Born in the Appilachian mountains of West Virginia to a radio electronics technician, Bruno grew up in coal mining
+    Born in the Appalachian mountains of West Virginia to a radio electronics technician, Bruno grew up in coal mining
     country where most of his classmates remain. He never threw a ball with his father, though they did attend a
-    handfull of Cincinnati Reds baseball games. They spent their nights and weekends soldering Heathkit projects from
+    handful of Cincinnati Reds baseball games. They spent their nights and weekends soldering Heathkit projects from
     Radio Shack and writing games and equation solvers in Borland Turbo Basic, then Turbo Pascal, and eventually Delphi.
     When calling his father in 1995 to tell him Bruno got his first professional programming gig, they both saw this
-    like getting drafted in the MLB. Everyday Bruno feels like "the luckiest man in baseball" to have escaped the coal
+    like getting drafted into MLB. Every day Bruno feels like "the luckiest man in baseball" to have escaped the coal
     mines.
 
     # Bruno does:
@@ -64,6 +64,7 @@ basics:
     #- network: RSS
       username: Community Involvement
       url: https://github.com/RichardBronosky/resume/blob/main/bruno.bronosky.community.md
+      #url: https://richardbronosky.github.io/resume/community/
     - network: Github
       username: RichardBronosky
       url: https://github.com/RichardBronosky
@@ -86,7 +87,7 @@ work:
       Value: >$10B
       Employees: >90k
     highlights:
-      - CI/CD with Harness.io, AWS infrastructure with CDK+CFN, Migration to github Enterprise from 5 other VCS
+      - CI/CD with Harness.io, AWS infrastructure with CDK+CFN, Migration to Github Enterprise from 5 other VCS
       - Architected an internal ML/AI Software Development Co-Pilot trained on internal code repos to reduce code "re-invention" and time/effort
 
   - name: "Confidential: Cyber Security and Biometric Identity Org"
@@ -201,7 +202,7 @@ work:
       - Develop extra Django and Rails projects.
 
   - name: Yahoo!
-    location: Atlanta, GA telecommute to Sunnyvale, CA
+    location: Atlanta, GA telecommuting to Sunnyvale, CA
     position: Technical Yahoo!
     startDate: "2004-03-01"
     endDate: "2007-01-01"
@@ -407,8 +408,8 @@ interests:
 
 meta:
   theme: kendall-markdown
+  #theme: ./themes/jsonresume-theme-kendall-markdown
   canonical: https://raw.githubusercontent.com/jsonresume/resume-schema/main/resume.json
   version: v1.0.0
   lastModified: "2023-06-01T00:42:42"
-
 
