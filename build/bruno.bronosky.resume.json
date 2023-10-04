@@ -7,7 +7,10 @@
     "email": "bruno@bronosky.com",
     "phone": "(404) 992-7866",
     "url": "https://richardbronosky.github.io/resume/",
-    "summary": "Born in the Appalachian mountains of West Virginia to a radio electronics technician, Bruno grew up in coal mining\ncountry where most of his classmates remain. He never threw a ball with his father, though they did attend a\nhandful of Cincinnati Reds baseball games. They spent their nights and weekends soldering Heathkit projects from\nRadio Shack and writing games and equation solvers in Borland Turbo Basic, then Turbo Pascal, and eventually Delphi.\nWhen calling his father in 1995 to tell him Bruno got his first professional programming gig, they both saw this\nlike getting drafted into MLB. Every day Bruno feels like \"the luckiest man in baseball\" to have escaped the coal\nmines.\n\n# Bruno does:\n\n- cloud computing: OpenStack Amazon Web Services, Microsoft Azure, Google Cloud Platform, Linode, DigitalOcean, Heroku\n- container services: Docker, Kubernetes, Nomad, ECS, EKS\n- infrastructure orchestration and automation with Terraform, Ansible, Chef, Argo\n- infrastructure and capacity planning\n- data center operations\n- OpenVPN, SSH tunneling, network security\n- troubleshoot network issues\n- DBA for DynamoDB, Kafka, Cassandra, MongoDB, CouchDB, PostgreSQL, MySQL\n- administer various Unix and Gnu/Linux\n- administer virtualization hosts and guests\n- optimize RAID, swap, cache\n- archaeology of code, protocol, process\n- manage systems engineers, software developers\n- manage vendors, contractors\n- manage client SLAs, vendor SLAs\n- study complex systems and make them accessible to various audiences\n- {Review, Recommend} application {architecture, code}\n- maintain SDLC process\n- develop web and mobile applications\n- architect {cloud, web, mobile} solutions\n- {Develop, Deploy} {iPhone, Android} apps\n- {Develop, Deploy} {Cordova, React Native} HTML5+CSS3+JS apps\n- {Audit, Deploy} {developer code, data migrations}\n- {Transform, Migrate} data\n- audit application code for security and performance\n\n# Bruno is:\n\n- teacher\n- strong verbal and written communicator\n- excellent troubleshooting and debugging\n- unrepentant command line addict\n- ambiguity assassin",
+    "urlPrintable": "https://richardbronosky.github.io/resume/html/",
+    "urlPdf": "https://richardbronosky.github.io/resume/pdf/",
+    "urlSource": "https://richardbronosky.github.io/resume/",
+    "summary": "Born in the Appalachian mountains of West Virginia to a radio electronics technician, Bruno grew up in coal mining\ncountry where most of his classmates remain. He never threw a ball with his father, though they did attend a\nhandful of Cincinnati Reds baseball games. They spent their nights and weekends soldering Heathkit projects from\nRadio Shack (my first computer was a [Heathkit H89](https://vintagecomputer.com/heathkit-h89.html)) and writing games and equation solvers in Borland Turbo Basic, then Turbo Pascal, and eventually Delphi.\nWhen calling his father in 1995 to tell him Bruno got his first professional programming gig, they both saw this\nlike getting drafted into MLB. Every day Bruno feels like \"the luckiest man in baseball\" to have escaped the coal\nmines.\n\n# What Bruno does:\n\n- cloud computing: OpenStack Amazon Web Services, Microsoft Azure, Google Cloud Platform, Linode, DigitalOcean, Heroku\n- container services: Docker, Kubernetes, Nomad, ECS, EKS\n- infrastructure orchestration and automation with Terraform, Ansible, Chef, Argo\n- infrastructure and capacity planning\n- data center operations\n- OpenVPN, SSH tunneling, network security\n- troubleshoot network issues\n- DBA for DynamoDB, Kafka, Cassandra, MongoDB, CouchDB, PostgreSQL, MySQL\n- administer various Unix and GNU/Linux\n- administer virtualization hosts and guests\n- optimize RAID, swap, cache\n- archaeology of code, protocol, process\n- manage systems engineers, software developers\n- manage vendors, contractors\n- manage client SLAs, vendor SLAs\n- study complex systems and make them accessible to various audiences\n- {review, recommend} application {architecture, code}\n- maintain SDLC process\n- develop web and mobile applications\n- architect {cloud, web, mobile} solutions\n- {develop, deploy} {iPhone, Android} apps\n- {develop, deploy} {Cordova, React Native} HTML5+CSS3+JS apps\n- {audit, deploy} {developer code, data migrations}\n- {transform, migrate} data\n- audit application code for security and performance\n\n# What Bruno is:\n\n- teacher\n- strong verbal and written communicator\n- excellent troubleshooter, debugger, and problem bisector\n- unrepentant command line addict\n- ambiguity assassin",
     "location": {
       "address": "Lower Garden District",
       "postalCode": "70130",
@@ -19,7 +22,7 @@
       {
         "network": "Not a Cover Letter",
         "username": "Community Involvement",
-        "url": "https://github.com/RichardBronosky/resume/blob/main/bruno.bronosky.community.md"
+        "url": "https://github.com/RichardBronosky/resume/blob/main/src/bruno.bronosky.community.md"
       },
       {
         "network": "Github",
@@ -52,7 +55,7 @@
       "summary": "Value: >$10B Employees: >90k",
       "highlights": [
         "CI/CD with Harness.io, AWS infrastructure with CDK+CFN, Migration to Github Enterprise from 5 other VCS",
-        "Architected an internal ML/AI Software Development Co-Pilot trained on internal code repos to reduce code \"re-invention\" and time/effort"
+        "architect and develop an internal ML/AI Software Development Co-Pilot trained on internal code repos to reduce code \"re-invention\" and time/effort"
       ]
     },
     {
@@ -62,7 +65,8 @@
       "endDate": "2022-09-30",
       "summary": "Value: >$3B Employees: >10k ",
       "highlights": [
-        "CI/CD with Jenkins/CloudBees, SonarQube, JMeter, various software testing tools"
+        "CI/CD with CloudBees/Jenkins and Argo-CD",
+        "software testing with SonarQube, JMeter, and various other tools"
       ]
     },
     {
@@ -146,7 +150,7 @@
       "startDate": "2009-11-01",
       "endDate": "2012-12-02",
       "highlights": [
-        "Manage 1/4 of a ~30 developer team.",
+        "Co-Manage a ~30 developer team.",
         "Improve performance through coaching.",
         "Encourage and inspire developers and vendors to give great service.",
         "Workflow automation scripting.",
@@ -160,13 +164,13 @@
       "startDate": "2008-07-01",
       "endDate": "2009-11-01",
       "highlights": [
-        "Administer Gnu/Linux servers.",
+        "Administer GNU/Linux servers.",
         "Manage a department of sysadmins.",
         "Workflow automation and config management."
       ]
     },
     {
-      "name": "Atlanta Journal-Constitution (Cox Media Group)",
+      "name": "Cox Media Group (Atlanta Journal-Constitution)",
       "location": "Atlanta, GA",
       "position": "MySQL DBA",
       "startDate": "2007-01-01",
@@ -180,7 +184,7 @@
     },
     {
       "name": "Yahoo!",
-      "location": "Atlanta, GA telecommuting to Sunnyvale, CA",
+      "location": "Atlanta, GA and Sunnyvale, CA",
       "position": "Technical Yahoo!",
       "startDate": "2004-03-01",
       "endDate": "2007-01-01",
@@ -231,8 +235,8 @@
       "startDate": "1999-04-01",
       "endDate": "2000-08-01",
       "highlights": [
-        "graphic creation and prepress;",
-        "Mac, NT, Solaris/Unix network & system administration"
+        "Create graphics for vinyl wrapping busses, buildings, trade shows, etc.",
+        "Administer network and Mac, NT, Solaris/Unix systems."
       ]
     },
     {
@@ -242,7 +246,7 @@
       "startDate": "1998-01-01",
       "endDate": "2004-03-01",
       "highlights": [
-        "on-site and remote consulting in LAMP stack, networking, web & client app development, Q/A, graphic design"
+        "Consult in LAMP stack, networking, web development, client application development, Q/A, automation, graphic design."
       ]
     },
     {
@@ -252,7 +256,9 @@
       "startDate": "1995-08-01",
       "endDate": "1998-01-01",
       "highlights": [
-        "pioneered the DB driven web solutions market using HTML, JS, Perl, C/C++, ColdFusion, MS SQL"
+        "Develop (as a market pioneer) DB driven web solutions using HTML, JS, Perl, C/C++, ColdFusion, MS SQL",
+        "Rack servers, run cables, and miscellaneous data center work.",
+        "Answer phones on the customer support line (while writing code)."
       ]
     }
   ],
@@ -268,12 +274,20 @@
         "Taught skills in programming, Arduino and other microprocessors, soldering, electrical engineering, lithium battery assembly and safety",
         "Taught skills in welding, wood working, maintenance of bicycles, motorcycles, and cars"
       ]
+    },
+    {
+      "organization": "Habitat for Humanity International",
+      "position": "Roofing Skill Supervisor",
+      "url": "https://decaturmakers.org/about/whats-in-the-space/",
+      "startDate": "2013-01-10",
+      "summary": "I started out as a Cox employee volunteering for a single day on a Clark Howard build. It was Day 1, so I came back every weekend to see the whole project completed. (Because I'm that kind of person.) At the end of the build the leader said, \"Great! Now that you've completed the 7 week training, pick a specialty so we can get you certified and put you to work.\" So, I didn't really set out to be a supervisor, but it has been one of the best experiences of my life."
     }
   ],
   "education": [
     {
       "institution": "University of Kentucky",
       "area": "Computer Engineering and Systems Analysis",
+      "startDate": "1997",
       "endDate": "1997"
     }
   ],
@@ -282,9 +296,12 @@
       "name": "Amazon Web Services",
       "level": "master",
       "keywords": [
-        "CDK/CFN",
+        "CDK",
+        "CFN",
         "EC2",
-        "ECS/EKS/Fargate",
+        "ECS",
+        "EKS",
+        "Fargate",
         "EBS",
         "RDS",
         "S3",
@@ -308,13 +325,31 @@
       ]
     },
     {
+      "name": "Machine Learning, Artificial Intelligence",
+      "level": "intermediate",
+      "keywords": [
+        "Language Model",
+        "LLM",
+        "Neural Network",
+        "Transformer",
+        "GAN; Generative Adversarial Network",
+        "Computer Vision",
+        "NLP; Natural Language Processing",
+        "TensorFlow",
+        "PyTorch",
+        "Mojo",
+        "automatic1111",
+        "oobabooga"
+      ]
+    },
+    {
       "name": "Kubernetes, Docker, and containers",
       "level": "advanced",
       "keywords": [
         "containerd",
         "Podman",
         "Helm",
-        "Argo Project; Argo-CD"
+        "Argo-CD; Argo Project"
       ]
     },
     {
@@ -327,7 +362,7 @@
         "MacOS",
         "Arch Linux, BTW",
         "Debian",
-        "RHEL Red Hat Enterprise Linux",
+        "RHEL; Red Hat Enterprise Linux",
         "CLI; Command Line Interface",
         "SSH",
         "Systemd; systemctl",
@@ -339,8 +374,9 @@
       "name": "Bash/Shell Scripting",
       "level": "master",
       "keywords": [
-        "GNU Bash; shell scripting",
-        "Zsh; Z shell"
+        "POSIX sh",
+        "GNU Bash",
+        "Zsh"
       ]
     },
     {
@@ -393,9 +429,13 @@
     {
       "name": "Maker",
       "keywords": [
-        "Making my own tools",
+        "Welding",
+        "Metal Machining",
+        "Woodworking",
+        "3D modeling",
+        "3D Printing",
         "PEV; Personal Electronic Vehicles",
-        "FPV multirotors/drones"
+        "FPV; multirotors/drones"
       ]
     },
     {
@@ -410,9 +450,10 @@
     {
       "name": "Electrical Engineering",
       "keywords": [
-        "RaspberryPi, SBCs",
-        "Microprocessors",
+        "SBCs; RaspberryPi",
+        "MPUs; Arduino, ESP32",
         "IoT",
+        "DIY Mechanical Keyboards",
         "Ham Radio, LoRa, Software Defined Radio"
       ]
     },
@@ -421,8 +462,8 @@
       "keywords": [
         "ROS Robotics Operating System",
         "Arm, Actuator, and End Effector design",
-        "BLDC, Brushless DC Motors",
-        "ESC development, [Vetter] Electronic Speed Control"
+        "BLDC; Brushless DC Motors",
+        "ESC development; [Vetter] Electronic Speed Control"
       ]
     },
     {

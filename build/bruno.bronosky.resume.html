@@ -19,17 +19,29 @@
 @-o-viewport        { width: device-width; }
 @viewport           { width: device-width; }
 
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
 body{
   font-family: 'Open Sans', Arial, Tahoma;
   font-weight: 400;
   color: #363636;
   background: #334960;
 }
+
 blockquote {
   font-size: 1em;
 }
 
 .container{
+  position: absolute;
+  left: 10px;
   margin-top: 80px;
   margin-bottom: 15px;
   background: #fff;
@@ -333,11 +345,92 @@ blockquote {
   */
 }
 
+.preload img {
+  animation: rotation 4s infinite linear;
+}
+
+.preload a {
+    color: #666666;
+    text-decoration: none;
+}
+
+.ribbon {
+    right: 0px;
+    position: absolute;
+    z-index: 200;
+    line-height: 100%;
+    text-align: right;
+    /* display: none; scale: 0.65; */
+}
+
+.dark-include{ display: none; }
+.dark-exclude{ display: initial; }
+
+@media (prefers-color-scheme: dark) {
+  .dark-include{ display: initial; }
+  .dark-exclude{ display: none; }
+  body{
+    background: #1c2835;
+    color: #aaaaaa;
+  }
+
+  .container{
+    background: #0b0f14;
+  }
+  #photo{
+    background: #1c2835;
+  }
+
+  .list-group-item {
+    background: #0b0f14;
+  }
+  #awards .year,
+  #education .year{
+    background: #0b0f14;
+  }
+  #text-header h1 span{
+    color: #5b7fa9;
+  }
+  .item-interests,
+  .item-skills{
+    color: #5b7fa9;
+  }
+
+  #awards .description,
+  #education .description{
+    background: #10171e;
+    border-right: 1px solid #333;
+    border-bottom: 1px solid #333;
+  }
+  #awards .description:after,
+  #education .description:after {
+    border-right-color: #10171e;
+  }
+  .job .details {
+    background: #10171e;
+    border-right: 1px solid #333;
+    border-bottom: 1px solid #333;
+  }
+  .contact-item .icon{
+    background: #10171e;
+    color: #5b7fa9;
+    border-right: 1px solid #333;
+    border-bottom: 1px solid #333;
+  }
+  #language-skills .skill{
+    border-bottom: 1px solid #10171e;
+  }
+}
+
     </style>
     <style type="text/css" media="print">
     body {
   font-size: .95em;
   -webkit-print-color-adjust: exact;
+}
+
+.preload img {
+  animation: none;
 }
 
 a[href]:after {
@@ -440,9 +533,131 @@ blockquote,
  }
 
     </style>
+    <script>
+      function setPreferredColorScheme(mode = "dark") {
+        console.log("changing")
+        for (var i = document.styleSheets.length - 1; i >= 0; i--) {
+          console.log("i",i)
+          document.styleSheets[i];
+          if(document.styleSheets[i].href !== null){ continue; }
+          for (var j = document.styleSheets[i].rules.length - 1; j >= 0; j--) {
+            console.log("j",j)
+            media = document.styleSheets[i].rules[j].media;
+            if (media && media.mediaText) {
+              console.log("includes mediaText")
+              if (media.mediaText.includes("dark")){
+                console.log("prefers dark")
+                console.log("set preference to light")
+                if (media.mediaText.includes("light")) media.deleteMedium("(prefers-color-scheme: light)");
+                if (media.mediaText.includes("dark"))  media.deleteMedium("(prefers-color-scheme: dark)");
+                media.appendMedium("(prefers-color-scheme: light)");
+              } else {
+                console.log("prefers not dark")
+                console.log("set preference to dark")
+                if (media.mediaText.includes("light")) media.deleteMedium("(prefers-color-scheme: light)");
+                if (media.mediaText.includes("dark"))  media.deleteMedium("(prefers-color-scheme: dark)");
+                media.appendMedium("(prefers-color-scheme: dark)");
+              }
+            }
+          }
+        }
+      }
+    </script>
   </head>
   <body>
     <div class="container">
+      <a class="ribbon" href="https://github.com/RichardBronosky/resume#bruno-bronosky" target="_blank">
+<svg
+   bruno:ref1="https://editsvgcode.com/"
+   xml:space="preserve"
+   width="147"
+   height="147"
+   overflow="visible"
+   style="-webkit-filter:drop-shadow(0 0 5px rgba(0,0,0,.7));filter:drop-shadow(0 0 5px rgba(0,0,0,.7))"
+   viewBox="28.386 1.317 147 147"
+   ml-update="aware"
+   version="1.1"
+   id="svg4"
+   sodipodi:docname="github-ribbon-is.svg"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:bruno="https://github.com/RichardBronosky/resume"><defs
+   id="defs1"><style
+   type="text/css"
+   id="style1">@import url('https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic');</style></defs><sodipodi:namedview
+   id="namedview4"
+   pagecolor="#505050"
+   bordercolor="#eeeeee"
+   borderopacity="1"
+   inkscape:showpageshadow="0"
+   inkscape:pageopacity="0"
+   inkscape:pagecheckerboard="0"
+   inkscape:deskcolor="#d1d1d1"
+   inkscape:zoom="5.7482993"
+   inkscape:cx="94.549704"
+   inkscape:cy="10.698817"
+   inkscape:window-width="1891"
+   inkscape:window-height="1051"
+   inkscape:window-x="0"
+   inkscape:window-y="0"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="svg4"
+   showgrid="false" /><linearGradient
+   id="a"
+   x1="125.566"
+   x2="105.649"
+   y1="662.853"
+   y2="682.77"
+   gradientTransform="translate(0 -614.771)"
+   gradientUnits="userSpaceOnUse"><stop
+     offset="0"
+     style="stop-color:#6d6d6d"
+     id="stop1" /><stop
+     offset="1"
+     style="stop-color:#5d5d5d"
+     id="stop2" /></linearGradient><path
+   fill="url(#a)"
+   d="M 175.622,137.972 35.676,-1.977 55.591,-21.892 195.539,118.055 Z"
+   id="ribbon"
+   style="display:inline"
+   inkscape:label="ribbon" /><path
+   fill="none"
+   stroke="#ffffff"
+   stroke-dasharray="3, 1.5"
+   d="M 30.705,-9.861 185.08,144.514 m -138.5,-172.5 154.375,154.375"
+   opacity="0.5"
+   id="stitches"
+   style="-webkit-filter:drop-shadow(0 0 5px rgba(0, 0, 0, 0.7));filter:drop-shadow(0 0 5px rgba(0, 0, 0, 0.7));display:inline"
+   inkscape:label="stitches" /><g
+   id="text_group"
+   inkscape:label="Text Group"><g
+     id="locate"
+     inkscape:label="locate"
+     transform="translate(113.6, 62.6)"><g
+       id="rotate"
+       inkscape:label="rotate"
+       transform="rotate(45)"><g
+         id="scale"
+         inkscape:label="scale"
+           transform="scale(1,1.1)"><text
+           xml:space="preserve"
+           id="main_text"
+           inkscape:label="main_text"
+           text-anchor="middle"
+           x="0"
+           y="0"
+           style="fill:#ffffff;font-style:normal;font-variant:normal;font-weight:800;font-stretch:normal;font-size:12.5857px;font-family:Roboto,sans-serif;-inkscape-font-specification:'Roboto,sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.04881"><tspan
+             sodipodi:role="line"
+             id="text_span"
+             inkscape:label="text_span"
+             x="0"
+             y="0">View Source on Github</tspan></text></g></g></g></g></svg>
+      </a>
+      <label class="ribbon" for="dark_mode">Switch to</br><span class="dark-include">light</span><span class="dark-exclude">dark</span></br>mode</label>
+      <button id="dark_mode" style="display:none" onclick="setPreferredColorScheme()">foo bar</button>
       <div class="row">
         <div class="col-xs-12">
           <div id="photo-header" class="text-center">
@@ -464,11 +679,11 @@ blockquote,
             <p><p>Born in the Appalachian mountains of West Virginia to a radio electronics technician, Bruno grew up in coal mining
 country where most of his classmates remain. He never threw a ball with his father, though they did attend a
 handful of Cincinnati Reds baseball games. They spent their nights and weekends soldering Heathkit projects from
-Radio Shack and writing games and equation solvers in Borland Turbo Basic, then Turbo Pascal, and eventually Delphi.
+Radio Shack (my first computer was a <a href="https://vintagecomputer.com/heathkit-h89.html">Heathkit H89</a>) and writing games and equation solvers in Borland Turbo Basic, then Turbo Pascal, and eventually Delphi.
 When calling his father in 1995 to tell him Bruno got his first professional programming gig, they both saw this
 like getting drafted into MLB. Every day Bruno feels like "the luckiest man in baseball" to have escaped the coal
 mines.</p>
-<h1 id="brunodoes">Bruno does:</h1>
+<h1 id="whatbrunodoes">What Bruno does:</h1>
 <ul>
 <li>cloud computing: OpenStack Amazon Web Services, Microsoft Azure, Google Cloud Platform, Linode, DigitalOcean, Heroku</li>
 <li>container services: Docker, Kubernetes, Nomad, ECS, EKS</li>
@@ -478,7 +693,7 @@ mines.</p>
 <li>OpenVPN, SSH tunneling, network security</li>
 <li>troubleshoot network issues</li>
 <li>DBA for DynamoDB, Kafka, Cassandra, MongoDB, CouchDB, PostgreSQL, MySQL</li>
-<li>administer various Unix and Gnu/Linux</li>
+<li>administer various Unix and GNU/Linux</li>
 <li>administer virtualization hosts and guests</li>
 <li>optimize RAID, swap, cache</li>
 <li>archaeology of code, protocol, process</li>
@@ -486,21 +701,21 @@ mines.</p>
 <li>manage vendors, contractors</li>
 <li>manage client SLAs, vendor SLAs</li>
 <li>study complex systems and make them accessible to various audiences</li>
-<li>{Review, Recommend} application {architecture, code}</li>
+<li>{review, recommend} application {architecture, code}</li>
 <li>maintain SDLC process</li>
 <li>develop web and mobile applications</li>
 <li>architect {cloud, web, mobile} solutions</li>
-<li>{Develop, Deploy} {iPhone, Android} apps</li>
-<li>{Develop, Deploy} {Cordova, React Native} HTML5+CSS3+JS apps</li>
-<li>{Audit, Deploy} {developer code, data migrations}</li>
-<li>{Transform, Migrate} data</li>
+<li>{develop, deploy} {iPhone, Android} apps</li>
+<li>{develop, deploy} {Cordova, React Native} HTML5+CSS3+JS apps</li>
+<li>{audit, deploy} {developer code, data migrations}</li>
+<li>{transform, migrate} data</li>
 <li>audit application code for security and performance</li>
 </ul>
-<h1 id="brunois">Bruno is:</h1>
+<h1 id="whatbrunois">What Bruno is:</h1>
 <ul>
 <li>teacher</li>
 <li>strong verbal and written communicator</li>
-<li>excellent troubleshooting and debugging</li>
+<li>excellent troubleshooter, debugger, and problem bisector</li>
 <li>unrepentant command line addict</li>
 <li>ambiguity assassin</li>
 </ul></p>
@@ -524,7 +739,7 @@ mines.</p>
                       Value: >$10B Employees: >90k
                       <ul class="list-group">
                         <li class="list-group-item">CI/CD with Harness.io, AWS infrastructure with CDK+CFN, Migration to Github Enterprise from 5 other VCS</li>
-                        <li class="list-group-item">Architected an internal ML/AI Software Development Co-Pilot trained on internal code repos to reduce code "re-invention" and time/effort</li>
+                        <li class="list-group-item">architect and develop an internal ML/AI Software Development Co-Pilot trained on internal code repos to reduce code "re-invention" and time/effort</li>
                       </ul>
                     </div>
                   </div>
@@ -545,7 +760,8 @@ mines.</p>
                     <div class="description">
                       Value: >$3B Employees: >10k 
                       <ul class="list-group">
-                        <li class="list-group-item">CI/CD with Jenkins/CloudBees, SonarQube, JMeter, various software testing tools</li>
+                        <li class="list-group-item">CI/CD with CloudBees/Jenkins and Argo-CD</li>
+                        <li class="list-group-item">software testing with SonarQube, JMeter, and various other tools</li>
                       </ul>
                     </div>
                   </div>
@@ -707,7 +923,7 @@ mines.</p>
                     <div class="description">
                       
                       <ul class="list-group">
-                        <li class="list-group-item">Manage 1/4 of a ~30 developer team.</li>
+                        <li class="list-group-item">Co-Manage a ~30 developer team.</li>
                         <li class="list-group-item">Improve performance through coaching.</li>
                         <li class="list-group-item">Encourage and inspire developers and vendors to give great service.</li>
                         <li class="list-group-item">Workflow automation scripting.</li>
@@ -735,7 +951,7 @@ mines.</p>
                     <div class="description">
                       
                       <ul class="list-group">
-                        <li class="list-group-item">Administer Gnu/Linux servers.</li>
+                        <li class="list-group-item">Administer GNU/Linux servers.</li>
                         <li class="list-group-item">Manage a department of sysadmins.</li>
                         <li class="list-group-item">Workflow automation and config management.</li>
                       </ul>
@@ -747,7 +963,7 @@ mines.</p>
                 <div class="row">
                   <div class="details">
                     <div class="where">
-                      Atlanta Journal-Constitution (Cox Media Group)
+                      Cox Media Group (Atlanta Journal-Constitution)
                       <div class="pull-right">
                         Atlanta, GA
                       </div>
@@ -776,7 +992,7 @@ mines.</p>
                     <div class="where">
                       Yahoo!
                       <div class="pull-right">
-                        Atlanta, GA telecommuting to Sunnyvale, CA
+                        Atlanta, GA and Sunnyvale, CA
                       </div>
                     </div>
                     <div class="year">2004 – 2007</div>
@@ -890,8 +1106,8 @@ mines.</p>
                     <div class="description">
                       
                       <ul class="list-group">
-                        <li class="list-group-item">graphic creation and prepress;</li>
-                        <li class="list-group-item">Mac, NT, Solaris/Unix network & system administration</li>
+                        <li class="list-group-item">Create graphics for vinyl wrapping busses, buildings, trade shows, etc.</li>
+                        <li class="list-group-item">Administer network and Mac, NT, Solaris/Unix systems.</li>
                       </ul>
                     </div>
                   </div>
@@ -915,7 +1131,7 @@ mines.</p>
                     <div class="description">
                       
                       <ul class="list-group">
-                        <li class="list-group-item">on-site and remote consulting in LAMP stack, networking, web & client app development, Q/A, graphic design</li>
+                        <li class="list-group-item">Consult in LAMP stack, networking, web development, client application development, Q/A, automation, graphic design.</li>
                       </ul>
                     </div>
                   </div>
@@ -939,7 +1155,9 @@ mines.</p>
                     <div class="description">
                       
                       <ul class="list-group">
-                        <li class="list-group-item">pioneered the DB driven web solutions market using HTML, JS, Perl, C/C++, ColdFusion, MS SQL</li>
+                        <li class="list-group-item">Develop (as a market pioneer) DB driven web solutions using HTML, JS, Perl, C/C++, ColdFusion, MS SQL</li>
+                        <li class="list-group-item">Rack servers, run cables, and miscellaneous data center work.</li>
+                        <li class="list-group-item">Answer phones on the customer support line (while writing code).</li>
                       </ul>
                     </div>
                   </div>
@@ -973,6 +1191,25 @@ mines.</p>
                   </div>
                 </div>
               </div>
+              <div class="job clearfix">
+                <div class="row">
+                  <div class="details">
+                    <div class="where">Habitat for Humanity International</div>
+                    <div class="address">
+                      <a href="https:&#x2F;&#x2F;decaturmakers.org&#x2F;about&#x2F;whats-in-the-space&#x2F;" target= "_blank"><i class="fas fa-globe ico"></i> https:&#x2F;&#x2F;decaturmakers.org&#x2F;about&#x2F;whats-in-the-space&#x2F;</a>
+                    </div>
+                    <div class="year">2013 – Present</div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="job-details col-xs-11">
+                    <div class="profession">Roofing Skill Supervisor</div>
+                    <div class="description">
+                      I started out as a Cox employee volunteering for a single day on a Clark Howard build. It was Day 1, so I came back every weekend to see the whole project completed. (Because I'm that kind of person.) At the end of the build the leader said, "Great! Now that you've completed the 7 week training, pick a specialty so we can get you certified and put you to work." So, I didn't really set out to be a supervisor, but it has been one of the best experiences of my life.
+                    </div>
+                  </div>
+                </div>
+              </div>
           </div>
         </div>
         <div class="col-xs-12 col-sm-5">
@@ -994,12 +1231,18 @@ mines.</p>
             </div>
             <div class="contact-item">
               <div class="icon pull-left text-center"><span class="fas fa-globe fa-fw"></span></div>
-              <div class="title only pull-right"><a href="https:&#x2F;&#x2F;richardbronosky.github.io&#x2F;resume&#x2F;" target="_blank">https:&#x2F;&#x2F;richardbronosky.github.io&#x2F;resume&#x2F;</a></div>
+              <div class="title pull-right">Resume (pdf)</div>
+              <div class="description pull-right"><a href="https:&#x2F;&#x2F;richardbronosky.github.io&#x2F;resume&#x2F;pdf&#x2F;" target="_blank">https:&#x2F;&#x2F;richardbronosky.github.io&#x2F;resume&#x2F;pdf&#x2F;</a></div>
+            </div>
+            <div class="contact-item">
+              <div class="icon pull-left text-center"><span class="fas fa-globe fa-fw"></span></div>
+              <div class="title pull-right">Resume (printable)</div>
+              <div class="description pull-right"><a href="https:&#x2F;&#x2F;richardbronosky.github.io&#x2F;resume&#x2F;html&#x2F;" target="_blank">https:&#x2F;&#x2F;richardbronosky.github.io&#x2F;resume&#x2F;html&#x2F;</a></div>
             </div>
             <div class="contact-item">
               <div class="icon pull-left text-center"><span class="fas fa-rss fa-fw"></span></div>
               <div class="title pull-right">Not a Cover Letter</div>
-              <div class="description pull-right"><a href="https:&#x2F;&#x2F;github.com&#x2F;RichardBronosky&#x2F;resume&#x2F;blob&#x2F;main&#x2F;bruno.bronosky.community.md" target="_blank">Community Involvement</a></div>
+              <div class="description pull-right"><a href="https:&#x2F;&#x2F;github.com&#x2F;RichardBronosky&#x2F;resume&#x2F;blob&#x2F;main&#x2F;src&#x2F;bruno.bronosky.community.md" target="_blank">Community Involvement</a></div>
             </div>
             <div class="contact-item">
               <div class="icon pull-left text-center"><span class="fab fa-github fa-fw"></span></div>
@@ -1031,9 +1274,12 @@ mines.</p>
                   <span class="skill-level">master</span>
               </div>
               <div class="col-sm-offset-1 col-sm-12 clearfix">
-                <span class= "skill badge">CDK/CFN</span>
+                <span class= "skill badge">CDK</span>
+                <span class= "skill badge">CFN</span>
                 <span class= "skill badge">EC2</span>
-                <span class= "skill badge">ECS/EKS/Fargate</span>
+                <span class= "skill badge">ECS</span>
+                <span class= "skill badge">EKS</span>
+                <span class= "skill badge">Fargate</span>
                 <span class= "skill badge">EBS</span>
                 <span class= "skill badge">RDS</span>
                 <span class= "skill badge">S3</span>
@@ -1060,6 +1306,26 @@ mines.</p>
             </div>
             <div class="skills clearfix">
               <div class="item-skills">
+                  Machine Learning, Artificial Intelligence
+                  <span class="skill-level">intermediate</span>
+              </div>
+              <div class="col-sm-offset-1 col-sm-12 clearfix">
+                <span class= "skill badge">Language Model</span>
+                <span class= "skill badge">LLM</span>
+                <span class= "skill badge">Neural Network</span>
+                <span class= "skill badge">Transformer</span>
+                <span class= "skill badge">GAN; Generative Adversarial Network</span>
+                <span class= "skill badge">Computer Vision</span>
+                <span class= "skill badge">NLP; Natural Language Processing</span>
+                <span class= "skill badge">TensorFlow</span>
+                <span class= "skill badge">PyTorch</span>
+                <span class= "skill badge">Mojo</span>
+                <span class= "skill badge">automatic1111</span>
+                <span class= "skill badge">oobabooga</span>
+              </div>
+            </div>
+            <div class="skills clearfix">
+              <div class="item-skills">
                   Kubernetes, Docker, and containers
                   <span class="skill-level">advanced</span>
               </div>
@@ -1067,7 +1333,7 @@ mines.</p>
                 <span class= "skill badge">containerd</span>
                 <span class= "skill badge">Podman</span>
                 <span class= "skill badge">Helm</span>
-                <span class= "skill badge">Argo Project; Argo-CD</span>
+                <span class= "skill badge">Argo-CD; Argo Project</span>
               </div>
             </div>
             <div class="skills clearfix">
@@ -1082,7 +1348,7 @@ mines.</p>
                 <span class= "skill badge">MacOS</span>
                 <span class= "skill badge">Arch Linux, BTW</span>
                 <span class= "skill badge">Debian</span>
-                <span class= "skill badge">RHEL Red Hat Enterprise Linux</span>
+                <span class= "skill badge">RHEL; Red Hat Enterprise Linux</span>
                 <span class= "skill badge">CLI; Command Line Interface</span>
                 <span class= "skill badge">SSH</span>
                 <span class= "skill badge">Systemd; systemctl</span>
@@ -1096,8 +1362,9 @@ mines.</p>
                   <span class="skill-level">master</span>
               </div>
               <div class="col-sm-offset-1 col-sm-12 clearfix">
-                <span class= "skill badge">GNU Bash; shell scripting</span>
-                <span class= "skill badge">Zsh; Z shell</span>
+                <span class= "skill badge">POSIX sh</span>
+                <span class= "skill badge">GNU Bash</span>
+                <span class= "skill badge">Zsh</span>
               </div>
             </div>
             <div class="skills clearfix">
@@ -1164,9 +1431,13 @@ mines.</p>
                   Maker
               </div>
               <div class="col-sm-offset-1 col-sm-12 clearfix">
-                <span class= "interest badge">Making my own tools</span>
+                <span class= "interest badge">Welding</span>
+                <span class= "interest badge">Metal Machining</span>
+                <span class= "interest badge">Woodworking</span>
+                <span class= "interest badge">3D modeling</span>
+                <span class= "interest badge">3D Printing</span>
                 <span class= "interest badge">PEV; Personal Electronic Vehicles</span>
-                <span class= "interest badge">FPV multirotors/drones</span>
+                <span class= "interest badge">FPV; multirotors/drones</span>
               </div>
             </div>
             <div class="interests clearfix">
@@ -1185,9 +1456,10 @@ mines.</p>
                   Electrical Engineering
               </div>
               <div class="col-sm-offset-1 col-sm-12 clearfix">
-                <span class= "interest badge">RaspberryPi, SBCs</span>
-                <span class= "interest badge">Microprocessors</span>
+                <span class= "interest badge">SBCs; RaspberryPi</span>
+                <span class= "interest badge">MPUs; Arduino, ESP32</span>
                 <span class= "interest badge">IoT</span>
+                <span class= "interest badge">DIY Mechanical Keyboards</span>
                 <span class= "interest badge">Ham Radio, LoRa, Software Defined Radio</span>
               </div>
             </div>
@@ -1198,8 +1470,8 @@ mines.</p>
               <div class="col-sm-offset-1 col-sm-12 clearfix">
                 <span class= "interest badge">ROS Robotics Operating System</span>
                 <span class= "interest badge">Arm, Actuator, and End Effector design</span>
-                <span class= "interest badge">BLDC, Brushless DC Motors</span>
-                <span class= "interest badge">ESC development, [Vetter] Electronic Speed Control</span>
+                <span class= "interest badge">BLDC; Brushless DC Motors</span>
+                <span class= "interest badge">ESC development; [Vetter] Electronic Speed Control</span>
               </div>
             </div>
             <div class="interests clearfix">
@@ -1227,7 +1499,7 @@ mines.</p>
             <h2><i class="fas fa-university ico"></i> Education</h2>
             <ul id="education" class="clearfix">
               <li>
-                <div class="year pull-left">1997</div>
+                <div class="year pull-left">1997 </div>
                 <div class="description pull-right">
                   <h3>University of Kentucky</h3>
                   <div class="where"></div>
