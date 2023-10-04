@@ -1,4 +1,5 @@
 ---
+please see full resume at: https://richardbronosky.github.io/resume/
 permalink: https://github.com/RichardBronosky/resume/blob/main/src/bruno.bronosky.resume.yaml
 ---
 $schema: https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json
@@ -9,16 +10,19 @@ basics:
   email: bruno@bronosky.com
   phone: (404) 992-7866
   url: https://richardbronosky.github.io/resume/
+  urlPrintable: https://richardbronosky.github.io/resume/html/
+  urlPdf: https://richardbronosky.github.io/resume/pdf/
+  urlSource: https://richardbronosky.github.io/resume/
   summary: |-
     Born in the Appalachian mountains of West Virginia to a radio electronics technician, Bruno grew up in coal mining
     country where most of his classmates remain. He never threw a ball with his father, though they did attend a
     handful of Cincinnati Reds baseball games. They spent their nights and weekends soldering Heathkit projects from
-    Radio Shack and writing games and equation solvers in Borland Turbo Basic, then Turbo Pascal, and eventually Delphi.
+    Radio Shack (my first computer was a [Heathkit H89](https://vintagecomputer.com/heathkit-h89.html)) and writing games and equation solvers in Borland Turbo Basic, then Turbo Pascal, and eventually Delphi.
     When calling his father in 1995 to tell him Bruno got his first professional programming gig, they both saw this
     like getting drafted into MLB. Every day Bruno feels like "the luckiest man in baseball" to have escaped the coal
     mines.
 
-    # Bruno does:
+    # What Bruno does:
 
     - cloud computing: OpenStack Amazon Web Services, Microsoft Azure, Google Cloud Platform, Linode, DigitalOcean, Heroku
     - container services: Docker, Kubernetes, Nomad, ECS, EKS
@@ -28,7 +32,7 @@ basics:
     - OpenVPN, SSH tunneling, network security
     - troubleshoot network issues
     - DBA for DynamoDB, Kafka, Cassandra, MongoDB, CouchDB, PostgreSQL, MySQL
-    - administer various Unix and Gnu/Linux
+    - administer various Unix and GNU/Linux
     - administer virtualization hosts and guests
     - optimize RAID, swap, cache
     - archaeology of code, protocol, process
@@ -36,21 +40,21 @@ basics:
     - manage vendors, contractors
     - manage client SLAs, vendor SLAs
     - study complex systems and make them accessible to various audiences
-    - {Review, Recommend} application {architecture, code}
+    - {review, recommend} application {architecture, code}
     - maintain SDLC process
     - develop web and mobile applications
     - architect {cloud, web, mobile} solutions
-    - {Develop, Deploy} {iPhone, Android} apps
-    - {Develop, Deploy} {Cordova, React Native} HTML5+CSS3+JS apps
-    - {Audit, Deploy} {developer code, data migrations}
-    - {Transform, Migrate} data
+    - {develop, deploy} {iPhone, Android} apps
+    - {develop, deploy} {Cordova, React Native} HTML5+CSS3+JS apps
+    - {audit, deploy} {developer code, data migrations}
+    - {transform, migrate} data
     - audit application code for security and performance
 
-    # Bruno is:
+    # What Bruno is:
 
     - teacher
     - strong verbal and written communicator
-    - excellent troubleshooting and debugging
+    - excellent troubleshooter, debugger, and problem bisector
     - unrepentant command line addict
     - ambiguity assassin
   location:
@@ -61,9 +65,8 @@ basics:
     region: LA
   profiles:
     - network: Not a Cover Letter
-    #- network: RSS
       username: Community Involvement
-      url: https://github.com/RichardBronosky/resume/blob/main/bruno.bronosky.community.md
+      url: https://github.com/RichardBronosky/resume/blob/main/src/bruno.bronosky.community.md
       #url: https://richardbronosky.github.io/resume/community/
     - network: Github
       username: RichardBronosky
@@ -88,7 +91,7 @@ work:
       Employees: >90k
     highlights:
       - CI/CD with Harness.io, AWS infrastructure with CDK+CFN, Migration to Github Enterprise from 5 other VCS
-      - Architected an internal ML/AI Software Development Co-Pilot trained on internal code repos to reduce code "re-invention" and time/effort
+      - architect and develop an internal ML/AI Software Development Co-Pilot trained on internal code repos to reduce code "re-invention" and time/effort
 
   - name: "Confidential: Cyber Security and Biometric Identity Org"
     position: "Contract: Trainer of DevOps Engineers"
@@ -98,7 +101,8 @@ work:
       Value: >$3B
       Employees: >10k 
     highlights:
-      - CI/CD with Jenkins/CloudBees, SonarQube, JMeter, various software testing tools
+      - CI/CD with CloudBees/Jenkins and Argo-CD
+      - software testing with SonarQube, JMeter, and various other tools
 
   - name: "Confidential: Financial Services Org"
     position: "Contract: Trainer of Robotics, Computer Vision, and Machine Learning Engineers"
@@ -174,7 +178,7 @@ work:
     startDate: "2009-11-01"
     endDate: "2012-12-02"
     highlights:
-      - Manage 1/4 of a ~30 developer team.
+      - Co-Manage a ~30 developer team.
       - Improve performance through coaching.
       - Encourage and inspire developers and vendors to give great service.
       - Workflow automation scripting.
@@ -186,11 +190,11 @@ work:
     startDate: "2008-07-01"
     endDate: "2009-11-01"
     highlights:
-      - Administer Gnu/Linux servers.
+      - Administer GNU/Linux servers.
       - Manage a department of sysadmins.
       - Workflow automation and config management.
 
-  - name: Atlanta Journal-Constitution (Cox Media Group)
+  - name: Cox Media Group (Atlanta Journal-Constitution)
     location: Atlanta, GA
     position: MySQL DBA
     startDate: "2007-01-01"
@@ -202,7 +206,7 @@ work:
       - Develop extra Django and Rails projects.
 
   - name: Yahoo!
-    location: Atlanta, GA telecommuting to Sunnyvale, CA
+    location: Atlanta, GA and Sunnyvale, CA
     position: Technical Yahoo!
     startDate: "2004-03-01"
     endDate: "2007-01-01"
@@ -245,8 +249,8 @@ work:
     startDate: "1999-04-01"
     endDate: "2000-08-01"
     highlights:
-      - graphic creation and prepress;
-      - Mac, NT, Solaris/Unix network & system administration
+      - Create graphics for vinyl wrapping busses, buildings, trade shows, etc.
+      - Administer network and Mac, NT, Solaris/Unix systems.
 
   - name: Freelance
     location: USA and Ireland
@@ -254,7 +258,7 @@ work:
     startDate: "1998-01-01"
     endDate: "2004-03-01"
     highlights:
-      - on-site and remote consulting in LAMP stack, networking, web & client app development, Q/A, graphic design
+      - Consult in LAMP stack, networking, web development, client application development, Q/A, automation, graphic design.
 
   - name: World Wide Development
     location: Ashland, KY
@@ -262,8 +266,9 @@ work:
     startDate: "1995-08-01"
     endDate: "1998-01-01"
     highlights:
-      - pioneered the DB driven web solutions market using HTML, JS, Perl, C/C++, ColdFusion, MS SQL
-
+      - Develop (as a market pioneer) DB driven web solutions using HTML, JS, Perl, C/C++, ColdFusion, MS SQL
+      - Rack servers, run cables, and miscellaneous data center work.
+      - Answer phones on the customer support line (while writing code).
 
 volunteer:
   - organization: DecaturMakers
@@ -275,11 +280,17 @@ volunteer:
       - Built and raced 2 Power Racing Series electric vehicles
       - Taught skills in programming, Arduino and other microprocessors, soldering, electrical engineering, lithium battery assembly and safety
       - Taught skills in welding, wood working, maintenance of bicycles, motorcycles, and cars
+  - organization: Habitat for Humanity International
+    position: Roofing Skill Supervisor
+    url: https://decaturmakers.org/about/whats-in-the-space/
+    startDate: "2013-01-10"
+    summary: I started out as a Cox employee volunteering for a single day on a Clark Howard build. It was Day 1, so I came back every weekend to see the whole project completed. (Because I'm that kind of person.) At the end of the build the leader said, "Great! Now that you've completed the 7 week training, pick a specialty so we can get you certified and put you to work." So, I didn't really set out to be a supervisor, but it has been one of the best experiences of my life.
 
 
 education:
   - institution: University of Kentucky
     area: Computer Engineering and Systems Analysis
+    startDate: "1997"
     endDate: "1997"
 
 
@@ -288,9 +299,12 @@ skills:
   - name: "Amazon Web Services"
     level: master
     keywords:
-      - CDK/CFN
+      - CDK
+      - CFN
       - EC2
-      - ECS/EKS/Fargate
+      - ECS
+      - EKS
+      - Fargate
       - EBS
       - RDS
       - S3
@@ -308,13 +322,28 @@ skills:
       - CloudFormation
       - CDK
       - Jenkins
+  - name: Machine Learning, Artificial Intelligence
+    level: intermediate
+    keywords:
+      - Language Model
+      - LLM
+      - Neural Network
+      - Transformer
+      - GAN; Generative Adversarial Network
+      - Computer Vision
+      - NLP; Natural Language Processing
+      - TensorFlow
+      - PyTorch
+      - Mojo
+      - automatic1111
+      - oobabooga
   - name: Kubernetes, Docker, and containers
     level: advanced
     keywords:
       - containerd
       - Podman
       - Helm
-      - Argo Project; Argo-CD
+      - Argo-CD; Argo Project
   - name: GNU/Linux and BSD Server Administration
     level: master
     keywords:
@@ -324,7 +353,7 @@ skills:
       - MacOS
       - Arch Linux, BTW
       - Debian
-      - RHEL Red Hat Enterprise Linux
+      - RHEL; Red Hat Enterprise Linux
       - CLI; Command Line Interface
       - SSH
       - Systemd; systemctl
@@ -333,8 +362,9 @@ skills:
   - name: Bash/Shell Scripting
     level: master
     keywords:
-      - GNU Bash; shell scripting
-      - Zsh; Z shell
+      - POSIX sh
+      - GNU Bash
+      - Zsh
   - name: Graphics
     level: master
     keywords:
@@ -370,9 +400,13 @@ interests:
 
   - name: Maker
     keywords:
-      - Making my own tools
+      - Welding
+      - Metal Machining
+      - Woodworking
+      - 3D modeling
+      - 3D Printing
       - PEV; Personal Electronic Vehicles
-      - FPV multirotors/drones
+      - FPV; multirotors/drones
 
   - name: Automation
     keywords:
@@ -383,17 +417,18 @@ interests:
 
   - name: Electrical Engineering
     keywords:
-      - RaspberryPi, SBCs
-      - Microprocessors
+      - SBCs; RaspberryPi
+      - MPUs; Arduino, ESP32
       - IoT
+      - DIY Mechanical Keyboards
       - Ham Radio, LoRa, Software Defined Radio
 
   - name: Robotics
     keywords:
       - ROS Robotics Operating System
       - Arm, Actuator, and End Effector design
-      - BLDC, Brushless DC Motors
-      - ESC development, [Vetter] Electronic Speed Control
+      - BLDC; Brushless DC Motors
+      - ESC development; [Vetter] Electronic Speed Control
 
   - name: Jeeps and Motorcycles
     keywords:
