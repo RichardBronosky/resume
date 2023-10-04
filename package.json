@@ -1,14 +1,21 @@
 {
+  "name": "resume-bruno-bronosky",
+  "version": "0.1.0",
+  "description": "The resume of Bruno Bronosky, Principal DevOps Automation Engineer and Trainer",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RichardBronosky/resume.git"
+  },
   "dependencies": {
-    "jsonresume-theme-kendall-markdown": "^0.2.1",
+    "jsonresume-theme-kendall-markdown": "^0.2.9",
     "resume-cli": "^3.0.8"
   },
   "scripts": {
-    "get_theme":
-        "./tools/jsonresume.sh main",
-    "develop":
-        "./tools/jsonresume.sh main",
-    "serve":
-        "./tools/jsonresume.sh serve"
+    "get-theme": "./tools/jsonresume.sh clone_theme",
+    "develop": "./tools/jsonresume.sh main",
+    "dev-pdf": "./tools/jsonresume.sh watch_do '\\.(js|css|yaml|sh)$' ./tools/jsonresume.sh pdf",
+    "dev-html": "./tools/jsonresume.sh watch_do '\\.(js|css|yaml|sh)$' ./tools/jsonresume.sh html",
+    "serve": "./tools/jsonresume.sh serve",
+    "build": "./tools/jsonresume.sh build"
   }
 }
