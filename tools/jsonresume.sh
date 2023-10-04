@@ -1,40 +1,109 @@
 #! /usr/bin/env bash
 set -eu
 
+#  temporary solution until my changes are accepted upstream
+export PATH=~/src/resume-cli/build:$PATH
+
 #yaml_file=resume.yaml
-yaml_file=bruno.bronosky.resume.yaml
+yaml_file=src/bruno.bronosky.resume.yaml
 #cmd_args=("${@}")
 #declare -p cmd_args
 #script_name="${cmd_args[0]}"
 script_name="${0}"
 
-json_file () {
-    local yaml_file="${1}"
-    echo "$(basename "${yaml_file}" .yaml).json"
+json_filename () {
+    local src_file="${1:-$yaml_file}"
+    local type="${2:-json}"
+    echo "build/$(basename "${src_file}" .yaml).${type}"
 }
 
-yaml_to_json () {
-    local filename="${1}"
-    local out="$(json_file "${filename}")"
+json_file="$(json_filename "${yaml_file}")"
+
+_y () {
+    local format="${1}"
+    local query="${2:-.}"
+    local filename="${3:-$yaml_file}"
+    yq --output-format="$format" "$query" "$filename"
+}
+
+_yy () { _y yaml "$@"; }
+
+_yj () { _y json "$@"; }
+
+_yt () { _y t "$@"; }
+
+main_document () {
+    _yy 'select(.basics)' "$@"
+}
+
+json_from_yaml () {
+    main_document "$@" | _yj . -
+}
+
+yaml_file_to_json_file () {
+    local out="$(json_filename "$@")"
     local mid="${out}.mid"
-    yq -ojson "${filename}">"${mid}"
-    cp "${mid}" "${out}"
+    json_from_yaml > "${mid}"
+    mv "${mid}" "${out}"
+}
+
+get_package_repo_url () {
+    #package_json='node_modules/resume-cli/package.json'
+    package_json="$1"
+    _yt '.repository.url' "$package_json"
+}
+
+resolve_module () {
+    local module="$1"
+    node --eval "console.log(require.resolve('$module'))"
+}
+
+resolve_package_json () {
+    local module="$1"
+    node --eval "console.log(require.resolve('$module/package.json'))"
+}
+
+get_theme () {
+    src_file="${1:-$yaml_file}"
+    _yt '""+.meta.theme' "$src_file"
+}
+
+clone_theme () {
+    local json="$(resolve_package_json "jsonresume-theme-$(get_theme)")"
+    local url="$(get_package_repo_url "$json")"
+    git clone $url
+}
+
+watch_do () {
+    local watch="$1"
+    shift
+    local cmd=("$@")
+    inotifywait --monitor --include "$watch" --event CLOSE_WRITE --recursive "${PWD}" | \
+        while read -r dir action watched_file; do
+            xarg_pipe="${dir%%/}/$watched_file"
+            _yy -P <(echo "[{'inotify event': {'date':'$(date)', 'pwd':'$PWD', 'dir':'$dir', 'watched_file':'$watched_file', 'action':'$action', 'xarg_{}':'$xarg_pipe'}}]")
+            echo "${cmd[*]}"$'\n'
+            xargs -I '{}' bash -c "${cmd[*]}" <<<"$xarg_pipe"
+        done
 }
 
 watch_yaml_to_json () {
     inotifywait --monitor --include "${yaml_file}" -e CLOSE_WRITE "${PWD}" | \
-        while read -r dir action filename; do
-            echo "$(date) -- dir: ${dir}; filename: ${filename}; action: ${action}"
-            yaml_to_json "${filename}"
-            if [[ -n ${server_pid:-} ]] && [[ -f /proc/$server_pid/cmdline ]] && grep -q 'resume serve' /proc/$server_pid/cmdline; then
-                kill $server_pid
+        while read -r dir action watched_file; do
+            echo "$(date) inotify event -- dir: ${dir}; watched_file: ${watched_file}; action: ${action}"
+            yaml_file_to_json_file "${watched_file}"
+            if [[ -n "${server_pid:-}" ]] \
+            && [[ -f "/proc/$server_pid/cmdline" ]] \
+            && grep -q 'resume serve' "/proc/$server_pid/cmdline"; \
+            then
+                kill "$server_pid"
             fi
         done
 }
 
 serve () {
-    src_file="${1:-$(json_file "$yaml_file")}"
-    theme="$(yq -ot '""+.meta.theme' $src_file)";
+    src_file="${1:-$json_file}"
+    theme="$(get_theme "$src_file")";
     THEME="${THEME:-$theme}"
     if [[ -n ${THEME:-} ]]; then
         resume serve --resume "$src_file" --theme "${THEME}"
@@ -65,24 +134,54 @@ cycle () {
 
 render () {
     format="$1"
-    src_file="${2:-$(json_file "$yaml_file")}"
-    dst_file="${src_file%.*}.$format"
-    which -a yq; yq -V
-    resume export --resume "$src_file" $dst_file --theme $(yq -ot '""+.meta.theme' $src_file)
+    src_file="${2:-}"
+    if [[ -n "${src_file:-}" ]]; then
+        dst_file="${3:-$src_file}"
+    else
+        dst_file="${json_file}"
+        src_file=/tmp/resume.json
+        json_from_yaml $yaml_file > "$src_file"
+    fi
+    dst_file="${dst_file%.*}.$format"
+    resume export --resume "$src_file" "$dst_file" --theme $(get_theme "$src_file")
+    if [[ $format == "pdf" ]] && which qpdf > /dev/null; then
+        pdf_meta build/bruno.bronosky.resume.pdf src/pdf_properties.json
+    fi
+}
+
+pdf_meta () {
+    src_file="${1}"
+    meta_file="${2}"
+    dst_file="${3:-${src_file%.*}.pdf}"
+    mid_file="${dst_file%.*}.ascii.pdf"
+    qpdf --qdf --object-streams=disable "$src_file" "$mid_file"
+    qpdf --update-from-json="$meta_file" "$mid_file"  "$dst_file"
+}
+
+html_preload () {
+    RENDER_TEMPLATE='/preloading.template' ./tools/jsonresume.sh html build/bruno.bronosky.resume.json build/preloading.html
 }
 
 html () {
-    src_file="${1:-$(json_file "$yaml_file")}"
-    render html "$src_file"
+    src_file="${1:-}"
+    dst_file="${2:-${json_file%.*}.html}"
+    render html "$src_file" "$dst_file"
 }
 
 pdf () {
-    src_file="${1:-$(json_file "$yaml_file")}"
-    render pdf "$src_file"
+    src_file="${1:-}"
+    dst_file="${2:-${json_file%.*}.pdf}"
+    render pdf "$src_file" "$dst_file"
+}
+
+build () {
+    yaml_file_to_json_file
+    html
+    pdf
 }
 
 main () {
-    yaml_to_json "$yaml_file"
+    yaml_file_to_json_file
     watch_yaml_to_json &
     #serve_loop
     serve
