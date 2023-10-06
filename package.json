@@ -17,5 +17,8 @@
     "dev-html": "./tools/jsonresume.sh watch_do '\\.(js|css|yaml|sh)$' ./tools/jsonresume.sh html",
     "serve": "./tools/jsonresume.sh serve",
     "build": "./tools/jsonresume.sh build"
+  },
+  "devDependencies": {
+    "prettier": "3.0.3"
   }
 }
