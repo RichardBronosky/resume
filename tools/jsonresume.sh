@@ -149,6 +149,23 @@ render () {
     fi
 }
 
+cover_letter () {
+    local file_in="${1:-src/bruno.bronosky.community.md}"    # markdown
+    local file_out="build/$(basename "$file_in" .md).pdf"     # pdf
+    local file_tmp="/tmp/$(basename  "$file_in" .md).html"    # html
+    local file_data="${PDF_METADATA:-src/pdf_properties.cover_letter.json}"
+#   render_html  "$file_in"  "$file_tmp"
+    cat "$file_in" \
+        | sed -e '1 { /^---/ { :a N; /\n---/! ba; d} }'              -e '# remove_frontmatter' \
+        | sed -e 's/# Community Involvement/# [not a] Cover Letter/' -e '# change_title' \
+        | markdown \
+        | sed -e 's/<h2>GitHub projects/<h2 style="page-break-before: always;">GitHub projects/' -e '# add_pagebreak' \
+        | ./node_modules/prettier/bin/prettier.cjs --parser html \
+        > "$file_tmp"
+    wkhtmltopdf  "$file_tmp" "$file_out"
+    pdf_meta     "$file_out" "$file_data"
+}
+
 pdf_meta () {
     src_file="${1}"
     meta_file="${2}"
