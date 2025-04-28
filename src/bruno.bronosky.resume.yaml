@@ -82,50 +82,75 @@ basics:
       url: https://x.com/RichardBronosky
 
 work:
+  - name: "Triton"
+    position: "Research Fellow"
+    startDate: "2023-07-31"
+    endDate: "Present"
+    highlights:
+      - Manage engineers and projects
+      - Validate R & D plans and results
+      - 3D modeling and CNC manufacturing
+      - Safety and fire suppression
+      - Design and implement sensor arrays for data gathering
+      - Develop real-time monitoring systems in Python
+      - AI data analysis and fault prediction
+      - Plan and administer a Digital Arts division
+    skills:
+      - AWS
+
   - name: "Confidential: International Airline"
     position: "Contract: Trainer of DevOps Engineers"
     startDate: "2022-09-30"
     endDate: "2023-07-31"
     summary: >-
-      Value: >$10B
-      Employees: >90k
+      Value: $10B+
+      Employees: 90k+
     highlights:
       - CI/CD with Harness.io, AWS infrastructure with CDK+CFN, Migration to Github Enterprise from 5 other VCS
       - architect and develop an internal ML/AI Software Development Co-Pilot trained on internal code repos to reduce code "re-invention" and time/effort
+    skills:
+      - AWS
 
   - name: "Confidential: Cyber Security and Biometric Identity Org"
     position: "Contract: Trainer of DevOps Engineers"
     startDate: "2022-05-01"
     endDate: "2022-09-30"
     summary: >-
-      Value: >$3B
-      Employees: >10k 
+      Value: $3B+
+      Employees: 10k+
     highlights:
       - CI/CD with CloudBees/Jenkins and Argo-CD
       - software testing with SonarQube, JMeter, and various other tools
+    skills:
+      - AWS
+      - FedRAMP
 
   - name: "Confidential: Financial Services Org"
     position: "Contract: Trainer of Robotics, Computer Vision, and Machine Learning Engineers"
     startDate: "2021-11-01"
     endDate: "2022-04-30"
     summary: >-
-      Value: >$1T
-      Employees: >225k
+      Value: $1T+
+      Employees: 225k+
     highlights:
       - Robotics R&D, Machine Learning, Computer Vision, Software Development, Network & Physical Architecture, DevSecOps, Linux System Administration
       - ROS 1&2 [Robotics Operating System], Dobot CR5, Python, C++
+    skills:
+      - AWS
 
   - name: "Confidential: Chemical Engineering R&D and Production Org"
     position: "Contract: Trainer of DevOps Engineers"
     startDate: "2021-02-01"
     endDate: "2021-09-30"
     summary: >-
-      Value: >$10B
-      Employees: >90k
+      Value: $10B+
+      Employees: 90k+
     highlights:
       - CI/CD with Jenkins, SonarQube, JMeter, various software testing tools
       - AWS infrastructure and network security architecture
       - Architected an internal ML/AI Software Development Co-Pilot trained on internal code repos to reduce code "re-invention" and time/effort
+    skills:
+      - AWS
 
   - name: Rooms To Go
     location: Dunwoody, GA
@@ -145,6 +170,8 @@ work:
       - Make and document changes to AWS infrastructure via aws-cli.
       - Manage network security with AWS Security Groups, iptables, and OpenVPN.
       - Maintain MongoDB and DynamoDB databases.
+    skills:
+      - AWS
 
   - name: MidAmerican Energy Services
     location: Dunwoody, GA
@@ -158,6 +185,8 @@ work:
       - Build and maintain Cassandra, MongoDB, and MySQL databases.
       - Build custom Raspberry Pi images for IoT devices sent to client locations.
       - Design and CNC mill custom IoT hardware cases.
+    skills:
+      - AWS
 
   - name: Cox Media Group [Technology]
     location: Atlanta, GA
@@ -171,6 +200,8 @@ work:
       - Workflow and process automation.
       - Lead mobile architecture and technical strategy.
       - Present and teach.
+    skills:
+      - AWS
 
   - name: Cox Media Group [Technology]
     location: Atlanta, GA
@@ -183,6 +214,8 @@ work:
       - Encourage and inspire developers and vendors to give great service.
       - Workflow automation scripting.
       - Architect and develop software.
+    skills:
+      - AWS
 
   - name: Cox Media Group [Technology]
     location: Atlanta, GA
@@ -193,6 +226,8 @@ work:
       - Administer GNU/Linux servers.
       - Manage a department of sysadmins.
       - Workflow automation and config management.
+    skills:
+      - AWS
 
   - name: Cox Media Group (Atlanta Journal-Constitution)
     location: Atlanta, GA
@@ -204,6 +239,8 @@ work:
       - Optimize developer code.
       - Maintain high availability and performance.
       - Develop extra Django and Rails projects.
+    skills:
+      - AWS
 
   - name: Yahoo!
     location: Atlanta, GA and Sunnyvale, CA
@@ -215,6 +252,8 @@ work:
       - Automate workflows.
       - Develop PHP web applications.
       - Administer FreeBSD, Apache, MySQL.
+    skills:
+      - PHP
 
   - name: Apple Computer
     location: Atlanta, GA
@@ -226,12 +265,14 @@ work:
 
   - name: Lanier Worldwide
     location: Atlanta, GA
-    position: Web Application Developer
+    position: Full Stack Developer
     startDate: "2002-10-01"
     endDate: "2004-03-01"
     highlights:
       - Manage and train developers on CVS, security policies, and best practices.
       - Develop PHP CMS and software deployment system.
+    skills:
+      - AWS
 
   - name: MedCenterDirect
     location: Atlanta, GA
@@ -242,6 +283,8 @@ work:
       - Develop PHP applications, portals, and commerce solutions.
       - Architect custom deployment strategy.
       - Script data migrations.
+    skills:
+      - AWS
 
   - name: Amazing Graphics
     location: Atlanta, GA
@@ -251,6 +294,8 @@ work:
     highlights:
       - Create graphics for vinyl wrapping busses, buildings, trade shows, etc.
       - Administer network and Mac, NT, Solaris/Unix systems.
+    skills:
+      - AWS
 
   - name: Freelance
     location: USA and Ireland
@@ -259,6 +304,21 @@ work:
     endDate: "2004-03-01"
     highlights:
       - Consult in LAMP stack, networking, web development, client application development, Q/A, automation, graphic design.
+    skills:
+      - HTML
+      - JS
+      - C
+      - C++
+      - TCP/IP
+      - Unix
+      - Solaris
+      - Data Center
+      - Adobe Photoshop
+      - Adobe Illustrator
+      - Adobe InDesign
+      - Quark Express
+      - Macromedia Shockwave
+      - Macromedia Flash
 
   - name: World Wide Development
     location: Ashland, KY
@@ -269,6 +329,15 @@ work:
       - Develop (as a market pioneer) DB driven web solutions using HTML, JS, Perl, C/C++, ColdFusion, MS SQL
       - Rack servers, run cables, and miscellaneous data center work.
       - Answer phones on the customer support line (while writing code).
+    skills:
+      - HTML
+      - JS
+      - C
+      - C++
+      - TCP/IP
+      - Unix
+      - Solaris
+      - Data Center
 
 volunteer:
   - organization: DecaturMakers
