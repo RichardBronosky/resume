@@ -21,16 +21,15 @@ json_file="$(json_filename "${yaml_file}")"
 
 _y () {
     local format="${1}"
-    local query="${2:-.}"
-    local filename="${3:-$yaml_file}"
-    yq --output-format="$format" "$query" "$filename"
+    shift
+    yq --output-format="$format" "$@"
 }
 
 _yy () { _y yaml "$@"; }
 
 _yj () { _y json "$@"; }
 
-_yt () { _y t "$@"; }
+_yt () { _y yaml -r "$@"; }
 
 main_document () {
     _yy 'select(.basics)' "$@"
@@ -41,10 +40,12 @@ json_from_yaml () {
 }
 
 yaml_file_to_json_file () {
+    local in="${1:-$yaml_file}"
     local out="$(json_filename "$@")"
     local mid="${out}.mid"
-    json_from_yaml > "${mid}"
+    json_from_yaml "$in" > "${mid}"
     mv "${mid}" "${out}"
+    echo "$out"
 }
 
 get_package_repo_url () {
@@ -64,6 +65,7 @@ resolve_package_json () {
 }
 
 get_theme () {
+    # WAS: yq -ot '""+.meta.theme' $src_file
     src_file="${1:-$yaml_file}"
     _yt '""+.meta.theme' "$src_file"
 }
@@ -72,6 +74,10 @@ clone_theme () {
     local json="$(resolve_package_json "jsonresume-theme-$(get_theme)")"
     local url="$(get_package_repo_url "$json")"
     git clone $url
+}
+
+backup_node_modules () {
+    mv node_modules "node_modules-$(date '+%Y%m%dT%H%M%S%Z')"
 }
 
 watch_do () {
@@ -144,8 +150,12 @@ render () {
     fi
     dst_file="${dst_file%.*}.$format"
     resume export --resume "$src_file" "$dst_file" --theme $(get_theme "$src_file")
-    if [[ $format == "pdf" ]] && which qpdf > /dev/null; then
-        pdf_meta build/bruno.bronosky.resume.pdf src/pdf_properties.json
+    if [[ $format == "pdf" ]]; then
+        if which qpdf > /dev/null; then
+            pdf_meta build/bruno.bronosky.resume.pdf src/pdf_properties.json
+        else
+            echo "Consider installing 'qpdf' customize PDF with src/pdf_properties.json"
+        fi
     fi
 }
 
@@ -180,13 +190,13 @@ html_preload () {
 }
 
 html () {
-    src_file="${1:-}"
+    src_file="${1:-${json_file}}"
     dst_file="${2:-${json_file%.*}.html}"
     render html "$src_file" "$dst_file"
 }
 
 pdf () {
-    src_file="${1:-}"
+    src_file="${1:-${json_file}}"
     dst_file="${2:-${json_file%.*}.pdf}"
     render pdf "$src_file" "$dst_file"
 }
@@ -195,6 +205,17 @@ build () {
     yaml_file_to_json_file
     html
     pdf
+}
+
+update_ghpages () {
+    git co gh-pages
+    git merge main
+    GIT_PAGER="" \
+    git st
+    GIT_PAGER="" \
+    git -n5 log
+    git push
+    git co main
 }
 
 main () {
