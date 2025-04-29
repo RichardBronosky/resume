@@ -7,8 +7,8 @@
     "url": "https://github.com/RichardBronosky/resume.git"
   },
   "dependencies": {
-    "jsonresume-theme-kendall-markdown": "^0.2.9",
-    "resume-cli": "^3.0.8"
+    "jsonresume-theme-kendall-markdown": "^0.2.10",
+    "resumed": "^5.0.0"
   },
   "scripts": {
     "get-theme": "./tools/jsonresume.sh clone_theme",
