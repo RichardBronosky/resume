@@ -1,5 +1,6 @@
+%YAML 1.1
 ---
-please see full resume at: https://richardbronosky.github.io/resume/
+"please see full resume at": https://richardbronosky.github.io/resume/
 permalink: https://github.com/RichardBronosky/resume/blob/main/src/bruno.bronosky.resume.yaml
 ---
 $schema: https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json
@@ -14,10 +15,16 @@ basics:
   urlPdf: https://richardbronosky.github.io/resume/pdf/
   urlSource: https://richardbronosky.github.io/resume/
   summary: |-
+    Engineer, architect, and mentor with 28+ years in DevOps, cloud platforms, infrastructure automation, and software
+    engineering. Extensive leadership in high-performance environments including cybersecurity, finance, energy, and
+    manufacturing. Adept at delivering modern CI/CD pipelines, teaching best practices, and driving business-critical
+    transformations across cloud, mobile, and embedded systems.
+  exhaustiveSummary: |-
     Born in the Appalachian mountains of West Virginia to a radio electronics technician, Bruno grew up in coal mining
     country where most of his classmates remain. He never threw a ball with his father, though they did attend a
     handful of Cincinnati Reds baseball games. They spent their nights and weekends soldering Heathkit projects from
-    Radio Shack (my first computer was a [Heathkit H89](https://vintagecomputer.com/heathkit-h89.html)) and writing games and equation solvers in Borland Turbo Basic, then Turbo Pascal, and eventually Delphi.
+    Radio Shack (my first computer was a [Heathkit H89](https://vintagecomputer.com/heathkit-h89.html)) and writing
+    games and equation solvers in Borland Turbo Basic, then Turbo Pascal, and eventually Delphi.
     When calling his father in 1995 to tell him Bruno got his first professional programming gig, they both saw this
     like getting drafted into MLB. Every day Bruno feels like "the luckiest man in baseball" to have escaped the coal
     mines.
@@ -97,6 +104,13 @@ work:
       - Plan and administer a Digital Arts division
     skills:
       - AWS
+      - GCP
+      - Azure
+      - Bash
+      - Python
+      - Rust
+      - C/C++
+      - security
 
   - name: "Confidential: International Airline"
     position: "Contract: Trainer of DevOps Engineers"
@@ -126,7 +140,7 @@ work:
       - FedRAMP
 
   - name: "Confidential: Financial Services Org"
-    position: "Contract: Trainer of Robotics, Computer Vision, and Machine Learning Engineers"
+    position: "Contract: Trainer of Robotics, Computer Vision, and ML Engineers"
     startDate: "2021-11-01"
     endDate: "2022-04-30"
     summary: >-
@@ -184,7 +198,7 @@ work:
       - Develop tools in Python, Go, bash, awk, sed, CircuitPython, and Arduino.
       - Build and maintain Cassandra, MongoDB, and MySQL databases.
       - Build custom Raspberry Pi images for IoT devices sent to client locations.
-      - Design and CNC mill custom IoT hardware cases.
+      - Design, 3D Model, and CNC mill custom IoT hardware cases.
     skills:
       - AWS
 
@@ -255,7 +269,22 @@ work:
     skills:
       - PHP
 
+  - name: Various
+    location: Various
+    position: Prior Professional Experience
+    startDate: "1995-08-01"
+    endDate: "2007-01-01"
+    highlights:
+      - >-
+        Companies include: Apple Computer, Lanier Worldwide, MedCenterDirect,
+        Amazing Graphics, World Wide Development, and freelance work
+      - >-
+        Tasks include: Technical Account Manager, Full Stack Developer, 3D Modeling, Graphic Design and Print Prepress
+    skills:
+      - PHP
+
   - name: Apple Computer
+    display: None
     location: Atlanta, GA
     position: Business Sales Specialist
     startDate: "2004-03-01"
@@ -264,6 +293,7 @@ work:
       - Exploit my expertise to lure businesses away from Microsoft products for the greater good of the universe.
 
   - name: Lanier Worldwide
+    display: None
     location: Atlanta, GA
     position: Full Stack Developer
     startDate: "2002-10-01"
@@ -275,6 +305,7 @@ work:
       - AWS
 
   - name: MedCenterDirect
+    display: None
     location: Atlanta, GA
     position: Lead Solutions Developer
     startDate: "2000-12-02"
@@ -287,6 +318,7 @@ work:
       - AWS
 
   - name: Amazing Graphics
+    display: None
     location: Atlanta, GA
     position: Digital Designer/Production Artist
     startDate: "1999-04-01"
@@ -298,6 +330,7 @@ work:
       - AWS
 
   - name: Freelance
+    display: None
     location: USA and Ireland
     position: Consultant
     startDate: "1998-01-01"
@@ -321,6 +354,7 @@ work:
       - Macromedia Flash
 
   - name: World Wide Development
+    display: None
     location: Ashland, KY
     position: Webmaster
     startDate: "1995-08-01"
@@ -359,6 +393,7 @@ volunteer:
 education:
   - institution: University of Kentucky
     area: Computer Engineering and Systems Analysis
+    display: None
     startDate: "1997"
     endDate: "1997"
 
