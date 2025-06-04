@@ -1,11 +1,61 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Virtual Environment
+venv/
+.venv/
+ENV/
+env/
+.env/
+
+# Node.js (from original)
 node_modules/
 package-lock.json
 public/
 jsonresume-theme-*/
 
-*.out
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Generated files
+*.docx
+*.pdf
+output/
 *.log
+trace.log
+output.log
+
+# LaTeX (from original)
+*.out
 *.aux
 *.ps
 *.dvi
-*.out
+
+# Temporary files
+.~lock.*
+*.tmp

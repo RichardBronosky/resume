@@ -25,6 +25,11 @@ def main():
         help="Also generate a PDF version (requires LibreOffice)",
         action="store_true"
     )
+    parser.add_argument(
+        "--ats",
+        help="Format work experience entries in ATS-friendly format",
+        action="store_true"
+    )
     
     args = parser.parse_args()
     
@@ -35,7 +40,8 @@ def main():
     success, message, page_count = generate_resume(
         args.yaml_file,
         args.output,
-        convert_to_pdf=args.pdf
+        convert_to_pdf=args.pdf,
+        ats_format=args.ats
     )
     print(message)
     sys.exit(0 if success else 1)

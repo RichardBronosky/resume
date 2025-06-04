@@ -113,8 +113,8 @@ work:
       - cybersecurity
       - GitOps
 
-  - name: "Confidential: International Airline"
-    position: "Contract: Trainer of DevOps Engineers"
+  - name: "(Confidential) International Airline"
+    position: "(Contract) Trainer of DevOps Engineers"
     startDate: "2022-09-30"
     endDate: "2023-07-31"
     summary: >-
@@ -127,8 +127,8 @@ work:
       - AWS
       - GitOps
 
-  - name: "Confidential: Cybersecurity and Biometric Identity Org"
-    position: "Contract: Trainer of DevOps Engineers"
+  - name: "(Confidential) Cybersecurity and Biometric Identity Org"
+    position: "(Contract) Trainer of DevOps Engineers"
     startDate: "2022-05-01"
     endDate: "2022-09-30"
     summary: >-
@@ -142,8 +142,8 @@ work:
       - FedRAMP
       - GitOps
 
-  - name: "Confidential: Financial Services Org"
-    position: "Contract: Trainer of Robotics, Computer Vision, and ML Engineers"
+  - name: "(Confidential) Financial Services Org"
+    position: "(Contract) Trainer of Robotics, Computer Vision, and ML Engineers"
     startDate: "2021-11-01"
     endDate: "2022-04-30"
     summary: >-
@@ -157,8 +157,8 @@ work:
       - GCP
       - GitOps
 
-  - name: "Confidential: Chemical Engineering R&D and Production Org"
-    position: "Contract: Trainer of DevOps Engineers"
+  - name: "(Confidential) Chemical Engineering R&D and Production Org"
+    position: "(Contract) Trainer of DevOps Engineers"
     startDate: "2021-02-01"
     endDate: "2021-09-30"
     summary: >-

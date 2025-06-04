@@ -192,19 +192,28 @@ html_preload () {
 html () {
     src_file="${1:-${json_file}}"
     dst_file="${2:-${json_file%.*}.html}"
-    render html "$src_file" "$dst_file"
+    ./node_modules/resumed/bin/resumed.js render "$src_file" -o "$dst_file"
 }
 
 pdf () {
     src_file="${1:-${json_file}}"
     dst_file="${2:-${json_file%.*}.pdf}"
-    render pdf "$src_file" "$dst_file"
+    ./node_modules/resumed/bin/resumed.js export "$src_file" -o "$dst_file"
+    if which qpdf > /dev/null; then
+        pdf_meta build/bruno.bronosky.resume.pdf src/pdf_properties.json
+    else
+        echo "Consider installing 'qpdf' customize PDF with src/pdf_properties.json"
+    fi
 }
 
 build () {
     yaml_file_to_json_file
     html
     pdf
+}
+
+build_docx () {
+    pipenv run python /home/bruno/src/resume/tools/docx-generator-v2.0.py
 }
 
 update_ghpages () {

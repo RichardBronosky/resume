@@ -173,6 +173,15 @@ def _is_year(date: str) -> bool:
     """Returns True if string is a 4-digit year, False otherwise."""
     return isinstance(date, str) and date.isdigit() and len(date) == 4
 
+def get_job_dates(job: Dict[str, Any]) -> List[str]:
+    """Extract start and end dates from a job entry."""
+    dates = []
+    if "startDate" in job:
+        dates.append(job["startDate"])
+    if "endDate" in job:
+        dates.append(job["endDate"])
+    return dates
+
 def format_date_range(dates: List[str]) -> str:
     """Format a list of dates into a date range string."""
     formatted_dates = []
@@ -185,7 +194,7 @@ def format_date_range(dates: List[str]) -> str:
             formatted_dates.append(datetime.strptime(date, "%Y-%m-%d").strftime("%Y-%m"))
     if len(formatted_dates) > 1 and formatted_dates[0] == formatted_dates[1]:
         formatted_dates = [formatted_dates[0]]
-    return f" ({' - '.join(formatted_dates)})" if formatted_dates else ""
+    return f" ({f" {BULLETS['EM_DASH']} ".join(formatted_dates)})" if formatted_dates else ""
 
 def add_hyperlink(paragraph, text: str, url: str):
     """Add a hyperlink to a paragraph."""
@@ -240,19 +249,39 @@ def add_page_break_after_paragraph(paragraph):
     br.set(qn('w:type'), 'page')
     run._r.append(br)
 
-def add_work_entry(doc: DocxDocument, job: Dict[str, Any], style: str = "MyBulletStyle") -> DocxDocument:
+def _filter_ats_chars(text: str) -> str:
+    """Remove characters that might confuse ATS systems."""
+    return ''.join(c for c in text if c not in '[]{}()<>:|')
+
+def ats_format_work_entry(job: Dict[str, Any]) -> Dict[str, Any]:
+    """Format a work entry in ATS-friendly format."""
+    modified_job = job.copy()  # Create a copy of the original job
+    # Override specific fields for ATS format
+    modified_job.update({
+        "position": _filter_ats_chars(job.get("position", "")),
+        "name": _filter_ats_chars(job.get("name", "")),
+    })
+    return modified_job
+
+def add_work_entry(doc: DocxDocument, job: Dict[str, Any], style: str = "MyBulletStyle", ats_format: bool = False) -> DocxDocument:
     """Add a single work entry to the document."""
-    p = doc.add_paragraph(style="MySectionStyle")
-    p.add_run(job.get("name", "")).bold = False
-    p.add_run(" | ")
-    p.add_run(job.get("position", "")).style = doc.styles["CustomLabel"]
-    
-    dates = []
-    if "startDate" in job:
-        dates.append(job["startDate"])
-    if "endDate" in job:
-        dates.append(job["endDate"])
-    p.add_run(format_date_range(dates))
+    if ats_format:
+        # ATS-friendly format: title, company, and dates on separate lines
+        ats_job = ats_format_work_entry(job)
+        p = doc.add_paragraph(style="MySectionStyle")
+        p.add_run(ats_job.get("position", "")).style = doc.styles["CustomLabel"]
+        p.add_run("\n")
+        p.add_run(ats_job.get("name", "")).bold = False
+        p.add_run("\n")
+        p.add_run(format_date_range(get_job_dates(job)))
+    else:
+        # Standard format: company | title | dates on one line
+        p = doc.add_paragraph(style="MySectionStyle")
+        p.add_run(job.get("name", "")).bold = False
+        p.add_run(" | ")
+        p.add_run(job.get("position", "")).style = doc.styles["CustomLabel"]
+        p.add_run(" | ")
+        p.add_run(format_date_range(get_job_dates(job)))
     
     if "summary" in job:
         doc.add_paragraph(job["summary"], style="MySectionStyle")
@@ -263,15 +292,15 @@ def add_work_entry(doc: DocxDocument, job: Dict[str, Any], style: str = "MyBulle
             last_p = doc.add_paragraph(highlight, style=style)
     return last_p
 
-def _is_page_break_needed(doc: DocxDocument, job: Dict[str, Any]) -> bool:
+def _is_page_break_needed(doc: DocxDocument, job: Dict[str, Any], ats_format: bool = False) -> bool:
     """Check if adding this job entry would cause a page break."""
     test_doc = copy_doc(doc)
     pages_before = count_pages(test_doc)
-    add_work_entry(test_doc, job)
+    add_work_entry(test_doc, job, ats_format=ats_format)
     pages_after = count_pages(test_doc)
     return pages_after > pages_before
 
-def add_work_section(doc: DocxDocument, work_experience: List[Dict[str, Any]]) -> None:
+def add_work_section(doc: DocxDocument, work_experience: List[Dict[str, Any]], ats_format: bool = False) -> None:
     """Add the work experience section to the document."""
     if not work_experience:
         return
@@ -288,11 +317,11 @@ def add_work_section(doc: DocxDocument, work_experience: List[Dict[str, Any]]) -
             added_heading = True
 
         # If it would cause a page break, add one before the entry
-        if previous_paragraph and _is_page_break_needed(doc, job):
+        if not ats_format and previous_paragraph and _is_page_break_needed(doc, job, ats_format=ats_format):
             add_page_break_after_paragraph(previous_paragraph)
             print(f"Added page break before {job.get('position', '')} at {job.get('name', '')}")
         
-        previous_paragraph = add_work_entry(doc, job)
+        previous_paragraph = add_work_entry(doc, job, ats_format=ats_format)
 
 def add_education_section(doc: DocxDocument, education: List[Dict[str, Any]]) -> None:
     """Add the education section to the document."""
@@ -339,7 +368,8 @@ def add_skills_section(doc: DocxDocument, skills: List[Dict[str, Any]]) -> None:
 def generate_resume(
     yaml_file: str,
     output_file: str,
-    convert_to_pdf: bool = False
+    convert_to_pdf: bool = False,
+    ats_format: bool = False
 ) -> Tuple[bool, str, Optional[int]]:
     """
     Generate a DOCX resume from a YAML file following the JSON Resume schema.
@@ -348,6 +378,7 @@ def generate_resume(
         yaml_file (str): Path to the input YAML file
         output_file (str): Path to the output DOCX file
         convert_to_pdf (bool): Whether to also create a PDF version
+        ats_format (bool): Whether to use ATS-friendly formatting for work entries
     
     Returns:
         Tuple[bool, str, Optional[int]]: Success status, message, and page count (if successful)
@@ -361,7 +392,7 @@ def generate_resume(
         
         # Add each section
         add_basics_section(doc, resume_data.get("basics", {}))
-        add_work_section(doc, resume_data.get("work", []))
+        add_work_section(doc, resume_data.get("work", []), ats_format=ats_format)
         add_education_section(doc, resume_data.get("education", []))
         add_skills_section(doc, resume_data.get("skills", []))
         
