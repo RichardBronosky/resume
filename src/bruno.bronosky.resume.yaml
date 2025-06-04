@@ -110,7 +110,8 @@ work:
       - Python
       - Rust
       - C/C++
-      - security
+      - cybersecurity
+      - GitOps
 
   - name: "Confidential: International Airline"
     position: "Contract: Trainer of DevOps Engineers"
@@ -124,8 +125,9 @@ work:
       - architect and develop an internal ML/AI Software Development Co-Pilot trained on internal code repos to reduce code "re-invention" and time/effort
     skills:
       - AWS
+      - GitOps
 
-  - name: "Confidential: Cyber Security and Biometric Identity Org"
+  - name: "Confidential: Cybersecurity and Biometric Identity Org"
     position: "Contract: Trainer of DevOps Engineers"
     startDate: "2022-05-01"
     endDate: "2022-09-30"
@@ -138,6 +140,7 @@ work:
     skills:
       - AWS
       - FedRAMP
+      - GitOps
 
   - name: "Confidential: Financial Services Org"
     position: "Contract: Trainer of Robotics, Computer Vision, and ML Engineers"
@@ -147,10 +150,12 @@ work:
       Value: $1T+
       Employees: 225k+
     highlights:
-      - Robotics R&D, Machine Learning, Computer Vision, Software Development, Network & Physical Architecture, DevSecOps, Linux System Administration
+      - Robotics R&D, GCP, Machine Learning, Computer Vision, Software Development, Network & Physical Architecture, DevSecOps, Linux System Administration
       - ROS 1&2 [Robotics Operating System], Dobot CR5, Python, C++
     skills:
       - AWS
+      - GCP
+      - GitOps
 
   - name: "Confidential: Chemical Engineering R&D and Production Org"
     position: "Contract: Trainer of DevOps Engineers"
@@ -161,10 +166,12 @@ work:
       Employees: 90k+
     highlights:
       - CI/CD with Jenkins, SonarQube, JMeter, various software testing tools
-      - AWS infrastructure and network security architecture
+      - Azure & AWS infrastructure and network security architecture
       - Architected an internal ML/AI Software Development Co-Pilot trained on internal code repos to reduce code "re-invention" and time/effort
     skills:
       - AWS
+      - Azure
+      - GitOps
 
   - name: Rooms To Go
     location: Dunwoody, GA
@@ -186,6 +193,7 @@ work:
       - Maintain MongoDB and DynamoDB databases.
     skills:
       - AWS
+      - GitOps
 
   - name: MidAmerican Energy Services
     location: Dunwoody, GA
@@ -201,6 +209,7 @@ work:
       - Design, 3D Model, and CNC mill custom IoT hardware cases.
     skills:
       - AWS
+      - GitOps
 
   - name: Cox Media Group [Technology]
     location: Atlanta, GA
@@ -216,6 +225,7 @@ work:
       - Present and teach.
     skills:
       - AWS
+      - GitOps
 
   - name: Cox Media Group [Technology]
     location: Atlanta, GA
@@ -230,6 +240,7 @@ work:
       - Architect and develop software.
     skills:
       - AWS
+      - GitOps
 
   - name: Cox Media Group [Technology]
     location: Atlanta, GA
@@ -420,12 +431,28 @@ skills:
   - name: "Automation/Orchestration & CI/CD"
     level: master
     keywords:
+      - GitOps
       - Terraform
+      - Packer
       - Ansible
       - Chef
       - CloudFormation
       - CDK
       - Jenkins
+      - ArgoCD
+  - name: "Observability/Monitoring"
+    level: master
+    keywords:
+      - Prometheus
+      - Grafana
+      - OpenTelemetry
+      - OpenMetrics
+      - OpenTracing
+      - Nagios
+      - Datadog
+      - New Relic
+      - Splunk
+      - ELK; Elasticsearch, Logstash, Kibana
   - name: Machine Learning, Artificial Intelligence
     level: intermediate
     keywords:

@@ -132,7 +132,10 @@ def setup_document() -> DocxDocument:
     doc.styles['Normal'].font.name = 'Calibri'
     doc.styles['Normal'].font.size = Pt(9)
     doc.styles['Heading 1'].font.size = Pt(12)
+    doc.styles['Heading 1'].paragraph_format.space_before = Pt(4)
     doc.styles['Heading 2'].font.size = Pt(10)
+    doc.styles['Title'].paragraph_format.space_after = Pt(2)
+
     #breakpoint()
 
     if "MySectionStyle" not in doc.styles:
