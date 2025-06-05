@@ -113,7 +113,33 @@ work:
       - cybersecurity
       - GitOps
 
+  - name: "NDA Protected Consulting Clients x4"
+    display: ATS-Only
+    position: "Engineering Team Trainer"
+    startDate: "2021-02-01"
+    endDate: "2021-09-30"
+    summary: >-
+      Value: $10B+
+      Employees: 90k+
+    highlights:
+      - CI/CD with CloudBees/Jenkins, Argo-CD, Harness.io, SonarQube, JMeter, AWS infrastructure with CDK+CFN
+      - Migration to Github Enterprise from 5 other VCS
+      - Azure & AWS infrastructure and network security architecture
+      - architect and develop an internal ML/AI Software Development Co-Pilot trained on internal code repos to reduce code "re-invention" and time/effort
+      - Robotics R&D, GCP, Machine Learning, Computer Vision, Software Development, Network & Physical Architecture, DevSecOps, Linux System Administration
+      - ROS 1&2 [Robotics Operating System], Dobot CR5, Python, C++
+
+    skills:
+      - AWS
+      - Azure
+      - GitOps
+      - FedRAMP
+      - C++
+      - Python
+      - ROS; Robotics Operating System
+
   - name: "(Confidential) International Airline"
+    display: ATS-None
     position: "(Contract) Trainer of DevOps Engineers"
     startDate: "2022-09-30"
     endDate: "2023-07-31"
@@ -128,6 +154,7 @@ work:
       - GitOps
 
   - name: "(Confidential) Cybersecurity and Biometric Identity Org"
+    display: ATS-None
     position: "(Contract) Trainer of DevOps Engineers"
     startDate: "2022-05-01"
     endDate: "2022-09-30"
@@ -143,6 +170,7 @@ work:
       - GitOps
 
   - name: "(Confidential) Financial Services Org"
+    display: ATS-None
     position: "(Contract) Trainer of Robotics, Computer Vision, and ML Engineers"
     startDate: "2021-11-01"
     endDate: "2022-04-30"
@@ -158,6 +186,7 @@ work:
       - GitOps
 
   - name: "(Confidential) Chemical Engineering R&D and Production Org"
+    display: ATS-None
     position: "(Contract) Trainer of DevOps Engineers"
     startDate: "2021-02-01"
     endDate: "2021-09-30"

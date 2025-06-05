@@ -191,10 +191,10 @@ def format_date_range(dates: List[str]) -> str:
         elif _is_year(date):
             formatted_dates.append(date)
         else:
-            formatted_dates.append(datetime.strptime(date, "%Y-%m-%d").strftime("%Y-%m"))
+            formatted_dates.append(datetime.strptime(date, "%Y-%m-%d").strftime("%b %Y"))
     if len(formatted_dates) > 1 and formatted_dates[0] == formatted_dates[1]:
         formatted_dates = [formatted_dates[0]]
-    return f" ({f" {BULLETS['EM_DASH']} ".join(formatted_dates)})" if formatted_dates else ""
+    return f" ({' - '.join(formatted_dates)})" if formatted_dates else ""
 
 def add_hyperlink(paragraph, text: str, url: str):
     """Add a hyperlink to a paragraph."""
@@ -283,7 +283,7 @@ def add_work_entry(doc: DocxDocument, job: Dict[str, Any], style: str = "MyBulle
         p.add_run(" | ")
         p.add_run(format_date_range(get_job_dates(job)))
     
-    if "summary" in job:
+    if not ats_format and "summary" in job:
         doc.add_paragraph(job["summary"], style="MySectionStyle")
     
     last_p = p
@@ -310,6 +310,10 @@ def add_work_section(doc: DocxDocument, work_experience: List[Dict[str, Any]], a
     
     for job in work_experience:
         if job.get("display", "") == "None":
+            continue
+        if ats_format and job.get("display", "") == "ATS-None":
+            continue
+        if not ats_format and job.get("display", "") == "ATS-Only":
             continue
             
         if not added_heading:
