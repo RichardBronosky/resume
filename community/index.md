@@ -1,1 +1,0 @@
-../src/bruno.bronosky.community.md

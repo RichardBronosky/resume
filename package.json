@@ -1,4 +1,6 @@
 {
+  "developer-notes": "This JSON file supports NPM. Run `npm run` to see a list of scripts.",
+  "developer-apology": "Yes, this project does use Python, and Node, and Bash. It's not how I would prefer to do this, but this is a time of transition for this project.",
   "name": "resume-bruno-bronosky",
   "version": "0.1.0",
   "description": "The resume of Bruno Bronosky, Principal DevOps Automation Engineer and Trainer",
@@ -15,6 +17,8 @@
     "develop": "./tools/jsonresume.sh main",
     "dev-pdf": "./tools/jsonresume.sh watch_do '\\.(js|css|yaml|sh)$' ./tools/jsonresume.sh pdf",
     "dev-html": "./tools/jsonresume.sh watch_do '\\.(js|css|yaml|sh)$' ./tools/jsonresume.sh html",
+    "webserver": "sudo $(which python3) -m http.server 80",
+    "webserver2": "sudo $(which python2) -m SimpleHTTPServer 80",
     "serve": "./tools/jsonresume.sh serve",
     "build": "./tools/jsonresume.sh build"
   },
