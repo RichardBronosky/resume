@@ -3,10 +3,13 @@ Core functionality for generating DOCX resumes from YAML files.
 """
 
 import os
+import time
+import logging
 from typing import Optional, Tuple, Dict, Any, List
 from datetime import datetime
 from docx import Document
 from io import BytesIO
+from contextlib import nullcontext
 
 from docx.shared import RGBColor, Pt, Inches
 from docx.enum.style import WD_STYLE_TYPE
@@ -17,55 +20,50 @@ from docx.text.run import Run
 
 from docx.enum.text import WD_ALIGN_PARAGRAPH, WD_BREAK
 from docx.document import Document as DocxDocument
-from .converter import docx_to_pdf
+from .unoconv import docx_to_pdf
 from .validator import load_yaml
 from .bullets import BULLETS
 
+# Configure logging
+logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger(__name__)
+
 def count_pages(doc: DocxDocument) -> int:
-    """Count the number of pages in a document.
-    
-    This method uses LibreOffice to get an accurate page count by converting to PDF temporarily.
-    The PDF is deleted after counting pages.
-    """
+    """Count the number of pages in a document using PDF conversion."""
     import tempfile
     import os
-    import subprocess
     
-    # Create a temporary file for the PDF
+    # Create a temporary file for the DOCX
     with tempfile.NamedTemporaryFile(suffix='.docx', delete=False) as temp_docx:
         temp_docx_path = temp_docx.name
         doc.save(temp_docx_path)
     
     try:
-        # Convert to PDF using LibreOffice
+        # Convert to PDF using unoconv service
+        from .unoconv import docx_to_pdf
+        pdf_success, pdf_message = docx_to_pdf(temp_docx_path)
+        if not pdf_success:
+            raise RuntimeError(f"Failed to convert to PDF: {pdf_message}")
+        
+        # Get PDF path
         pdf_path = os.path.splitext(temp_docx_path)[0] + '.pdf'
-        subprocess.run([
-            'libreoffice',
-            '--headless',
-            '--convert-to',
-            'pdf',
-            temp_docx_path,
-            '--outdir',
-            os.path.dirname(temp_docx_path)
-        ], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         
         # Use pdfinfo to get page count
+        import subprocess
         result = subprocess.run(['pdfinfo', pdf_path], 
                               capture_output=True, 
                               text=True)
         for line in result.stdout.split('\n'):
             if line.startswith('Pages:'):
-                page_count = int(line.split()[1])
-                break
-        else:
-            page_count = 1  # fallback if pages not found
-            
-        return page_count
+                return int(line.split()[1])
+        
+        return 1  # fallback if pages not found
         
     finally:
         # Clean up temporary files
         try:
             os.unlink(temp_docx_path)
+            pdf_path = os.path.splitext(temp_docx_path)[0] + '.pdf'
             if os.path.exists(pdf_path):
                 os.unlink(pdf_path)
         except Exception:
@@ -295,10 +293,8 @@ def add_work_entry(doc: DocxDocument, job: Dict[str, Any], style: str = "MyBulle
 def _is_page_break_needed(doc: DocxDocument, job: Dict[str, Any], ats_format: bool = False) -> bool:
     """Check if adding this job entry would cause a page break."""
     test_doc = copy_doc(doc)
-    pages_before = count_pages(test_doc)
     add_work_entry(test_doc, job, ats_format=ats_format)
-    pages_after = count_pages(test_doc)
-    return pages_after > pages_before
+    return count_pages(test_doc) > count_pages(doc)
 
 def add_work_section(doc: DocxDocument, work_experience: List[Dict[str, Any]], ats_format: bool = False) -> None:
     """Add the work experience section to the document."""
@@ -307,6 +303,7 @@ def add_work_section(doc: DocxDocument, work_experience: List[Dict[str, Any]], a
         
     added_heading = False
     previous_paragraph = None
+    current_pages = None  # Cache for current page count
     
     for job in work_experience:
         if job.get("display", "") == "None":
@@ -321,11 +318,39 @@ def add_work_section(doc: DocxDocument, work_experience: List[Dict[str, Any]], a
             added_heading = True
 
         # If it would cause a page break, add one before the entry
-        if not ats_format and previous_paragraph and _is_page_break_needed(doc, job, ats_format=ats_format):
-            add_page_break_after_paragraph(previous_paragraph)
-            print(f"Added page break before {job.get('position', '')} at {job.get('name', '')}")
-        
-        previous_paragraph = add_work_entry(doc, job, ats_format=ats_format)
+        if not ats_format and previous_paragraph:
+            if current_pages is None:
+                current_pages = count_pages(doc)
+            test_doc = copy_doc(doc)
+            add_work_entry(test_doc, job, ats_format=ats_format)
+            test_pages = count_pages(test_doc)
+            if test_pages > current_pages:
+                add_page_break_after_paragraph(previous_paragraph)
+                print(f"Added page break before {job.get('position', '')} at {job.get('name', '')}")
+                previous_paragraph = add_work_entry(doc, job, ats_format=ats_format)
+                current_pages = test_pages
+            else:
+                # Copy all paragraphs from test_doc that come after previous_paragraph
+                last_index = -1
+                for i, para in enumerate(doc.paragraphs):
+                    if para == previous_paragraph:
+                        last_index = i
+                        break
+                
+                # Remove any paragraphs after the previous one
+                for _ in range(len(doc.paragraphs) - last_index - 1):
+                    doc._body._element.remove(doc.paragraphs[last_index + 1]._element)
+                
+                # Add all paragraphs from test_doc after the point we found
+                for para in test_doc.paragraphs[last_index + 1:]:
+                    new_para = doc.add_paragraph()
+                    new_para._p.append(para._p)
+                previous_paragraph = doc.paragraphs[-1]
+                current_pages = test_pages
+        else:
+            previous_paragraph = add_work_entry(doc, job, ats_format=ats_format)
+            if current_pages is None:
+                current_pages = count_pages(doc)
 
 def add_education_section(doc: DocxDocument, education: List[Dict[str, Any]]) -> None:
     """Add the education section to the document."""
@@ -387,33 +412,59 @@ def generate_resume(
     Returns:
         Tuple[bool, str, Optional[int]]: Success status, message, and page count (if successful)
     """
+    start_time = time.time()
+    logger.debug("Starting resume generation...")
+    
     try:
         # Load and validate YAML
+        logger.debug("Loading YAML file...")
         resume_data = load_yaml(yaml_file)
         
         # Create and setup document
+        logger.debug("Setting up document...")
         doc = setup_document()
         
-        # Add each section
-        add_basics_section(doc, resume_data.get("basics", {}))
-        add_work_section(doc, resume_data.get("work", []), ats_format=ats_format)
-        add_education_section(doc, resume_data.get("education", []))
-        add_skills_section(doc, resume_data.get("skills", []))
-        
-        # Get page count before saving
-        page_count = count_pages(doc)
-        
-        # Save the document
-        doc.save(output_file)
-        
-        # Convert to PDF if requested
-        if convert_to_pdf:
-            pdf_success, pdf_message = docx_to_pdf(output_file)
-            if not pdf_success:
-                return False, f"DOCX created but PDF conversion failed: {pdf_message}", None
-            return True, f"Successfully created {output_file} and PDF version ({page_count} pages)", page_count
-        
-        return True, f"Successfully created {output_file} ({page_count} pages)", page_count
+        # Start PDF service for page counting and conversion
+        from .unoconv import get_service
+        with get_service():
+            # Add each section
+            logger.debug("Adding basic information...")
+            add_basics_section(doc, resume_data.get("basics", {}))
+            
+            logger.debug("Adding work experience...")
+            add_work_section(doc, resume_data.get("work", []), ats_format=ats_format)
+            
+            logger.debug("Adding education...")
+            add_education_section(doc, resume_data.get("education", []))
+            
+            logger.debug("Adding skills...")
+            add_skills_section(doc, resume_data.get("skills", []))
+            
+            # Get page count before saving
+            logger.debug("Getting final page count...")
+            page_count = count_pages(doc)
+            
+            # Save the document
+            logger.debug(f"Saving document to {output_file}...")
+            doc.save(output_file)
+            
+            # Convert to PDF if requested
+            if convert_to_pdf:
+                logger.debug("Converting to PDF...")
+                from .unoconv import docx_to_pdf
+                pdf_success, pdf_message = docx_to_pdf(output_file)
+                if not pdf_success:
+                    return False, f"DOCX created but PDF conversion failed: {pdf_message}", None
+                
+                elapsed = time.time() - start_time
+                logger.debug(f"Resume generation completed in {elapsed:.2f} seconds")
+                return True, f"Successfully created {output_file} and PDF version ({page_count} pages)", page_count
+            
+            elapsed = time.time() - start_time
+            logger.debug(f"Resume generation completed in {elapsed:.2f} seconds")
+            return True, f"Successfully created {output_file} ({page_count} pages)", page_count
     
     except Exception as e:
+        elapsed = time.time() - start_time
+        logger.error(f"Resume generation failed after {elapsed:.2f} seconds")
         return False, f"Error generating resume: {str(e)}", None 

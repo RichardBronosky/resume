@@ -1,5 +1,7 @@
 pyperclip==1.9.0
 termcolor==2.5.0
-pyyaml==6.0.2
-python-docx==1.1.2
-jsonschema==4.24.0 
+pyyaml>=5.1
+python-docx>=0.8.11
+jsonschema>=3.2.0
+docker>=6.1.0
+requests>=2.31.0 
