@@ -1,5 +1,8 @@
 # Bruno Bronosky's Resume Builder
 
+**[📄 View/Download PDF Version](build/bruno.bronosky.resume.pdf)** | **[📝 View/Download DOCX Version](build/bruno.bronosky.resume.docx)**
+
+
 This repository contains the source code and generators for my professional resume. 
 The core data is stored in `src/bruno.bronosky.resume.yaml` following the JSON Resume schema.
 
