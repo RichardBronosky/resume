@@ -307,14 +307,19 @@ def add_skills_section(doc: DocxDocument, skills: List[Dict[str, Any]]) -> None:
     if not skills:
         return
         
-    doc.add_heading("Skills", 1)
+    paragraphs = []
+    paragraphs.append(doc.add_heading("Skills", 1))
     for skill in skills:
-        #p = doc.add_paragraph()
         p = doc.add_paragraph(style="MySectionStyle")
         if "name" in skill:
             p.add_run(skill["name"]).style = doc.styles["CustomLabel"]
         if "keywords" in skill:
             p.add_run(": " + f" {BULLETS['MIDDLE_DOT']} ".join(skill["keywords"]))
+        paragraphs.append(p)
+        
+    # Bind the heading and all skill lines together
+    for para in paragraphs[:-1]:
+        para.paragraph_format.keep_with_next = True
 
 def generate_resume(
     yaml_file: str,
