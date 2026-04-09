@@ -230,7 +230,6 @@ def add_work_entry(doc: DocxDocument, job: Dict[str, Any], style: str = "MyBulle
         # ATS-friendly format: title, company, and dates on separate lines
         ats_job = ats_format_work_entry(job)
         p = doc.add_paragraph(style="MySectionStyle")
-        p.paragraph_format.keep_with_next = True
         p.add_run(ats_job.get("position", "")).style = doc.styles["CustomLabel"]
         p.add_run("\n")
         p.add_run(ats_job.get("name", "")).bold = False
@@ -239,19 +238,24 @@ def add_work_entry(doc: DocxDocument, job: Dict[str, Any], style: str = "MyBulle
     else:
         # Standard format: company | title | dates on one line
         p = doc.add_paragraph(style="MySectionStyle")
-        p.paragraph_format.keep_with_next = True
         p.add_run(job.get("name", "")).bold = False
         p.add_run(" | ")
         p.add_run(job.get("position", "")).style = doc.styles["CustomLabel"]
         p.add_run(" | ")
         p.add_run(format_date_range(get_job_dates(job)))
     
+    paragraphs = [p]
+    
     if not ats_format and "summary" in job:
-        doc.add_paragraph(job["summary"], style="MySectionStyle")
+        paragraphs.append(doc.add_paragraph(job["summary"], style="MySectionStyle"))
     
     if "highlights" in job:
         for highlight in job["highlights"]:
-            doc.add_paragraph(highlight, style=style)
+            paragraphs.append(doc.add_paragraph(highlight, style=style))
+            
+    # Bind all paragraphs of this job entry together so they don't split across pages
+    for para in paragraphs[:-1]:
+        para.paragraph_format.keep_with_next = True
 
 def add_work_section(doc: DocxDocument, work_experience: List[Dict[str, Any]], ats_format: bool = False) -> None:
     """Add the work experience section to the document."""
