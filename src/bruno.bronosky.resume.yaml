@@ -6,7 +6,7 @@ permalink: https://github.com/RichardBronosky/resume/blob/main/src/bruno.bronosk
 $schema: https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json
 basics:
   name: Bruno Bronosky
-  label: Principal DevOps Automation Engineer and Trainer
+  label: Principal (AI-Augmented) DevOps Automation Engineer and Trainer
   image: "http://www.gravatar.com/avatar/959ccd33301cb3c15953c1a632a36763?s=500"
   email: job-application@bronosky.com
   phone: (404) 992-7866
@@ -16,8 +16,9 @@ basics:
   urlSource: https://richardbronosky.github.io/resume/
   summary: |-
     Engineer, architect, and mentor with 28+ years in DevOps, cloud platforms, infrastructure automation, and software
-    engineering. Extensive leadership in high-performance environments including cybersecurity, finance, energy, and
-    manufacturing. Adept at delivering modern CI/CD pipelines, teaching best practices, and driving business-critical
+    engineering. I power these disciplines with an AI-augmented workflow, leveraging autonomous agents (OpenClaw, OpenCode)
+    and self-hosted LLMs to massively accelerate infrastructure delivery, pipeline analysis, and code refactoring.
+    Adept at building secure API tools for AI integration, teaching best practices, and driving business-critical
     transformations across cloud, mobile, and embedded systems.
   exhaustiveSummary: |-
     Born in the Appalachian mountains of West Virginia to a radio electronics technician, Bruno grew up in coal mining
@@ -116,6 +117,10 @@ work:
     endDate: "Present"
     highlights:
       - Manage engineers and projects
+      - Developed secure API endpoints and OpenClaw agent skills to automate infrastructure interaction and monitoring
+      - Deployed local, privacy-compliant LLMs to accelerate engineering velocity while protecting proprietary data
+      - Leveraged AI coding agents to rapidly refactor complex systems and automate infrastructure-as-code
+      - Mentored engineering teams on adopting AI-augmented workflows and integrating LLMs into CI/CD pipelines
       - Validate R & D plans and results
       - 3D modeling and CNC manufacturing
       - Safety and fire suppression
@@ -461,6 +466,15 @@ education:
 
 skills:
 #   level: beginner , intermediate, advanced, master
+  - name: "AI & Agentic Automation"
+    level: master
+    keywords:
+      - OpenClaw & OpenCode
+      - Agentic Workflows (MCP)
+      - AI-to-API Integration
+      - Local / Private LLMs
+      - AI-Assisted CI/CD
+      - Prompt Engineering
   - name: "Amazon Web Services"
     level: master
     keywords:
