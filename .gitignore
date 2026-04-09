@@ -4,7 +4,6 @@ __pycache__/
 *$py.class
 *.so
 .Python
-build/
 develop-eggs/
 dist/
 downloads/
@@ -43,8 +42,8 @@ jsonresume-theme-*/
 *.swo
 
 # Generated files
-*.docx
-*.pdf
+# *.docx
+# *.pdf
 output/
 *.log
 trace.log
