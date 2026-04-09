@@ -380,11 +380,11 @@ def generate_resume(
             elapsed = time.time() - start_time
             logger.debug(f"Resume generation completed in {elapsed:.2f} seconds")
             pdf_file = output_file.replace(".docx", ".pdf")
-            return True, f"Successfully created {output_file} and PDF version.\nView it with: libreoffice {pdf_file}", 1
+            return True, f"Successfully created {output_file} and PDF version.\nView it with: make open-pdf\nor: libreoffice {pdf_file}", 1
         
         elapsed = time.time() - start_time
         logger.debug(f"Resume generation completed in {elapsed:.2f} seconds")
-        return True, f"Successfully created {output_file}.\nView it with: libreoffice {output_file}", 1
+        return True, f"Successfully created {output_file}.\nView it with: make open-docx\nor: libreoffice {output_file}", 1
     
     except Exception as e:
         elapsed = time.time() - start_time

@@ -18,3 +18,9 @@ clean:
 	rm -rf .venv/
 	rm -rf src/docx-generator/build/
 	rm -rf src/docx-generator/*.egg-info/
+
+open-docx: docx
+	@libreoffice $(DOCX_OUTPUT) >/dev/null 2>&1 &
+
+open-pdf: pdf
+	@libreoffice $(DOCX_OUTPUT:.docx=.pdf) >/dev/null 2>&1 &
