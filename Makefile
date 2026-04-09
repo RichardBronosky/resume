@@ -1,11 +1,20 @@
-TARGET=bruno.bronosky.resume.pdf
+YAML_INPUT = src/bruno.bronosky.resume.yaml
+DOCX_OUTPUT = build/bruno.bronosky.resume.docx
 
-# HINT: Run `make clean` if you get "Nothing to be done for `all`."
-all: $(TARGET)
+.PHONY: all docx pdf clean
 
-%.pdf: %.tex
-	docker run -i richardbronosky/latex-compiler < $< > $@
+all: docx
+
+docx:
+	mkdir -p build
+	resume-docx $(YAML_INPUT) -o $(DOCX_OUTPUT)
+
+pdf:
+	mkdir -p build
+	resume-docx $(YAML_INPUT) -o $(DOCX_OUTPUT) --pdf
 
 clean:
-	rm -f $(TARGET) $$(cat .gitignore)
-
+	rm -rf build/
+	rm -rf .venv/
+	rm -rf src/docx-generator/build/
+	rm -rf src/docx-generator/*.egg-info/
