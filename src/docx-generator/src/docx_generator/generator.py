@@ -261,12 +261,13 @@ def ats_format_work_entry(job: Dict[str, Any]) -> Dict[str, Any]:
     })
     return modified_job
 
-def add_work_entry(doc: DocxDocument, job: Dict[str, Any], style: str = "MyBulletStyle", ats_format: bool = False) -> DocxDocument:
+def add_work_entry(doc: DocxDocument, job: Dict[str, Any], style: str = "MyBulletStyle", ats_format: bool = False) -> None:
     """Add a single work entry to the document."""
     if ats_format:
         # ATS-friendly format: title, company, and dates on separate lines
         ats_job = ats_format_work_entry(job)
         p = doc.add_paragraph(style="MySectionStyle")
+        p.paragraph_format.keep_with_next = True
         p.add_run(ats_job.get("position", "")).style = doc.styles["CustomLabel"]
         p.add_run("\n")
         p.add_run(ats_job.get("name", "")).bold = False
@@ -275,6 +276,7 @@ def add_work_entry(doc: DocxDocument, job: Dict[str, Any], style: str = "MyBulle
     else:
         # Standard format: company | title | dates on one line
         p = doc.add_paragraph(style="MySectionStyle")
+        p.paragraph_format.keep_with_next = True
         p.add_run(job.get("name", "")).bold = False
         p.add_run(" | ")
         p.add_run(job.get("position", "")).style = doc.styles["CustomLabel"]
@@ -284,26 +286,16 @@ def add_work_entry(doc: DocxDocument, job: Dict[str, Any], style: str = "MyBulle
     if not ats_format and "summary" in job:
         doc.add_paragraph(job["summary"], style="MySectionStyle")
     
-    last_p = p
     if "highlights" in job:
         for highlight in job["highlights"]:
-            last_p = doc.add_paragraph(highlight, style=style)
-    return last_p
-
-def _is_page_break_needed(doc: DocxDocument, job: Dict[str, Any], ats_format: bool = False) -> bool:
-    """Check if adding this job entry would cause a page break."""
-    test_doc = copy_doc(doc)
-    add_work_entry(test_doc, job, ats_format=ats_format)
-    return count_pages(test_doc) > count_pages(doc)
+            doc.add_paragraph(highlight, style=style)
 
 def add_work_section(doc: DocxDocument, work_experience: List[Dict[str, Any]], ats_format: bool = False) -> None:
     """Add the work experience section to the document."""
     if not work_experience:
         return
         
-    added_heading = False
-    previous_paragraph = None
-    current_pages = None  # Cache for current page count
+    doc.add_heading("Work Experience", 1)
     
     for job in work_experience:
         if job.get("display", "") == "None":
@@ -312,45 +304,8 @@ def add_work_section(doc: DocxDocument, work_experience: List[Dict[str, Any]], a
             continue
         if not ats_format and job.get("display", "") == "ATS-Only":
             continue
-            
-        if not added_heading:
-            doc.add_heading("Work Experience", 1)
-            added_heading = True
-
-        # If it would cause a page break, add one before the entry
-        if not ats_format and previous_paragraph:
-            if current_pages is None:
-                current_pages = count_pages(doc)
-            test_doc = copy_doc(doc)
-            add_work_entry(test_doc, job, ats_format=ats_format)
-            test_pages = count_pages(test_doc)
-            if test_pages > current_pages:
-                add_page_break_after_paragraph(previous_paragraph)
-                print(f"Added page break before {job.get('position', '')} at {job.get('name', '')}")
-                previous_paragraph = add_work_entry(doc, job, ats_format=ats_format)
-                current_pages = test_pages
-            else:
-                # Copy all paragraphs from test_doc that come after previous_paragraph
-                last_index = -1
-                for i, para in enumerate(doc.paragraphs):
-                    if para == previous_paragraph:
-                        last_index = i
-                        break
-                
-                # Remove any paragraphs after the previous one
-                for _ in range(len(doc.paragraphs) - last_index - 1):
-                    doc._body._element.remove(doc.paragraphs[last_index + 1]._element)
-                
-                # Add all paragraphs from test_doc after the point we found
-                for para in test_doc.paragraphs[last_index + 1:]:
-                    new_para = doc.add_paragraph()
-                    new_para._p.append(para._p)
-                previous_paragraph = doc.paragraphs[-1]
-                current_pages = test_pages
-        else:
-            previous_paragraph = add_work_entry(doc, job, ats_format=ats_format)
-            if current_pages is None:
-                current_pages = count_pages(doc)
+        
+        add_work_entry(doc, job, ats_format=ats_format)
 
 def add_education_section(doc: DocxDocument, education: List[Dict[str, Any]]) -> None:
     """Add the education section to the document."""
