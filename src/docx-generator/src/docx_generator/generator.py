@@ -29,45 +29,8 @@ logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
 def count_pages(doc: DocxDocument) -> int:
-    """Count the number of pages in a document using PDF conversion."""
-    import tempfile
-    import os
-    
-    # Create a temporary file for the DOCX
-    with tempfile.NamedTemporaryFile(suffix='.docx', delete=False) as temp_docx:
-        temp_docx_path = temp_docx.name
-        doc.save(temp_docx_path)
-    
-    try:
-        # Convert to PDF using unoconv service
-        from .unoconv import docx_to_pdf
-        pdf_success, pdf_message = docx_to_pdf(temp_docx_path)
-        if not pdf_success:
-            raise RuntimeError(f"Failed to convert to PDF: {pdf_message}")
-        
-        # Get PDF path
-        pdf_path = os.path.splitext(temp_docx_path)[0] + '.pdf'
-        
-        # Use pdfinfo to get page count
-        import subprocess
-        result = subprocess.run(['pdfinfo', pdf_path], 
-                              capture_output=True, 
-                              text=True)
-        for line in result.stdout.split('\n'):
-            if line.startswith('Pages:'):
-                return int(line.split()[1])
-        
-        return 1  # fallback if pages not found
-        
-    finally:
-        # Clean up temporary files
-        try:
-            os.unlink(temp_docx_path)
-            pdf_path = os.path.splitext(temp_docx_path)[0] + '.pdf'
-            if os.path.exists(pdf_path):
-                os.unlink(pdf_path)
-        except Exception:
-            pass  # ignore cleanup errors
+    """Stubbed since page breaks use keep_with_next now."""
+    return 1
 
 def add_page_numbers(doc: DocxDocument) -> None:
     """Add page numbers in the format 'Page X of Y' to the footer."""
@@ -379,45 +342,39 @@ def generate_resume(
         logger.debug("Setting up document...")
         doc = setup_document()
         
-        # Start PDF service for page counting and conversion
-        from .unoconv import get_service
-        with get_service():
-            # Add each section
-            logger.debug("Adding basic information...")
-            add_basics_section(doc, resume_data.get("basics", {}))
-            
-            logger.debug("Adding work experience...")
-            add_work_section(doc, resume_data.get("work", []), ats_format=ats_format)
-            
-            logger.debug("Adding education...")
-            add_education_section(doc, resume_data.get("education", []))
-            
-            logger.debug("Adding skills...")
-            add_skills_section(doc, resume_data.get("skills", []))
-            
-            # Get page count before saving
-            logger.debug("Getting final page count...")
-            page_count = count_pages(doc)
-            
-            # Save the document
-            logger.debug(f"Saving document to {output_file}...")
-            doc.save(output_file)
-            
-            # Convert to PDF if requested
-            if convert_to_pdf:
-                logger.debug("Converting to PDF...")
-                from .unoconv import docx_to_pdf
+        # Add each section directly (unoconv removed for docx generation)
+        logger.debug("Adding basic information...")
+        add_basics_section(doc, resume_data.get("basics", {}))
+        
+        logger.debug("Adding work experience...")
+        add_work_section(doc, resume_data.get("work", []), ats_format=ats_format)
+        
+        logger.debug("Adding education...")
+        add_education_section(doc, resume_data.get("education", []))
+        
+        logger.debug("Adding skills...")
+        add_skills_section(doc, resume_data.get("skills", []))
+        
+        # Save the document
+        logger.debug(f"Saving document to {output_file}...")
+        doc.save(output_file)
+        
+        # Convert to PDF if requested
+        if convert_to_pdf:
+            logger.debug("Converting to PDF...")
+            from .unoconv import get_service, docx_to_pdf
+            with get_service():
                 pdf_success, pdf_message = docx_to_pdf(output_file)
-                if not pdf_success:
-                    return False, f"DOCX created but PDF conversion failed: {pdf_message}", None
-                
-                elapsed = time.time() - start_time
-                logger.debug(f"Resume generation completed in {elapsed:.2f} seconds")
-                return True, f"Successfully created {output_file} and PDF version ({page_count} pages)", page_count
+            if not pdf_success:
+                return False, f"DOCX created but PDF conversion failed: {pdf_message}", None
             
             elapsed = time.time() - start_time
             logger.debug(f"Resume generation completed in {elapsed:.2f} seconds")
-            return True, f"Successfully created {output_file} ({page_count} pages)", page_count
+            return True, f"Successfully created {output_file} and PDF version (pages unknown)", 1
+        
+        elapsed = time.time() - start_time
+        logger.debug(f"Resume generation completed in {elapsed:.2f} seconds")
+        return True, f"Successfully created {output_file} (pages unknown)", 1
     
     except Exception as e:
         elapsed = time.time() - start_time

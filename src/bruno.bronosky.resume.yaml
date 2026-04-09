@@ -65,8 +65,8 @@ basics:
     - unrepentant command line addict
     - ambiguity assassin
   location:
-    address: Lower Garden District
-    postalCode: "70130"
+    address: French Quarter
+    postalCode: "70116"
     city: New Orleans
     countryCode: US
     region: LA
@@ -89,6 +89,27 @@ basics:
       url: https://x.com/RichardBronosky
 
 work:
+  - name: "Intelerad Medical Systems"
+    position: "Technology Consultant"
+    startDate: "2025-11-17"
+    endDate: "Present"
+    highlights:
+      - Develop AI tools to shorten ticket completion times
+      - Develop AI tools to on-board new team members
+      - Document Dev-Ops processes and Infrastructure to improve AI tool efficiency.
+      - Dev-Ops
+    skills:
+      - AWS
+      - Azure
+      - Bash
+      - Python
+      - Terraform
+      - Ansible
+      - CI/CD
+      - OpenClaw
+      - OpenCode
+      - Gemini-CLi/Claude Code/GPT Codex
+
   - name: "Triton"
     position: "Research Fellow"
     startDate: "2023-07-31"
