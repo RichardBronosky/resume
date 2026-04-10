@@ -6,9 +6,14 @@
 This repository contains the source code and generators for my professional resume. 
 The core data is stored in `src/bruno.bronosky.resume.yaml` following the JSON Resume schema.
 
-## Quick Start (NixOS / Linux)
+## Quick Start (macOS / Linux)
 
-This project uses a native Python generator and `libreoffice` (for PDF conversion). The easiest way to run this on NixOS is using `nix-shell`, which will automatically fetch dependencies, create a Python virtual environment, and install the generator CLI.
+This project uses a native Python generator and `libreoffice` (for PDF conversion). The easiest way to run this on any macOS or Linux system is using the Nix package manager (you don't need NixOS). Running `nix-shell` will [automatically fetch dependencies](shell.nix#L7-L11), create a Python virtual environment, and install the generator CLI.
+
+**Don't have Nix?** You can install the package manager on any Mac or Linux distro without altering your base OS:
+```bash
+sh <(curl -L https://nixos.org/nix/install) --daemon
+```
 
 ```bash
 # 1. Drop into the development shell
