@@ -8,6 +8,7 @@ pkgs.mkShell {
     pkgs.python311Packages.pip
     pkgs.python311Packages.virtualenv
     pkgs.libreoffice
+    pkgs.gh # GitHub CLI for creating releases
   ];
 
   shellHook = ''
