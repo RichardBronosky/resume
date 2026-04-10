@@ -1,6 +1,6 @@
 # Bruno Bronosky's Resume Builder
 
-**[📄 View/Download PDF Version](build/bruno.bronosky.resume.pdf)** | **[📝 Download DOCX Version](build/bruno.bronosky.resume.docx?raw=true)**
+**[📄 View/Download PDF Version](https://github.com/RichardBronosky/resume/releases/latest/download/bruno.bronosky.resume.pdf)** | **[📝 Download DOCX Version](https://github.com/RichardBronosky/resume/releases/latest/download/bruno.bronosky.resume.docx)**
 
 
 This repository contains the source code and generators for my professional resume. 
