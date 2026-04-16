@@ -44,10 +44,12 @@ jsonresume-theme-*/
 # Generated files
 # *.docx
 # *.pdf
+build/
 output/
 *.log
 trace.log
 output.log
+node_modules-*/
 
 # LaTeX (from original)
 *.out

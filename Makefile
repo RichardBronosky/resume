@@ -1,5 +1,11 @@
 YAML_INPUT = src/bruno.bronosky.resume.yaml
 DOCX_OUTPUT = build/bruno.bronosky.resume.docx
+LOCAL_RESUME_DOCX = src/docx-generator/.venv/bin/resume-docx
+RESUME_DOCX = $(shell command -v resume-docx 2>/dev/null)
+
+ifeq ($(RESUME_DOCX),)
+RESUME_DOCX = $(LOCAL_RESUME_DOCX)
+endif
 
 .PHONY: all docx pdf clean
 
@@ -7,11 +13,13 @@ all: docx
 
 docx:
 	mkdir -p build
-	resume-docx $(YAML_INPUT) -o $(DOCX_OUTPUT)
+	@test -x "$(RESUME_DOCX)" || { echo "Error: resume-docx not found. Run inside nix-shell or use the local generator venv at $(LOCAL_RESUME_DOCX)."; exit 1; }
+	$(RESUME_DOCX) $(YAML_INPUT) -o $(DOCX_OUTPUT)
 
 pdf:
 	mkdir -p build
-	resume-docx $(YAML_INPUT) -o $(DOCX_OUTPUT) --pdf
+	@test -x "$(RESUME_DOCX)" || { echo "Error: resume-docx not found. Run inside nix-shell or use the local generator venv at $(LOCAL_RESUME_DOCX)."; exit 1; }
+	$(RESUME_DOCX) $(YAML_INPUT) -o $(DOCX_OUTPUT) --pdf
 
 clean:
 	rm -rf build/
