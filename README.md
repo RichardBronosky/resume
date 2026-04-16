@@ -32,9 +32,9 @@ Outputs will be saved to the `build/` directory.
 
 ## Repository Layout
 
-* `src/bruno.bronosky.resume.yaml` - The single source of truth for all resume data.
-* `src/docx-generator/` - A custom Python CLI (`resume-docx`) that reads the YAML and generates a clean, unbreakable DOCX format.
-* `build/` - Output directory for generated artifacts.
+* [`src/bruno.bronosky.resume.yaml`](src/bruno.bronosky.resume.yaml) - The single source of truth for all resume data.
+* [`src/docx-generator/`](src/docx-generator/) - A custom Python CLI (`resume-docx`) that reads the YAML and generates a clean, unbreakable DOCX format.
+* [`build/`](build/) - Output directory for generated artifacts.
 
 ## Current Focus
 
