@@ -2,9 +2,11 @@
 
 **[📄 View/Download PDF Version](https://github.com/RichardBronosky/resume/releases/latest/download/bruno.bronosky.resume.pdf)** | **[📝 Download DOCX Version](https://github.com/RichardBronosky/resume/releases/latest/download/bruno.bronosky.resume.docx)**
 
+This repository contains the source code and generators for my professional resume.
 
-This repository contains the source code and generators for my professional resume. 
-The core data is stored in `src/bruno.bronosky.resume.yaml` following the JSON Resume schema.
+The current active workflow uses structured resume data in `src/bruno.bronosky.resume.yaml`, following the [JSON Resume](https://jsonresume.org/) schema, to generate clean, ATS-friendly DOCX and PDF outputs for job applications.
+
+The LaTeX heritage of this project still [remains](#legacy--latex-notes).
 
 ## Quick Start (macOS / Linux)
 
@@ -34,7 +36,10 @@ Outputs will be saved to the `build/` directory.
 * `src/docx-generator/` - A custom Python CLI (`resume-docx`) that reads the YAML and generates a clean, unbreakable DOCX format.
 * `build/` - Output directory for generated artifacts.
 
-## Coming Soon (HTML Generation)
-Currently, this focuses heavily on creating an ATS-friendly, clean DOCX and PDF.
-In the future, the HTML and JSON-resume web generation pipeline (which uses `package.json` and Node.js) will be refactored to match this streamlined workflow.
+## Current Focus
 
+Right now, the YAML → DOCX/PDF pipeline is the path I am actively maintaining for job applications. The generated outputs are working well for ATS use, and that is the workflow I am prioritizing.
+
+## Legacy / LaTeX Notes
+
+This repo also preserves the earlier LaTeX-based workflow and remains the historical source for the [richardbronosky/latex-compiler](https://registry.hub.docker.com/r/richardbronosky/latex-compiler) Docker image. That tooling is still part of the repository, but it is not the workflow I am actively optimizing right now.
