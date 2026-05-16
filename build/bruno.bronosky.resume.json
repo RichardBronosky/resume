@@ -2,7 +2,7 @@
   "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
   "basics": {
     "name": "Bruno Bronosky",
-    "label": "Principal DevOps Automation Engineer and Trainer",
+    "label": "Principal (AI-Augmented) DevOps Automation Engineer and Trainer",
     "image": "http://www.gravatar.com/avatar/959ccd33301cb3c15953c1a632a36763?s=500",
     "email": "job-application@bronosky.com",
     "phone": "(404) 992-7866",
@@ -10,10 +10,11 @@
     "urlPrintable": "https://richardbronosky.github.io/resume/html/",
     "urlPdf": "https://richardbronosky.github.io/resume/pdf/",
     "urlSource": "https://richardbronosky.github.io/resume/",
-    "summary": "Born in the Appalachian mountains of West Virginia to a radio electronics technician, Bruno grew up in coal mining\ncountry where most of his classmates remain. He never threw a ball with his father, though they did attend a\nhandful of Cincinnati Reds baseball games. They spent their nights and weekends soldering Heathkit projects from\nRadio Shack (my first computer was a [Heathkit H89](https://vintagecomputer.com/heathkit-h89.html)) and writing games and equation solvers in Borland Turbo Basic, then Turbo Pascal, and eventually Delphi.\nWhen calling his father in 1995 to tell him Bruno got his first professional programming gig, they both saw this\nlike getting drafted into MLB. Every day Bruno feels like \"the luckiest man in baseball\" to have escaped the coal\nmines.\n\n# What Bruno does:\n\n- cloud computing: OpenStack Amazon Web Services, Microsoft Azure, Google Cloud Platform, Linode, DigitalOcean, Heroku\n- container services: Docker, Kubernetes, Nomad, ECS, EKS\n- infrastructure orchestration and automation with Terraform, Ansible, Chef, Argo\n- infrastructure and capacity planning\n- data center operations\n- OpenVPN, SSH tunneling, network security\n- troubleshoot network issues\n- DBA for DynamoDB, Kafka, Cassandra, MongoDB, CouchDB, PostgreSQL, MySQL\n- administer various Unix and GNU/Linux\n- administer virtualization hosts and guests\n- optimize RAID, swap, cache\n- archaeology of code, protocol, process\n- manage systems engineers, software developers\n- manage vendors, contractors\n- manage client SLAs, vendor SLAs\n- study complex systems and make them accessible to various audiences\n- {review, recommend} application {architecture, code}\n- maintain SDLC process\n- develop web and mobile applications\n- architect {cloud, web, mobile} solutions\n- {develop, deploy} {iPhone, Android} apps\n- {develop, deploy} {Cordova, React Native} HTML5+CSS3+JS apps\n- {audit, deploy} {developer code, data migrations}\n- {transform, migrate} data\n- audit application code for security and performance\n\n# What Bruno is:\n\n- teacher\n- strong verbal and written communicator\n- excellent troubleshooter, debugger, and problem bisector\n- unrepentant command line addict\n- ambiguity assassin",
+    "summary": "Engineer, architect, and mentor with 28+ years in DevOps, cloud platforms, infrastructure automation, and software\nengineering. I power these disciplines with an AI-augmented workflow, leveraging autonomous agents (OpenClaw, OpenCode)\nand self-hosted LLMs to massively accelerate infrastructure delivery, pipeline analysis, and code refactoring.\nAdept at building secure API tools for AI integration, teaching best practices, and driving business-critical\ntransformations across cloud, mobile, and embedded systems.",
+    "exhaustiveSummary": "Born in the Appalachian mountains of West Virginia to a radio electronics technician, Bruno grew up in coal mining\ncountry where most of his classmates remain. He never threw a ball with his father, though they did attend a\nhandful of Cincinnati Reds baseball games. They spent their nights and weekends soldering Heathkit projects from\nRadio Shack (my first computer was a [Heathkit H89](https://vintagecomputer.com/heathkit-h89.html)) and writing\ngames and equation solvers in Borland Turbo Basic, then Turbo Pascal, and eventually Delphi.\nWhen calling his father in 1995 to tell him Bruno got his first professional programming gig, they both saw this\nlike getting drafted into MLB. Every day Bruno feels like \"the luckiest man in baseball\" to have escaped the coal\nmines.\n\n# What Bruno does:\n\n- cloud computing: OpenStack Amazon Web Services, Microsoft Azure, Google Cloud Platform, Linode, DigitalOcean, Heroku\n- container services: Docker, Kubernetes, Nomad, ECS, EKS\n- infrastructure orchestration and automation with Terraform, Ansible, Chef, Argo\n- infrastructure and capacity planning\n- data center operations\n- OpenVPN, SSH tunneling, network security\n- troubleshoot network issues\n- DBA for DynamoDB, Kafka, Cassandra, MongoDB, CouchDB, PostgreSQL, MySQL\n- administer various Unix and GNU/Linux\n- administer virtualization hosts and guests\n- optimize RAID, swap, cache\n- archaeology of code, protocol, process\n- manage systems engineers, software developers\n- manage vendors, contractors\n- manage client SLAs, vendor SLAs\n- study complex systems and make them accessible to various audiences\n- {review, recommend} application {architecture, code}\n- maintain SDLC process\n- develop web and mobile applications\n- architect {cloud, web, mobile} solutions\n- {develop, deploy} {iPhone, Android} apps\n- {develop, deploy} {Cordova, React Native} HTML5+CSS3+JS apps\n- {audit, deploy} {developer code, data migrations}\n- {transform, migrate} data\n- audit application code for security and performance\n\n# What Bruno is:\n\n- teacher\n- strong verbal and written communicator\n- excellent troubleshooter, debugger, and problem bisector\n- unrepentant command line addict\n- ambiguity assassin",
     "location": {
-      "address": "Lower Garden District",
-      "postalCode": "70130",
+      "address": "French Quarter",
+      "postalCode": "70116",
       "city": "New Orleans",
       "countryCode": "US",
       "region": "LA"
@@ -36,7 +37,7 @@
       },
       {
         "network": "LinkedIn",
-        "username": "Bruno-Bronosky",
+        "username": "RichardBronosky",
         "url": "https://www.linkedin.com/in/RichardBronosky"
       },
       {
@@ -48,48 +49,151 @@
   },
   "work": [
     {
-      "name": "Confidential: International Airline",
-      "position": "Contract: Trainer of DevOps Engineers",
+      "name": "Intelerad Medical Systems",
+      "position": "Technology Consultant",
+      "startDate": "2025-11-17",
+      "endDate": "Present",
+      "highlights": [
+        "Develop AI tools to shorten ticket completion times",
+        "Develop AI tools to on-board new team members",
+        "Document Dev-Ops processes and Infrastructure to improve AI tool efficiency.",
+        "Dev-Ops"
+      ],
+      "skills": [
+        "AWS",
+        "Azure",
+        "Bash",
+        "Python",
+        "Terraform",
+        "Ansible",
+        "CI/CD",
+        "OpenClaw",
+        "OpenCode",
+        "Gemini-CLi/Claude Code/GPT Codex"
+      ]
+    },
+    {
+      "name": "Triton",
+      "position": "Research Fellow",
+      "startDate": "2023-07-31",
+      "endDate": "Present",
+      "highlights": [
+        "Manage engineers and projects",
+        "Developed secure API endpoints and OpenClaw agent skills to automate infrastructure interaction and monitoring",
+        "Deployed local, privacy-compliant LLMs to accelerate engineering velocity while protecting proprietary data",
+        "Leveraged AI coding agents to rapidly refactor complex systems and automate infrastructure-as-code",
+        "Mentored engineering teams on adopting AI-augmented workflows and integrating LLMs into CI/CD pipelines",
+        "Validate R & D plans and results",
+        "3D modeling and CNC manufacturing",
+        "Safety and fire suppression",
+        "Design and implement sensor arrays for data gathering",
+        "Develop real-time monitoring systems in Python",
+        "AI data analysis and fault prediction",
+        "Plan and administer a Digital Arts division"
+      ],
+      "skills": [
+        "AWS",
+        "GCP",
+        "Azure",
+        "Bash",
+        "Python",
+        "Rust",
+        "C/C++",
+        "cybersecurity",
+        "GitOps"
+      ]
+    },
+    {
+      "name": "NDA Protected Consulting Clients x4",
+      "display": "ATS-Only",
+      "position": "Engineering Team Trainer",
+      "startDate": "2021-02-01",
+      "endDate": "2021-09-30",
+      "summary": "Value: $10B+ Employees: 90k+",
+      "highlights": [
+        "CI/CD with CloudBees/Jenkins, Argo-CD, Harness.io, SonarQube, JMeter, AWS infrastructure with CDK+CFN",
+        "Migration to Github Enterprise from 5 other VCS",
+        "Azure & AWS infrastructure and network security architecture",
+        "architect and develop an internal ML/AI Software Development Co-Pilot trained on internal code repos to reduce code \"re-invention\" and time/effort",
+        "Robotics R&D, GCP, Machine Learning, Computer Vision, Software Development, Network & Physical Architecture, DevSecOps, Linux System Administration",
+        "ROS 1&2 [Robotics Operating System], Dobot CR5, Python, C++"
+      ],
+      "skills": [
+        "AWS",
+        "Azure",
+        "GitOps",
+        "FedRAMP",
+        "C++",
+        "Python",
+        "ROS; Robotics Operating System"
+      ]
+    },
+    {
+      "name": "(Confidential) International Airline",
+      "display": "ATS-None",
+      "position": "(Contract) Trainer of DevOps Engineers",
       "startDate": "2022-09-30",
       "endDate": "2023-07-31",
-      "summary": "Value: >$10B Employees: >90k",
+      "summary": "Value: $10B+ Employees: 90k+",
       "highlights": [
         "CI/CD with Harness.io, AWS infrastructure with CDK+CFN, Migration to Github Enterprise from 5 other VCS",
         "architect and develop an internal ML/AI Software Development Co-Pilot trained on internal code repos to reduce code \"re-invention\" and time/effort"
+      ],
+      "skills": [
+        "AWS",
+        "GitOps"
       ]
     },
     {
-      "name": "Confidential: Cyber Security and Biometric Identity Org",
-      "position": "Contract: Trainer of DevOps Engineers",
+      "name": "(Confidential) Cybersecurity and Biometric Identity Org",
+      "display": "ATS-None",
+      "position": "(Contract) Trainer of DevOps Engineers",
       "startDate": "2022-05-01",
       "endDate": "2022-09-30",
-      "summary": "Value: >$3B Employees: >10k ",
+      "summary": "Value: $3B+ Employees: 10k+",
       "highlights": [
         "CI/CD with CloudBees/Jenkins and Argo-CD",
         "software testing with SonarQube, JMeter, and various other tools"
+      ],
+      "skills": [
+        "AWS",
+        "FedRAMP",
+        "GitOps"
       ]
     },
     {
-      "name": "Confidential: Financial Services Org",
-      "position": "Contract: Trainer of Robotics, Computer Vision, and Machine Learning Engineers",
+      "name": "(Confidential) Financial Services Org",
+      "display": "ATS-None",
+      "position": "(Contract) Trainer of Robotics, Computer Vision, and ML Engineers",
       "startDate": "2021-11-01",
       "endDate": "2022-04-30",
-      "summary": "Value: >$1T Employees: >225k",
+      "summary": "Value: $1T+ Employees: 225k+",
       "highlights": [
-        "Robotics R&D, Machine Learning, Computer Vision, Software Development, Network & Physical Architecture, DevSecOps, Linux System Administration",
+        "Robotics R&D, GCP, Machine Learning, Computer Vision, Software Development, Network & Physical Architecture, DevSecOps, Linux System Administration",
         "ROS 1&2 [Robotics Operating System], Dobot CR5, Python, C++"
+      ],
+      "skills": [
+        "AWS",
+        "GCP",
+        "GitOps"
       ]
     },
     {
-      "name": "Confidential: Chemical Engineering R&D and Production Org",
-      "position": "Contract: Trainer of DevOps Engineers",
+      "name": "(Confidential) Chemical Engineering R&D and Production Org",
+      "display": "ATS-None",
+      "position": "(Contract) Trainer of DevOps Engineers",
       "startDate": "2021-02-01",
       "endDate": "2021-09-30",
-      "summary": "Value: >$10B Employees: >90k",
+      "summary": "Value: $10B+ Employees: 90k+",
       "highlights": [
         "CI/CD with Jenkins, SonarQube, JMeter, various software testing tools",
-        "AWS infrastructure and network security architecture",
+        "Azure & AWS infrastructure and network security architecture",
         "Architected an internal ML/AI Software Development Co-Pilot trained on internal code repos to reduce code \"re-invention\" and time/effort"
+      ],
+      "skills": [
+        "AWS",
+        "Azure",
+        "GitOps"
       ]
     },
     {
@@ -111,6 +215,10 @@
         "Make and document changes to AWS infrastructure via aws-cli.",
         "Manage network security with AWS Security Groups, iptables, and OpenVPN.",
         "Maintain MongoDB and DynamoDB databases."
+      ],
+      "skills": [
+        "AWS",
+        "GitOps"
       ]
     },
     {
@@ -125,7 +233,11 @@
         "Develop tools in Python, Go, bash, awk, sed, CircuitPython, and Arduino.",
         "Build and maintain Cassandra, MongoDB, and MySQL databases.",
         "Build custom Raspberry Pi images for IoT devices sent to client locations.",
-        "Design and CNC mill custom IoT hardware cases."
+        "Design, 3D Model, and CNC mill custom IoT hardware cases."
+      ],
+      "skills": [
+        "AWS",
+        "GitOps"
       ]
     },
     {
@@ -141,6 +253,10 @@
         "Workflow and process automation.",
         "Lead mobile architecture and technical strategy.",
         "Present and teach."
+      ],
+      "skills": [
+        "AWS",
+        "GitOps"
       ]
     },
     {
@@ -155,6 +271,10 @@
         "Encourage and inspire developers and vendors to give great service.",
         "Workflow automation scripting.",
         "Architect and develop software."
+      ],
+      "skills": [
+        "AWS",
+        "GitOps"
       ]
     },
     {
@@ -167,6 +287,9 @@
         "Administer GNU/Linux servers.",
         "Manage a department of sysadmins.",
         "Workflow automation and config management."
+      ],
+      "skills": [
+        "AWS"
       ]
     },
     {
@@ -180,6 +303,9 @@
         "Optimize developer code.",
         "Maintain high availability and performance.",
         "Develop extra Django and Rails projects."
+      ],
+      "skills": [
+        "AWS"
       ]
     },
     {
@@ -193,10 +319,28 @@
         "Automate workflows.",
         "Develop PHP web applications.",
         "Administer FreeBSD, Apache, MySQL."
+      ],
+      "skills": [
+        "PHP"
+      ]
+    },
+    {
+      "name": "Various",
+      "location": "Various",
+      "position": "Prior Professional Experience",
+      "startDate": "1995-08-01",
+      "endDate": "2007-01-01",
+      "highlights": [
+        "Companies include: Apple Computer, Lanier Worldwide, MedCenterDirect, Amazing Graphics, World Wide Development, and freelance work",
+        "Tasks include: Technical Account Manager, Full Stack Developer, 3D Modeling, Graphic Design and Print Prepress"
+      ],
+      "skills": [
+        "PHP"
       ]
     },
     {
       "name": "Apple Computer",
+      "display": "None",
       "location": "Atlanta, GA",
       "position": "Business Sales Specialist",
       "startDate": "2004-03-01",
@@ -207,17 +351,22 @@
     },
     {
       "name": "Lanier Worldwide",
+      "display": "None",
       "location": "Atlanta, GA",
-      "position": "Web Application Developer",
+      "position": "Full Stack Developer",
       "startDate": "2002-10-01",
       "endDate": "2004-03-01",
       "highlights": [
         "Manage and train developers on CVS, security policies, and best practices.",
         "Develop PHP CMS and software deployment system."
+      ],
+      "skills": [
+        "AWS"
       ]
     },
     {
       "name": "MedCenterDirect",
+      "display": "None",
       "location": "Atlanta, GA",
       "position": "Lead Solutions Developer",
       "startDate": "2000-12-02",
@@ -226,10 +375,14 @@
         "Develop PHP applications, portals, and commerce solutions.",
         "Architect custom deployment strategy.",
         "Script data migrations."
+      ],
+      "skills": [
+        "AWS"
       ]
     },
     {
       "name": "Amazing Graphics",
+      "display": "None",
       "location": "Atlanta, GA",
       "position": "Digital Designer/Production Artist",
       "startDate": "1999-04-01",
@@ -237,20 +390,41 @@
       "highlights": [
         "Create graphics for vinyl wrapping busses, buildings, trade shows, etc.",
         "Administer network and Mac, NT, Solaris/Unix systems."
+      ],
+      "skills": [
+        "AWS"
       ]
     },
     {
       "name": "Freelance",
+      "display": "None",
       "location": "USA and Ireland",
       "position": "Consultant",
       "startDate": "1998-01-01",
       "endDate": "2004-03-01",
       "highlights": [
         "Consult in LAMP stack, networking, web development, client application development, Q/A, automation, graphic design."
+      ],
+      "skills": [
+        "HTML",
+        "JS",
+        "C",
+        "C++",
+        "TCP/IP",
+        "Unix",
+        "Solaris",
+        "Data Center",
+        "Adobe Photoshop",
+        "Adobe Illustrator",
+        "Adobe InDesign",
+        "Quark Express",
+        "Macromedia Shockwave",
+        "Macromedia Flash"
       ]
     },
     {
       "name": "World Wide Development",
+      "display": "None",
       "location": "Ashland, KY",
       "position": "Webmaster",
       "startDate": "1995-08-01",
@@ -259,6 +433,16 @@
         "Develop (as a market pioneer) DB driven web solutions using HTML, JS, Perl, C/C++, ColdFusion, MS SQL",
         "Rack servers, run cables, and miscellaneous data center work.",
         "Answer phones on the customer support line (while writing code)."
+      ],
+      "skills": [
+        "HTML",
+        "JS",
+        "C",
+        "C++",
+        "TCP/IP",
+        "Unix",
+        "Solaris",
+        "Data Center"
       ]
     }
   ],
@@ -287,11 +471,24 @@
     {
       "institution": "University of Kentucky",
       "area": "Computer Engineering and Systems Analysis",
+      "display": "None",
       "startDate": "1997",
       "endDate": "1997"
     }
   ],
   "skills": [
+    {
+      "name": "AI & Agentic Automation",
+      "level": "master",
+      "keywords": [
+        "OpenClaw & OpenCode",
+        "Agentic Workflows (MCP)",
+        "AI-to-API Integration",
+        "Local / Private LLMs",
+        "AI-Assisted CI/CD",
+        "Prompt Engineering"
+      ]
+    },
     {
       "name": "Amazon Web Services",
       "level": "master",
@@ -316,12 +513,31 @@
       "name": "Automation/Orchestration & CI/CD",
       "level": "master",
       "keywords": [
+        "GitOps",
         "Terraform",
+        "Packer",
         "Ansible",
         "Chef",
         "CloudFormation",
         "CDK",
-        "Jenkins"
+        "Jenkins",
+        "ArgoCD"
+      ]
+    },
+    {
+      "name": "Observability/Monitoring",
+      "level": "master",
+      "keywords": [
+        "Prometheus",
+        "Grafana",
+        "OpenTelemetry",
+        "OpenMetrics",
+        "OpenTracing",
+        "Nagios",
+        "Datadog",
+        "New Relic",
+        "Splunk",
+        "ELK; Elasticsearch, Logstash, Kibana"
       ]
     },
     {
@@ -483,7 +699,7 @@
     }
   ],
   "meta": {
-    "theme": "kendall-markdown",
+    "theme": "jsonresume-theme-kendall-markdown",
     "canonical": "https://raw.githubusercontent.com/jsonresume/resume-schema/main/resume.json",
     "version": "v1.0.0",
     "lastModified": "2023-06-01T00:42:42"
