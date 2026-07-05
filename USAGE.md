@@ -1,48 +1,45 @@
-# Usage (pyenv)
+# Usage
 
-This repo includes a Python-based DOCX generator. These instructions use pyenv to install Python locally, create a virtual environment, and generate a resume.
+This repo generates DOCX and PDF resumes from `src/bruno.bronosky.resume.yaml`
+using `nix-shell` (Python and LibreOffice are provisioned automatically — no
+system Python or Docker required).
 
 ## Prerequisites
 
-- pyenv installed and available in your shell
-- Docker running (required for PDF conversion and page counting)
-- pdfinfo available (from poppler-utils)
+- [Nix](https://nixos.org/download) package manager. If you don't have it:
+  ```bash
+  sh <(curl -L https://nixos.org/nix/install) --daemon
+  ```
 
-## Install Python with pyenv
+## Generate a resume
 
 ```bash
-pyenv install 3.12.8
-pyenv local 3.12.8
-python -V
+# 1. Drop into the development shell (auto-installs the generator CLI)
+nix-shell
+
+# 2. Build the DOCX version
+make docx
+
+# 3. Build the DOCX and PDF versions
+make pdf
 ```
 
-## Create a virtual environment
+Outputs are saved to `build/`.
+
+## Rebuilding from scratch
+
+If the local `.venv` gets stale (e.g. after moving to a different machine or
+a Nix package upgrade), delete it and let `nix-shell` recreate it:
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate
-```
-
-## Install the generator
-
-```bash
-pip install -r src/docx-generator/requirements.txt
-pip install -e src/docx-generator
-```
-
-## Generate a DOCX resume
-
-```bash
-resume-docx src/bruno.bronosky.resume.yaml -o build/Bruno_Bronosky_Resume_From_YAML.docx
-```
-
-## Generate DOCX and PDF
-
-```bash
-resume-docx src/bruno.bronosky.resume.yaml -o build/Bruno_Bronosky_Resume_From_YAML.docx --pdf
+rm -rf .venv
+nix-shell
 ```
 
 ## Troubleshooting
 
-- If you see a Docker permission error, run the command with sudo or add your user to the docker group.
-- If you see "No such file or directory: 'pdfinfo'", install poppler-utils and re-run.
+- `resume-docx: command not found` inside `nix-shell` — delete `.venv` and
+  re-enter the shell (see above); the shell hook reinstalls the CLI
+  automatically.
+- PDF conversion errors — LibreOffice is provisioned by `nix-shell`; make
+  sure you're running `make pdf` (or `make docx`) from inside the shell.
