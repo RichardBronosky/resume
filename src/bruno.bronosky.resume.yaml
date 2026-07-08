@@ -485,13 +485,21 @@ skills:
       - EKS
       - Fargate
       - EBS
+      - ELB
       - RDS
       - S3
-      - Lamda
-      - CloudFront
-      - GuardDuty
       - SNS
       - SQS
+      - IAM
+      - VPC
+      - SSM
+      - Lamda
+      - Route53
+      - CloudFront
+      - CloudWatch
+      - GuardDuty
+      - DynamoDB
+      - Auto Scaling
   - name: "Automation/Orchestration & CI/CD"
     level: master
     keywords:
