@@ -98,8 +98,10 @@ work:
       - Develop AI tools to shorten ticket completion times
       - Develop AI tools to on-board new team members
       - Document Dev-Ops processes and Infrastructure to improve AI tool efficiency.
+      - Automate and document repeatable infrastructure operations rather than relying on manual procedures.
       - Dev-Ops
     skills:
+      - PowerShell
       - AWS
       - Azure
       - Bash
@@ -121,6 +123,7 @@ work:
       - Deployed local, privacy-compliant LLMs to accelerate engineering velocity while protecting proprietary data
       - Leveraged AI coding agents to rapidly refactor complex systems and automate infrastructure-as-code
       - Mentored engineering teams on adopting AI-augmented workflows and integrating LLMs into CI/CD pipelines
+      - Used Python for API-driven infrastructure automation, real-time systems, robotics, monitoring, and data analysis.
       - Validate R & D plans and results
       - 3D modeling and CNC manufacturing
       - Safety and fire suppression
@@ -153,6 +156,8 @@ work:
       - Azure & AWS infrastructure and network security architecture
       - architect and develop an internal ML/AI Software Development Co-Pilot trained on internal code repos to reduce code "re-invention" and time/effort
       - Robotics R&D, GCP, Machine Learning, Computer Vision, Software Development, Network & Physical Architecture, DevSecOps, Linux System Administration
+      - Built and taught CI/CD patterns including GitHub Actions workflows, GitHub Enterprise migrations, and cloud-backed automation.
+      - Integrated service-management and ticket workflow data into delivery and operational analysis processes.
       - ROS 1&2 [Robotics Operating System], Dobot CR5, Python, C++
 
     skills:
@@ -162,6 +167,8 @@ work:
       - FedRAMP
       - C++
       - Python
+      - GitHub Actions
+      - ServiceNow
       - ROS; Robotics Operating System
 
   - name: "(Confidential) International Airline"
@@ -241,6 +248,8 @@ work:
       - Develop tools and services in bash, Node.js, Python, and Go.
       - Design, build, and deploy Docker containers, API Gateways.
       - Automate and orchestrate infrastructure with Packer and Terraform.
+      - Built Python automation against cloud and service APIs for infrastructure operations.
+      - Built GitHub Actions workflows professionally from 2020, using Actions pragmatically and offloading larger execution to cloud-native services when appropriate.
       - Build and maintain [Fargate] ECS, EKS, and Kubernetes clusters serving microservices.
       - Manage AWS costs.
       - Make and document changes to AWS infrastructure via aws-cli.
@@ -249,6 +258,9 @@ work:
     skills:
       - AWS
       - GitOps
+      - GitHub Actions
+      - Python REST API Automation
+      - PowerShell
 
   - name: MidAmerican Energy Services
     location: Dunwoody, GA
@@ -260,11 +272,15 @@ work:
       - Build and maintain Kubernetes clusters serving microservices.
       - Develop tools in Python, Go, bash, awk, sed, CircuitPython, and Arduino.
       - Build and maintain Cassandra, MongoDB, and MySQL databases.
+      - Automated infrastructure and operational workflows with Python and PowerShell where Windows administration or executable documentation was required.
+      - Maintained database-backed production systems with emphasis on operational health, performance, and reliability.
       - Build custom Raspberry Pi images for IoT devices sent to client locations.
       - Design, 3D Model, and CNC mill custom IoT hardware cases.
     skills:
       - AWS
       - GitOps
+      - PowerShell
+      - SQL Server
 
   - name: Cox Media Group [Technology]
     location: Atlanta, GA
@@ -275,12 +291,17 @@ work:
       - Develop mobile client and backend POCs.
       - Architect and deploy cloud infrastructure.
       - Develop and maintain original Open Source software projects.
+      - Automated Windows and cloud administration with PowerShell and Python rather than leaving manual GUI procedures undocumented.
+      - Integrated ServiceNow ticket/workflow data into CI/CD and operational analysis workflows.
       - Workflow and process automation.
       - Lead mobile architecture and technical strategy.
       - Present and teach.
     skills:
       - AWS
       - GitOps
+      - PowerShell
+      - ServiceNow
+      - Python REST API Automation
 
   - name: Cox Media Group [Technology]
     location: Atlanta, GA
@@ -292,6 +313,7 @@ work:
       - Improve performance through coaching.
       - Encourage and inspire developers and vendors to give great service.
       - Workflow automation scripting.
+      - Partnered with ServiceNow administrators to extract ticket/request data for analysis and process automation.
       - Architect and develop software.
     skills:
       - AWS
@@ -306,6 +328,7 @@ work:
       - Administer GNU/Linux servers.
       - Manage a department of sysadmins.
       - Workflow automation and config management.
+      - Used ServiceNow as a ticket assignee/request creator and later as a workflow data source for operational analysis.
     skills:
       - AWS
 
@@ -319,6 +342,7 @@ work:
       - Optimize developer code.
       - Maintain high availability and performance.
       - Develop extra Django and Rails projects.
+      - Used Python/Django for internal tooling before later expanding into cloud and REST/API automation.
     skills:
       - AWS
 
@@ -426,7 +450,7 @@ work:
     startDate: "1995-08-01"
     endDate: "1998-01-01"
     highlights:
-      - Develop (as a market pioneer) DB driven web solutions using HTML, JS, Perl, C/C++, ColdFusion, MS SQL
+      - Develop and administer market-pioneer DB-driven web solutions using HTML, JS, Perl, C/C++, ColdFusion, and MS SQL Server.
       - Rack servers, run cables, and miscellaneous data center work.
       - Answer phones on the customer support line (while writing code).
     skills:
@@ -437,6 +461,7 @@ work:
       - TCP/IP
       - Unix
       - Solaris
+      - SQL Server
       - Data Center
 
 volunteer:
@@ -507,6 +532,7 @@ skills:
       - Terraform
       - Packer
       - Ansible
+      - GitHub Actions
       - Chef
       - CloudFormation
       - CDK
@@ -568,6 +594,23 @@ skills:
       - POSIX sh
       - GNU Bash
       - Zsh
+  - name: PowerShell Automation
+    level: master
+    keywords:
+      - Windows administration as executable documentation
+      - Active Directory / Exchange / O365 automation
+      - SQL Server administration automation
+      - VMware automation
+      - Cloud and CI/CD automation
+      - ServiceNow integration
+  - name: Service Management and Database Operations
+    level: advanced
+    keywords:
+      - ServiceNow workflow and catalog integration
+      - ServiceNow data extraction for analysis
+      - Microsoft SQL Server administration
+      - SQL Server querying, operations, troubleshooting, and performance stewardship
+      - Production database reliability
   - name: Graphics
     level: master
     keywords:
@@ -583,10 +626,13 @@ skills:
       - JavaScript; ECMAScript
       - PHP
   - name: Interpreted Languages
-    level: intermediate
+    level: advanced
     keywords:
       - Node.js
       - Python
+      - Python REST/API automation
+      - Python AWS automation before official AWS CLI
+      - Django
   - name: Compiled Languages
     level: beginner
     keywords:
@@ -651,4 +697,3 @@ meta:
   canonical: https://raw.githubusercontent.com/jsonresume/resume-schema/main/resume.json
   version: v1.0.0
   lastModified: "2023-06-01T00:42:42"
-
