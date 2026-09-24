@@ -29,7 +29,7 @@ pkgs.mkShell {
     # Install the local docx-generator package in editable mode
     if ! command -v resume-docx &> /dev/null; then
         echo "Installing docx-generator..."
-        pip install -e src/docx-generator -q
+        pip install -e src/docx-generator -q --break-system-packages
     fi
     
     echo "You can now run: make docx"
