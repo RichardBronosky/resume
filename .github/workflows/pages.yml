@@ -1,10 +1,14 @@
 name: Deploy resume to GitHub Pages
 
 # Publishes the committed build/ artifacts at https://bronosky.com/resume/.
-# Rebuild locally (see USAGE.md), commit build/, push main. CI only copies.
+# Rebuild locally (see USAGE.md), commit build/, push. CI only copies.
+#
+# Branches named preview/<name> are also published, at /resume/preview/<name>/.
+# Deleting such a branch removes its preview on the next run.
 on:
   push:
-    branches: [main]
+    branches: [main, 'preview/**']
+  delete:
   workflow_dispatch:
 
 permissions:
@@ -18,27 +22,16 @@ concurrency:
 
 jobs:
   build:
+    # `delete` fires for every deleted ref; only care about preview branches.
+    if: github.event_name != 'delete' || (github.event.ref_type == 'branch' && startsWith(github.event.ref, 'preview/'))
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - name: Assemble site (legacy URL layout)
-        run: |
-          redirect() { # redirect <dir> <target>
-            mkdir -p "dist/$1"
-            printf '<!DOCTYPE html>\n<meta charset="utf-8">\n<title>Resume of Bruno Bronosky</title>\n<meta http-equiv="refresh" content="0; url=%s">\n<a href="%s">Continue</a>\n' "$2" "$2" > "dist/$1/index.html"
-          }
-          mkdir -p dist/html dist/pdf
-          cp build/bruno.bronosky.resume.html dist/index.html
-          cp build/bruno.bronosky.resume.html dist/html/bruno.bronosky.resume.html
-          cp build/bruno.bronosky.resume.html dist/html/index.html
-          cp build/bruno.bronosky.resume.pdf  dist/pdf/bruno.bronosky.resume.pdf
-          cp build/bruno.bronosky.resume.docx dist/bruno.bronosky.resume.docx
-          cp build/bruno.bronosky.resume.json dist/bruno.bronosky.resume.json
-          redirect pdf bruno.bronosky.resume.pdf
-          cp build/bruno.bronosky.community.pdf dist/bruno.bronosky.community.pdf
-          redirect community ../bruno.bronosky.community.pdf
-          find dist -type f | sort
+      - name: Assemble site (see tools/assemble-site.sh)
+        run: ./tools/assemble-site.sh dist
 
       - uses: actions/upload-pages-artifact@v3
         with:

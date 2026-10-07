@@ -48,6 +48,24 @@ The live resume at **<https://bronosky.com/resume/>** is deployed by
 To publish a change: edit the YAML, rebuild `build/` (see [USAGE.md](USAGE.md)),
 commit, push `main`.
 
+### Public previews
+
+Any branch named `preview/<name>` is published at
+`https://bronosky.com/resume/preview/<name>/` (index at `/resume/preview/`),
+so a change can be checked on real devices before it reaches `main`:
+
+```bash
+git switch -c preview/my-change
+# edit, rebuild build/ (see USAGE.md), commit it
+git push -u origin preview/my-change      # live in ~1 minute
+git push origin --delete preview/my-change  # remove the preview
+```
+
+Previews serve the branch's committed `build/` files, carry a red
+`PREVIEW <branch> @ <sha>` banner and `noindex`, but are public to anyone with
+the URL. Production (`/resume/`) always comes from `main`.
+Assembly logic: [`tools/assemble-site.sh`](tools/assemble-site.sh).
+
 **The `gh-pages` branch is retired.** It was a hand-built orphan branch (last
 built 2026-05-16) and is archived at tag `archive/gh-pages-2026-05`. Pages
 source is now "GitHub Actions".
