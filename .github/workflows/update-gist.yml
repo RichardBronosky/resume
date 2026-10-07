@@ -14,4 +14,5 @@ jobs:
       with:
         token: ${{ secrets.TOKEN }}
         gist_id: ${{ vars.GIST_ID }}
-        file_path: resume.json
+        file_path: build/bruno.bronosky.resume.json
+        gist_file_name: resume.json
