@@ -16,10 +16,11 @@ basics:
   urlSource: https://richardbronosky.github.io/resume/
   summary: |-
     Engineer, architect, and mentor with 28+ years in DevOps, cloud platforms, infrastructure automation, and software
-    engineering. I power these disciplines with an AI-augmented workflow, leveraging autonomous agents (OpenClaw, OpenCode)
-    and self-hosted LLMs to massively accelerate infrastructure delivery, pipeline analysis, and code refactoring.
-    Adept at building secure API tools for AI integration, teaching best practices, and driving business-critical
-    transformations across cloud, mobile, and embedded systems.
+    engineering. I turn operational work into durable scripts, API integrations, and CI/CD workflows across Python,
+    Bash, GitHub Actions, and AWS, Azure, and GCP. I power these disciplines with an AI-augmented workflow, leveraging
+    autonomous agents (OpenClaw, OpenCode) and self-hosted LLMs to massively accelerate infrastructure delivery,
+    pipeline analysis, and code refactoring. Adept at building secure API tools for AI integration, teaching best
+    practices, and driving business-critical transformations across cloud, mobile, and embedded systems.
   exhaustiveSummary: |-
     Born in the Appalachian mountains of West Virginia to a radio electronics technician, Bruno grew up in coal mining
     country where most of his classmates remain. He never threw a ball with his father, though they did attend a
