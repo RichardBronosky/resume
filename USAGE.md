@@ -39,7 +39,8 @@ The HTML theme is vendored at
 always renders with that copy, never the npm package, so it is never published
 or fetched. The old standalone clone of the theme repo is no longer used.
 
-The community page (`/resume/community/`) is rendered from
+The community page (`/resume/community/`) is a themed web page (same CSS and
+header as the resume, no PDF involved) rendered from
 `src/bruno.bronosky.community.md` with `node tools/community-html.cjs` and
 committed as `build/bruno.bronosky.community.html`. The resume links to it
 instead of a github.com URL because on Android a github.com link opens the

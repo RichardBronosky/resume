@@ -24,15 +24,11 @@ site() {
   for f in "$BASE.docx" "$BASE.json" bruno.bronosky.community.pdf; do
     git show "$ref:build/$f" > "$dest/$f" 2>/dev/null || rm -f "$dest/$f"
   done
-  # /community/: a real HTML page (a github.com link would open the GitHub app on Android);
-  # fall back to the PDF if no HTML was built.
-  mkdir -p "$dest/community"
+  # /community/: a themed HTML page. Never redirect to the PDF (bad on phones; the PDF is
+  # only for email attachments) and never link github.com (opens the GitHub app on Android).
   if git cat-file -e "$ref:build/bruno.bronosky.community.html" 2>/dev/null; then
+    mkdir -p "$dest/community"
     git show "$ref:build/bruno.bronosky.community.html" > "$dest/community/index.html"
-  elif [ -f "$dest/bruno.bronosky.community.pdf" ]; then
-    printf '<!DOCTYPE html>\n<meta charset="utf-8">\n<meta http-equiv="refresh" content="0; url=../bruno.bronosky.community.pdf">\n' > "$dest/community/index.html"
-  else
-    rmdir "$dest/community"
   fi
 }
 
