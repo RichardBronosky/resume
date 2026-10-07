@@ -30,6 +30,35 @@ make pdf
 
 Outputs will be saved to the `build/` directory.
 
+## Publishing (bronosky.com/resume/)
+
+The live resume at **<https://bronosky.com/resume/>** is deployed by
+[`.github/workflows/pages.yml`](.github/workflows/pages.yml) on every push to
+`main`. CI does not build anything; it copies the committed
+[`build/`](build/) artifacts into the URL layout below.
+
+| URL | Serves |
+|-----|--------|
+| `/resume/` | HTML resume (`build/bruno.bronosky.resume.html`) |
+| `/resume/html/` | same HTML |
+| `/resume/pdf/` → `/resume/pdf/bruno.bronosky.resume.pdf` | PDF |
+| `/resume/bruno.bronosky.resume.{docx,json}` | DOCX / JSON Resume |
+| `/resume/community/` → community PDF | community statement |
+
+To publish a change: edit the YAML, rebuild `build/` (see [USAGE.md](USAGE.md)),
+commit, push `main`.
+
+**The `gh-pages` branch is retired.** It was a hand-built orphan branch (last
+built 2026-05-16) and is archived at tag `archive/gh-pages-2026-05`. Pages
+source is now "GitHub Actions".
+
+How `bronosky.com/resume/` is hosted: `bronosky.com` is the user site
+([RichardBronosky/richardbronosky.github.io](https://github.com/RichardBronosky/richardbronosky.github.io),
+custom domain `bronosky.com`); this repo's Pages site is mounted under it at
+`/resume/`. Unrelated and independent: the QR contact card
+[brand-bot](https://github.com/RichardBronosky/brand-bot) is served from
+`bruno.bronosky.com`.
+
 ## Repository Layout
 
 * [`src/bruno.bronosky.resume.yaml`](src/bruno.bronosky.resume.yaml) - The single source of truth for all resume data.

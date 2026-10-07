@@ -26,6 +26,21 @@ make pdf
 
 Outputs are saved to `build/`.
 
+## Publish to bronosky.com/resume/
+
+Commit the regenerated `build/` files and push `main`; the
+[Pages workflow](.github/workflows/pages.yml) deploys them. There is no
+`gh-pages` branch any more. See the Publishing section of the
+[README](README.md#publishing-bronoskycomresume).
+
+HTML and JSON are not produced by `make`. From a shell with `yq` (e.g.
+`nix-shell -p yq-go`) run, with `tools/` on `PATH`:
+
+```bash
+PATH=$PWD/tools:$PATH ./tools/jsonresume.sh yaml_file_to_json_file
+PATH=$PWD/tools:$PATH ./tools/jsonresume.sh html
+```
+
 ## Rebuilding from scratch
 
 If the local `.venv` gets stale (e.g. after moving to a different machine or

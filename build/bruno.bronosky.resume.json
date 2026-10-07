@@ -6,11 +6,11 @@
     "image": "http://www.gravatar.com/avatar/959ccd33301cb3c15953c1a632a36763?s=500",
     "email": "job-application@bronosky.com",
     "phone": "(404) 992-7866",
-    "url": "https://richardbronosky.github.io/resume/",
-    "urlPrintable": "https://richardbronosky.github.io/resume/html/",
-    "urlPdf": "https://richardbronosky.github.io/resume/pdf/",
-    "urlSource": "https://richardbronosky.github.io/resume/",
-    "summary": "Engineer, architect, and mentor with 28+ years in DevOps, cloud platforms, infrastructure automation, and software\nengineering. I power these disciplines with an AI-augmented workflow, leveraging autonomous agents (OpenClaw, OpenCode)\nand self-hosted LLMs to massively accelerate infrastructure delivery, pipeline analysis, and code refactoring.\nAdept at building secure API tools for AI integration, teaching best practices, and driving business-critical\ntransformations across cloud, mobile, and embedded systems.",
+    "url": "https://bronosky.com/resume/",
+    "urlPrintable": "https://bronosky.com/resume/html/",
+    "urlPdf": "https://bronosky.com/resume/pdf/",
+    "urlSource": "https://bronosky.com/resume/",
+    "summary": "Engineer, architect, and mentor with 28+ years in DevOps, cloud platforms, infrastructure automation, and software\nengineering. I turn operational work into durable scripts, API integrations, and CI/CD workflows across Python,\nBash, GitHub Actions, and AWS, Azure, and GCP. I power these disciplines with an AI-augmented workflow, leveraging\nautonomous agents (OpenClaw, OpenCode) and self-hosted LLMs to massively accelerate infrastructure delivery,\npipeline analysis, and code refactoring. Adept at building secure API tools for AI integration, teaching best\npractices, and driving business-critical transformations across cloud, mobile, and embedded systems.",
     "exhaustiveSummary": "Born in the Appalachian mountains of West Virginia to a radio electronics technician, Bruno grew up in coal mining\ncountry where most of his classmates remain. He never threw a ball with his father, though they did attend a\nhandful of Cincinnati Reds baseball games. They spent their nights and weekends soldering Heathkit projects from\nRadio Shack (my first computer was a [Heathkit H89](https://vintagecomputer.com/heathkit-h89.html)) and writing\ngames and equation solvers in Borland Turbo Basic, then Turbo Pascal, and eventually Delphi.\nWhen calling his father in 1995 to tell him Bruno got his first professional programming gig, they both saw this\nlike getting drafted into MLB. Every day Bruno feels like \"the luckiest man in baseball\" to have escaped the coal\nmines.\n\n# What Bruno does:\n\n- cloud computing: OpenStack Amazon Web Services, Microsoft Azure, Google Cloud Platform, Linode, DigitalOcean, Heroku\n- container services: Docker, Kubernetes, Nomad, ECS, EKS\n- infrastructure orchestration and automation with Terraform, Ansible, Chef, Argo\n- infrastructure and capacity planning\n- data center operations\n- OpenVPN, SSH tunneling, network security\n- troubleshoot network issues\n- DBA for DynamoDB, Kafka, Cassandra, MongoDB, CouchDB, PostgreSQL, MySQL\n- administer various Unix and GNU/Linux\n- administer virtualization hosts and guests\n- optimize RAID, swap, cache\n- archaeology of code, protocol, process\n- manage systems engineers, software developers\n- manage vendors, contractors\n- manage client SLAs, vendor SLAs\n- study complex systems and make them accessible to various audiences\n- {review, recommend} application {architecture, code}\n- maintain SDLC process\n- develop web and mobile applications\n- architect {cloud, web, mobile} solutions\n- {develop, deploy} {iPhone, Android} apps\n- {develop, deploy} {Cordova, React Native} HTML5+CSS3+JS apps\n- {audit, deploy} {developer code, data migrations}\n- {transform, migrate} data\n- audit application code for security and performance\n\n# What Bruno is:\n\n- teacher\n- strong verbal and written communicator\n- excellent troubleshooter, debugger, and problem bisector\n- unrepentant command line addict\n- ambiguity assassin",
     "location": {
       "address": "French Quarter",
@@ -57,9 +57,11 @@
         "Develop AI tools to shorten ticket completion times",
         "Develop AI tools to on-board new team members",
         "Document Dev-Ops processes and Infrastructure to improve AI tool efficiency.",
+        "Automate and document repeatable infrastructure operations rather than relying on manual procedures.",
         "Dev-Ops"
       ],
       "skills": [
+        "PowerShell",
         "AWS",
         "Azure",
         "Bash",
@@ -83,6 +85,7 @@
         "Deployed local, privacy-compliant LLMs to accelerate engineering velocity while protecting proprietary data",
         "Leveraged AI coding agents to rapidly refactor complex systems and automate infrastructure-as-code",
         "Mentored engineering teams on adopting AI-augmented workflows and integrating LLMs into CI/CD pipelines",
+        "Used Python for API-driven infrastructure automation, real-time systems, robotics, monitoring, and data analysis.",
         "Validate R & D plans and results",
         "3D modeling and CNC manufacturing",
         "Safety and fire suppression",
@@ -116,6 +119,8 @@
         "Azure & AWS infrastructure and network security architecture",
         "architect and develop an internal ML/AI Software Development Co-Pilot trained on internal code repos to reduce code \"re-invention\" and time/effort",
         "Robotics R&D, GCP, Machine Learning, Computer Vision, Software Development, Network & Physical Architecture, DevSecOps, Linux System Administration",
+        "Built and taught CI/CD patterns including GitHub Actions workflows, GitHub Enterprise migrations, and cloud-backed automation.",
+        "Integrated service-management and ticket workflow data into delivery and operational analysis processes.",
         "ROS 1&2 [Robotics Operating System], Dobot CR5, Python, C++"
       ],
       "skills": [
@@ -125,6 +130,8 @@
         "FedRAMP",
         "C++",
         "Python",
+        "GitHub Actions",
+        "ServiceNow",
         "ROS; Robotics Operating System"
       ]
     },
@@ -210,6 +217,8 @@
         "Develop tools and services in bash, Node.js, Python, and Go.",
         "Design, build, and deploy Docker containers, API Gateways.",
         "Automate and orchestrate infrastructure with Packer and Terraform.",
+        "Built Python automation against cloud and service APIs for infrastructure operations.",
+        "Built GitHub Actions workflows professionally from 2020, using Actions pragmatically and offloading larger execution to cloud-native services when appropriate.",
         "Build and maintain [Fargate] ECS, EKS, and Kubernetes clusters serving microservices.",
         "Manage AWS costs.",
         "Make and document changes to AWS infrastructure via aws-cli.",
@@ -218,7 +227,10 @@
       ],
       "skills": [
         "AWS",
-        "GitOps"
+        "GitOps",
+        "GitHub Actions",
+        "Python REST API Automation",
+        "PowerShell"
       ]
     },
     {
@@ -232,12 +244,16 @@
         "Build and maintain Kubernetes clusters serving microservices.",
         "Develop tools in Python, Go, bash, awk, sed, CircuitPython, and Arduino.",
         "Build and maintain Cassandra, MongoDB, and MySQL databases.",
+        "Automated infrastructure and operational workflows with Python and PowerShell where Windows administration or executable documentation was required.",
+        "Maintained database-backed production systems with emphasis on operational health, performance, and reliability.",
         "Build custom Raspberry Pi images for IoT devices sent to client locations.",
         "Design, 3D Model, and CNC mill custom IoT hardware cases."
       ],
       "skills": [
         "AWS",
-        "GitOps"
+        "GitOps",
+        "PowerShell",
+        "SQL Server"
       ]
     },
     {
@@ -250,13 +266,18 @@
         "Develop mobile client and backend POCs.",
         "Architect and deploy cloud infrastructure.",
         "Develop and maintain original Open Source software projects.",
+        "Automated Windows and cloud administration with PowerShell and Python rather than leaving manual GUI procedures undocumented.",
+        "Integrated ServiceNow ticket/workflow data into CI/CD and operational analysis workflows.",
         "Workflow and process automation.",
         "Lead mobile architecture and technical strategy.",
         "Present and teach."
       ],
       "skills": [
         "AWS",
-        "GitOps"
+        "GitOps",
+        "PowerShell",
+        "ServiceNow",
+        "Python REST API Automation"
       ]
     },
     {
@@ -270,6 +291,7 @@
         "Improve performance through coaching.",
         "Encourage and inspire developers and vendors to give great service.",
         "Workflow automation scripting.",
+        "Partnered with ServiceNow administrators to extract ticket/request data for analysis and process automation.",
         "Architect and develop software."
       ],
       "skills": [
@@ -286,7 +308,8 @@
       "highlights": [
         "Administer GNU/Linux servers.",
         "Manage a department of sysadmins.",
-        "Workflow automation and config management."
+        "Workflow automation and config management.",
+        "Used ServiceNow as a ticket assignee/request creator and later as a workflow data source for operational analysis."
       ],
       "skills": [
         "AWS"
@@ -302,7 +325,8 @@
         "Administer MySQL.",
         "Optimize developer code.",
         "Maintain high availability and performance.",
-        "Develop extra Django and Rails projects."
+        "Develop extra Django and Rails projects.",
+        "Used Python/Django for internal tooling before later expanding into cloud and REST/API automation."
       ],
       "skills": [
         "AWS"
@@ -430,7 +454,7 @@
       "startDate": "1995-08-01",
       "endDate": "1998-01-01",
       "highlights": [
-        "Develop (as a market pioneer) DB driven web solutions using HTML, JS, Perl, C/C++, ColdFusion, MS SQL",
+        "Develop and administer market-pioneer DB-driven web solutions using HTML, JS, Perl, C/C++, ColdFusion, and MS SQL Server.",
         "Rack servers, run cables, and miscellaneous data center work.",
         "Answer phones on the customer support line (while writing code)."
       ],
@@ -442,6 +466,7 @@
         "TCP/IP",
         "Unix",
         "Solaris",
+        "SQL Server",
         "Data Center"
       ]
     }
@@ -500,13 +525,21 @@
         "EKS",
         "Fargate",
         "EBS",
+        "ELB",
         "RDS",
         "S3",
-        "Lamda",
-        "CloudFront",
-        "GuardDuty",
         "SNS",
-        "SQS"
+        "SQS",
+        "IAM",
+        "VPC",
+        "SSM",
+        "Lamda",
+        "Route53",
+        "CloudFront",
+        "CloudWatch",
+        "GuardDuty",
+        "DynamoDB",
+        "Auto Scaling"
       ]
     },
     {
@@ -517,6 +550,7 @@
         "Terraform",
         "Packer",
         "Ansible",
+        "GitHub Actions",
         "Chef",
         "CloudFormation",
         "CDK",
@@ -596,6 +630,29 @@
       ]
     },
     {
+      "name": "PowerShell Automation",
+      "level": "master",
+      "keywords": [
+        "Windows administration as executable documentation",
+        "Active Directory / Exchange / O365 automation",
+        "SQL Server administration automation",
+        "VMware automation",
+        "Cloud and CI/CD automation",
+        "ServiceNow integration"
+      ]
+    },
+    {
+      "name": "Service Management and Database Operations",
+      "level": "advanced",
+      "keywords": [
+        "ServiceNow workflow and catalog integration",
+        "ServiceNow data extraction for analysis",
+        "Microsoft SQL Server administration",
+        "SQL Server querying, operations, troubleshooting, and performance stewardship",
+        "Production database reliability"
+      ]
+    },
+    {
       "name": "Graphics",
       "level": "master",
       "keywords": [
@@ -617,10 +674,13 @@
     },
     {
       "name": "Interpreted Languages",
-      "level": "intermediate",
+      "level": "advanced",
       "keywords": [
         "Node.js",
-        "Python"
+        "Python",
+        "Python REST/API automation",
+        "Python AWS automation before official AWS CLI",
+        "Django"
       ]
     },
     {

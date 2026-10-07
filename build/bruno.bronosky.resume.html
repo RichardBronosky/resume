@@ -569,94 +569,7 @@ blockquote,
         }
       }
     </script>
-  <style>
-/* ===== Resume responsive overrides (Bruno, 2026-10-06) =====
-   Goal: zero horizontal scrolling on any screen width.
-   Port this block into the kendall theme's style.css when rebuilding via npm. */
-html, body {
-  overflow-x: hidden;
-  max-width: 100%;
-}
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-img {
-  max-width: 100%;
-  height: auto;
-}
-/* theme set .job-details to width:100% + padding-left:5% (=105% -> overflow) */
-.job .job-details {
-  width: 100%;
-}
-/* theme set .details to margin-left:3% + width:95% + padding (= >100% -> overflow) */
-.job .details {
-  width: 100%;
-  margin-left: 0;
-  margin-right: 0;
-}
-/* let skill/interest headings wrap instead of truncating with ellipsis */
-.item-interests,
-.item-skills {
-  white-space: normal;
-  height: auto;
-  overflow: visible;
-  text-overflow: clip;
-}
-/* long links and words wrap instead of forcing sideways scroll */
-.details, .description, .where, .profession,
-p, li, a, span, div {
-  overflow-wrap: break-word;
-}
-.ribbon {
-  max-width: 32%;
-}
-@media (max-width: 767px) {
-  .container {
-    left: 0;
-    right: 0;
-    margin-top: 40px;
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-  #photo-header {
-    margin-top: -30px;
-    text-align: center;
-  }
-  #text-header h1 {
-    font-size: 1.4em;
-  }
-  #awards .year, #education .year {
-    width: 100%;
-    display: block;
-    padding: 5px 10px;
-  }
-  #awards .description, #education .description {
-    width: 100%;
-    display: block;
-  }
-}
-</style>
-
-<style>
-/* ===== round 2: phone-width offenders ===== */
-.item-interests,
-.item-skills {
-  position: relative; /* anchor the absolutely-positioned skill-level badges */
-}
-@media (max-width: 767px) {
-  .ribbon {
-    display: none; /* decorative corner ribbons overflow small screens */
-  }
-  .skill-level {
-    position: static; /* badges flow inline instead of flying off-viewport */
-    display: inline-block;
-    margin: 2px 0 2px 8px;
-    vertical-align: middle;
-  }
-}
-</style>
-
-</head>
+  </head>
   <body>
     <div class="container">
       <a class="ribbon" href="https://github.com/RichardBronosky/resume#bruno-bronosky" target="_blank">
@@ -770,10 +683,11 @@ p, li, a, span, div {
           <div class="box" id="section_about">
             <h2><i class="fas fa-user ico"></i> About</h2>
             <p><p>Engineer, architect, and mentor with 28+ years in DevOps, cloud platforms, infrastructure automation, and software
-engineering. I power these disciplines with an AI-augmented workflow, leveraging autonomous agents (OpenClaw, OpenCode)
-and self-hosted LLMs to massively accelerate infrastructure delivery, pipeline analysis, and code refactoring.
-Adept at building secure API tools for AI integration, teaching best practices, and driving business-critical
-transformations across cloud, mobile, and embedded systems.</p></p>
+engineering. I turn operational work into durable scripts, API integrations, and CI/CD workflows across Python,
+Bash, GitHub Actions, and AWS, Azure, and GCP. I power these disciplines with an AI-augmented workflow, leveraging
+autonomous agents (OpenClaw, OpenCode) and self-hosted LLMs to massively accelerate infrastructure delivery,
+pipeline analysis, and code refactoring. Adept at building secure API tools for AI integration, teaching best
+practices, and driving business-critical transformations across cloud, mobile, and embedded systems.</p></p>
           </div>
           <!-- WORK EXPERIENCE -->
           <div class="box" id="section_work_experience">
@@ -796,6 +710,7 @@ transformations across cloud, mobile, and embedded systems.</p></p>
                         <li class="list-group-item">Develop AI tools to shorten ticket completion times</li>
                         <li class="list-group-item">Develop AI tools to on-board new team members</li>
                         <li class="list-group-item">Document Dev-Ops processes and Infrastructure to improve AI tool efficiency.</li>
+                        <li class="list-group-item">Automate and document repeatable infrastructure operations rather than relying on manual procedures.</li>
                         <li class="list-group-item">Dev-Ops</li>
                       </ul>
                     </div>
@@ -822,6 +737,7 @@ transformations across cloud, mobile, and embedded systems.</p></p>
                         <li class="list-group-item">Deployed local, privacy-compliant LLMs to accelerate engineering velocity while protecting proprietary data</li>
                         <li class="list-group-item">Leveraged AI coding agents to rapidly refactor complex systems and automate infrastructure-as-code</li>
                         <li class="list-group-item">Mentored engineering teams on adopting AI-augmented workflows and integrating LLMs into CI/CD pipelines</li>
+                        <li class="list-group-item">Used Python for API-driven infrastructure automation, real-time systems, robotics, monitoring, and data analysis.</li>
                         <li class="list-group-item">Validate R & D plans and results</li>
                         <li class="list-group-item">3D modeling and CNC manufacturing</li>
                         <li class="list-group-item">Safety and fire suppression</li>
@@ -854,6 +770,8 @@ transformations across cloud, mobile, and embedded systems.</p></p>
                         <li class="list-group-item">Azure & AWS infrastructure and network security architecture</li>
                         <li class="list-group-item">architect and develop an internal ML/AI Software Development Co-Pilot trained on internal code repos to reduce code "re-invention" and time/effort</li>
                         <li class="list-group-item">Robotics R&D, GCP, Machine Learning, Computer Vision, Software Development, Network & Physical Architecture, DevSecOps, Linux System Administration</li>
+                        <li class="list-group-item">Built and taught CI/CD patterns including GitHub Actions workflows, GitHub Enterprise migrations, and cloud-backed automation.</li>
+                        <li class="list-group-item">Integrated service-management and ticket workflow data into delivery and operational analysis processes.</li>
                         <li class="list-group-item">ROS 1&2 [Robotics Operating System], Dobot CR5, Python, C++</li>
                       </ul>
                     </div>
@@ -974,6 +892,8 @@ transformations across cloud, mobile, and embedded systems.</p></p>
                         <li class="list-group-item">Develop tools and services in bash, Node.js, Python, and Go.</li>
                         <li class="list-group-item">Design, build, and deploy Docker containers, API Gateways.</li>
                         <li class="list-group-item">Automate and orchestrate infrastructure with Packer and Terraform.</li>
+                        <li class="list-group-item">Built Python automation against cloud and service APIs for infrastructure operations.</li>
+                        <li class="list-group-item">Built GitHub Actions workflows professionally from 2020, using Actions pragmatically and offloading larger execution to cloud-native services when appropriate.</li>
                         <li class="list-group-item">Build and maintain [Fargate] ECS, EKS, and Kubernetes clusters serving microservices.</li>
                         <li class="list-group-item">Manage AWS costs.</li>
                         <li class="list-group-item">Make and document changes to AWS infrastructure via aws-cli.</li>
@@ -1006,6 +926,8 @@ transformations across cloud, mobile, and embedded systems.</p></p>
                         <li class="list-group-item">Build and maintain Kubernetes clusters serving microservices.</li>
                         <li class="list-group-item">Develop tools in Python, Go, bash, awk, sed, CircuitPython, and Arduino.</li>
                         <li class="list-group-item">Build and maintain Cassandra, MongoDB, and MySQL databases.</li>
+                        <li class="list-group-item">Automated infrastructure and operational workflows with Python and PowerShell where Windows administration or executable documentation was required.</li>
+                        <li class="list-group-item">Maintained database-backed production systems with emphasis on operational health, performance, and reliability.</li>
                         <li class="list-group-item">Build custom Raspberry Pi images for IoT devices sent to client locations.</li>
                         <li class="list-group-item">Design, 3D Model, and CNC mill custom IoT hardware cases.</li>
                       </ul>
@@ -1034,6 +956,8 @@ transformations across cloud, mobile, and embedded systems.</p></p>
                         <li class="list-group-item">Develop mobile client and backend POCs.</li>
                         <li class="list-group-item">Architect and deploy cloud infrastructure.</li>
                         <li class="list-group-item">Develop and maintain original Open Source software projects.</li>
+                        <li class="list-group-item">Automated Windows and cloud administration with PowerShell and Python rather than leaving manual GUI procedures undocumented.</li>
+                        <li class="list-group-item">Integrated ServiceNow ticket/workflow data into CI/CD and operational analysis workflows.</li>
                         <li class="list-group-item">Workflow and process automation.</li>
                         <li class="list-group-item">Lead mobile architecture and technical strategy.</li>
                         <li class="list-group-item">Present and teach.</li>
@@ -1064,6 +988,7 @@ transformations across cloud, mobile, and embedded systems.</p></p>
                         <li class="list-group-item">Improve performance through coaching.</li>
                         <li class="list-group-item">Encourage and inspire developers and vendors to give great service.</li>
                         <li class="list-group-item">Workflow automation scripting.</li>
+                        <li class="list-group-item">Partnered with ServiceNow administrators to extract ticket/request data for analysis and process automation.</li>
                         <li class="list-group-item">Architect and develop software.</li>
                       </ul>
                     </div>
@@ -1091,6 +1016,7 @@ transformations across cloud, mobile, and embedded systems.</p></p>
                         <li class="list-group-item">Administer GNU/Linux servers.</li>
                         <li class="list-group-item">Manage a department of sysadmins.</li>
                         <li class="list-group-item">Workflow automation and config management.</li>
+                        <li class="list-group-item">Used ServiceNow as a ticket assignee/request creator and later as a workflow data source for operational analysis.</li>
                       </ul>
                     </div>
                   </div>
@@ -1118,6 +1044,7 @@ transformations across cloud, mobile, and embedded systems.</p></p>
                         <li class="list-group-item">Optimize developer code.</li>
                         <li class="list-group-item">Maintain high availability and performance.</li>
                         <li class="list-group-item">Develop extra Django and Rails projects.</li>
+                        <li class="list-group-item">Used Python/Django for internal tooling before later expanding into cloud and REST/API automation.</li>
                       </ul>
                     </div>
                   </div>
@@ -1317,7 +1244,7 @@ transformations across cloud, mobile, and embedded systems.</p></p>
                     <div class="description">
                       
                       <ul class="list-group">
-                        <li class="list-group-item">Develop (as a market pioneer) DB driven web solutions using HTML, JS, Perl, C/C++, ColdFusion, MS SQL</li>
+                        <li class="list-group-item">Develop and administer market-pioneer DB-driven web solutions using HTML, JS, Perl, C/C++, ColdFusion, and MS SQL Server.</li>
                         <li class="list-group-item">Rack servers, run cables, and miscellaneous data center work.</li>
                         <li class="list-group-item">Answer phones on the customer support line (while writing code).</li>
                       </ul>
@@ -1394,12 +1321,12 @@ transformations across cloud, mobile, and embedded systems.</p></p>
             <div class="contact-item">
               <div class="icon pull-left text-center"><span class="fas fa-globe fa-fw"></span></div>
               <div class="title pull-right">Resume (pdf)</div>
-              <div class="description pull-right"><a href="https:&#x2F;&#x2F;richardbronosky.github.io&#x2F;resume&#x2F;pdf&#x2F;" target="_blank">https:&#x2F;&#x2F;richardbronosky.github.io&#x2F;resume&#x2F;pdf&#x2F;</a></div>
+              <div class="description pull-right"><a href="https:&#x2F;&#x2F;bronosky.com&#x2F;resume&#x2F;pdf&#x2F;" target="_blank">https:&#x2F;&#x2F;bronosky.com&#x2F;resume&#x2F;pdf&#x2F;</a></div>
             </div>
             <div class="contact-item">
               <div class="icon pull-left text-center"><span class="fas fa-globe fa-fw"></span></div>
               <div class="title pull-right">Resume (printable)</div>
-              <div class="description pull-right"><a href="https:&#x2F;&#x2F;richardbronosky.github.io&#x2F;resume&#x2F;html&#x2F;" target="_blank">https:&#x2F;&#x2F;richardbronosky.github.io&#x2F;resume&#x2F;html&#x2F;</a></div>
+              <div class="description pull-right"><a href="https:&#x2F;&#x2F;bronosky.com&#x2F;resume&#x2F;html&#x2F;" target="_blank">https:&#x2F;&#x2F;bronosky.com&#x2F;resume&#x2F;html&#x2F;</a></div>
             </div>
             <div class="contact-item">
               <div class="icon pull-left text-center"><span class="fas fa-rss fa-fw"></span></div>
@@ -1457,13 +1384,21 @@ transformations across cloud, mobile, and embedded systems.</p></p>
                 <span class= "skill badge">EKS</span>
                 <span class= "skill badge">Fargate</span>
                 <span class= "skill badge">EBS</span>
+                <span class= "skill badge">ELB</span>
                 <span class= "skill badge">RDS</span>
                 <span class= "skill badge">S3</span>
-                <span class= "skill badge">Lamda</span>
-                <span class= "skill badge">CloudFront</span>
-                <span class= "skill badge">GuardDuty</span>
                 <span class= "skill badge">SNS</span>
                 <span class= "skill badge">SQS</span>
+                <span class= "skill badge">IAM</span>
+                <span class= "skill badge">VPC</span>
+                <span class= "skill badge">SSM</span>
+                <span class= "skill badge">Lamda</span>
+                <span class= "skill badge">Route53</span>
+                <span class= "skill badge">CloudFront</span>
+                <span class= "skill badge">CloudWatch</span>
+                <span class= "skill badge">GuardDuty</span>
+                <span class= "skill badge">DynamoDB</span>
+                <span class= "skill badge">Auto Scaling</span>
               </div>
             </div>
             <div class="skills clearfix">
@@ -1476,6 +1411,7 @@ transformations across cloud, mobile, and embedded systems.</p></p>
                 <span class= "skill badge">Terraform</span>
                 <span class= "skill badge">Packer</span>
                 <span class= "skill badge">Ansible</span>
+                <span class= "skill badge">GitHub Actions</span>
                 <span class= "skill badge">Chef</span>
                 <span class= "skill badge">CloudFormation</span>
                 <span class= "skill badge">CDK</span>
@@ -1566,6 +1502,33 @@ transformations across cloud, mobile, and embedded systems.</p></p>
             </div>
             <div class="skills clearfix">
               <div class="item-skills">
+                  PowerShell Automation
+                  <span class="skill-level">master</span>
+              </div>
+              <div class="col-sm-offset-1 col-sm-12 clearfix">
+                <span class= "skill badge">Windows administration as executable documentation</span>
+                <span class= "skill badge">Active Directory / Exchange / O365 automation</span>
+                <span class= "skill badge">SQL Server administration automation</span>
+                <span class= "skill badge">VMware automation</span>
+                <span class= "skill badge">Cloud and CI/CD automation</span>
+                <span class= "skill badge">ServiceNow integration</span>
+              </div>
+            </div>
+            <div class="skills clearfix">
+              <div class="item-skills">
+                  Service Management and Database Operations
+                  <span class="skill-level">advanced</span>
+              </div>
+              <div class="col-sm-offset-1 col-sm-12 clearfix">
+                <span class= "skill badge">ServiceNow workflow and catalog integration</span>
+                <span class= "skill badge">ServiceNow data extraction for analysis</span>
+                <span class= "skill badge">Microsoft SQL Server administration</span>
+                <span class= "skill badge">SQL Server querying, operations, troubleshooting, and performance stewardship</span>
+                <span class= "skill badge">Production database reliability</span>
+              </div>
+            </div>
+            <div class="skills clearfix">
+              <div class="item-skills">
                   Graphics
                   <span class="skill-level">master</span>
               </div>
@@ -1591,11 +1554,14 @@ transformations across cloud, mobile, and embedded systems.</p></p>
             <div class="skills clearfix">
               <div class="item-skills">
                   Interpreted Languages
-                  <span class="skill-level">intermediate</span>
+                  <span class="skill-level">advanced</span>
               </div>
               <div class="col-sm-offset-1 col-sm-12 clearfix">
                 <span class= "skill badge">Node.js</span>
                 <span class= "skill badge">Python</span>
+                <span class= "skill badge">Python REST/API automation</span>
+                <span class= "skill badge">Python AWS automation before official AWS CLI</span>
+                <span class= "skill badge">Django</span>
               </div>
             </div>
             <div class="skills clearfix">

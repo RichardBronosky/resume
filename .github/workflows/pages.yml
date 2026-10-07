@@ -1,0 +1,55 @@
+name: Deploy resume to GitHub Pages
+
+# Publishes the committed build/ artifacts at https://bronosky.com/resume/.
+# Rebuild locally (see USAGE.md), commit build/, push main. CI only copies.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Assemble site (legacy URL layout)
+        run: |
+          redirect() { # redirect <dir> <target>
+            mkdir -p "dist/$1"
+            printf '<!DOCTYPE html>\n<meta charset="utf-8">\n<title>Resume of Bruno Bronosky</title>\n<meta http-equiv="refresh" content="0; url=%s">\n<a href="%s">Continue</a>\n' "$2" "$2" > "dist/$1/index.html"
+          }
+          mkdir -p dist/html dist/pdf
+          cp build/bruno.bronosky.resume.html dist/index.html
+          cp build/bruno.bronosky.resume.html dist/html/bruno.bronosky.resume.html
+          cp build/bruno.bronosky.resume.html dist/html/index.html
+          cp build/bruno.bronosky.resume.pdf  dist/pdf/bruno.bronosky.resume.pdf
+          cp build/bruno.bronosky.resume.docx dist/bruno.bronosky.resume.docx
+          cp build/bruno.bronosky.resume.json dist/bruno.bronosky.resume.json
+          redirect pdf bruno.bronosky.resume.pdf
+          cp build/bruno.bronosky.community.pdf dist/bruno.bronosky.community.pdf
+          redirect community ../bruno.bronosky.community.pdf
+          find dist -type f | sort
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
