@@ -24,12 +24,21 @@ site() {
   for f in "$BASE.docx" "$BASE.json" bruno.bronosky.community.pdf; do
     git show "$ref:build/$f" > "$dest/$f" 2>/dev/null || rm -f "$dest/$f"
   done
+  # /community/: a real HTML page (a github.com link would open the GitHub app on Android);
+  # fall back to the PDF if no HTML was built.
+  mkdir -p "$dest/community"
+  if git cat-file -e "$ref:build/bruno.bronosky.community.html" 2>/dev/null; then
+    git show "$ref:build/bruno.bronosky.community.html" > "$dest/community/index.html"
+  elif [ -f "$dest/bruno.bronosky.community.pdf" ]; then
+    printf '<!DOCTYPE html>\n<meta charset="utf-8">\n<meta http-equiv="refresh" content="0; url=../bruno.bronosky.community.pdf">\n' > "$dest/community/index.html"
+  else
+    rmdir "$dest/community"
+  fi
 }
 
 rm -rf "$OUT"
 site origin/main "$OUT"
 redirect "pdf" "$BASE.pdf"
-[ -f "$OUT/bruno.bronosky.community.pdf" ] && redirect community ../bruno.bronosky.community.pdf
 
 rows=""
 while read -r ref; do
@@ -43,7 +52,8 @@ while read -r ref; do
   redirect "preview/$name/pdf" "$BASE.pdf"
   sha=$(git rev-parse --short "$ref")
   # Mark as non-public-facing: keep out of search engines, banner on the HTML pages.
-  for page in "$dest/index.html" "$dest/html/$BASE.html" "$dest/html/index.html"; do
+  for page in "$dest/index.html" "$dest/html/$BASE.html" "$dest/html/index.html" "$dest/community/index.html"; do
+    [ -f "$page" ] || continue
     sed -i "0,/<\/head>/s||<meta name=\"robots\" content=\"noindex,nofollow\"></head>|" "$page"
     sed -i "0,/<body[^>]*>/s||&<div style=\"position:fixed;bottom:0;left:0;z-index:9999;background:#b00020;color:#fff;font:12px sans-serif;padding:3px 8px\">PREVIEW preview/$name @ $sha</div>|" "$page"
   done

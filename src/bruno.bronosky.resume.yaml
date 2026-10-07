@@ -75,8 +75,7 @@ basics:
   profiles:
     - network: Not a Cover Letter
       username: Community Involvement
-      url: https://github.com/RichardBronosky/resume/blob/main/src/bruno.bronosky.community.md
-      #url: https://bronosky.com/resume/community/
+      url: https://bronosky.com/resume/community/
     - network: Github
       username: RichardBronosky
       url: https://github.com/RichardBronosky
