@@ -428,6 +428,89 @@ blockquote {
   }
 }
 
+/* ===== Resume responsive overrides (Bruno, 2026-10-06) =====
+   Goal: zero horizontal scrolling on any screen width.
+   Port this block into the kendall theme's style.css when rebuilding via npm. */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+/* theme set .job-details to width:100% + padding-left:5% (=105% -> overflow) */
+.job .job-details {
+  width: 100%;
+}
+/* theme set .details to margin-left:3% + width:95% + padding (= >100% -> overflow) */
+.job .details {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+/* let skill/interest headings wrap instead of truncating with ellipsis */
+.item-interests,
+.item-skills {
+  white-space: normal;
+  height: auto;
+  overflow: visible;
+  text-overflow: clip;
+}
+/* long links and words wrap instead of forcing sideways scroll */
+.details, .description, .where, .profession,
+p, li, a, span, div {
+  overflow-wrap: break-word;
+}
+.ribbon {
+  max-width: 32%;
+}
+@media (max-width: 767px) {
+  .container {
+    left: 0;
+    right: 0;
+    margin-top: 40px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  #photo-header {
+    margin-top: -30px;
+    text-align: center;
+  }
+  #text-header h1 {
+    font-size: 1.4em;
+  }
+  #awards .year, #education .year {
+    width: 100%;
+    display: block;
+    padding: 5px 10px;
+  }
+  #awards .description, #education .description {
+    width: 100%;
+    display: block;
+  }
+}
+
+/* ===== round 2: phone-width offenders ===== */
+.item-interests,
+.item-skills {
+  position: relative; /* anchor the absolutely-positioned skill-level badges */
+}
+@media (max-width: 767px) {
+  .ribbon {
+    display: none; /* decorative corner ribbons overflow small screens */
+  }
+  .skill-level {
+    position: static; /* badges flow inline instead of flying off-viewport */
+    display: inline-block;
+    margin: 2px 0 2px 8px;
+    vertical-align: middle;
+  }
+}
+
     </style>
     <style type="text/css" media="print">
     body {

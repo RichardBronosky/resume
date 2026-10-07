@@ -189,16 +189,20 @@ html_preload () {
     RENDER_TEMPLATE='/preloading.template' ./tools/jsonresume.sh html build/bruno.bronosky.resume.json build/preloading.html
 }
 
+# The theme is vendored in themes/ and ALWAYS used, regardless of meta.theme
+# in the YAML or anything in node_modules. Edit it there.
+theme_path="${PWD}/themes/jsonresume-theme-kendall-markdown/index.js"
+
 html () {
     src_file="${1:-${json_file}}"
     dst_file="${2:-${json_file%.*}.html}"
-    ./node_modules/resumed/bin/resumed.js render "$src_file" -o "$dst_file"
+    ./node_modules/resumed/bin/resumed.js render "$src_file" --theme "$theme_path" -o "$dst_file"
 }
 
 pdf () {
     src_file="${1:-${json_file}}"
     dst_file="${2:-${json_file%.*}.pdf}"
-    ./node_modules/resumed/bin/resumed.js export "$src_file" -o "$dst_file"
+    ./node_modules/resumed/bin/resumed.js export "$src_file" --theme "$theme_path" -o "$dst_file"
     if which qpdf > /dev/null; then
         pdf_meta build/bruno.bronosky.resume.pdf src/pdf_properties.json
     else

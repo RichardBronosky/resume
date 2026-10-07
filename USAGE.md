@@ -33,6 +33,12 @@ Commit the regenerated `build/` files and push `main`; the
 `gh-pages` branch any more. See the Publishing section of the
 [README](README.md#publishing-bronoskycomresume).
 
+The HTML theme is vendored at
+[`themes/jsonresume-theme-kendall-markdown/`](themes/jsonresume-theme-kendall-markdown/)
+(edit it there; `style.css` holds the responsive overrides). `tools/jsonresume.sh`
+always renders with that copy, never the npm package, so it is never published
+or fetched. The old standalone clone of the theme repo is no longer used.
+
 HTML and JSON are not produced by `make`. From a shell with `yq` (e.g.
 `nix-shell -p yq-go`) run, with `tools/` on `PATH`:
 
