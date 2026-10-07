@@ -315,6 +315,13 @@
             {{/basics.url}}
             {{/basics.urlPdf}}
             {{/basics.urlPrintable}}
+            {{#basics.urlPrintable}}
+            <div class="contact-item">
+              <div class="icon pull-left text-center"><span class="fas fa-globe fa-fw"></span></div>
+              <div class="title pull-right">Resume</div>
+              <div class="description pull-right"><a href="{{basics.urlPrintable}}" target="_blank">{{basics.urlPrintable}}</a></div>
+            </div>
+            {{/basics.urlPrintable}}
             {{#basics.urlPdf}}
             <div class="contact-item">
               <div class="icon pull-left text-center"><span class="fas fa-globe fa-fw"></span></div>
@@ -322,13 +329,6 @@
               <div class="description pull-right"><a href="{{basics.urlPdf}}" target="_blank">{{basics.urlPdf}}</a></div>
             </div>
             {{/basics.urlPdf}}
-            {{#basics.urlPrintable}}
-            <div class="contact-item">
-              <div class="icon pull-left text-center"><span class="fas fa-globe fa-fw"></span></div>
-              <div class="title pull-right">Resume (printable)</div>
-              <div class="description pull-right"><a href="{{basics.urlPrintable}}" target="_blank">{{basics.urlPrintable}}</a></div>
-            </div>
-            {{/basics.urlPrintable}}
             {{#basics.profiles}}
             <div class="contact-item">
               <div class="icon pull-left text-center"><span class="{{iconClass}} fa-fw"></span></div>
