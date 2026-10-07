@@ -79,23 +79,39 @@ def add_page_numbers(doc: DocxDocument) -> None:
     num_pages._r.append(instr_text2)
     num_pages._r.append(fld_char4)
 
+    # Compact footer text
+    for run in paragraph.runs:
+        run.font.size = Pt(8)
+
 def setup_document() -> DocxDocument:
     """Create and configure a new document with default settings."""
     doc = Document()
     # Set margins for compact layout
     for section in doc.sections:
-        section.top_margin = Inches(0.15)
-        section.bottom_margin = Inches(0.25)
+        section.top_margin = Inches(0.1)
+        section.bottom_margin = Inches(0.2)
         section.left_margin = Inches(0.3)
         section.right_margin = Inches(0.3)
 
     # Font defaults
     doc.styles['Normal'].font.name = 'Calibri'
     doc.styles['Normal'].font.size = Pt(9)
+    # Single line spacing and tight paragraph gaps for space efficiency
+    doc.styles['Normal'].paragraph_format.line_spacing = 1.0
+    doc.styles['Normal'].paragraph_format.space_after = Pt(1)
     doc.styles['Heading 1'].font.size = Pt(12)
-    doc.styles['Heading 1'].paragraph_format.space_before = Pt(4)
+    doc.styles['Heading 1'].paragraph_format.space_before = Pt(2)
+    doc.styles['Heading 1'].paragraph_format.space_after = Pt(2)
     doc.styles['Heading 2'].font.size = Pt(10)
+    doc.styles['Title'].font.size = Pt(20)
     doc.styles['Title'].paragraph_format.space_after = Pt(2)
+    # Tighten the blue rule under the name (Title style bottom border)
+    _title_pPr = doc.styles['Title'].element.get_or_add_pPr()
+    _pBdr = _title_pPr.find(qn('w:pBdr'))
+    if _pBdr is not None:
+        _bottom = _pBdr.find(qn('w:bottom'))
+        if _bottom is not None:
+            _bottom.set(qn('w:space'), '1')
 
     #breakpoint()
 
@@ -109,7 +125,10 @@ def setup_document() -> DocxDocument:
         new_style = doc.styles.add_style("MyBulletStyle", WD_STYLE_TYPE.PARAGRAPH)
         base = doc.styles["List Bullet"]
         new_style.base_style = base
-        new_style.paragraph_format.space_after = Pt(10)
+        new_style.paragraph_format.space_after = Pt(0)
+        # Tighter bullet gutter: less indent, smaller hanging gap
+        new_style.paragraph_format.left_indent = Inches(0.3)
+        new_style.paragraph_format.first_line_indent = Inches(-0.18)
 
     if "CustomLabel" not in doc.styles:
         font = doc.styles.add_style("CustomLabel", WD_STYLE_TYPE.CHARACTER).font
@@ -182,6 +201,7 @@ def add_basics_section(doc: DocxDocument, basics: Dict[str, Any]) -> None:
     # Contact information
     contact = doc.add_paragraph()
     contact.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    contact.paragraph_format.space_after = Pt(0)
     
     contact_parts = []
     if "email" in basics:
@@ -253,8 +273,10 @@ def add_work_entry(doc: DocxDocument, job: Dict[str, Any], style: str = "MyBulle
         for highlight in job["highlights"]:
             paragraphs.append(doc.add_paragraph(highlight, style=style))
             
-    # Bind all paragraphs of this job entry together so they don't split across pages
-    for para in paragraphs[:-1]:
+    # Keep the job header (and summary line, if present) with the first
+    # bullet; let bullet lists flow naturally across page breaks.
+    head_count = 1 + (1 if (not ats_format and "summary" in job) else 0)
+    for para in paragraphs[:head_count]:
         para.paragraph_format.keep_with_next = True
 
 def add_work_section(doc: DocxDocument, work_experience: List[Dict[str, Any]], ats_format: bool = False) -> None:
@@ -317,9 +339,9 @@ def add_skills_section(doc: DocxDocument, skills: List[Dict[str, Any]]) -> None:
             p.add_run(": " + f" {BULLETS['MIDDLE_DOT']} ".join(skill["keywords"]))
         paragraphs.append(p)
         
-    # Bind the heading and all skill lines together
-    for para in paragraphs[:-1]:
-        para.paragraph_format.keep_with_next = True
+    # Keep the heading with the first skill line; let the rest flow naturally
+    if len(paragraphs) > 1:
+        paragraphs[0].paragraph_format.keep_with_next = True
 
 def generate_resume(
     yaml_file: str,
