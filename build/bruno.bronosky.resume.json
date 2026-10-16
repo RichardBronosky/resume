@@ -56,9 +56,9 @@
       "highlights": [
         "Develop AI tools to shorten ticket completion times",
         "Develop AI tools to on-board new team members",
-        "Document Dev-Ops processes and Infrastructure to improve AI tool efficiency.",
+        "Document DevOps processes and Infrastructure to improve AI tool efficiency.",
         "Automate and document repeatable infrastructure operations rather than relying on manual procedures.",
-        "Dev-Ops"
+        "DevOps"
       ],
       "skills": [
         "PowerShell",
@@ -71,7 +71,10 @@
         "CI/CD",
         "OpenClaw",
         "OpenCode",
-        "Gemini-CLi/Claude Code/GPT Codex"
+        "Gemini CLI",
+        "Claude Code",
+        "GPT Codex",
+        "Grok Build"
       ]
     },
     {
@@ -86,6 +89,7 @@
         "Leveraged AI coding agents to rapidly refactor complex systems and automate infrastructure-as-code",
         "Mentored engineering teams on adopting AI-augmented workflows and integrating LLMs into CI/CD pipelines",
         "Used Python for API-driven infrastructure automation, real-time systems, robotics, monitoring, and data analysis.",
+        "Administer MySQL databases supporting real-time systems, monitoring, and data analysis.",
         "Validate R & D plans and results",
         "3D modeling and CNC manufacturing",
         "Safety and fire suppression",
@@ -103,41 +107,19 @@
         "Rust",
         "C/C++",
         "cybersecurity",
-        "GitOps"
-      ]
-    },
-    {
-      "name": "NDA Protected Consulting Clients x4",
-      "display": "ATS-Only",
-      "position": "Engineering Team Trainer",
-      "startDate": "2021-02-01",
-      "endDate": "2021-09-30",
-      "summary": "Value: $10B+ Employees: 90k+",
-      "highlights": [
-        "CI/CD with CloudBees/Jenkins, Argo-CD, Harness.io, SonarQube, JMeter, AWS infrastructure with CDK+CFN",
-        "Migration to Github Enterprise from 5 other VCS",
-        "Azure & AWS infrastructure and network security architecture",
-        "architect and develop an internal ML/AI Software Development Co-Pilot trained on internal code repos to reduce code \"re-invention\" and time/effort",
-        "Robotics R&D, GCP, Machine Learning, Computer Vision, Software Development, Network & Physical Architecture, DevSecOps, Linux System Administration",
-        "Built and taught CI/CD patterns including GitHub Actions workflows, GitHub Enterprise migrations, and cloud-backed automation.",
-        "Integrated service-management and ticket workflow data into delivery and operational analysis processes.",
-        "ROS 1&2 [Robotics Operating System], Dobot CR5, Python, C++"
-      ],
-      "skills": [
-        "AWS",
-        "Azure",
+        "DevOps",
         "GitOps",
-        "FedRAMP",
-        "C++",
-        "Python",
-        "GitHub Actions",
-        "ServiceNow",
-        "ROS; Robotics Operating System"
+        "CI/CD",
+        "OpenClaw",
+        "OpenCode",
+        "Gemini CLI",
+        "Claude Code",
+        "GPT Codex",
+        "Grok Build"
       ]
     },
     {
       "name": "(Confidential) International Airline",
-      "display": "ATS-None",
       "position": "(Contract) Trainer of DevOps Engineers",
       "startDate": "2022-09-30",
       "endDate": "2023-07-31",
@@ -153,14 +135,14 @@
     },
     {
       "name": "(Confidential) Cybersecurity and Biometric Identity Org",
-      "display": "ATS-None",
       "position": "(Contract) Trainer of DevOps Engineers",
       "startDate": "2022-05-01",
       "endDate": "2022-09-30",
       "summary": "Value: $3B+ Employees: 10k+",
       "highlights": [
         "CI/CD with CloudBees/Jenkins and Argo-CD",
-        "software testing with SonarQube, JMeter, and various other tools"
+        "software testing with SonarQube, JMeter, and various other tools",
+        "Administer and support MySQL database infrastructure."
       ],
       "skills": [
         "AWS",
@@ -170,7 +152,6 @@
     },
     {
       "name": "(Confidential) Financial Services Org",
-      "display": "ATS-None",
       "position": "(Contract) Trainer of Robotics, Computer Vision, and ML Engineers",
       "startDate": "2021-11-01",
       "endDate": "2022-04-30",
@@ -187,7 +168,6 @@
     },
     {
       "name": "(Confidential) Chemical Engineering R&D and Production Org",
-      "display": "ATS-None",
       "position": "(Contract) Trainer of DevOps Engineers",
       "startDate": "2021-02-01",
       "endDate": "2021-09-30",
@@ -323,13 +303,17 @@
       "endDate": "2008-07-01",
       "highlights": [
         "Administer MySQL.",
+        "Performed multi-version MySQL upgrades and migrations.",
+        "Used Percona tools for MySQL backup, recovery, and operational tuning.",
         "Optimize developer code.",
         "Maintain high availability and performance.",
         "Develop extra Django and Rails projects.",
         "Used Python/Django for internal tooling before later expanding into cloud and REST/API automation."
       ],
       "skills": [
-        "AWS"
+        "MySQL",
+        "RAID",
+        "Linux Administration"
       ]
     },
     {
@@ -349,22 +333,7 @@
       ]
     },
     {
-      "name": "Various",
-      "location": "Various",
-      "position": "Prior Professional Experience",
-      "startDate": "1995-08-01",
-      "endDate": "2007-01-01",
-      "highlights": [
-        "Companies include: Apple Computer, Lanier Worldwide, MedCenterDirect, Amazing Graphics, World Wide Development, and freelance work",
-        "Tasks include: Technical Account Manager, Full Stack Developer, 3D Modeling, Graphic Design and Print Prepress"
-      ],
-      "skills": [
-        "PHP"
-      ]
-    },
-    {
       "name": "Apple Computer",
-      "display": "None",
       "location": "Atlanta, GA",
       "position": "Business Sales Specialist",
       "startDate": "2004-03-01",
@@ -375,7 +344,6 @@
     },
     {
       "name": "Lanier Worldwide",
-      "display": "None",
       "location": "Atlanta, GA",
       "position": "Full Stack Developer",
       "startDate": "2002-10-01",
@@ -385,12 +353,11 @@
         "Develop PHP CMS and software deployment system."
       ],
       "skills": [
-        "AWS"
+        "PHP"
       ]
     },
     {
       "name": "MedCenterDirect",
-      "display": "None",
       "location": "Atlanta, GA",
       "position": "Lead Solutions Developer",
       "startDate": "2000-12-02",
@@ -401,12 +368,19 @@
         "Script data migrations."
       ],
       "skills": [
-        "AWS"
+        "PHP",
+        "HTML",
+        "JS",
+        "C",
+        "C++",
+        "TCP/IP",
+        "Unix",
+        "Solaris",
+        "Data Center"
       ]
     },
     {
       "name": "Amazing Graphics",
-      "display": "None",
       "location": "Atlanta, GA",
       "position": "Digital Designer/Production Artist",
       "startDate": "1999-04-01",
@@ -416,12 +390,16 @@
         "Administer network and Mac, NT, Solaris/Unix systems."
       ],
       "skills": [
-        "AWS"
+        "Adobe Photoshop",
+        "Adobe Illustrator",
+        "Adobe InDesign",
+        "Quark Express",
+        "Macromedia Shockwave",
+        "Macromedia Flash"
       ]
     },
     {
       "name": "Freelance",
-      "display": "None",
       "location": "USA and Ireland",
       "position": "Consultant",
       "startDate": "1998-01-01",
@@ -448,7 +426,6 @@
     },
     {
       "name": "World Wide Development",
-      "display": "None",
       "location": "Ashland, KY",
       "position": "Webmaster",
       "startDate": "1995-08-01",
@@ -492,15 +469,7 @@
       "summary": "I started out as a Cox employee volunteering for a single day on a Clark Howard build. It was Day 1, so I came back every weekend to see the whole project completed. (Because I'm that kind of person.) At the end of the build the leader said, \"Great! Now that you've completed the 7 week training, pick a specialty so we can get you certified and put you to work.\" So, I didn't really set out to be a supervisor, but it has been one of the best experiences of my life."
     }
   ],
-  "education": [
-    {
-      "institution": "University of Kentucky",
-      "area": "Computer Engineering and Systems Analysis",
-      "display": "None",
-      "startDate": "1997",
-      "endDate": "1997"
-    }
-  ],
+  "education": [],
   "skills": [
     {
       "name": "AI & Agentic Automation",
@@ -533,7 +502,7 @@
         "IAM",
         "VPC",
         "SSM",
-        "Lamda",
+        "Lambda",
         "Route53",
         "CloudFront",
         "CloudWatch",

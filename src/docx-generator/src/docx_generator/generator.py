@@ -286,14 +286,8 @@ def add_work_section(doc: DocxDocument, work_experience: List[Dict[str, Any]], a
         
     doc.add_heading("Work Experience", 1)
     
+    # Which entries appear is decided upstream by tools/resume-variant.py.
     for job in work_experience:
-        if job.get("display", "") == "None":
-            continue
-        if ats_format and job.get("display", "") == "ATS-None":
-            continue
-        if not ats_format and job.get("display", "") == "ATS-Only":
-            continue
-        
         add_work_entry(doc, job, ats_format=ats_format)
 
 def add_education_section(doc: DocxDocument, education: List[Dict[str, Any]]) -> None:
@@ -303,8 +297,6 @@ def add_education_section(doc: DocxDocument, education: List[Dict[str, Any]]) ->
         
     added_heading = False
     for edu in education:
-        if edu.get("display", "") == "None":
-            continue
         if not added_heading:
             doc.add_heading("Education", 1)
             added_heading = True

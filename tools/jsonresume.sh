@@ -39,12 +39,11 @@ json_from_yaml () {
     main_document "$@" | _yj . -
 }
 
+# The web variant (src/variants/web.yaml) is what the HTML and resume.json show.
 yaml_file_to_json_file () {
     local in="${1:-$yaml_file}"
     local out="$(json_filename "$@")"
-    local mid="${out}.mid"
-    json_from_yaml "$in" > "${mid}"
-    mv "${mid}" "${out}"
+    ./tools/resume-variant.py web --source "$in" -o "$out"
     echo "$out"
 }
 

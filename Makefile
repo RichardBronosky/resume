@@ -1,25 +1,46 @@
 YAML_INPUT = src/bruno.bronosky.resume.yaml
-DOCX_OUTPUT = build/bruno.bronosky.resume.docx
+BASE = build/bruno.bronosky.resume
+DOCX_OUTPUT = $(BASE).docx
 LOCAL_RESUME_DOCX = src/docx-generator/.venv/bin/resume-docx
 RESUME_DOCX = $(shell command -v resume-docx 2>/dev/null)
+VARIANT_JSON = ./tools/resume-variant.py
 
 ifeq ($(RESUME_DOCX),)
 RESUME_DOCX = $(LOCAL_RESUME_DOCX)
 endif
 
-.PHONY: all docx pdf clean
+# Every output is rendered from the JSON of one variant (src/variants/*.yaml):
+#   web       -> $(BASE).json, .html        (bronosky.com/resume/)
+#   paper     -> $(BASE).docx, .pdf
+#   ats       -> $(BASE).ats.docx
+#   <one-off> -> $(BASE).<one-off>.docx, .pdf   e.g. make oneoff VARIANT=mysql-dba
+.PHONY: all docx pdf ats oneoff json clean check-docx
 
 all: docx
 
-docx:
+json:
 	mkdir -p build
-	@test -x "$(RESUME_DOCX)" || { echo "Error: resume-docx not found. Run inside nix-shell or use the local generator venv at $(LOCAL_RESUME_DOCX)."; exit 1; }
-	$(RESUME_DOCX) $(YAML_INPUT) -o $(DOCX_OUTPUT)
+	$(VARIANT_JSON) web -o $(BASE).json
+	$(VARIANT_JSON) paper -o $(BASE).paper.json
+	$(VARIANT_JSON) ats -o $(BASE).ats.json
 
-pdf:
-	mkdir -p build
+check-docx:
 	@test -x "$(RESUME_DOCX)" || { echo "Error: resume-docx not found. Run inside nix-shell or use the local generator venv at $(LOCAL_RESUME_DOCX)."; exit 1; }
-	$(RESUME_DOCX) $(YAML_INPUT) -o $(DOCX_OUTPUT) --pdf
+
+docx: json check-docx
+	$(RESUME_DOCX) $(BASE).paper.json -o $(DOCX_OUTPUT)
+
+pdf: json check-docx
+	$(RESUME_DOCX) $(BASE).paper.json -o $(DOCX_OUTPUT) --pdf
+
+ats: json check-docx
+	$(RESUME_DOCX) $(BASE).ats.json -o $(DOCX_OUTPUT) --ats
+
+oneoff: check-docx
+	@test -n "$(VARIANT)" || { echo "Usage: make oneoff VARIANT=<name of a src/variants/*.yaml>"; exit 1; }
+	mkdir -p build
+	$(VARIANT_JSON) $(VARIANT) -o $(BASE).$(VARIANT).json
+	$(RESUME_DOCX) $(BASE).$(VARIANT).json -o $(BASE).$(VARIANT).docx --pdf
 
 clean:
 	rm -rf build/

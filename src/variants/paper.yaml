@@ -1,0 +1,9 @@
+# The DOCX/PDF you attach to an email. Aggregates like "Various" replace the
+# entries they list in `replaces`.
+highlights:
+  # Top N bullets per job, by how long ago the job ended. Source order is
+  # priority order, so put the best bullet first. First matching rule wins.
+  max_by_age:
+    - {within_years: 6, max: 8}
+    - {within_years: 15, max: 5}
+    - {max: 3}

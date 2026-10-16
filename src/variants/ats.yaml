@@ -1,0 +1,4 @@
+# The DOCX for applicant tracking systems: same as paper, plus aggregates
+# meant only for ATS (e.g. the four NDA clients as one entry). The DOCX
+# generator is run with --ats for this variant.
+extends: paper

@@ -90,16 +90,20 @@ basics:
       url: https://x.com/RichardBronosky
 
 work:
-  - name: "Intelerad Medical Systems"
+  - id: intelerad
+    name: "Intelerad Medical Systems"
     position: "Technology Consultant"
     startDate: "2025-11-17"
     endDate: "Present"
     highlights:
       - Develop AI tools to shorten ticket completion times
       - Develop AI tools to on-board new team members
-      - Document Dev-Ops processes and Infrastructure to improve AI tool efficiency.
+      - text: "Document DevOps processes and Infrastructure to improve AI tool efficiency."
+        variants: ["!mysql-dba"]
+      - text: "Document DevOps processes and infrastructure, including operational runbooks for production systems."
+        variants: [mysql-dba]
       - Automate and document repeatable infrastructure operations rather than relying on manual procedures.
-      - Dev-Ops
+      - DevOps
     skills:
       - PowerShell
       - AWS
@@ -111,9 +115,13 @@ work:
       - CI/CD
       - OpenClaw
       - OpenCode
-      - Gemini-CLi/Claude Code/GPT Codex
+      - Gemini CLI
+      - Claude Code
+      - GPT Codex
+      - Grok Build
 
-  - name: "Triton"
+  - id: triton
+    name: "Triton"
     position: "Research Fellow"
     startDate: "2023-07-31"
     endDate: "Present"
@@ -124,6 +132,8 @@ work:
       - Leveraged AI coding agents to rapidly refactor complex systems and automate infrastructure-as-code
       - Mentored engineering teams on adopting AI-augmented workflows and integrating LLMs into CI/CD pipelines
       - Used Python for API-driven infrastructure automation, real-time systems, robotics, monitoring, and data analysis.
+      - text: "Administer MySQL databases supporting real-time systems, monitoring, and data analysis."
+        variants: [web, mysql-dba]
       - Validate R & D plans and results
       - 3D modeling and CNC manufacturing
       - Safety and fire suppression
@@ -140,13 +150,23 @@ work:
       - Rust
       - C/C++
       - cybersecurity
+      - DevOps
       - GitOps
+      - CI/CD
+      - OpenClaw
+      - OpenCode
+      - Gemini CLI
+      - Claude Code
+      - GPT Codex
+      - Grok Build
 
-  - name: "NDA Protected Consulting Clients x4"
-    display: ATS-Only
+  - id: nda-clients
+    name: "NDA Protected Consulting Clients x4"
+    variants: [ats]
+    replaces: [airline, biometric, finserv, chemical]
     position: "Engineering Team Trainer"
     startDate: "2021-02-01"
-    endDate: "2021-09-30"
+    endDate: "2023-07-31"
     summary: >-
       Value: $10B+
       Employees: 90k+
@@ -171,8 +191,8 @@ work:
       - ServiceNow
       - ROS; Robotics Operating System
 
-  - name: "(Confidential) International Airline"
-    display: ATS-None
+  - id: airline
+    name: "(Confidential) International Airline"
     position: "(Contract) Trainer of DevOps Engineers"
     startDate: "2022-09-30"
     endDate: "2023-07-31"
@@ -186,8 +206,8 @@ work:
       - AWS
       - GitOps
 
-  - name: "(Confidential) Cybersecurity and Biometric Identity Org"
-    display: ATS-None
+  - id: biometric
+    name: "(Confidential) Cybersecurity and Biometric Identity Org"
     position: "(Contract) Trainer of DevOps Engineers"
     startDate: "2022-05-01"
     endDate: "2022-09-30"
@@ -197,13 +217,15 @@ work:
     highlights:
       - CI/CD with CloudBees/Jenkins and Argo-CD
       - software testing with SonarQube, JMeter, and various other tools
+      - text: "Administer and support MySQL database infrastructure."
+        variants: [web, mysql-dba]
     skills:
       - AWS
       - FedRAMP
       - GitOps
 
-  - name: "(Confidential) Financial Services Org"
-    display: ATS-None
+  - id: finserv
+    name: "(Confidential) Financial Services Org"
     position: "(Contract) Trainer of Robotics, Computer Vision, and ML Engineers"
     startDate: "2021-11-01"
     endDate: "2022-04-30"
@@ -218,8 +240,8 @@ work:
       - GCP
       - GitOps
 
-  - name: "(Confidential) Chemical Engineering R&D and Production Org"
-    display: ATS-None
+  - id: chemical
+    name: "(Confidential) Chemical Engineering R&D and Production Org"
     position: "(Contract) Trainer of DevOps Engineers"
     startDate: "2021-02-01"
     endDate: "2021-09-30"
@@ -235,7 +257,8 @@ work:
       - Azure
       - GitOps
 
-  - name: Rooms To Go
+  - id: roomstogo
+    name: Rooms To Go
     location: Dunwoody, GA
     position: Principal DevOps Engineer
     startDate: "2018-11-01"
@@ -254,7 +277,10 @@ work:
       - Manage AWS costs.
       - Make and document changes to AWS infrastructure via aws-cli.
       - Manage network security with AWS Security Groups, iptables, and OpenVPN.
-      - Maintain MongoDB and DynamoDB databases.
+      - text: "Maintain MongoDB and DynamoDB databases."
+        variants: ["!mysql-dba"]
+      - text: "Maintain MySQL, MongoDB, and DynamoDB databases."
+        variants: [mysql-dba]
     skills:
       - AWS
       - GitOps
@@ -262,7 +288,8 @@ work:
       - Python REST API Automation
       - PowerShell
 
-  - name: MidAmerican Energy Services
+  - id: midamerican
+    name: MidAmerican Energy Services
     location: Dunwoody, GA
     position: DevOps Team Leader
     startDate: "2016-10-01"
@@ -271,7 +298,10 @@ work:
       - Orchestrate infrastructure with Packer, Terraform, Chef, and Ansible.
       - Build and maintain Kubernetes clusters serving microservices.
       - Develop tools in Python, Go, bash, awk, sed, CircuitPython, and Arduino.
-      - Build and maintain Cassandra, MongoDB, and MySQL databases.
+      - text: "Build and maintain Cassandra, MongoDB, and MySQL databases."
+        variants: ["!mysql-dba"]
+      - text: "Build and maintain Cassandra, MongoDB, and MySQL databases in mixed production environments."
+        variants: [mysql-dba]
       - Automated infrastructure and operational workflows with Python and PowerShell where Windows administration or executable documentation was required.
       - Maintained database-backed production systems with emphasis on operational health, performance, and reliability.
       - Build custom Raspberry Pi images for IoT devices sent to client locations.
@@ -282,7 +312,8 @@ work:
       - PowerShell
       - SQL Server
 
-  - name: Cox Media Group [Technology]
+  - id: cox-architect
+    name: Cox Media Group [Technology]
     location: Atlanta, GA
     position: Solution Architect, Mobile
     startDate: "2012-12-02"
@@ -303,7 +334,8 @@ work:
       - ServiceNow
       - Python REST API Automation
 
-  - name: Cox Media Group [Technology]
+  - id: cox-sdm
+    name: Cox Media Group [Technology]
     location: Atlanta, GA
     position: Software Development Manager
     startDate: "2009-11-01"
@@ -319,34 +351,64 @@ work:
       - AWS
       - GitOps
 
-  - name: Cox Media Group [Technology]
+  - id: cox-ism
+    name: Cox Media Group [Technology]
     location: Atlanta, GA
     position: Internet Systems Manager & MySQL DBA
     startDate: "2008-07-01"
     endDate: "2009-11-01"
     highlights:
-      - Administer GNU/Linux servers.
-      - Manage a department of sysadmins.
-      - Workflow automation and config management.
+      - text: "Administer GNU/Linux servers."
+        variants: ["!mysql-dba"]
+      - text: "Administered MySQL replication and high-availability topologies across a GNU/Linux server fleet."
+        variants: [mysql-dba]
+      - text: "Manage a department of sysadmins."
+        variants: ["!mysql-dba"]
+      - text: "Managed a department of sysadmins while retaining hands-on MySQL DBA responsibilities."
+        variants: [mysql-dba]
+      - text: "Workflow automation and config management."
+        variants: ["!mysql-dba"]
+      - text: "Workflow automation and configuration management for database and application infrastructure."
+        variants: [mysql-dba]
       - Used ServiceNow as a ticket assignee/request creator and later as a workflow data source for operational analysis.
     skills:
       - AWS
 
-  - name: Cox Media Group (Atlanta Journal-Constitution)
+  - id: ajc
+    name: Cox Media Group (Atlanta Journal-Constitution)
     location: Atlanta, GA
     position: MySQL DBA
     startDate: "2007-01-01"
     endDate: "2008-07-01"
     highlights:
-      - Administer MySQL.
-      - Optimize developer code.
-      - Maintain high availability and performance.
-      - Develop extra Django and Rails projects.
+      - text: "Administer MySQL."
+        variants: ["!mysql-dba"]
+      - text: "Administered production MySQL databases supporting the Atlanta Journal-Constitution, including replication-based high-availability topologies."
+        variants: [mysql-dba]
+      - text: "Performed multi-version MySQL upgrades and migrations."
+        variants: [web, mysql-dba]
+      - text: "Used Percona tools for MySQL backup, recovery, and operational tuning."
+        variants: [web, mysql-dba]
+      - text: "Optimize developer code."
+        variants: ["!mysql-dba"]
+      - text: "Tuned database and disk-system performance; optimized developer-written queries and schema design."
+        variants: [mysql-dba]
+      - text: "Maintain high availability and performance."
+        variants: ["!mysql-dba"]
+      - text: "Maintained high availability and performance across production and development environments."
+        variants: [mysql-dba]
+      - text: "Develop extra Django and Rails projects."
+        variants: ["!mysql-dba"]
+      - text: "Developed supporting Django and Rails projects."
+        variants: [mysql-dba]
       - Used Python/Django for internal tooling before later expanding into cloud and REST/API automation.
     skills:
-      - AWS
+      - MySQL
+      - RAID
+      - Linux Administration
 
-  - name: Yahoo!
+  - id: yahoo
+    name: Yahoo!
     location: Atlanta, GA and Sunnyvale, CA
     position: Technical Yahoo!
     startDate: "2004-03-01"
@@ -359,7 +421,10 @@ work:
     skills:
       - PHP
 
-  - name: Various
+  - id: various
+    name: Various
+    variants: [paper, ats]
+    replaces: [apple, lanier, medcenter, amazing, freelance, wwd]
     location: Various
     position: Prior Professional Experience
     startDate: "1995-08-01"
@@ -373,8 +438,8 @@ work:
     skills:
       - PHP
 
-  - name: Apple Computer
-    display: None
+  - id: apple
+    name: Apple Computer
     location: Atlanta, GA
     position: Business Sales Specialist
     startDate: "2004-03-01"
@@ -382,8 +447,8 @@ work:
     highlights:
       - Exploit my expertise to lure businesses away from Microsoft products for the greater good of the universe.
 
-  - name: Lanier Worldwide
-    display: None
+  - id: lanier
+    name: Lanier Worldwide
     location: Atlanta, GA
     position: Full Stack Developer
     startDate: "2002-10-01"
@@ -392,10 +457,10 @@ work:
       - Manage and train developers on CVS, security policies, and best practices.
       - Develop PHP CMS and software deployment system.
     skills:
-      - AWS
+      - PHP
 
-  - name: MedCenterDirect
-    display: None
+  - id: medcenter
+    name: MedCenterDirect
     location: Atlanta, GA
     position: Lead Solutions Developer
     startDate: "2000-12-02"
@@ -405,10 +470,18 @@ work:
       - Architect custom deployment strategy.
       - Script data migrations.
     skills:
-      - AWS
+      - PHP
+      - HTML
+      - JS
+      - C
+      - C++
+      - TCP/IP
+      - Unix
+      - Solaris
+      - Data Center
 
-  - name: Amazing Graphics
-    display: None
+  - id: amazing
+    name: Amazing Graphics
     location: Atlanta, GA
     position: Digital Designer/Production Artist
     startDate: "1999-04-01"
@@ -417,10 +490,15 @@ work:
       - Create graphics for vinyl wrapping busses, buildings, trade shows, etc.
       - Administer network and Mac, NT, Solaris/Unix systems.
     skills:
-      - AWS
+      - Adobe Photoshop
+      - Adobe Illustrator
+      - Adobe InDesign
+      - Quark Express
+      - Macromedia Shockwave
+      - Macromedia Flash
 
-  - name: Freelance
-    display: None
+  - id: freelance
+    name: Freelance
     location: USA and Ireland
     position: Consultant
     startDate: "1998-01-01"
@@ -443,8 +521,8 @@ work:
       - Macromedia Shockwave
       - Macromedia Flash
 
-  - name: World Wide Development
-    display: None
+  - id: wwd
+    name: World Wide Development
     location: Ashland, KY
     position: Webmaster
     startDate: "1995-08-01"
@@ -484,7 +562,7 @@ volunteer:
 education:
   - institution: University of Kentucky
     area: Computer Engineering and Systems Analysis
-    display: None
+    variants: [None]
     startDate: "1997"
     endDate: "1997"
 
@@ -518,7 +596,7 @@ skills:
       - IAM
       - VPC
       - SSM
-      - Lamda
+      - Lambda
       - Route53
       - CloudFront
       - CloudWatch

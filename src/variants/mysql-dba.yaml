@@ -1,0 +1,107 @@
+# One-off: MySQL DBA contract applications (replaces the old forked
+# bruno.bronosky.resume.mysql-dba-contractor.yaml). Bullets in the main YAML
+# with `variants: [mysql-dba]` are written for this resume and go first.
+extends: paper
+promote_own_bullets: true
+basics:
+  label: MySQL Database Administrator | Linux Infrastructure & DevOps Automation Engineer
+  summary: |-
+    Database administrator and Linux infrastructure engineer with 30+ years in DBMS design, implementation,
+    deployment, administration, and maintenance. Hands-on MySQL DBA experience includes replication-based
+    high-availability topologies, multi-version upgrades and migrations, database and disk-system performance
+    tuning, and backup/recovery operations using Percona tooling, alongside FreeBSD/Apache/MySQL stack
+    administration and later maintaining MySQL in mixed production environments alongside Cassandra and
+    MongoDB. Pairs that DBA foundation with deep GNU/Linux and Unix systems administration and 10+ years of
+    DevOps automation using Terraform, Ansible, Chef, and Python/Bash across bare-metal, AWS, Azure, and GCP
+    environments. That hands-on depth is now amplified by an AI-augmented workflow: repeated, demonstrated results
+    have shown that any technical skill I've built across 30 years is a sufficient foundation for me to
+    competently administer or develop that technology to current best practices with AI assistance, and I
+    apply that same AI-assisted verification even to the skills I use every day, specifically so my own
+    experience never becomes a blind spot. The result is a breadth and reliability of technical effectiveness
+    greater than I have ever demonstrated before. Self-motivated, detail-oriented, comfortable owning multiple
+    concurrent assignments, and available for on-call rotation supporting critical production database issues
+    outside business hours.
+skills:
+- name: MySQL Database Administration
+  level: master
+  keywords:
+  - MySQL 5.6 / 5.7 / 8.0
+  - Replication & High Availability
+  - Disaster Recovery
+  - Multi-Version Upgrades & Migrations
+  - Percona Tools (backup, recovery, operational tuning)
+  - Performance & Disk-System Tuning
+  - Security Administration
+  - Database Environment Lifecycle Management
+  - Production & Development Environment Support
+  - Data Migration & Transformation
+- name: GNU/Linux and Unix Server Administration
+  level: master
+  keywords:
+  - Linux
+  - FreeBSD
+  - RHEL; Red Hat Enterprise Linux
+  - CLI; Command Line Interface
+  - SSH
+  - Systemd; systemctl
+  - System V; SysV Init
+  - LSB; Linux Standard Base
+- name: Automation/Orchestration & CI/CD (DevOps Tools)
+  level: master
+  keywords:
+  - Terraform
+  - Ansible
+  - Chef
+  - Packer
+  - GitHub Actions / GitHub Enterprise
+  - CloudFormation
+  - CDK
+  - Jenkins
+  - ArgoCD
+  - GitOps
+- name: Bash/Shell Scripting
+  level: master
+  keywords:
+  - POSIX sh
+  - GNU Bash
+  - Zsh
+- name: Interpreted Languages
+  level: advanced
+  keywords:
+  - Python
+  - Python REST/API automation
+  - Perl
+  - Node.js
+  - Django
+- name: Amazon Web Services & Cloud/Virtual Environments
+  level: master
+  keywords:
+  - EC2
+  - EBS
+  - RDS
+  - VPC
+  - IAM
+  - Azure
+  - GCP
+  - OpenStack
+  - Proxmox
+  - Bare-metal and virtualized environments
+- name: Service Management and Database Operations
+  level: advanced
+  keywords:
+  - Microsoft SQL Server administration
+  - SQL Server querying, operations, troubleshooting, and performance stewardship
+  - ServiceNow workflow and catalog integration
+  - Production database reliability
+- name: PowerShell Automation
+  level: master
+  keywords:
+  - Windows administration as executable documentation
+  - Cloud and CI/CD automation
+- name: AI & Agentic Automation
+  level: master
+  keywords:
+  - Agentic Workflows (MCP)
+  - AI-to-API Integration
+  - Local / Private LLMs
+  - AI-Assisted CI/CD

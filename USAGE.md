@@ -46,8 +46,10 @@ committed as `build/bruno.bronosky.community.html`. The resume links to it
 instead of a github.com URL because on Android a github.com link opens the
 GitHub app.
 
-HTML and JSON are not produced by `make`. From a shell with `yq` (e.g.
-`nix-shell -p yq-go`) run, with `tools/` on `PATH`:
+Each output is a *variant* of the one YAML file (web, paper, ATS, one-offs);
+see [`src/variants/README.md`](src/variants/README.md). `make json` writes the
+JSON for each; `make ats` and `make oneoff VARIANT=mysql-dba` build the other
+DOCX files. The HTML is not produced by `make`. With `tools/` on `PATH` run:
 
 ```bash
 PATH=$PWD/tools:$PATH ./tools/jsonresume.sh yaml_file_to_json_file
