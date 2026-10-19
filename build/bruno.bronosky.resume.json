@@ -10,7 +10,7 @@
     "urlPrintable": "https://bronosky.com/resume/",
     "urlPdf": "https://bronosky.com/resume/pdf/",
     "urlSource": "https://bronosky.com/resume/",
-    "summary": "Engineer, architect, and mentor with 30+ years in DevOps, cloud platforms, infrastructure automation, and software\nengineering. I turn operational work into durable scripts, API integrations, and CI/CD workflows across Python,\nBash, GitHub Actions, and AWS, Azure, and GCP. I power these disciplines with an AI-augmented workflow, leveraging\nautonomous agents (OpenClaw, OpenCode) and self-hosted LLMs to massively accelerate infrastructure delivery,\npipeline analysis, and code refactoring. Adept at building secure API tools for AI integration, teaching best\npractices, and driving business-critical transformations across cloud, mobile, and embedded systems.",
+    "summary": "Principal DevOps engineer with 30+ years building and running production systems, from data center racks to\nAWS, Azure, and GCP. I replace manual operations with tested automation (Terraform, Ansible, GitHub Actions,\nPython, Bash, PowerShell) and teach teams to own it: DevOps trainer for four enterprise clients worth $3B to\n$1T, and co-manager of a 30-developer team. I use AI coding agents daily (Claude Code, Codex, Gemini CLI,\nOpenClaw) and self-hosted LLMs to ship infrastructure work faster.",
     "exhaustiveSummary": "Born in the Appalachian mountains of West Virginia to a radio electronics technician, Bruno grew up in coal mining\ncountry where most of his classmates remain. He never threw a ball with his father, though they did attend a\nhandful of Cincinnati Reds baseball games. They spent their nights and weekends soldering Heathkit projects from\nRadio Shack (my first computer was a [Heathkit H89](https://vintagecomputer.com/heathkit-h89.html)) and writing\ngames and equation solvers in Borland Turbo Basic, then Turbo Pascal, and eventually Delphi.\nWhen calling his father in 1995 to tell him Bruno got his first professional programming gig, they both saw this\nlike getting drafted into MLB. Every day Bruno feels like \"the luckiest man in baseball\" to have escaped the coal\nmines.\n\n# What Bruno does:\n\n- cloud computing: OpenStack Amazon Web Services, Microsoft Azure, Google Cloud Platform, Linode, DigitalOcean, Heroku\n- container services: Docker, Kubernetes, Nomad, ECS, EKS\n- infrastructure orchestration and automation with Terraform, Ansible, Chef, Argo\n- infrastructure and capacity planning\n- data center operations\n- OpenVPN, SSH tunneling, network security\n- troubleshoot network issues\n- DBA for DynamoDB, Kafka, Cassandra, MongoDB, CouchDB, PostgreSQL, MySQL\n- administer various Unix and GNU/Linux\n- administer virtualization hosts and guests\n- optimize RAID, swap, cache\n- archaeology of code, protocol, process\n- manage systems engineers, software developers\n- manage vendors, contractors\n- manage client SLAs, vendor SLAs\n- study complex systems and make them accessible to various audiences\n- {review, recommend} application {architecture, code}\n- maintain SDLC process\n- develop web and mobile applications\n- architect {cloud, web, mobile} solutions\n- {develop, deploy} {iPhone, Android} apps\n- {develop, deploy} {Cordova, React Native} HTML5+CSS3+JS apps\n- {audit, deploy} {developer code, data migrations}\n- {transform, migrate} data\n- audit application code for security and performance\n\n# What Bruno is:\n\n- teacher\n- strong verbal and written communicator\n- excellent troubleshooter, debugger, and problem bisector\n- unrepentant command line addict\n- ambiguity assassin",
     "location": {
       "address": "French Quarter",
@@ -53,12 +53,13 @@
       "position": "Technology Consultant",
       "startDate": "2025-11-17",
       "endDate": "Present",
+      "summary": "Medical imaging software. Hourly contract, concurrent with Triton.",
       "highlights": [
-        "Develop AI tools to shorten ticket completion times",
-        "Develop AI tools to on-board new team members",
-        "Document DevOps processes and Infrastructure to improve AI tool efficiency.",
-        "Automate and document repeatable infrastructure operations rather than relying on manual procedures.",
-        "DevOps"
+        "Build AI pipelines that work whole categories of ServiceNow tickets, cutting ticket completion times.",
+        "Package infrastructure and process context for AI agents, which also speeds up onboarding for new team members.",
+        "Document DevOps processes and infrastructure so AI tools work from accurate context.",
+        "Automate and document repeatable infrastructure operations instead of relying on manual procedures.",
+        "Handle day-to-day DevOps across AWS and Azure with Terraform, Ansible, PowerShell, and CI/CD."
       ],
       "skills": [
         "PowerShell",
@@ -82,20 +83,21 @@
       "position": "Research Fellow",
       "startDate": "2023-07-31",
       "endDate": "Present",
+      "summary": "Alternative fuel research. Hourly contract, concurrent with Intelerad.",
       "highlights": [
-        "Manage engineers and projects",
-        "Developed secure API endpoints and OpenClaw agent skills to automate infrastructure interaction and monitoring",
-        "Deployed local, privacy-compliant LLMs to accelerate engineering velocity while protecting proprietary data",
-        "Leveraged AI coding agents to rapidly refactor complex systems and automate infrastructure-as-code",
-        "Mentored engineering teams on adopting AI-augmented workflows and integrating LLMs into CI/CD pipelines",
-        "Used Python for API-driven infrastructure automation, real-time systems, robotics, monitoring, and data analysis.",
-        "Validate R & D plans and results",
-        "3D modeling and CNC manufacturing",
-        "Safety and fire suppression",
-        "Design and implement sensor arrays for data gathering",
-        "Develop real-time monitoring systems in Python",
-        "AI data analysis and fault prediction",
-        "Plan and administer a Digital Arts division"
+        "Manage 4–6 engineers or projects at a time.",
+        "Develop secure API endpoints and OpenClaw agent skills to automate infrastructure interaction and monitoring.",
+        "Deploy local, privacy-compliant LLMs that speed up engineering while keeping proprietary data in-house.",
+        "Use AI coding agents to refactor complex systems and automate infrastructure as code.",
+        "Mentor engineering teams on AI-augmented workflows and on integrating LLMs into CI/CD pipelines.",
+        "Design and implement sensor arrays that monitor temperature and vibration in mechanical processes.",
+        "Predict equipment failure with AI analysis of out-of-spec temperature and vibration data.",
+        "Develop real-time monitoring systems in Python.",
+        "Use Python for API-driven infrastructure automation, real-time systems, robotics, monitoring, and data analysis.",
+        "Validate R&D plans and results.",
+        "3D model and CNC-machine custom parts.",
+        "Oversee safety and fire suppression.",
+        "Plan and administer a Digital Arts division."
       ],
       "skills": [
         "AWS",
@@ -125,7 +127,7 @@
       "summary": "Value: $10B+ Employees: 90k+",
       "highlights": [
         "CI/CD with Harness.io, AWS infrastructure with CDK+CFN, Migration to Github Enterprise from 5 other VCS",
-        "architect and develop an internal ML/AI Software Development Co-Pilot trained on internal code repos to reduce code \"re-invention\" and time/effort"
+        "Architect and develop an internal ML/AI Software Development Co-Pilot trained on internal code repos to reduce code \"re-invention\" and time/effort"
       ],
       "skills": [
         "AWS",
@@ -173,7 +175,7 @@
       "highlights": [
         "CI/CD with Jenkins, SonarQube, JMeter, various software testing tools",
         "Azure & AWS infrastructure and network security architecture",
-        "Architected an internal ML/AI Software Development Co-Pilot trained on internal code repos to reduce code \"re-invention\" and time/effort"
+        "Architect an internal ML/AI Software Development Co-Pilot trained on internal code repos to reduce code \"re-invention\" and time/effort"
       ],
       "skills": [
         "AWS",
@@ -188,17 +190,19 @@
       "startDate": "2018-11-01",
       "endDate": "2021-02-01",
       "highlights": [
-        "Direct and train a department of DevOps Engineers and SREs.",
-        "Train developers to follow DevOps & CI/CD processes.",
-        "Architect Hybrid-Cloud and Multi-Cloud infrastructure.",
+        "Direct and train a 4-engineer DevOps/SRE department.",
+        "Take releases from Friday-only deploys to multiple deploys a day with CI/CD.",
+        "Keep the platform up through live sale events like Black Friday, and lead the response to outages, migrations, and security events.",
+        "Build and maintain [Fargate] ECS, EKS, and Kubernetes clusters serving microservices across ~9 AWS accounts.",
+        "Own AWS cost management, a role I took on because spend was growing too fast.",
+        "Train developers to follow DevOps and CI/CD processes.",
+        "Architect hybrid-cloud and multi-cloud infrastructure.",
         "Set and enforce security practices.",
-        "Develop tools and services in bash, Node.js, Python, and Go.",
-        "Design, build, and deploy Docker containers, API Gateways.",
         "Automate and orchestrate infrastructure with Packer and Terraform.",
-        "Built Python automation against cloud and service APIs for infrastructure operations.",
-        "Built GitHub Actions workflows professionally from 2020, using Actions pragmatically and offloading larger execution to cloud-native services when appropriate.",
-        "Build and maintain [Fargate] ECS, EKS, and Kubernetes clusters serving microservices.",
-        "Manage AWS costs.",
+        "Build GitHub Actions workflows (since 2020), offloading heavy jobs to cloud-native services when appropriate.",
+        "Build Python automation against cloud and service APIs for infrastructure operations.",
+        "Develop tools and services in Bash, Node.js, Python, and Go.",
+        "Design, build, and deploy Docker containers and API gateways.",
         "Make and document changes to AWS infrastructure via aws-cli.",
         "Manage network security with AWS Security Groups, iptables, and OpenVPN.",
         "Maintain MongoDB and DynamoDB databases."
@@ -218,14 +222,15 @@
       "startDate": "2016-10-01",
       "endDate": "2018-07-01",
       "highlights": [
-        "Orchestrate infrastructure with Packer, Terraform, Chef, and Ansible.",
-        "Build and maintain Kubernetes clusters serving microservices.",
-        "Develop tools in Python, Go, bash, awk, sed, CircuitPython, and Arduino.",
+        "Lead a 3-engineer DevOps team.",
+        "Cut server provisioning from days to minutes by replacing word-of-mouth procedures with Packer, Terraform, Chef, and Ansible.",
+        "Build and maintain 8 Kubernetes clusters (hundreds of nodes) serving microservices.",
+        "Build custom Raspberry Pi images for thousands of IoT devices across ~10 client sites.",
         "Build and maintain Cassandra, MongoDB, and MySQL databases.",
-        "Automated infrastructure and operational workflows with Python and PowerShell where Windows administration or executable documentation was required.",
-        "Maintained database-backed production systems with emphasis on operational health, performance, and reliability.",
-        "Build custom Raspberry Pi images for IoT devices sent to client locations.",
-        "Design, 3D Model, and CNC mill custom IoT hardware cases."
+        "Design, 3D model, and CNC mill custom IoT hardware cases.",
+        "Automate infrastructure and operational workflows with Python and PowerShell where Windows administration or executable documentation is needed.",
+        "Maintain database-backed production systems for operational health, performance, and reliability.",
+        "Develop tools in Python, Go, Bash, awk, sed, CircuitPython, and Arduino."
       ],
       "skills": [
         "AWS",
@@ -235,19 +240,20 @@
       ]
     },
     {
-      "name": "Cox Media Group [Technology]",
+      "name": "Cox Media Group",
       "location": "Atlanta, GA",
       "position": "Solution Architect, Mobile",
       "startDate": "2012-12-02",
       "endDate": "2016-10-01",
       "highlights": [
-        "Develop mobile client and backend POCs.",
-        "Architect and deploy cloud infrastructure.",
-        "Develop and maintain original Open Source software projects.",
-        "Automated Windows and cloud administration with PowerShell and Python rather than leaving manual GUI procedures undocumented.",
-        "Integrated ServiceNow ticket/workflow data into CI/CD and operational analysis workflows.",
-        "Workflow and process automation.",
+        "Manage and deploy the mobile apps for 180 newspaper, TV, and radio stations.",
         "Lead mobile architecture and technical strategy.",
+        "Architect and deploy cloud infrastructure.",
+        "Develop mobile client and backend proofs of concept.",
+        "Develop and maintain original open source software projects.",
+        "Automate Windows and cloud administration with PowerShell and Python instead of undocumented manual GUI procedures.",
+        "Integrate ServiceNow ticket and workflow data into CI/CD and operational analysis.",
+        "Automate workflows and processes.",
         "Present and teach."
       ],
       "skills": [
@@ -259,17 +265,17 @@
       ]
     },
     {
-      "name": "Cox Media Group [Technology]",
+      "name": "Cox Media Group",
       "location": "Atlanta, GA",
       "position": "Software Development Manager",
       "startDate": "2009-11-01",
       "endDate": "2012-12-02",
       "highlights": [
-        "Co-Manage a ~30 developer team.",
+        "Co-manage a ~30-developer team.",
         "Improve performance through coaching.",
         "Encourage and inspire developers and vendors to give great service.",
-        "Workflow automation scripting.",
-        "Partnered with ServiceNow administrators to extract ticket/request data for analysis and process automation.",
+        "Script workflow automation.",
+        "Partner with ServiceNow administrators to extract ticket and request data for analysis and process automation.",
         "Architect and develop software."
       ],
       "skills": [
@@ -278,7 +284,7 @@
       ]
     },
     {
-      "name": "Cox Media Group [Technology]",
+      "name": "Cox Media Group",
       "location": "Atlanta, GA",
       "position": "Internet Systems Manager & MySQL DBA",
       "startDate": "2008-07-01",
@@ -286,17 +292,18 @@
       "highlights": [
         "Administer GNU/Linux servers.",
         "Manage a department of sysadmins.",
-        "Workflow automation and config management.",
-        "Used ServiceNow as a ticket assignee/request creator and later as a workflow data source for operational analysis."
+        "Automate workflows and manage configuration.",
+        "Work ServiceNow tickets and requests, and later use it as a workflow data source for operational analysis."
       ],
       "skills": [
         "AWS"
       ]
     },
     {
-      "name": "Cox Media Group (Atlanta Journal-Constitution)",
+      "name": "Cox Media Group",
       "location": "Atlanta, GA",
       "position": "MySQL DBA",
+      "summary": "Atlanta Journal-Constitution",
       "startDate": "2007-01-01",
       "endDate": "2008-07-01",
       "highlights": [
@@ -304,7 +311,7 @@
         "Optimize developer code.",
         "Maintain high availability and performance.",
         "Develop extra Django and Rails projects.",
-        "Used Python/Django for internal tooling before later expanding into cloud and REST/API automation."
+        "Build internal tooling in Python/Django."
       ],
       "skills": [
         "MySQL",
@@ -505,7 +512,6 @@
         "Grafana",
         "OpenTelemetry",
         "OpenMetrics",
-        "OpenTracing",
         "Nagios",
         "Datadog",
         "New Relic",

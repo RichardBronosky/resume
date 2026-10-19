@@ -15,12 +15,11 @@ basics:
   urlPdf: https://bronosky.com/resume/pdf/
   urlSource: https://bronosky.com/resume/
   summary: |-
-    Engineer, architect, and mentor with 30+ years in DevOps, cloud platforms, infrastructure automation, and software
-    engineering. I turn operational work into durable scripts, API integrations, and CI/CD workflows across Python,
-    Bash, GitHub Actions, and AWS, Azure, and GCP. I power these disciplines with an AI-augmented workflow, leveraging
-    autonomous agents (OpenClaw, OpenCode) and self-hosted LLMs to massively accelerate infrastructure delivery,
-    pipeline analysis, and code refactoring. Adept at building secure API tools for AI integration, teaching best
-    practices, and driving business-critical transformations across cloud, mobile, and embedded systems.
+    Principal DevOps engineer with 30+ years building and running production systems, from data center racks to
+    AWS, Azure, and GCP. I replace manual operations with tested automation (Terraform, Ansible, GitHub Actions,
+    Python, Bash, PowerShell) and teach teams to own it: DevOps trainer for four enterprise clients worth $3B to
+    $1T, and co-manager of a 30-developer team. I use AI coding agents daily (Claude Code, Codex, Gemini CLI,
+    OpenClaw) and self-hosted LLMs to ship infrastructure work faster.
   exhaustiveSummary: |-
     Born in the Appalachian mountains of West Virginia to a radio electronics technician, Bruno grew up in coal mining
     country where most of his classmates remain. He never threw a ball with his father, though they did attend a
@@ -95,15 +94,16 @@ work:
     position: "Technology Consultant"
     startDate: "2025-11-17"
     endDate: "Present"
+    summary: "Medical imaging software. Hourly contract, concurrent with Triton."
     highlights:
-      - Develop AI tools to shorten ticket completion times
-      - Develop AI tools to on-board new team members
-      - text: "Document DevOps processes and Infrastructure to improve AI tool efficiency."
+      - Build AI pipelines that work whole categories of ServiceNow tickets, cutting ticket completion times.
+      - Package infrastructure and process context for AI agents, which also speeds up onboarding for new team members.
+      - text: "Document DevOps processes and infrastructure so AI tools work from accurate context."
         variants: ["!mysql-dba"]
       - text: "Document DevOps processes and infrastructure, including operational runbooks for production systems."
         variants: [mysql-dba]
-      - Automate and document repeatable infrastructure operations rather than relying on manual procedures.
-      - DevOps
+      - Automate and document repeatable infrastructure operations instead of relying on manual procedures.
+      - Handle day-to-day DevOps across AWS and Azure with Terraform, Ansible, PowerShell, and CI/CD.
     skills:
       - PowerShell
       - AWS
@@ -125,22 +125,23 @@ work:
     position: "Research Fellow"
     startDate: "2023-07-31"
     endDate: "Present"
+    summary: "Alternative fuel research. Hourly contract, concurrent with Intelerad."
     highlights:
-      - Manage engineers and projects
-      - Developed secure API endpoints and OpenClaw agent skills to automate infrastructure interaction and monitoring
-      - Deployed local, privacy-compliant LLMs to accelerate engineering velocity while protecting proprietary data
-      - Leveraged AI coding agents to rapidly refactor complex systems and automate infrastructure-as-code
-      - Mentored engineering teams on adopting AI-augmented workflows and integrating LLMs into CI/CD pipelines
-      - Used Python for API-driven infrastructure automation, real-time systems, robotics, monitoring, and data analysis.
+      - Manage 4–6 engineers or projects at a time.
+      - Develop secure API endpoints and OpenClaw agent skills to automate infrastructure interaction and monitoring.
+      - Deploy local, privacy-compliant LLMs that speed up engineering while keeping proprietary data in-house.
+      - Use AI coding agents to refactor complex systems and automate infrastructure as code.
+      - Mentor engineering teams on AI-augmented workflows and on integrating LLMs into CI/CD pipelines.
+      - Design and implement sensor arrays that monitor temperature and vibration in mechanical processes.
+      - Predict equipment failure with AI analysis of out-of-spec temperature and vibration data.
+      - Develop real-time monitoring systems in Python.
+      - Use Python for API-driven infrastructure automation, real-time systems, robotics, monitoring, and data analysis.
       - text: "Administer MySQL databases supporting real-time systems, monitoring, and data analysis."
         variants: [mysql-dba]
-      - Validate R & D plans and results
-      - 3D modeling and CNC manufacturing
-      - Safety and fire suppression
-      - Design and implement sensor arrays for data gathering
-      - Develop real-time monitoring systems in Python
-      - AI data analysis and fault prediction
-      - Plan and administer a Digital Arts division
+      - Validate R&D plans and results.
+      - 3D model and CNC-machine custom parts.
+      - Oversee safety and fire suppression.
+      - Plan and administer a Digital Arts division.
     skills:
       - AWS
       - GCP
@@ -174,10 +175,10 @@ work:
       - CI/CD with CloudBees/Jenkins, Argo-CD, Harness.io, SonarQube, JMeter, AWS infrastructure with CDK+CFN
       - Migration to Github Enterprise from 5 other VCS
       - Azure & AWS infrastructure and network security architecture
-      - architect and develop an internal ML/AI Software Development Co-Pilot trained on internal code repos to reduce code "re-invention" and time/effort
+      - Architect and develop an internal ML/AI Software Development Co-Pilot trained on internal code repos to reduce code "re-invention" and time/effort
       - Robotics R&D, GCP, Machine Learning, Computer Vision, Software Development, Network & Physical Architecture, DevSecOps, Linux System Administration
-      - Built and taught CI/CD patterns including GitHub Actions workflows, GitHub Enterprise migrations, and cloud-backed automation.
-      - Integrated service-management and ticket workflow data into delivery and operational analysis processes.
+      - Build and teach CI/CD patterns, including GitHub Actions workflows, GitHub Enterprise migrations, and cloud-backed automation.
+      - Integrate service-management and ticket workflow data into delivery and operational analysis.
       - ROS 1&2 [Robotics Operating System], Dobot CR5, Python, C++
 
     skills:
@@ -201,7 +202,7 @@ work:
       Employees: 90k+
     highlights:
       - CI/CD with Harness.io, AWS infrastructure with CDK+CFN, Migration to Github Enterprise from 5 other VCS
-      - architect and develop an internal ML/AI Software Development Co-Pilot trained on internal code repos to reduce code "re-invention" and time/effort
+      - Architect and develop an internal ML/AI Software Development Co-Pilot trained on internal code repos to reduce code "re-invention" and time/effort
     skills:
       - AWS
       - GitOps
@@ -251,7 +252,7 @@ work:
     highlights:
       - CI/CD with Jenkins, SonarQube, JMeter, various software testing tools
       - Azure & AWS infrastructure and network security architecture
-      - Architected an internal ML/AI Software Development Co-Pilot trained on internal code repos to reduce code "re-invention" and time/effort
+      - Architect an internal ML/AI Software Development Co-Pilot trained on internal code repos to reduce code "re-invention" and time/effort
     skills:
       - AWS
       - Azure
@@ -264,17 +265,19 @@ work:
     startDate: "2018-11-01"
     endDate: "2021-02-01"
     highlights:
-      - Direct and train a department of DevOps Engineers and SREs.
-      - Train developers to follow DevOps & CI/CD processes.
-      - Architect Hybrid-Cloud and Multi-Cloud infrastructure.
+      - Direct and train a 4-engineer DevOps/SRE department.
+      - Take releases from Friday-only deploys to multiple deploys a day with CI/CD.
+      - Keep the platform up through live sale events like Black Friday, and lead the response to outages, migrations, and security events.
+      - Build and maintain [Fargate] ECS, EKS, and Kubernetes clusters serving microservices across ~9 AWS accounts.
+      - Own AWS cost management, a role I took on because spend was growing too fast.
+      - Train developers to follow DevOps and CI/CD processes.
+      - Architect hybrid-cloud and multi-cloud infrastructure.
       - Set and enforce security practices.
-      - Develop tools and services in bash, Node.js, Python, and Go.
-      - Design, build, and deploy Docker containers, API Gateways.
       - Automate and orchestrate infrastructure with Packer and Terraform.
-      - Built Python automation against cloud and service APIs for infrastructure operations.
-      - Built GitHub Actions workflows professionally from 2020, using Actions pragmatically and offloading larger execution to cloud-native services when appropriate.
-      - Build and maintain [Fargate] ECS, EKS, and Kubernetes clusters serving microservices.
-      - Manage AWS costs.
+      - Build GitHub Actions workflows (since 2020), offloading heavy jobs to cloud-native services when appropriate.
+      - Build Python automation against cloud and service APIs for infrastructure operations.
+      - Develop tools and services in Bash, Node.js, Python, and Go.
+      - Design, build, and deploy Docker containers and API gateways.
       - Make and document changes to AWS infrastructure via aws-cli.
       - Manage network security with AWS Security Groups, iptables, and OpenVPN.
       - text: "Maintain MongoDB and DynamoDB databases."
@@ -295,17 +298,18 @@ work:
     startDate: "2016-10-01"
     endDate: "2018-07-01"
     highlights:
-      - Orchestrate infrastructure with Packer, Terraform, Chef, and Ansible.
-      - Build and maintain Kubernetes clusters serving microservices.
-      - Develop tools in Python, Go, bash, awk, sed, CircuitPython, and Arduino.
+      - Lead a 3-engineer DevOps team.
+      - Cut server provisioning from days to minutes by replacing word-of-mouth procedures with Packer, Terraform, Chef, and Ansible.
+      - Build and maintain 8 Kubernetes clusters (hundreds of nodes) serving microservices.
+      - Build custom Raspberry Pi images for thousands of IoT devices across ~10 client sites.
       - text: "Build and maintain Cassandra, MongoDB, and MySQL databases."
         variants: ["!mysql-dba"]
       - text: "Build and maintain Cassandra, MongoDB, and MySQL databases in mixed production environments."
         variants: [mysql-dba]
-      - Automated infrastructure and operational workflows with Python and PowerShell where Windows administration or executable documentation was required.
-      - Maintained database-backed production systems with emphasis on operational health, performance, and reliability.
-      - Build custom Raspberry Pi images for IoT devices sent to client locations.
-      - Design, 3D Model, and CNC mill custom IoT hardware cases.
+      - Design, 3D model, and CNC mill custom IoT hardware cases.
+      - Automate infrastructure and operational workflows with Python and PowerShell where Windows administration or executable documentation is needed.
+      - Maintain database-backed production systems for operational health, performance, and reliability.
+      - Develop tools in Python, Go, Bash, awk, sed, CircuitPython, and Arduino.
     skills:
       - AWS
       - GitOps
@@ -313,19 +317,20 @@ work:
       - SQL Server
 
   - id: cox-architect
-    name: Cox Media Group [Technology]
+    name: Cox Media Group
     location: Atlanta, GA
     position: Solution Architect, Mobile
     startDate: "2012-12-02"
     endDate: "2016-10-01"
     highlights:
-      - Develop mobile client and backend POCs.
-      - Architect and deploy cloud infrastructure.
-      - Develop and maintain original Open Source software projects.
-      - Automated Windows and cloud administration with PowerShell and Python rather than leaving manual GUI procedures undocumented.
-      - Integrated ServiceNow ticket/workflow data into CI/CD and operational analysis workflows.
-      - Workflow and process automation.
+      - Manage and deploy the mobile apps for 180 newspaper, TV, and radio stations.
       - Lead mobile architecture and technical strategy.
+      - Architect and deploy cloud infrastructure.
+      - Develop mobile client and backend proofs of concept.
+      - Develop and maintain original open source software projects.
+      - Automate Windows and cloud administration with PowerShell and Python instead of undocumented manual GUI procedures.
+      - Integrate ServiceNow ticket and workflow data into CI/CD and operational analysis.
+      - Automate workflows and processes.
       - Present and teach.
     skills:
       - AWS
@@ -335,24 +340,24 @@ work:
       - Python REST API Automation
 
   - id: cox-sdm
-    name: Cox Media Group [Technology]
+    name: Cox Media Group
     location: Atlanta, GA
     position: Software Development Manager
     startDate: "2009-11-01"
     endDate: "2012-12-02"
     highlights:
-      - Co-Manage a ~30 developer team.
+      - Co-manage a ~30-developer team.
       - Improve performance through coaching.
       - Encourage and inspire developers and vendors to give great service.
-      - Workflow automation scripting.
-      - Partnered with ServiceNow administrators to extract ticket/request data for analysis and process automation.
+      - Script workflow automation.
+      - Partner with ServiceNow administrators to extract ticket and request data for analysis and process automation.
       - Architect and develop software.
     skills:
       - AWS
       - GitOps
 
   - id: cox-ism
-    name: Cox Media Group [Technology]
+    name: Cox Media Group
     location: Atlanta, GA
     position: Internet Systems Manager & MySQL DBA
     startDate: "2008-07-01"
@@ -360,48 +365,49 @@ work:
     highlights:
       - text: "Administer GNU/Linux servers."
         variants: ["!mysql-dba"]
-      - text: "Administered MySQL replication and high-availability topologies across a GNU/Linux server fleet."
+      - text: "Administer MySQL replication and high-availability topologies across a GNU/Linux server fleet."
         variants: [mysql-dba]
       - text: "Manage a department of sysadmins."
         variants: ["!mysql-dba"]
-      - text: "Managed a department of sysadmins while retaining hands-on MySQL DBA responsibilities."
+      - text: "Manage a department of sysadmins while staying hands-on as MySQL DBA."
         variants: [mysql-dba]
-      - text: "Workflow automation and config management."
+      - text: "Automate workflows and manage configuration."
         variants: ["!mysql-dba"]
-      - text: "Workflow automation and configuration management for database and application infrastructure."
+      - text: "Automate workflows and manage configuration for database and application infrastructure."
         variants: [mysql-dba]
-      - Used ServiceNow as a ticket assignee/request creator and later as a workflow data source for operational analysis.
+      - Work ServiceNow tickets and requests, and later use it as a workflow data source for operational analysis.
     skills:
       - AWS
 
   - id: ajc
-    name: Cox Media Group (Atlanta Journal-Constitution)
+    name: Cox Media Group
     location: Atlanta, GA
     position: MySQL DBA
+    summary: Atlanta Journal-Constitution
     startDate: "2007-01-01"
     endDate: "2008-07-01"
     highlights:
       - text: "Administer MySQL."
         variants: ["!mysql-dba"]
-      - text: "Administered production MySQL databases supporting the Atlanta Journal-Constitution, including replication-based high-availability topologies."
+      - text: "Administer production MySQL databases for the Atlanta Journal-Constitution, including replication-based high availability."
         variants: [mysql-dba]
-      - text: "Performed multi-version MySQL upgrades and migrations."
+      - text: "Perform multi-version MySQL upgrades and migrations."
         variants: [mysql-dba]
-      - text: "Used Percona tools for MySQL backup, recovery, and operational tuning."
+      - text: "Use Percona tools for MySQL backup, recovery, and operational tuning."
         variants: [mysql-dba]
       - text: "Optimize developer code."
         variants: ["!mysql-dba"]
-      - text: "Tuned database and disk-system performance; optimized developer-written queries and schema design."
+      - text: "Tune database and disk-system performance; optimize developer-written queries and schema design."
         variants: [mysql-dba]
       - text: "Maintain high availability and performance."
         variants: ["!mysql-dba"]
-      - text: "Maintained high availability and performance across production and development environments."
+      - text: "Maintain high availability and performance across production and development environments."
         variants: [mysql-dba]
       - text: "Develop extra Django and Rails projects."
         variants: ["!mysql-dba"]
-      - text: "Developed supporting Django and Rails projects."
+      - text: "Develop supporting Django and Rails projects."
         variants: [mysql-dba]
-      - Used Python/Django for internal tooling before later expanding into cloud and REST/API automation.
+      - Build internal tooling in Python/Django.
     skills:
       - MySQL
       - RAID
@@ -585,28 +591,28 @@ skills:
   - name: "Amazon Web Services"
     level: master
     keywords:
-      - CDK
-      - CFN
+      - {text: "CDK", variants: [web]}
+      - {text: "CFN", variants: [web]}
       - EC2
       - ECS
       - EKS
       - Fargate
-      - EBS
-      - ELB
+      - {text: "EBS", variants: [web]}
+      - {text: "ELB", variants: [web]}
       - RDS
       - S3
-      - SNS
-      - SQS
+      - {text: "SNS", variants: [web]}
+      - {text: "SQS", variants: [web]}
       - IAM
       - VPC
-      - SSM
+      - {text: "SSM", variants: [web]}
       - Lambda
-      - Route53
-      - CloudFront
+      - {text: "Route53", variants: [web]}
+      - {text: "CloudFront", variants: [web]}
       - CloudWatch
-      - GuardDuty
+      - {text: "GuardDuty", variants: [web]}
       - DynamoDB
-      - Auto Scaling
+      - {text: "Auto Scaling", variants: [web]}
   - name: "Automation/Orchestration & CI/CD"
     level: master
     keywords:
@@ -627,7 +633,6 @@ skills:
       - Grafana
       - OpenTelemetry
       - OpenMetrics
-      - OpenTracing
       - Nagios
       - Datadog
       - New Relic
@@ -636,18 +641,18 @@ skills:
   - name: Machine Learning, Artificial Intelligence
     level: intermediate
     keywords:
-      - Language Model
+      - {text: "Language Model", variants: [web]}
       - LLM
-      - Neural Network
-      - Transformer
-      - GAN; Generative Adversarial Network
+      - {text: "Neural Network", variants: [web]}
+      - {text: "Transformer", variants: [web]}
+      - {text: "GAN; Generative Adversarial Network", variants: [web]}
       - Computer Vision
-      - NLP; Natural Language Processing
+      - {text: "NLP; Natural Language Processing", variants: [web]}
       - TensorFlow
       - PyTorch
-      - Mojo
-      - automatic1111
-      - oobabooga
+      - {text: "Mojo", variants: [web]}
+      - {text: "automatic1111", variants: [web]}
+      - {text: "oobabooga", variants: [web]}
   - name: Kubernetes, Docker, and containers
     level: advanced
     keywords:
@@ -662,7 +667,7 @@ skills:
       - FreeBSD
       - OpenBSD
       - MacOS
-      - Arch Linux, BTW
+      - {text: "Arch Linux, BTW", variants: [web]}
       - Debian
       - RHEL; Red Hat Enterprise Linux
       - CLI; Command Line Interface
@@ -693,6 +698,7 @@ skills:
       - Microsoft SQL Server administration
       - Production database reliability
   - name: Graphics
+    variants: [web]
     level: master
     keywords:
       - Adobe Creative Suite
@@ -700,6 +706,7 @@ skills:
       - FreeCAD
       - Fusion 360
   - name: Web Development
+    variants: [web]
     level: master
     keywords:
       - HTML
