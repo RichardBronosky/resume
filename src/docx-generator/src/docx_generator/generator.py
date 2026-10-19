@@ -197,7 +197,16 @@ def add_basics_section(doc: DocxDocument, basics: Dict[str, Any]) -> None:
     # Name as heading
     heading = doc.add_heading(basics.get("name", ""), 0)
     heading.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    
+
+    # Headline (one-off variants override it)
+    if basics.get("label"):
+        label = doc.add_paragraph()
+        label.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        label.paragraph_format.space_after = Pt(0)
+        run = label.add_run(basics["label"])
+        run.style = doc.styles["CustomLabel"]
+        run.font.size = Pt(11)
+
     # Contact information
     contact = doc.add_paragraph()
     contact.alignment = WD_ALIGN_PARAGRAPH.CENTER
