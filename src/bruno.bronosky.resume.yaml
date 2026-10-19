@@ -6,7 +6,7 @@ permalink: https://github.com/RichardBronosky/resume/blob/main/src/bruno.bronosk
 $schema: https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json
 basics:
   name: Bruno Bronosky
-  label: Principal DevOps Engineer | AI-Augmented Automation & Team Training
+  label: Principal DevOps Engineer | Team Lead & Trainer
   image: "http://www.gravatar.com/avatar/959ccd33301cb3c15953c1a632a36763?s=500"
   email: job-application@bronosky.com
   phone: (404) 992-7866
@@ -133,7 +133,7 @@ work:
       - Mentored engineering teams on adopting AI-augmented workflows and integrating LLMs into CI/CD pipelines
       - Used Python for API-driven infrastructure automation, real-time systems, robotics, monitoring, and data analysis.
       - text: "Administer MySQL databases supporting real-time systems, monitoring, and data analysis."
-        variants: [web, mysql-dba]
+        variants: [mysql-dba]
       - Validate R & D plans and results
       - 3D modeling and CNC manufacturing
       - Safety and fire suppression
@@ -218,7 +218,7 @@ work:
       - CI/CD with CloudBees/Jenkins and Argo-CD
       - software testing with SonarQube, JMeter, and various other tools
       - text: "Administer and support MySQL database infrastructure."
-        variants: [web, mysql-dba]
+        variants: [mysql-dba]
     skills:
       - AWS
       - FedRAMP
@@ -386,9 +386,9 @@ work:
       - text: "Administered production MySQL databases supporting the Atlanta Journal-Constitution, including replication-based high-availability topologies."
         variants: [mysql-dba]
       - text: "Performed multi-version MySQL upgrades and migrations."
-        variants: [web, mysql-dba]
+        variants: [mysql-dba]
       - text: "Used Percona tools for MySQL backup, recovery, and operational tuning."
-        variants: [web, mysql-dba]
+        variants: [mysql-dba]
       - text: "Optimize developer code."
         variants: ["!mysql-dba"]
       - text: "Tuned database and disk-system performance; optimized developer-written queries and schema design."
@@ -428,7 +428,7 @@ work:
     location: Various
     position: Prior Professional Experience
     startDate: "1995-08-01"
-    endDate: "2007-01-01"
+    endDate: "2004-06-01"
     highlights:
       - >-
         Companies include: Apple Computer, Lanier Worldwide, MedCenterDirect,
@@ -497,8 +497,12 @@ work:
       - Macromedia Shockwave
       - Macromedia Flash
 
+  # An older page-length rollup of amazing/medcenter/lanier, superseded by
+  # "Various". Kept for its dates and skills; shown nowhere.
   - id: freelance
     name: Freelance
+    variants: [None]
+    replaces: [amazing, medcenter, lanier]
     location: USA and Ireland
     position: Consultant
     startDate: "1998-01-01"

@@ -2,7 +2,7 @@
   "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
   "basics": {
     "name": "Bruno Bronosky",
-    "label": "Principal DevOps Engineer | AI-Augmented Automation & Team Training",
+    "label": "Principal DevOps Engineer | Team Lead & Trainer",
     "image": "http://www.gravatar.com/avatar/959ccd33301cb3c15953c1a632a36763?s=500",
     "email": "job-application@bronosky.com",
     "phone": "(404) 992-7866",
@@ -89,7 +89,6 @@
         "Leveraged AI coding agents to rapidly refactor complex systems and automate infrastructure-as-code",
         "Mentored engineering teams on adopting AI-augmented workflows and integrating LLMs into CI/CD pipelines",
         "Used Python for API-driven infrastructure automation, real-time systems, robotics, monitoring, and data analysis.",
-        "Administer MySQL databases supporting real-time systems, monitoring, and data analysis.",
         "Validate R & D plans and results",
         "3D modeling and CNC manufacturing",
         "Safety and fire suppression",
@@ -141,8 +140,7 @@
       "summary": "Value: $3B+ Employees: 10k+",
       "highlights": [
         "CI/CD with CloudBees/Jenkins and Argo-CD",
-        "software testing with SonarQube, JMeter, and various other tools",
-        "Administer and support MySQL database infrastructure."
+        "software testing with SonarQube, JMeter, and various other tools"
       ],
       "skills": [
         "AWS",
@@ -303,8 +301,6 @@
       "endDate": "2008-07-01",
       "highlights": [
         "Administer MySQL.",
-        "Performed multi-version MySQL upgrades and migrations.",
-        "Used Percona tools for MySQL backup, recovery, and operational tuning.",
         "Optimize developer code.",
         "Maintain high availability and performance.",
         "Develop extra Django and Rails projects.",
@@ -390,32 +386,6 @@
         "Administer network and Mac, NT, Solaris/Unix systems."
       ],
       "skills": [
-        "Adobe Photoshop",
-        "Adobe Illustrator",
-        "Adobe InDesign",
-        "Quark Express",
-        "Macromedia Shockwave",
-        "Macromedia Flash"
-      ]
-    },
-    {
-      "name": "Freelance",
-      "location": "USA and Ireland",
-      "position": "Consultant",
-      "startDate": "1998-01-01",
-      "endDate": "2004-03-01",
-      "highlights": [
-        "Consult in LAMP stack, networking, web development, client application development, Q/A, automation, graphic design."
-      ],
-      "skills": [
-        "HTML",
-        "JS",
-        "C",
-        "C++",
-        "TCP/IP",
-        "Unix",
-        "Solaris",
-        "Data Center",
         "Adobe Photoshop",
         "Adobe Illustrator",
         "Adobe InDesign",
