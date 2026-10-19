@@ -10,7 +10,6 @@ that JSON, so they cannot disagree about what is shown.
 | `web`       | `build/…resume.json`, `.html`           | exhaustive: every entry and every bullet    |
 | `paper`     | `build/…resume.docx`, `.pdf`            | aggregates on, top-N bullets per job        |
 | `ats`       | `build/…resume.ats.docx`                | `paper` + ATS-only aggregates               |
-| `mysql-dba` | `build/…resume.mysql-dba.docx`, `.pdf`  | one-off, `make oneoff VARIANT=mysql-dba`    |
 
 ## In the YAML
 
@@ -21,7 +20,7 @@ Any entry (job, education, skill group, profile), any bullet in
 | ---------------------- | ------------------------------------------------- |
 | omitted                | every variant                                     |
 | `[paper, ats]`         | only those (and one-offs that `extend` them)      |
-| `["!mysql-dba"]`       | every variant except that one                     |
+| `["!ats"]`             | every variant except that one                     |
 | `[None]`               | nowhere; kept only as the source of truth         |
 
 A bullet that needs `variants:` is written as `{text: "...", variants: [...]}`.
@@ -37,8 +36,7 @@ last 15, and 3 before that (`highlights.max_by_age` in `paper.yaml`).
 
 ## One-off resumes
 
-Copy `mysql-dba.yaml`. A one-off `extends` a base variant and can override
-`basics` (label, summary), replace `skills`, and change the bullet caps. Write
-tailored bullets in the main YAML with `variants: [<one-off>]`; with
-`promote_own_bullets: true` they go to the top of their job. When a tailored
-bullet rewrites a generic one, mark the generic one `["!<one-off>"]`.
+A resume tailored to one job is not a variant here. It is a folder on the
+`oneoffs` branch with an `oneoff.yaml` that extends `paper` or `ats`. See
+[AGENTS.md](../../AGENTS.md) and `tools/oneoff.py`. Facts it may use but the
+public resume shouldn't show stay in the main YAML as `variants: [None]`.

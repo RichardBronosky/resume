@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build one resume variant as plain JSON Resume from the single source YAML.
 
-    tools/resume-variant.py <variant> [-o out.json] [--source src/....yaml]
+    tools/resume-variant.py <variant | path/to/oneoff.yaml> [-o out.json] [--source src/....yaml]
 
 Every output (web HTML, paper DOCX/PDF, ATS DOCX, one-offs) is rendered from
 the JSON this writes, so the filtering below is the only place that decides
@@ -37,16 +37,22 @@ def load_source(path):
 
 
 def load_variant(name):
-    """Return (config, lineage). lineage is [name, parent, grandparent, ...]."""
+    """Return (config, lineage). lineage is [name, parent, grandparent, ...].
+    `name` is a variant in src/variants/ or the path of a one-off's
+    oneoff.yaml, whose lineage name is its folder name."""
     config, lineage = {}, []
     while name:
+        if name.endswith(".yaml") and os.path.isfile(name):
+            path, name = name, os.path.basename(os.path.dirname(os.path.abspath(name)))
+        else:
+            path = os.path.join(VARIANTS_DIR, f"{name}.yaml")
         if name in lineage:
             sys.exit(f"variant cycle: {' -> '.join(lineage + [name])}")
-        path = os.path.join(VARIANTS_DIR, f"{name}.yaml")
         if not os.path.exists(path):
             sys.exit(f"unknown variant '{name}' (no {path})")
         with open(path) as f:
             own = yaml.safe_load(f) or {}
+        own.pop("meta", None)  # a one-off's tracking info, not resume content
         lineage.append(name)
         config = deep_merge(own, config)  # child wins
         name = own.get("extends")
@@ -114,18 +120,46 @@ def highlight_cap(entry, rules, today):
     return None
 
 
-def pick_highlights(entry, lineage, rules, promote, today):
-    """Source order is priority order. With `promote_own_bullets`, bullets that
-    name this exact variant jump the queue before the cap applies."""
-    bullets = [b for b in entry.get("highlights", []) if included(b, lineage)]
-    if promote:
-        def own(b):
-            return isinstance(b, dict) and lineage[0] in (b.get("variants") or [])
-        bullets = [b for b in bullets if own(b)] + [b for b in bullets if not own(b)]
+def tailor_highlights(job_id, every, shown, ops):
+    """Apply a one-off's `jobs.<id>` ops to the shown bullet texts.
+
+    top:    bullets to put first, in this order. May name any bullet the job
+            has in the source, including `variants: [None]` ones.
+    drop:   bullets to leave out.
+    reword: [{text, based_on}] replaces the based_on bullet in place.
+    Every referenced bullet must match the source word for word, so a one-off
+    can reorder and reword what is there but cannot invent new bullets."""
+    def known(text, op):
+        if text not in every:
+            sys.exit(f"jobs.{job_id}.{op}: no such bullet in the source YAML: {text!r}")
+        return text
+
+    unknown = set(ops) - {"top", "drop", "reword"}
+    if unknown:
+        sys.exit(f"jobs.{job_id}: unknown key(s) {sorted(unknown)}; use top, drop, reword")
+    top = [known(t, "top") for t in ops.get("top") or []]
+    drop = {known(t, "drop") for t in ops.get("drop") or []}
+    texts = top + [t for t in shown if t not in top]
+    texts = [t for t in texts if t not in drop]
+    for r in ops.get("reword") or []:
+        base = known(r.get("based_on"), "reword.based_on")
+        if base not in texts:
+            sys.exit(f"jobs.{job_id}.reword: {base!r} is not shown; add it to `top` first")
+        texts[texts.index(base)] = r["text"]
+    return texts
+
+
+def pick_highlights(entry, lineage, rules, tailor, today):
+    """Source order is priority order; a one-off's `jobs` ops reorder, drop
+    and reword before the cap applies."""
+    every = [bullet_text(b) for b in entry.get("highlights", [])]
+    texts = [bullet_text(b) for b in entry.get("highlights", []) if included(b, lineage)]
+    if entry.get("id") in tailor:
+        texts = tailor_highlights(entry["id"], every, texts, tailor[entry["id"]] or {})
     cap = highlight_cap(entry, rules, today)
     if cap is not None:
-        bullets = bullets[:cap]
-    return [bullet_text(b) for b in bullets]
+        texts = texts[:cap]
+    return texts
 
 
 def build(source, config, lineage, today):
@@ -136,7 +170,11 @@ def build(source, config, lineage, today):
         out["skills"] = config["skills"]
 
     rules = (config.get("highlights") or {}).get("max_by_age")
-    promote = bool(config.get("promote_own_bullets"))
+    tailor = config.get("jobs") or {}
+    ids = {w.get("id") for w in source.get("work") or [] if isinstance(w, dict)}
+    for job_id in tailor:
+        if job_id not in ids:
+            sys.exit(f"jobs.{job_id}: no work entry with that id")
 
     for section in SECTIONS:
         items = out.get(section)
@@ -151,7 +189,7 @@ def build(source, config, lineage, today):
         for item in kept:
             if isinstance(item, dict):
                 if "highlights" in item:
-                    item["highlights"] = pick_highlights(item, lineage, rules, promote, today)
+                    item["highlights"] = pick_highlights(item, lineage, rules, tailor, today)
                 if "keywords" in item:
                     item["keywords"] = [bullet_text(k) for k in item["keywords"] if included(k, lineage)]
             result.append(strip_private(item))

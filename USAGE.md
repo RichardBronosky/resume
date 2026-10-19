@@ -48,8 +48,8 @@ GitHub app.
 
 Each output is a *variant* of the one YAML file (web, paper, ATS, one-offs);
 see [`src/variants/README.md`](src/variants/README.md). `make json` writes the
-JSON for each; `make ats` and `make oneoff VARIANT=mysql-dba` build the other
-DOCX files. The HTML is not produced by `make`. With `tools/` on `PATH` run:
+JSON for each; `make ats` builds the ATS DOCX. One-off resumes for a single
+job live on the `oneoffs` branch: see [AGENTS.md](AGENTS.md). The HTML is not produced by `make`. With `tools/` on `PATH` run:
 
 ```bash
 PATH=$PWD/tools:$PATH ./tools/jsonresume.sh yaml_file_to_json_file

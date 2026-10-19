@@ -98,10 +98,7 @@ work:
     highlights:
       - Build AI pipelines that work whole categories of ServiceNow tickets, cutting ticket completion times.
       - Package infrastructure and process context for AI agents, which also speeds up onboarding for new team members.
-      - text: "Document DevOps processes and infrastructure so AI tools work from accurate context."
-        variants: ["!mysql-dba"]
-      - text: "Document DevOps processes and infrastructure, including operational runbooks for production systems."
-        variants: [mysql-dba]
+      - Document DevOps processes and infrastructure so AI tools work from accurate context.
       - Automate and document repeatable infrastructure operations instead of relying on manual procedures.
       - Handle day-to-day DevOps across AWS and Azure with Terraform, Ansible, PowerShell, and CI/CD.
     skills:
@@ -137,7 +134,7 @@ work:
       - Develop real-time monitoring systems in Python.
       - Use Python for API-driven infrastructure automation, real-time systems, robotics, monitoring, and data analysis.
       - text: "Administer MySQL databases supporting real-time systems, monitoring, and data analysis."
-        variants: [mysql-dba]
+        variants: [None]  # on record; one-offs can pull it in with `top`
       - Validate R&D plans and results.
       - 3D model and CNC-machine custom parts.
       - Oversee safety and fire suppression.
@@ -219,7 +216,7 @@ work:
       - CI/CD with CloudBees/Jenkins and Argo-CD
       - software testing with SonarQube, JMeter, and various other tools
       - text: "Administer and support MySQL database infrastructure."
-        variants: [mysql-dba]
+        variants: [None]  # on record; one-offs can pull it in with `top`
     skills:
       - AWS
       - FedRAMP
@@ -280,10 +277,7 @@ work:
       - Design, build, and deploy Docker containers and API gateways.
       - Make and document changes to AWS infrastructure via aws-cli.
       - Manage network security with AWS Security Groups, iptables, and OpenVPN.
-      - text: "Maintain MongoDB and DynamoDB databases."
-        variants: ["!mysql-dba"]
-      - text: "Maintain MySQL, MongoDB, and DynamoDB databases."
-        variants: [mysql-dba]
+      - Maintain MongoDB and DynamoDB databases.
     skills:
       - AWS
       - GitOps
@@ -302,10 +296,7 @@ work:
       - Cut server provisioning from days to minutes by replacing word-of-mouth procedures with Packer, Terraform, Chef, and Ansible.
       - Build and maintain 8 Kubernetes clusters (hundreds of nodes) serving microservices.
       - Build custom Raspberry Pi images for thousands of IoT devices across ~10 client sites.
-      - text: "Build and maintain Cassandra, MongoDB, and MySQL databases."
-        variants: ["!mysql-dba"]
-      - text: "Build and maintain Cassandra, MongoDB, and MySQL databases in mixed production environments."
-        variants: [mysql-dba]
+      - Build and maintain Cassandra, MongoDB, and MySQL databases.
       - Design, 3D model, and CNC mill custom IoT hardware cases.
       - Automate infrastructure and operational workflows with Python and PowerShell where Windows administration or executable documentation is needed.
       - Maintain database-backed production systems for operational health, performance, and reliability.
@@ -363,18 +354,9 @@ work:
     startDate: "2008-07-01"
     endDate: "2009-11-01"
     highlights:
-      - text: "Administer GNU/Linux servers."
-        variants: ["!mysql-dba"]
-      - text: "Administer MySQL replication and high-availability topologies across a GNU/Linux server fleet."
-        variants: [mysql-dba]
-      - text: "Manage a department of sysadmins."
-        variants: ["!mysql-dba"]
-      - text: "Manage a department of sysadmins while staying hands-on as MySQL DBA."
-        variants: [mysql-dba]
-      - text: "Automate workflows and manage configuration."
-        variants: ["!mysql-dba"]
-      - text: "Automate workflows and manage configuration for database and application infrastructure."
-        variants: [mysql-dba]
+      - Administer GNU/Linux servers.
+      - Manage a department of sysadmins.
+      - Automate workflows and manage configuration.
       - Work ServiceNow tickets and requests, and later use it as a workflow data source for operational analysis.
     skills:
       - AWS
@@ -387,26 +369,14 @@ work:
     startDate: "2007-01-01"
     endDate: "2008-07-01"
     highlights:
-      - text: "Administer MySQL."
-        variants: ["!mysql-dba"]
-      - text: "Administer production MySQL databases for the Atlanta Journal-Constitution, including replication-based high availability."
-        variants: [mysql-dba]
+      - Administer MySQL.
       - text: "Perform multi-version MySQL upgrades and migrations."
-        variants: [mysql-dba]
+        variants: [None]  # on record; one-offs can pull it in with `top`
       - text: "Use Percona tools for MySQL backup, recovery, and operational tuning."
-        variants: [mysql-dba]
-      - text: "Optimize developer code."
-        variants: ["!mysql-dba"]
-      - text: "Tune database and disk-system performance; optimize developer-written queries and schema design."
-        variants: [mysql-dba]
-      - text: "Maintain high availability and performance."
-        variants: ["!mysql-dba"]
-      - text: "Maintain high availability and performance across production and development environments."
-        variants: [mysql-dba]
-      - text: "Develop extra Django and Rails projects."
-        variants: ["!mysql-dba"]
-      - text: "Develop supporting Django and Rails projects."
-        variants: [mysql-dba]
+        variants: [None]  # on record; one-offs can pull it in with `top`
+      - Optimize developer code.
+      - Maintain high availability and performance.
+      - Develop extra Django and Rails projects.
       - Build internal tooling in Python/Django.
     skills:
       - MySQL

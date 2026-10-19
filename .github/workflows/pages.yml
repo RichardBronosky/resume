@@ -4,6 +4,7 @@ name: Deploy resume to GitHub Pages
 # Rebuild locally (see USAGE.md), commit build/, push. CI only copies.
 #
 # Branches named preview/<name> are also published, at /resume/preview/<name>/.
+# The `oneoffs` branch must NEVER be published: it names the companies applied to.
 # Deleting such a branch removes its preview on the next run.
 on:
   push:

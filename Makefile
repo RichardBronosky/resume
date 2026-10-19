@@ -11,8 +11,8 @@ RESUME_DOCX = PYTHONPATH=$(CURDIR)/src/docx-generator/src $(PYTHON) -m docx_gene
 #   web       -> $(BASE).json, .html        (bronosky.com/resume/)
 #   paper     -> $(BASE).docx, .pdf
 #   ats       -> $(BASE).ats.docx
-#   <one-off> -> $(BASE).<one-off>.docx, .pdf   e.g. make oneoff VARIANT=mysql-dba
-.PHONY: all docx pdf ats oneoff json clean check-docx
+# One-offs for a single job are not built here: see AGENTS.md and tools/oneoff.py.
+.PHONY: all docx pdf ats json clean check-docx
 
 all: docx
 
@@ -33,12 +33,6 @@ pdf: json check-docx
 
 ats: json check-docx
 	$(RESUME_DOCX) $(BASE).ats.json -o $(DOCX_OUTPUT) --ats
-
-oneoff: check-docx
-	@test -n "$(VARIANT)" || { echo "Usage: make oneoff VARIANT=<name of a src/variants/*.yaml>"; exit 1; }
-	mkdir -p build
-	$(VARIANT_JSON) $(VARIANT) -o $(BASE).$(VARIANT).json
-	$(RESUME_DOCX) $(BASE).$(VARIANT).json -o $(BASE).$(VARIANT).docx --pdf
 
 clean:
 	rm -rf build/

@@ -1,0 +1,22 @@
+name: Check one-offs
+
+# One-offs live only on the `oneoffs` branch and never in main.
+# See AGENTS.md and tools/oneoff.py.
+on:
+  push:
+    branches: [main, oneoffs]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - run: git fetch origin main:main || true
+      - run: pip install pyyaml
+      - run: python3 tools/oneoff.py check
