@@ -1,13 +1,11 @@
 YAML_INPUT = src/bruno.bronosky.resume.yaml
 BASE = build/bruno.bronosky.resume
 DOCX_OUTPUT = $(BASE).docx
-LOCAL_RESUME_DOCX = src/docx-generator/.venv/bin/resume-docx
-RESUME_DOCX = $(shell command -v resume-docx 2>/dev/null)
 VARIANT_JSON = ./tools/resume-variant.py
-
-ifeq ($(RESUME_DOCX),)
-RESUME_DOCX = $(LOCAL_RESUME_DOCX)
-endif
+# Always run the generator in this checkout. A `resume-docx` on PATH may be an
+# editable install of some other clone, with different layout code.
+PYTHON = $(firstword $(wildcard .venv/bin/python) python3)
+RESUME_DOCX = PYTHONPATH=$(CURDIR)/src/docx-generator/src $(PYTHON) -m docx_generator.cli
 
 # Every output is rendered from the JSON of one variant (src/variants/*.yaml):
 #   web       -> $(BASE).json, .html        (bronosky.com/resume/)
@@ -25,7 +23,7 @@ json:
 	$(VARIANT_JSON) ats -o $(BASE).ats.json
 
 check-docx:
-	@test -x "$(RESUME_DOCX)" || { echo "Error: resume-docx not found. Run inside nix-shell or use the local generator venv at $(LOCAL_RESUME_DOCX)."; exit 1; }
+	@$(PYTHON) -c 'import docx, jsonschema, yaml' || { echo "Error: python-docx/jsonschema/PyYAML missing. Run inside nix-shell."; exit 1; }
 
 docx: json check-docx
 	$(RESUME_DOCX) $(BASE).paper.json -o $(DOCX_OUTPUT)
