@@ -13,20 +13,24 @@ Everything else is built from it. Read this whole file before changing anything.
 - `main` never contains `oneoffs/`. The `oneoffs` branch is main plus the
   `oneoffs/` folder and nothing else. `tools/oneoff.py check` enforces both.
 - `oneoffs` merges *from* main (`git merge main`), never into it.
-- Never push one-offs to a `preview/*` branch: those are published on the web.
-  `oneoffs` itself is never published.
+- **`oneoffs` is local only. Never push it anywhere**, under any name. The
+  GitHub repo is public, and one-offs name the companies Bruno applies to. A
+  `pre-push` hook in `.git/hooks/` refuses it; never bypass it with `--no-verify`.
 
 ## Making a one-off
 
 ```bash
 git switch oneoffs && git merge main
 tools/oneoff.py new 2026-10-21-acme-sre-lead --company Acme --role "SRE Lead" --url https://...
-# save the job posting as oneoffs/<folder>/jd.txt, then edit oneoff.yaml
+# save the job posting VERBATIM as oneoffs/<folder>/jd.txt, then edit oneoff.yaml
 tools/oneoff.py build 2026-10-21-acme-sre-lead
 git add oneoffs/2026-10-21-acme-sre-lead && git commit
 ```
 
 `oneoffs/2026-09-22-mysql-dba-contractor/` is a finished example.
+
+Get the posting with the shared browser (the `collaborative-chromium` skill),
+not a fetch tool: fetchers get blocked by Cloudflare or return summaries.
 Track applications with `tools/oneoff.py status <folder> sent` and
 `tools/oneoff.py list`.
 
