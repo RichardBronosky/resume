@@ -348,6 +348,7 @@ blockquote {
 }
 
 .ribbon {
+    top: 0;
     right: 0px;
     position: absolute;
     z-index: 200;
@@ -356,63 +357,78 @@ blockquote {
     /* display: none; scale: 0.65; */
 }
 
-.dark-include{ display: none; }
-.dark-exclude{ display: initial; }
+a.ribbon {
+  width: 147px;
+  height: 147px;
+  overflow: hidden;
+}
+/* Keep the original plain three-line toggle in the top-right corner. */
+#theme-toggle {
+  border: 0;
+  padding: 0;
+  color: inherit;
+  background: transparent;
+  font: inherit;
+  font-weight: 700;
+  line-height: 100%;
+  cursor: pointer;
+}
+#theme-toggle:focus-visible {
+  outline: 2px solid #227c74;
+}
+@media print {
+  #theme-toggle { display: none; }
+}
+:root[data-theme="dark"] body{
+  background: #1c2835;
+  color: #aaaaaa;
+}
 
-@media (prefers-color-scheme: dark) {
-  .dark-include{ display: initial; }
-  .dark-exclude{ display: none; }
-  body{
-    background: #1c2835;
-    color: #aaaaaa;
-  }
+:root[data-theme="dark"] .container{
+  background: #0b0f14;
+}
+:root[data-theme="dark"] #photo{
+  background: #1c2835;
+}
 
-  .container{
-    background: #0b0f14;
-  }
-  #photo{
-    background: #1c2835;
-  }
+:root[data-theme="dark"] .list-group-item {
+  background: #0b0f14;
+}
+:root[data-theme="dark"] #awards .year,
+:root[data-theme="dark"] #education .year{
+  background: #0b0f14;
+}
+:root[data-theme="dark"] #text-header h1 span{
+  color: #5b7fa9;
+}
+:root[data-theme="dark"] .item-interests,
+:root[data-theme="dark"] .item-skills{
+  color: #5b7fa9;
+}
 
-  .list-group-item {
-    background: #0b0f14;
-  }
-  #awards .year,
-  #education .year{
-    background: #0b0f14;
-  }
-  #text-header h1 span{
-    color: #5b7fa9;
-  }
-  .item-interests,
-  .item-skills{
-    color: #5b7fa9;
-  }
-
-  #awards .description,
-  #education .description{
-    background: #10171e;
-    border-right: 1px solid #333;
-    border-bottom: 1px solid #333;
-  }
-  #awards .description:after,
-  #education .description:after {
-    border-right-color: #10171e;
-  }
-  .job .details {
-    background: #10171e;
-    border-right: 1px solid #333;
-    border-bottom: 1px solid #333;
-  }
-  .contact-item .icon{
-    background: #10171e;
-    color: #5b7fa9;
-    border-right: 1px solid #333;
-    border-bottom: 1px solid #333;
-  }
-  #language-skills .skill{
-    border-bottom: 1px solid #10171e;
-  }
+:root[data-theme="dark"] #awards .description,
+:root[data-theme="dark"] #education .description{
+  background: #10171e;
+  border-right: 1px solid #333;
+  border-bottom: 1px solid #333;
+}
+:root[data-theme="dark"] #awards .description:after,
+:root[data-theme="dark"] #education .description:after {
+  border-right-color: #10171e;
+}
+:root[data-theme="dark"] .job .details {
+  background: #10171e;
+  border-right: 1px solid #333;
+  border-bottom: 1px solid #333;
+}
+:root[data-theme="dark"] .contact-item .icon{
+  background: #10171e;
+  color: #5b7fa9;
+  border-right: 1px solid #333;
+  border-bottom: 1px solid #333;
+}
+:root[data-theme="dark"] #language-skills .skill{
+  border-bottom: 1px solid #10171e;
 }
 
 /* ===== Resume responsive overrides (Bruno, 2026-10-06) =====
@@ -460,8 +476,8 @@ p, li, a, span, div {
     left: 0;
     right: 0;
     margin-top: 40px;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
   #photo-header {
     margin-top: -30px;
@@ -482,18 +498,40 @@ p, li, a, span, div {
 }
 
 /* ===== round 2: phone-width offenders ===== */
-.item-interests,
-.item-skills {
-  position: relative; /* anchor the absolutely-positioned skill-level badges */
-}
-@media (max-width: 767px) {
-  .ribbon {
-    display: none; /* decorative corner ribbons overflow small screens */
-  }
+@media screen {
   .skill-level {
-    position: static; /* badges flow inline instead of flying off-viewport */
+    position: static; /* proficiency labels wrap with their headings at any width */
     display: inline-block;
+    max-width: calc(100% - 8px);
     margin: 2px 0 2px 8px;
     vertical-align: middle;
+  }
+}
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: calc(100% - 20px); /* allow for its 10px left offset and right gutter */
+  }
+}
+/* Badges must fit their column on desktop as well as phones. */
+.skill.badge,
+.interest.badge {
+  max-width: calc(100% - 5px); /* reserve the badge's right margin */
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+/* A full-width grid column cannot also have a horizontal column offset. */
+.skills > .col-sm-12,
+.interests > .col-sm-12 {
+  margin-left: 0;
+}
+@media (max-width: 767px) {
+  a.ribbon {
+    width: 147px;
+    height: 147px;
+    max-width: 40%;
+  }
+  .ribbon svg {
+    width: 100%;
+    height: 100%;
   }
 }

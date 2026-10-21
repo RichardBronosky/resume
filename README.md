@@ -30,6 +30,11 @@ make pdf
 
 Outputs will be saved to the `build/` directory.
 
+Use [`tools.sh`](tools.sh) as the shared agent/human command entrypoint:
+`./tools.sh make pdf`, `./tools.sh html`, `./tools.sh review demo`, or
+`./tools.sh help`. Review commands manage private tailnet demos and shared Chrome;
+see [USAGE.md](USAGE.md#unified-tools-entrypoint) for commands and permissions.
+
 ## Publishing (bronosky.com/resume/)
 
 The live resume at **<https://bronosky.com/resume/>** is deployed by

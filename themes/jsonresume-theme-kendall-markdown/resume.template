@@ -17,34 +17,36 @@
     {{{printcss}}}
     </style>
     <script>
-      function setPreferredColorScheme(mode = "dark") {
-        console.log("changing")
-        for (var i = document.styleSheets.length - 1; i >= 0; i--) {
-          console.log("i",i)
-          document.styleSheets[i];
-          if(document.styleSheets[i].href !== null){ continue; }
-          for (var j = document.styleSheets[i].rules.length - 1; j >= 0; j--) {
-            console.log("j",j)
-            media = document.styleSheets[i].rules[j].media;
-            if (media && media.mediaText) {
-              console.log("includes mediaText")
-              if (media.mediaText.includes("dark")){
-                console.log("prefers dark")
-                console.log("set preference to light")
-                if (media.mediaText.includes("light")) media.deleteMedium("(prefers-color-scheme: light)");
-                if (media.mediaText.includes("dark"))  media.deleteMedium("(prefers-color-scheme: dark)");
-                media.appendMedium("(prefers-color-scheme: light)");
-              } else {
-                console.log("prefers not dark")
-                console.log("set preference to dark")
-                if (media.mediaText.includes("light")) media.deleteMedium("(prefers-color-scheme: light)");
-                if (media.mediaText.includes("dark"))  media.deleteMedium("(prefers-color-scheme: dark)");
-                media.appendMedium("(prefers-color-scheme: dark)");
-              }
-            }
+      (() => {
+        const preference = matchMedia('(prefers-color-scheme: dark)');
+        let saved;
+        try { saved = localStorage.getItem('resume-theme'); } catch (_) {}
+        const root = document.documentElement;
+        root.dataset.theme = ['light', 'dark'].includes(saved)
+          ? saved : (preference.matches ? 'dark' : 'light');
+        function updateButton() {
+          const button = document.getElementById('theme-toggle');
+          if (button) {
+            document.getElementById('theme-label').textContent = root.dataset.theme === 'dark' ? 'light' : 'dark';
+            button.setAttribute('aria-pressed', String(root.dataset.theme === 'dark'));
           }
         }
-      }
+        addEventListener('DOMContentLoaded', () => {
+          updateButton();
+          document.getElementById('theme-toggle').addEventListener('click', () => {
+            root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+            saved = root.dataset.theme;
+            try { localStorage.setItem('resume-theme', saved); } catch (_) {}
+            updateButton();
+          });
+        });
+        preference.addEventListener('change', event => {
+          if (!saved) {
+            root.dataset.theme = event.matches ? 'dark' : 'light';
+            updateButton();
+          }
+        });
+      })();
     </script>
   </head>
   <body>
@@ -139,8 +141,7 @@
              x="0"
              y="0">View Source on Github</tspan></text></g></g></g></g></svg>
       </a>
-      <label class="ribbon" for="dark_mode">Switch to</br><span class="dark-include">light</span><span class="dark-exclude">dark</span></br>mode</label>
-      <button id="dark_mode" style="display:none" onclick="setPreferredColorScheme()">foo bar</button>
+      <button id="theme-toggle" class="ribbon" type="button" aria-pressed="false">Switch to<br><span id="theme-label">dark</span><br>mode</button>
       <div class="row">
         <div class="col-xs-12">
           <div id="photo-header" class="text-center">
