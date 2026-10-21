@@ -435,6 +435,22 @@ work:
     skills:
       - PHP
 
+  - id: industrial-controls
+    name: "Independent Consulting"
+    position: "Industrial Controls / Automation Consultant"
+    startDate: "2002-01-01"
+    endDate: "2009-12-31"
+    highlights:
+      - Programmed, commissioned, and troubleshot Allen-Bradley PLCs using RSLogix (ladder logic)
+      - Programmed AutomationDirect DirectLOGIC PLCs using DirectSOFT
+    skills:
+      - Allen-Bradley PLCs
+      - RSLogix
+      - AutomationDirect DirectLOGIC
+      - DirectSOFT
+      - Ladder Logic
+      - Industrial Controls
+
   - id: medcenter
     name: MedCenterDirect
     location: Atlanta, GA
@@ -549,6 +565,14 @@ education:
 
 skills:
 #   level: beginner , intermediate, advanced, master
+  - name: "Industrial Controls"
+    keywords:
+      - Allen-Bradley PLCs
+      - RSLogix
+      - AutomationDirect DirectLOGIC
+      - DirectSOFT
+      - Ladder Logic
+      - Industrial Controls
   - name: "AI & Agentic Automation"
     level: master
     keywords:
