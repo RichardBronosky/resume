@@ -5,9 +5,8 @@ Operating rules: [AGENTS.md](AGENTS.md). Commands and setup: [USAGE.md](USAGE.md
 
 ## Release: responsive site and unified tooling
 
-Status: implementation complete; Bruno authorized commit and public deployment.
-Release checks, commit/push, Pages deployment, and live verification are the
-remaining delivery steps. Record their outcome below.
+Status: complete and publicly deployed. Bruno approved the final implementation;
+release checks, push to main, Pages deployment, and live verification passed.
 
 ### Completed
 
@@ -52,10 +51,17 @@ remaining delivery steps. Record their outcome below.
 - Final release checks: passed (12 regression tests, full viewport/theme demo,
   public artifact isolation, one-off scope check, generator dependencies,
   unchanged two-page PDF, and whitespace checks).
-- Commit and push to main: pending.
-- GitHub Pages deployment: pending.
-- Live verification: confirm served HTML matches the released artifact, contains
-  the responsive/theme fixes, and has no diagnostic UI or script references.
+- Application release: `3752f08a9013141beb00b2d4ad89c064b0acc8ad`, pushed to main.
+- [GitHub Pages deployment](https://github.com/RichardBronosky/resume/actions/runs/39689512282): succeeded.
+- Live verification: fetched https://bronosky.com/resume/ after deployment;
+  HTML matches the committed artifact byte for byte. Theme button, 15px mobile
+  grid padding, badge wrapping, and tablet fixes are present; diagnostic markers
+  are absent.
+- Live HTML SHA-256: `01a6ae52b77b30824a0669173d7c4fc0d2d30313ffa161074a2db6ce67d3a934`.
+- Public PDF fetched from `/resume/pdf/bruno.bronosky.resume.pdf` matches the
+  local unchanged artifact byte for byte and remains two pages.
+- This completion-record update changes documentation only; released site
+  artifacts remain identical.
 
 ## Remaining backlog
 
