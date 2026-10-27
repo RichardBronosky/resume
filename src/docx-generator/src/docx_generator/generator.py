@@ -283,18 +283,30 @@ def add_work_entry(doc: DocxDocument, job: Dict[str, Any], style: str = "MyBulle
             paragraphs.append(doc.add_paragraph(highlight, style=style))
             
     # Keep the job header (and summary line, if present) with the first
-    # bullet; let bullet lists flow naturally across page breaks.
+    # bullet, and never strand a single bullet on either side of a page
+    # break: the first bullet sticks to the second, the second-to-last to
+    # the last. Middle bullets may still break, so whole entries are not
+    # glued together (that pushes the resume past 2 pages).
     head_count = 1 + (1 if (not ats_format and "summary" in job) else 0)
+    bullets = paragraphs[head_count:]
+    for para in paragraphs:
+        para.paragraph_format.keep_together = True
     for para in paragraphs[:head_count]:
         para.paragraph_format.keep_with_next = True
+    if bullets:
+        bullets[0].paragraph_format.keep_with_next = True
+    if len(bullets) >= 2:
+        bullets[-2].paragraph_format.keep_with_next = True
+    paragraphs[-1].paragraph_format.keep_with_next = False
 
 def add_work_section(doc: DocxDocument, work_experience: List[Dict[str, Any]], ats_format: bool = False) -> None:
     """Add the work experience section to the document."""
     if not work_experience:
         return
         
-    doc.add_heading("Work Experience", 1)
-    
+    heading = doc.add_heading("Work Experience", 1)
+    heading.paragraph_format.keep_with_next = True
+
     # Which entries appear is decided upstream by tools/resume-variant.py.
     for job in work_experience:
         add_work_entry(doc, job, ats_format=ats_format)
